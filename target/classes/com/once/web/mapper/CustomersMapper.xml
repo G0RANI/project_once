@@ -7,5 +7,4 @@
 	INSERT INTO CUSTOMERS (kaid, hcoin, hqua, pprice)
 	VALUES (#{id}, 11, 11, 11)
 </insert>
- 
 </mapper>
