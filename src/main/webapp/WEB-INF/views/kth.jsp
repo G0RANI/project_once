@@ -201,13 +201,8 @@
 		                <article>
 		                    <span class="titB">
 		                    <strong>
-		                    <ahref="https://www.ubcindex.com" target="_blank" rel="noopener noreferrer">UBCI 인덱스</a></strong><span class="tabB tabR">
-	                            <ul class="col4">
-	                                <li><a href="#" class="on" title="전체">전체</a></li>
-	                                <li><a href="#" class="" title="시장 인덱스">시장 인덱스</a></li>
-	                                <li><a href="#" class="" title="테마 인덱스">테마 인덱스 </a></li>
-	                                <li><a href="#" class="" title="전략 인덱스">전략 인덱스</a></li>
-	                            </ul></span></span>
+		                    <ahref="https://www.ubcindex.com" target="_blank" rel="noopener noreferrer">네이버뉴스</a></strong><span class="tabB tabR">
+							</span></span>
 		                    <table class="highlight tbl_index">
 		                        <colgroup>
 		                            <col width="184">
@@ -219,18 +214,8 @@
 		                        </colgroup>
 		                        <thead>
 		                            <tr>
-		                                <th>인덱스명</th>
-		                                <th>개요</th>
-		                                <th><a href="#" title="전일대비">전일대비 <img
-		                                        src="https://cdn.upbit.com/images/ico_up_down_2.a48699e.png"
-		                                        alt=""></a></th>
-		                                <th><a href="#" title="1개월">1개월 <img
-		                                        src="https://cdn.upbit.com/images/ico_up_down.0a6c534.png"
-		                                        alt=""></a></th>
-		                                <th><a href="#" title="3개월">3개월 <img
-		                                        src="https://cdn.upbit.com/images/ico_up_down.0a6c534.png"
-		                                        alt=""></a></th>
-		                                <th>&nbsp;</th>
+		                                <th>제목</th>
+		                                <th>시간</th>
 		                            </tr>
 		                        </thead>
 		                        <tbody id="index_list">
