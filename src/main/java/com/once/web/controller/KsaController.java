@@ -14,13 +14,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.once.web.lambda.IConsumer;
+import com.once.web.service.CustomersServiceImpl;
+
 
 @Controller
 public class KsaController {
 	private static final Logger logger = LoggerFactory.getLogger(KsaController.class);
 	
 	@Autowired Map<String,Object> map;
-
+	@Autowired CustomersServiceImpl cust;
+	
 	@RequestMapping("/ksa")
 	public String ksaMain(Locale locale, Model model) {
 		logger.info("김승아 컨트롤 진입 했씁니다!!!");	
@@ -32,8 +36,9 @@ public class KsaController {
 	public Map<String,Object> login(@RequestBody Map<?,?> res) {
 		System.out.println("카카오정보 : "+res.toString());
 		map = new HashMap<String,Object>();
-		//IConsumer c = (Object o) -> cust.registCustomer(res); 
-		//c.accept(res);
+		IConsumer c = (Object o) -> cust.registCustomer(res);
+		
+		c.accept(res);
 		map.clear();
 		map.put("msg", res);
 		
