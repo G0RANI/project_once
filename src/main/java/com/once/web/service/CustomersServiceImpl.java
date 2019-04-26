@@ -1,18 +1,21 @@
 package com.once.web.service;
 
 import java.util.List;
+import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.once.web.domain.Customers;
+import com.once.web.mapper.CustomersMapper;
 
 @Service
 public class CustomersServiceImpl implements CustomersService{
+	@Autowired CustomersMapper cm;
 
 	@Override
-	public void registCustomer(Customers cust) {
-		// TODO Auto-generated method stub
-		
+	public void registCustomer(Map<?,?> map) {
+		cm.insertCustomer(map);
 	}
 
 	@Override

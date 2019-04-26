@@ -2,5 +2,10 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
- <mapper namespace="com.once.web.mapper.CustomersMapper">
+<mapper namespace="com.once.web.mapper.CustomersMapper">
+<insert id="insertCustomer">
+	INSERT INTO CUSTOMERS (kaid, hcoin, hqua, pprice)
+	VALUES (#{id}, 11, 11, 11)
+</insert>
+ 
 </mapper>
