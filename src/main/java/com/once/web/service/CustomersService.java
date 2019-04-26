@@ -9,11 +9,11 @@ import com.once.web.domain.Customers;
 
 @Component
 public interface CustomersService {
-	public void registCustomer(Map<?,?> map);
+	public void registCustomer(Map<String,Object> map);
 	public List<Customers> bringAllAmount(Customers cust);
 	public List<Customers> bringSomeCoin(Customers cust);
 	
-	public Customers retrieveCustomer(Customers cust);
+	public Customers retrieveCustomer(Map<String,Object> map);
 	public int countCustomers();
 	public boolean existsCustomerID(Customers cust);
 	

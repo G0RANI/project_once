@@ -60,7 +60,6 @@ ksa=(()=>{
 	      container: '#custom-login-btn',
 	      size:'large',
 	      success: function(authObj) {
-	    	  alert('dd');
 	    	   Kakao.API.request({
 	    	       url: '/v1/user/me',
 	    	       success: function(res) {
@@ -74,14 +73,14 @@ ksa=(()=>{
 	    	             	$.ajax({
 	    	             		url:x+'/login',
 	    	             		type: 'POST',
-	    	             		data: JSON.stringify(res),
+	    	             		data: JSON.stringify(res, authObj),
 	    	             		dataType:'json',
 	    	             		contentType : "application/json; charset=UTF-8",
 	    	             		success:function(res){
-	    	             			alert('성공');
+	    	             			 location.assign(x+"/ngh");
 	    	             		},
 	    	             		error:function(err){
-	    	             			alert('실패');
+	    	             			kakao(x);
 
 	    	             		}
 	    	             	});
