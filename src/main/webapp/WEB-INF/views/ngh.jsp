@@ -34,7 +34,21 @@
 	crossorigin="anonymous"></script>
 <script async="" src="https://platform.twitter.com/widgets.js"></script>
 <style data-styled="" data-styled-version="4.2.0"></style>
+<script src="http://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="http://www.amcharts.com/lib/3/serial.js"></script>
+<script src="http://www.amcharts.com/lib/3/themes/light.js"></script>
+<script src="http://www.amcharts.com/lib/3/amstock.js"></script>
 <style type="text/css">
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+}
+
+#chartdiv {
+	width: 100%;
+	height: 100%;
+}
 #markdown_notice_body {
 	margin: 0;
 	padding: 0;
@@ -581,10 +595,13 @@
 													</div>
 												</nav>
 												</ciq-ui-wrapper>
+												
+												<!-- 차트 시작 -->
 												<div class="exchangeChartiq ciq-chart-area">
 													<div id="chartContainerexchangeChartiq"
 														class="chartContainer toolbarOn"
 														style="background-color: rgb(255, 255, 255);">
+														
 														<div class=""></div>
 														<span class="stx-btn stx_annotation_save"
 															style="display: none;" id="annotationSave"><translate
@@ -592,6 +609,7 @@
 															class="stx-btn stx_annotation_cancel"
 															style="display: none; margin-left: 10px;"
 															id="annotationCancel"><translate original="cancel">cancel</translate></span>
+														
 														<div id="mSticky"
 															style="display: none; top: 33px; right: 221.5px;">
 															<span id="mStickyInterior" style="display: none;"></span>
@@ -620,9 +638,6 @@
 															</div>
 														</div>
 														<div class="stx-float-date"style="left: 996.5px; bottom: 77px; visibility: hidden;" id="floatDate"></div>
-														<div class="stx-ico-handle" style="display: none;" id="handleTemplate">
-															<span></span>
-														</div>
 														<div class="stx-panel-control" id="iconsTemplate">
 															<div class="stx-panel-title"></div>
 															<div class="stx-btn-panel">
@@ -667,34 +682,9 @@
 																</div>
 															</div>
 														</div> 
-														<div class="stx-ico-handle" style="display: none; left: 0px; width: 901px;" id="null">
-															<span></span>
-														</div>
-														<div class="stx-holder stx-panel-study" cq-panel-name="volume" style="right: 0px; top: 308px; left: 0px; height: 77px; display: block;">
-															<div class="stx-subholder" cq-panel-name="volume" style="z-index: 1; left: 0px; width: 901px; top: 0px; height: 77px;">
-																<div class="stx-panel-control stx-show" id="iconsTemplate">
-																	<div class="stx-panel-title">Volume</div>
-																	<div class="stx-btn-panel">
-																		<span class="stx-ico-up"></span>
-																	</div>
-																	<div class="stx-btn-panel" style="display: none;">
-																		<span class="stx-ico-focus"></span>
-																	</div>
-																	<div class="stx-btn-panel" style="display: none;">
-																		<span class="stx-ico-down"></span>
-																	</div>
-																	<div class="stx-btn-panel" style="">
-																		<span class="stx-ico-edit"></span>
-																	</div>
-																	<div class="stx-btn-panel">
-																		<span class="stx-ico-close"></span>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="stx-ico-handle" style="left: 0px; width: 901px; top: 305.5px;" id="null">
-															<span></span>
-														</div>
+										
+
+
 														<stx-hu-tooltip style="left: -1000px; right: auto; top: 131px;">
 														<stx-hu-tooltip-field auto=""> <stx-hu-tooltip-field-name>일시:</stx-hu-tooltip-field-name>
 														<stx-hu-tooltip-field-value>04/22</stx-hu-tooltip-field-value></stx-hu-tooltip-field>
@@ -708,6 +698,8 @@
 														<stx-hu-tooltip-field-value>6,123,000</stx-hu-tooltip-field-value></stx-hu-tooltip-field>
 														<stx-hu-tooltip-field auto=""> <stx-hu-tooltip-field-name>거래량:</stx-hu-tooltip-field-name>
 														<stx-hu-tooltip-field-value>123.1</stx-hu-tooltip-field-value></stx-hu-tooltip-field></stx-hu-tooltip>
+														<!-- 메인차트 -->
+																<div id="chartdiv"></div>
 														<canvas height="385" width="966" style="position: absolute; left: 0px; width: 966px; height: 385px;"></canvas>
 														<canvas height="385" width="966" 	style="position: absolute; left: 0px; display: none; width: 966px; height: 385px;"></canvas>
 														<canvas height="385" width="966" 	style="position: absolute; left: 0px; display: none; width: 966px; height: 385px;"></canvas>
@@ -1334,7 +1326,10 @@
 															<div class="stx-ico-handle"
 																style="left: 0px; width: 415px; top: 195.5px;" id="null">
 																<span></span>
+																
 															</div>
+															<!-- 미니차트 -->
+															<div id="chartdiv" height="248" width="480"></div>
 															<canvas height="248" width="480"
 																style="position: absolute; left: 0px; width: 480px; height: 248px;">
 								</canvas>
@@ -1542,6 +1537,7 @@
 										<span>서울 마포구 백범로 23, 3층</span><span>대표 once</span><span>사업자등록번호
 											123-45-78944</span>
 									</p>
+									
 									<div class="app__snsLink--6VrG4">
 										<a target="_blank" rel="noopener noreferrer"
 											href="https://twitter.com/upbitglobal"
@@ -1563,6 +1559,7 @@
 											class="app__snsLink__item--3sEsb app__snsLink__item--linkedin--1eEkL"
 											title="linkedin">linkedin</a>
 									</div>
+									
 									<p class="app__company--3_rIE">
 										<a target="_blank" rel="noopener noreferrer"
 											href="https://bittrex.com" title="BITTREX"><img
@@ -1660,7 +1657,8 @@
 <script src="<%=application.getContextPath()%>/resources/js/team/ngh.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/app.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/router.js"></script>
+<script src="<%=application.getContextPath()%>/resources/js/ngh/nghchart.js"></script>
 <script>
-	app.init('<%=application.getContextPath()%>');
+app.init('<%=application.getContextPath()%>');
 </script>
 </html>
