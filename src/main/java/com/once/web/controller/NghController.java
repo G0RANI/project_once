@@ -6,9 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @Controller
@@ -20,5 +18,10 @@ public class NghController {
 		logger.info("남기호 컨트롤 진입 했씁니다!!!");	
 		return "ngh";
 	}
-	
+	@RequestMapping("/ngh/once")
+	public String once() {
+		logger.info("원스 코인에 들어왔습니다!!!");	
+		
+	return "";	
+	}
 }
