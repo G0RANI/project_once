@@ -68,7 +68,6 @@
     <script src="https://cdn.upbit.com/js/pc-inline-1.2.js" integrity="sha384-qTbmS4jWPoNJ/fbbtBgeNTj7u3P1Mlp0wn9pKGGp1+ehUyuSFYVGJosc800zYG+n" crossorigin="anonymous"></script>
     <script async="" src="https://platform.twitter.com/widgets.js"></script>
     <style data-styled="" data-styled-version="4.2.0"></style>
-	<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
 	<!-- Facebook Pixel Code -->
 	<noscript>
@@ -182,7 +181,7 @@
 									<a style="cursor:pointer" class="" id="kth" title="코인동향">코인동향</a>
 									<a style="cursor:pointer" class="" id="kth2" title="고객센터">고객센터</a>
 								</nav>
-								<ul class="tnb">
+								<ul class="tnb" id="nav3">
 									<li><a style="cursor:pointer" id="ksa" title="로그인">로그인</a></li>
 									<li><a style="cursor:pointer" id="ksa_m" title="회원가입">회원가입</a></li>
 								</ul>
@@ -337,6 +336,7 @@
 <script src="<%=application.getContextPath()%>/resources/js/team/ngh.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/app.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/router.js"></script>
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script> 
 	app.init('<%=application.getContextPath()%>');
 	ksa.kakao('<%=application.getContextPath()%>');  		
