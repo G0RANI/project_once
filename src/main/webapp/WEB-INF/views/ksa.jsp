@@ -339,6 +339,6 @@
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script> 
 	app.init('<%=application.getContextPath()%>');
-	ksa.kakao('<%=application.getContextPath()%>');  		
+	ksa.kakao('<%=application.getContextPath()%>');
 </script>
 </html>

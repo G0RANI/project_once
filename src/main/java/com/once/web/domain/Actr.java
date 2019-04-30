@@ -6,6 +6,5 @@ import lombok.Data;
 
 @Data @Component
 public class Actr {
-	private String acnum;
-	int tseq;
+	private String acnum, tseq;
 }

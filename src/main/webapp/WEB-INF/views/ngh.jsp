@@ -1656,6 +1656,7 @@ html, body {
 						</div>
 							
 					</div>
+					
 				
 </body>
 <!-- upbit -->
@@ -1681,13 +1682,12 @@ html, body {
 <script src="<%=application.getContextPath()%>/resources/js/team/ngh.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/app.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/router.js"></script>
-<<<<<<< HEAD
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-=======
+
 <script src="<%=application.getContextPath()%>/resources/js/ngh/nghchart.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/kth/scroll.js"></script>
 <script type="text/javascript">initMoving(document.getElementById("right_content"), 50, 50, 50)</script>	
->>>>>>> d8f569880484084dfba131122d17a9d505e2089c
+
 <script>
 app.init('<%=application.getContextPath()%>');
 ngh.init('<%=application.getContextPath()%>');

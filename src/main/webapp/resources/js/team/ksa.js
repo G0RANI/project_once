@@ -23,7 +23,6 @@ ksa=(()=>{
 				 $(ksa_compo.d_w_charge()).appendTo('#once');
 				 $('#nav2 a').attr('class', '');
 				 $('#ksa_d').attr('class', 'on');
-				
 			});
 			break;
 		case 'i':
@@ -42,8 +41,7 @@ ksa=(()=>{
 			 });
 			break;
 		}
-	};
-	
+	};	
 
 	let kakao=(x)=>{
 		Kakao.init('84c6f4f17078c92b08795e362bbe2d2d');  //여기서 아까 발급받은 키 중 javascript키를 사용해준다.
