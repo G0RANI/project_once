@@ -562,9 +562,9 @@ ksa_compo = {
 			+'                        <strong>0 <i>KRW</i></strong>'
 			+'                      </dd>'
 			+'                    </dl></span><span class="tabB"><ul>'
-			+'                      <li><a href="#" class="on" title="KRW충전">KRW충전</a></li>'
-			+'                      <li><a href="#" class="" title="출금신청">출금신청</a></li>'
-			+'                      <li><a href="#" class="" title="입출금내역">입출금내역</a></li>'
+			+'                      <li><a id="dd" class="on" title="KRW충전">KRW충전</a></li>'
+			+'                      <li><a id="ss" class="" title="출금신청">출금신청</a></li>'
+			+'                      <li><a id="aa" class="" title="입출금내역">입출금내역</a></li>'
 			+'                    </ul></span>'
 			+'                  <div class="TabArea BgGrey KRW">'
 			+'                    <span class="btnB"><em>KRW 입금(충전)을 위해 실명확인 입출금 계좌'
@@ -588,14 +588,8 @@ ksa_compo = {
 			+'  </div>'
 		},
 		d_w_application:()=>{
-			return '<span class="tabB">'
-			+'	<ul>'
-			+'		<li><a href="#" class="" title="KRW충전">KRW충전</a></li>'
-			+'		<li><a href="#" class="on" title="출금신청">출금신청</a></li>'
-			+'		<li><a href="#" class="" title="입출금내역">입출금내역</a></li>'
-			+'	</ul>'
-			+'</span>'
-			+'<div class="TabArea BgGrey KRW">'
+			return 
+			'<div class="TabArea BgGrey KRW">'
 			+'	<span class="btnB"> '
 			+'		<em>KRW 출금은 보안등급 레벨3 부터 가능합니다.</em> '
 			+'		<a class="btn" title="보안등급 상향 바로가기" href="/mypage/security_certificate">보안등급상향 바로가기</a>'
@@ -609,14 +603,8 @@ ksa_compo = {
 			+'</div>'
 		},
 		d_w_trx:()=>{
-			return '<span class="tabB">'
-			+'	<ul>'
-			+'		<li><a href="#" class="" title="KRW충전">KRW충전</a></li>'
-			+'		<li><a href="#" class="" title="출금신청">출금신청</a></li>'
-			+'		<li><a href="#" class="on" title="입출금내역">입출금내역</a></li>'
-			+'	</ul>'
-			+'</span>'
-			+'<span class="statementB">'
+			return 
+			'<span class="statementB">'
 			+'	<div class="f_clear">'
 			+'		<div class="selectB">'
 			+'			<a href="#" class="select">전체</a>'

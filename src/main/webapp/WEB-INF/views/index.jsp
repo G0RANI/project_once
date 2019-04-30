@@ -69,7 +69,6 @@
     <script async="" src="https://platform.twitter.com/widgets.js"></script>
     <style data-styled="" data-styled-version="4.2.0"></style>
 
-
 	<!-- Facebook Pixel Code -->
 	<noscript>
 		<img height="1" width="1" src="https://www.facebook.com/tr?id=621223061560463&ev=PageView&noscript=1"/>
@@ -821,6 +820,7 @@
 <script src="<%=application.getContextPath()%>/resources/js/team/ngh.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/app.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/router.js"></script>
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script>
 	app.init('<%=application.getContextPath()%>');
 </script>
