@@ -34,14 +34,11 @@
 	crossorigin="anonymous"></script>
 <script async="" src="https://platform.twitter.com/widgets.js"></script>
 <style data-styled="" data-styled-version="4.2.0"></style>
-<<<<<<< HEAD
 
-=======
 <script src="http://www.amcharts.com/lib/3/amcharts.js"></script>
 <script src="http://www.amcharts.com/lib/3/serial.js"></script>
 <script src="http://www.amcharts.com/lib/3/themes/light.js"></script>
 <script src="http://www.amcharts.com/lib/3/amstock.js"></script>
->>>>>>> d8f569880484084dfba131122d17a9d505e2089c
 <style type="text/css">
 html, body {
   width: 100%;
@@ -219,11 +216,15 @@ html, body {
 						<div class="mainB">
 							<section class="ty01">
 								<article>
-									<span class="titB link"> <a href="" class="select">
-											<em> <img src="https://static.upbit.com/logos/BTC.png" 	alt="https://static.upbit.com/logos/BTC.png">
-										</em> <strong>원스코인</strong>
-											<p>ONCE/KRW</p>
-									</a> <a href="" class="Arrow">Arrow</a>
+									<span class="titB link">
+									 <a href="" class="select">
+										<em> 
+											<img src="https://static.upbit.com/logos/BTC.png" 	alt="https://static.upbit.com/logos/BTC.png">
+										</em> 
+										<strong>원스코인</strong>
+										<p>ONCE/KRW</p>
+									</a> 
+									<a href="" class="Arrow">Arrow</a>
 										<div class="exchangeList" style="display: block;"></div>
 										<div class="inforTab">
 											<dl>
@@ -508,96 +509,7 @@ html, body {
 												<span></span> 
 												<span></span>
 												<span></span>
-												<nav class="ciq-nav">
-													<div class="tool_wrap">
-														<span>
-															<a class="fullchart-btn" target="_blank" href="/full_chart?code=CRIX.UPBIT.KRW-BTC">
-															</a>
-															</span>
-															<span>
-															<a href="#" class="resetLayout">
-															<translate original="초기화">초기화</translate> 
-															</a>
-															</span>
-															<span>
-															<menu-select id="timezoneSelect">
-															<button class="timezone-btn"></button>
-															</menu-select></span><span><menu-select id="periodicitySelect">
-															<span class="title">30분</span> <menu-select-options
-																classname="menu-hover"> <menu-option
-																classname="option"> <translate
-																original="1 Min">1분</translate></menu-option> <menu-option
-																classname="option"> <translate
-																original="3 Min">3분</translate></menu-option> <menu-option
-																classname="option"> <translate
-																original="5 Min">5분</translate></menu-option> <menu-option
-																classname="option"> <translate
-																original="10 Min">10분</translate></menu-option> <menu-option
-																classname="option"> <translate
-																original="15 Min">15분</translate></menu-option> <menu-option
-																classname="option"> <translate
-																original="30 Min">30분</translate></menu-option> <menu-option
-																classname="option"> <translate
-																original="1 Hour">1시간</translate></menu-option> <menu-option
-																classname="option"> <translate
-																original="4 Hour">4시간</translate></menu-option> <menu-option
-																classname="option"> <translate
-																original="1 Day">1일</translate></menu-option> <menu-option
-																classname="option"> <translate
-																original="1 Wk">1주</translate></menu-option> <menu-option
-																classname="option"> <translate
-																original="1 Mon">1달</translate> </menu-option> </menu-select-options> </menu-select> </span>
-														<menu-select id="chartTypeSelect"> <span
-															class="title">캔들</span> <menu-select-options
-															classname="menu-hover"> <menu-option
-															classname="option"> <translate
-															original="Bar">바</translate></menu-option> <menu-option
-															classname="option"> <translate
-															original="Line break">삼선전환도</translate></menu-option> <menu-option
-															classname="option"> <translate
-															original="Line">선</translate></menu-option> <menu-option
-															classname="option"> <translate
-															original="Candle">캔들</translate></menu-option> <menu-option
-															classname="option"> <translate
-															original="Volume candle">캔들볼륨</translate></menu-option> <menu-option
-															classname="option"> <translate
-															original="Hollow candle">투명캔들</translate> </menu-option> </menu-select-options> </menu-select>
-														<span> <menu-select id="studySelect">
-															<span class="title"><translate original="Studies">지표</translate></span>
-
-															<menu-select-options classname="ps-container">
-															<menu-option> <span><translate
-																	original="Volume Chart">거래량</translate></span></menu-option> <menu-option>
-
-															<menu-select id="themeSelect"> <span
-																class="title"> <translate original="테마">테마</translate></span>
-															<menu-select-options> <menu-option
-																classname="option"> <translate
-																original="Default">기본</translate></menu-option> <menu-option
-																classname="option"> <translate
-																original="메로나">메로나</translate></menu-option> <menu-option
-																classname="option"> <translate
-																original="Dark">Dark</translate></menu-option> <menu-option
-																classname="option"> <translate
-																original="+ 테마 수정 / 새 테마 생성">+ 테마 수정 / 새 테마
-															생성</translate></menu-option> <menu-option classname="option"> <translate
-																original="+ 현재 테마 삭제">+ 현재 테마 삭제</translate></menu-option></menu-select-options></menu-select></span>
-														<div id="toolSelect">
-															<menu-select> <span class="title"><translate
-																	original="도구">도구</translate></span> <menu-select-options
-																classname="menu-hover"> <menu-option
-																classname="option"> <translate
-																original="도구 선택 안함">도구 선택 안함</translate></menu-option> <menu-option
-																classname="option">가틀리 패턴</menu-option> <span></span>
-														</div>
-													</div>
-													<div class="Selecttor">
-														<span class="chkB"><a href="#" class="on"><em><translate
-																		original="-">-</translate></em> <translate original="기본 차트">기본
-																차트</translate></a><a href="#" class="disable"><em><translate
-																		original="-">-</translate></em> <translate original="트레이딩뷰">트레이딩뷰</translate></a></span>
-													</div>
-												</nav>
+											
 												</ciq-ui-wrapper>
 												
 												<!-- 차트 시작 -->
@@ -631,15 +543,7 @@ html, body {
 														<div class="stx_crosshair stx_crosshair_x" style="left: 1037.5px; display: none;" id="crossX"></div>
 														<div class="stx_crosshair stx_crosshair_y" style="top: 171px; left: 0px; width: 894px; display: none;"	id="crossY"></div>
 														<div class="stx_chart_controls" style="display: block; bottom: 119px;" id="chartControls">
-															<div id="chartSize">
-																<span id="zoomOut" class="stx-zoom-out"><div class="zoom-div">
-																		<translate original="*Alt+스크롤: 차트 기간 확대/축소">*Alt+스크롤:			차트 기간 확대/축소</translate>
-																	</div></span><span id="zoomIn" class="stx-zoom-in">
-																	<div class="zoom-div">
-																		<translate original="*Alt+스크롤: 차트 기간 확대/축소">*Alt+스크롤:
-																		차트 기간 확대/축소</translate>
-																	</div></span>
-															</div>
+														
 														</div>
 														<div class="stx-float-date"style="left: 996.5px; bottom: 77px; visibility: hidden;" id="floatDate"></div>
 														<div class="stx-panel-control" id="iconsTemplate">
@@ -686,9 +590,6 @@ html, body {
 																</div>
 															</div>
 														</div> 
-										
-
-
 														<stx-hu-tooltip style="left: -1000px; right: auto; top: 131px;">
 														<stx-hu-tooltip-field auto=""> <stx-hu-tooltip-field-name>일시:</stx-hu-tooltip-field-name>
 														<stx-hu-tooltip-field-value>04/22</stx-hu-tooltip-field-value></stx-hu-tooltip-field>
@@ -703,22 +604,14 @@ html, body {
 														<stx-hu-tooltip-field auto=""> <stx-hu-tooltip-field-name>거래량:</stx-hu-tooltip-field-name>
 														<stx-hu-tooltip-field-value>123.1</stx-hu-tooltip-field-value></stx-hu-tooltip-field></stx-hu-tooltip>
 														<!-- 메인차트 -->
-																<div id="chartdiv"></div>
-														<canvas height="385" width="966" style="position: absolute; left: 0px; width: 966px; height: 385px;"></canvas>
+														<div id="chartdiv"></div>
+													<!-- 	<canvas height="385" width="966" style="position: absolute; left: 0px; width: 966px; height: 385px;"></canvas>
 														<canvas height="385" width="966" 	style="position: absolute; left: 0px; display: none; width: 966px; height: 385px;"></canvas>
-														<canvas height="385" width="966" 	style="position: absolute; left: 0px; display: none; width: 966px; height: 385px;"></canvas>
+														<canvas height="385" width="966" 	style="position: absolute; left: 0px; display: none; width: 966px; height: 385px;"></canvas> -->
 													</div>
 												</div>
-											</div> </span>
-										<!-- <span class="graphB" id="tv_chart_container"
-										style="display: none; width: 100%; position: relative; overflow: hidden; height: 451px;"><iframe
-											id="tradingview_eb9c4" name="tradingview_eb9c4"
-											src="js/charting_library/static/ko-tv-chart.1f5f8727d52f80cf1894.html#symbol=BTCKRW%2FCRIX.UPBIT.KRW-BTC&amp;interval=1D&amp;widgetbar=%7B%22details%22%3Afalse%2C%22watchlist%22%3Afalse%2C%22watchlist_settings%22%3A%7B%22default_symbols%22%3A%5B%5D%7D%7D&amp;timeFrames=%5B%7B%22text%22%3A%221m%22%2C%22resolution%22%3A%2230%22%7D%2C%7B%22text%22%3A%225d%22%2C%22resolution%22%3A%225%22%7D%2C%7B%22text%22%3A%221d%22%2C%22resolution%22%3A%221%22%7D%5D&amp;locale=ko&amp;uid=tradingview_eb9c4&amp;clientId=upbit.com&amp;userId=public_user_id&amp;chartsStorageUrl=https%3A%2F%2Fsaveload.tradingview.com&amp;chartsStorageVer=1.1&amp;customCSS=%2Fcss%2Ftvcustom.css%3F2&amp;debug=false&amp;timezone=Asia%2FSeoul&amp;theme=light"
-											frameborder="0" allowtransparency="true" scrolling="no"
-											allowfullscreen=""
-											style="display: block; width: 100%; height: 100%;">
-											</iframe>
-										</span>  -->
+											</div> 
+										</span>
 									</div>
 								</article>
 								<div class="halfB">
@@ -1432,21 +1325,11 @@ html, body {
 							</section>
 							
 							<section class="ty02">
-							
-								<div style="height: 0px;"></div>
+								<div style="height:0px;"></div>
 								<div id="right_content">
 								<article>
-									<span class="searchB">
-										<div class="search">
-											<input type="text" placeholder="코인명/심볼검색" value=""><a
-												href="#" class="btn" title="검색">검색</a>
-										</div>
-										<div class="bookmark">
-											<a href="#" class="" title="관심코인">관심코인</a>
-										</div>
-										<div class="setting">
-											<a href="#" class="" title="화면설정">화면설정</a>
-										</div></span><span class="tabB"><ul class="ty05">
+										<span class="tabB">
+										<ul class="ty05">
 											<li><a href="#" class="on" title="원화거래">원화거래</a></li>
 											<li><a href="#" class="" title="BTC">BTC</a></li>
 											<li><a href="#" class="" title="ETH">ETH</a></li>
@@ -1479,11 +1362,12 @@ html, body {
 												</tr>
 											</thead>
 										</table>
+										<div id="r_root">
 										<div class="scrollB">
-											<div
-												style="position: relative; overflow: hidden; width: 100%; height: 630px;">
+											<div style="position: relative; overflow: hidden; width: 100%; height: 630px;">
 												<div id="right_con"
 													style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; overflow: scroll; margin-right: -17px; margin-bottom: -17px;">
+													<!-- 오른쪽 네비바 -->
 													<table class="highlight">
 														<colgroup>
 															<col width="26">
@@ -1494,7 +1378,7 @@ html, body {
 															<col width="*">
 														</colgroup>
 														<tbody>
-															<tr class="down on">
+															<tr id="" class="down on">
 																<td>
 																	<span class="bookmark">
 																		<a href="#">즐겨찾기</a>
@@ -1540,13 +1424,11 @@ html, body {
 													</div>
 												</div>
 											</div>
-										</div></span>
+										</div>
+										</span>
+										</div>
 								</article>
 								</div>
-								
-								<article class="app__main--erefX">
-						
-					</article>
 							</section>
 							<footer>
 							<div class="app__wrap--2K1mv">
@@ -1681,13 +1563,10 @@ html, body {
 <script src="<%=application.getContextPath()%>/resources/js/team/ngh.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/app.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/router.js"></script>
-<<<<<<< HEAD
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-=======
 <script src="<%=application.getContextPath()%>/resources/js/ngh/nghchart.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/kth/scroll.js"></script>
-<script type="text/javascript">initMoving(document.getElementById("right_content"), 50, 50, 50)</script>	
->>>>>>> d8f569880484084dfba131122d17a9d505e2089c
+<%-- <script src="<%=application.getContextPath()%>/resources/js/kth/scroll.js"></script>
+<script type="text/javascript">initMoving(document.getElementById("right_content"), 50, 50, 50)</script>	 --%>
 <script>
 app.init('<%=application.getContextPath()%>');
 ngh.init('<%=application.getContextPath()%>');

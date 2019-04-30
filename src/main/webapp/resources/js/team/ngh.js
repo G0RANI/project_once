@@ -9,10 +9,11 @@ ngh=(()=>{
 		setContentView();
 	};
 	let setContentView=()=>{	
-		alert('기호 js 들어왔다');
 		once_chart();
 		right_con();
 	};
+	
+	/*차트*/
 	let once_chart=()=>{
 		alert('ONCE 들어왔다');
 	/*	$.ajax({
@@ -28,28 +29,117 @@ ngh=(()=>{
 	            }
 		});*/
 	}
-/*	let right_con=()=>{
+	
+	/*오른쪽 네비*/
+	let right_con=()=>{
+		alert('오른쪽  네비  들어왔다');
 		$.getScript($.js()+'/component/ngh_compo.js',()=>{
-			$('#right_con').empty();
-			$(ngh_compo.r_con()).appendTo('#right_con');
-			
+			$('#r_root').empty();
 			let arr=[{
-	               txt : '비트', name : 'mypage'},	  
-	              {txt : '비트', name : 'del'}, 
-	              {txt : '비트', name : 'update'}, 
-	              {txt : '비트', name : 'shop'}, 
-	              {txt : '비트', name : 'history'},
-	              {txt : '비트', name : 'basket'
-	         }];
+	               txt : '원쓰코인', name : 'once'},	  
+	              {txt : '비트코인', name : 'bit'},
+	              {txt : '비트코인캐시', name : 'cash'}, 
+	              {txt : '리플', name : 'riple'}, 
+	              {txt : '이더리움', name : 'ethd'},
+	              {txt : '이오스'},
+	              {txt : '에이다'},
+	              {txt : '쿼크체인'},
+	              {txt : '아이오타'},
+	              {txt : '아르고'},
+	              {txt : '트론'},
+	              {txt : '앵커'},
+	              {txt : '메디블록'},
+	              {txt : '엔진코인'},
+	              {txt : '코스모스인'},
+	              {txt : '이오스'},
+	              ];
 			$.each(arr,(i,j)=>{
-				 $('<td><a href="#">'+j.txt+'</a></td>')
-				  .attr('strong', j.name)
-				  .appendTo('#right_con');
-				  
-				
+				$('<tbody>'
+					 +'	<tr id="" class="down on">'
+					 +'		<td>'
+					 +'			<span class="bookmark">'
+					 +'				<a href="#">즐겨찾기</a>'
+					 +'			</span>'
+					 +'		</td>'
+					 +'		<td class="cAlign"><a href="#">'
+					 +'				<div class="bar down">'
+					 +'					<span class="line" style="top: 13.3682px; height: 0.519935px;">-</span>'
+					 +'					<span class="box" style="top: 13.5px; height: 1px;">-</span>'
+					 +'				</div>'
+					 +'			</a>'
+					 +'		</td>'
+					 +'		<td class="tit">'
+					 +'			<a href="#">'
+					 +'				 <strong>'+j.txt+'</strong>'
+					 +'			</a>'
+					 +'		 	<em>BTC<span>/KRW</span></em>'
+					 +'		</td>'
+					 +'		<td class="price">'
+					 +'			<strong>6,122,000</strong>'
+					 +'			<span class=""> </span>'
+					 +'		</td>'
+					 +'		<td class="percent">'
+					 +'			<p>-0.37%</p><em>-23,000</em>'
+					 +'		</td>'
+					 +'		<td class="rAlign">'
+					 +'			<p>40,636<i>백만</i></p>'
+					 +'		</td>'
+					 +'	</tr>	'
+				 +'</tbody>')
+				  .attr('name', j.name)
+	              .appendTo('.highlight')
+	              .click(function(){
+	                  let that = $(this).attr('name');
+	                  $(this).addClass('active');
+	                  switch(that){
+	                  case 'once':
+	                		alert('once');
+	                      break;
+	                  case 'bit':
+	                		alert('bit');
+	                       break;
+	                  case 'cash':
+	                		alert('cash');
+	                       break;
+	                  case 'riple':
+	                		alert('riple');
+	                       break;
+	                  }
+	             });
+				/*click*/
 			});
+			/*each*/
 		});
-	};*/
+		/*getscript*/
+	};
+	/*right_nav*/
+	
+	
+	/*let once_coin=()=>{
+		$('#once').click(function(){
+		
+		})
+	}
+	
+	let bit_coin=()=>{
+		$('#bit').click(function(){
+			alert('bit');
+		})
+	}
+	
+	let cash_coin=()=>{
+		$('#cash').click(function(){
+			alert('cash');
+		})
+	}
+	
+	let riple_coin=()=>{
+		$('#riple').click(function(){
+			alert('riple');
+		})
+	}*/
+	
+	
 	return{init:init,
 		onCreate:onCreate};
 })();
