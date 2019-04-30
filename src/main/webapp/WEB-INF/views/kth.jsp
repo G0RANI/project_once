@@ -351,7 +351,7 @@
 		                                        src="https://cdn.upbit.com/images/ico_sort.267365d.png" alt=""></a></th>
 		                                <th class=""><a href="#">6개월 <img
 		                                        src="https://cdn.upbit.com/images/ico_sort.267365d.png" alt=""></a></th>
-		                                <th class=""><a href="#">1년 <img
+		                                <th class=""><a href="#">2년 <img
 		                                        src="https://cdn.upbit.com/images/ico_sort.267365d.png" alt=""></a></th>
 		                            </tr>
 		                        </thead>
