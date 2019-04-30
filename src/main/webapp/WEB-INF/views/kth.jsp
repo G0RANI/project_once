@@ -78,6 +78,7 @@
 		font-family: 'overwatch';
 		src: url('fonts/koverwatch.woff2');
 		}
+		
 	</style>
 	<!-- Facebook Pixel Code -->
 	<noscript>
@@ -169,6 +170,9 @@
 	    margin-top: 0; }
 	  #markdown_notice_body blockquote > :last-child {
 	    margin-bottom: 0; }
+	  .crawler_text{
+	  	text-align: center;
+	  }  
 	</style>
 </head>
 <body>
@@ -203,107 +207,121 @@
 		                    <strong>
 		                    <ahref="https://www.ubcindex.com" target="_blank" rel="noopener noreferrer">네이버뉴스</a></strong><span class="tabB tabR">
 							</span></span>
-		                    <table class="highlight tbl_index">
-		                        <colgroup>
-		                            <col width="184">
-		                            <col width="*">
-		                            <col width="170">
-		                            <col width="120">
-		                            <col width="120">
-		                            <col width="9">
-		                        </colgroup>
-		                        <thead>
-		                            <tr>
-		                                <th>제목</th>
-		                                <th>시간</th>
-		                            </tr>
-		                        </thead>
-		                        <tbody id="index_list">
-		                            <tr>
-		                                <th><p class="name">
-		                                        <a href="https://www.ubcindex.com/indexes/IDX.UPBIT.THMIDX03"
-		                                            target="_blank" rel="noopener noreferrer">예측시장</a><span>2개 코인</span>
-		                                    </p></th>
-		                                <td><p class="txt">
-		                                        <a href="https://www.ubcindex.com/indexes/IDX.UPBIT.THMIDX03"
-		                                            target="_blank" rel="noopener noreferrer">특정한 사건에 대한 참가자들의 예측을 기반으로 한 예측시장 플랫폼 구축을 목적으로 하는 암호화폐로 구성된 테마인덱스 </a>
-		                                    </p></td>
-		                                <td><p class="change up">
-		                                        <strong>629.20</strong><span><i>41.67</i>+7.09%</span>
-		                                    </p></td>
-		                                <td><p class="up">+57.11%</p></td>
-		                                <td><p class="up">+48.05%</p></td>
-		                                <td>&nbsp;</td>
-		                            </tr>
-		                            <tr>
-		                                <th><p class="name">
-		                                        <a href="https://www.ubcindex.com/indexes/IDX.UPBIT.THMIDX07"
-		                                            target="_blank" rel="noopener noreferrer">데이터저장 서비스</a><span>3개코인</span>
-		                                    </p></th>
-		                                <td><p class="txt">
-		                                        <a href="https://www.ubcindex.com/indexes/IDX.UPBIT.THMIDX07"
-		                                            target="_blank" rel="noopener noreferrer">유휴 저장공간을 블록체인 기술을 통해 엮음으로써, 클라우드 스토리지 서비스를 수행하는 암호화폐로 구성된 테마인덱스 </a>
-		                                    </p></td>
-		                                <td><p class="change up">
-		                                        <strong>619.82</strong><span><i>26.34</i>+4.44%</span>
-		                                    </p></td>
-		                                <td><p class="up">+15.13%</p></td>
-		                                <td><p class="up">+36.95%</p></td>
-		                                <td>&nbsp;</td>
-		                            </tr>
-		                            <tr>
-		                                <th><p class="name">
-		                                        <a href="https://www.ubcindex.com/indexes/IDX.UPBIT.THMIDX09"
-		                                            target="_blank" rel="noopener noreferrer">대출 및 신용 서비스</a><span>3개 코인</span>
-		                                    </p></th>
-		                                <td><p class="txt">
-		                                        <a href="https://www.ubcindex.com/indexes/IDX.UPBIT.THMIDX09"
-		                                            target="_blank" rel="noopener noreferrer">블록체인 기술을 기반으로, 기존의 은행권이 수행했던 대출이나 신용 기반의 서비스를 제공하는 암호화폐로 구성된 테마인덱스 </a>
-		                                    </p></td>
-		                                <td><p class="change up">
-		                                        <strong>251.44</strong><span><i>7.12</i>+2.91%</span>
-		                                    </p></td>
-		                                <td><p class="up">+96.31%</p></td>
-		                                <td><p class="up">+116.57%</p></td>
-		                                <td>&nbsp;</td>
-		                            </tr>
-		                            <tr>
-		                                <th><p class="name">
-		                                        <a href="https://www.ubcindex.com/indexes/IDX.UPBIT.THMIDX15"
-		                                            target="_blank" rel="noopener noreferrer">컨텐츠 생산 및 중개</a><span>11개  코인</span>
-		                                    </p></th>
-		                                <td><p class="txt">
-		                                        <a href="https://www.ubcindex.com/indexes/IDX.UPBIT.THMIDX15"
-		                                            target="_blank" rel="noopener noreferrer">미디어, 엔터테인먼트와 같은 컨텐츠의 생산 및 중개서비스를 지원하는 플랫폼을 가진 암호화폐로 구성된 테마인덱스 </a>
-		                                    </p></td>
-		                                <td><p class="change up">
-		                                        <strong>431.36</strong><span><i>4.27</i>+1.00%</span>
-		                                    </p></td>
-		                                <td><p class="up">+6.79%</p></td>
-		                                <td><p class="up">+3.35%</p></td>
-		                                <td>&nbsp;</td>
-		                            </tr>
-		                            <tr>
-		                                <th><p class="name">
-		                                        <a href="https://www.ubcindex.com/indexes/IDX.UPBIT.UBAI_ST"
-		                                            target="_blank" rel="noopener noreferrer">UBAI BTC quote</a><span>189개 코인</span>
-		                                    </p></th>
-		                                <td><p class="txt">
-		                                        <a href="https://www.ubcindex.com/indexes/IDX.UPBIT.UBAI_ST"
-		                                            target="_blank" rel="noopener noreferrer">UBAI 인덱스를 비트코인 기준으로 환산한 인덱스 </a>
-		                                    </p></td>
-		                                <td><p class="change up">
-		                                        <strong>679.66</strong><span><i>6.45</i>+0.96%</span>
-		                                    </p></td>
-		                                <td><p class="down">-8.48%</p></td>
-		                                <td><p class="down">-4.00%</p></td>
-		                                <td>&nbsp;</td>
-		                            </tr>
-		                        </tbody>
-		                    </table>
+<table class="highlight tbl_index">
+                                <colgroup>
+                                    <col width="10">
+                                    <col width="200">
+                                    <col width="30">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th class="crawler_text">NO</th>
+                                        <th class="crawler_text">제목</th>
+                                        <th class="crawler_text">시간</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="index_list">
+                                    <tr>
+                                        <th><p class="name">
+                                                <a href="https://www.ubcindex.com/indexes/IDX.UPBIT.THMIDX03"
+                                                    target="_blank" rel="noopener noreferrer">예측시장</a><span>2개 코인</span>
+                                            </p></th>
+                                        <td><p class="txt">
+                                                <a href="https://www.ubcindex.com/indexes/IDX.UPBIT.THMIDX03"
+                                                    target="_blank" rel="noopener noreferrer">특정한 사건에 대한 참가자들의 예측을 기반으로 한 예측시장 플랫폼 구축을 목적으로 하는 암호화폐로 구성된 테마인덱스 </a>
+                                            </p></td>
+                                        <td><p class="change up">
+                                                <strong>629.20</strong><span><i>41.67</i>+7.09%</span>
+                                            </p></td>
+                                        <td><p class="up">+57.11%</p></td>
+                                        <td><p class="up">+48.05%</p></td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <th><p class="name">
+                                                <a href="https://www.ubcindex.com/indexes/IDX.UPBIT.THMIDX07"
+                                                    target="_blank" rel="noopener noreferrer">데이터저장 서비스</a><span>3개코인</span>
+                                            </p></th>
+                                        <td><p class="txt">
+                                                <a href="https://www.ubcindex.com/indexes/IDX.UPBIT.THMIDX07"
+                                                    target="_blank" rel="noopener noreferrer">유휴 저장공간을 블록체인 기술을 통해 엮음으로써, 클라우드 스토리지 서비스를 수행하는 암호화폐로 구성된 테마인덱스 </a>
+                                            </p></td>
+                                        <td><p class="change up">
+                                                <strong>619.82</strong><span><i>26.34</i>+4.44%</span>
+                                            </p></td>
+                                        <td><p class="up">+15.13%</p></td>
+                                        <td><p class="up">+36.95%</p></td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <th><p class="name">
+                                                <a href="https://www.ubcindex.com/indexes/IDX.UPBIT.THMIDX09"
+                                                    target="_blank" rel="noopener noreferrer">대출 및 신용 서비스</a><span>3개 코인</span>
+                                            </p></th>
+                                        <td><p class="txt">
+                                                <a href="https://www.ubcindex.com/indexes/IDX.UPBIT.THMIDX09"
+                                                    target="_blank" rel="noopener noreferrer">블록체인 기술을 기반으로, 기존의 은행권이 수행했던 대출이나 신용 기반의 서비스를 제공하는 암호화폐로 구성된 테마인덱스 </a>
+                                            </p></td>
+                                        <td><p class="change up">
+                                                <strong>251.44</strong><span><i>7.12</i>+2.91%</span>
+                                            </p></td>
+                                        <td><p class="up">+96.31%</p></td>
+                                        <td><p class="up">+116.57%</p></td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <th><p class="name">
+                                                <a href="https://www.ubcindex.com/indexes/IDX.UPBIT.THMIDX15"
+                                                    target="_blank" rel="noopener noreferrer">컨텐츠 생산 및 중개</a><span>11개  코인</span>
+                                            </p></th>
+                                        <td><p class="txt">
+                                                <a href="https://www.ubcindex.com/indexes/IDX.UPBIT.THMIDX15"
+                                                    target="_blank" rel="noopener noreferrer">미디어, 엔터테인먼트와 같은 컨텐츠의 생산 및 중개서비스를 지원하는 플랫폼을 가진 암호화폐로 구성된 테마인덱스 </a>
+                                            </p></td>
+                                        <td><p class="change up">
+                                                <strong>431.36</strong><span><i>4.27</i>+1.00%</span>
+                                            </p></td>
+                                        <td><p class="up">+6.79%</p></td>
+                                        <td><p class="up">+3.35%</p></td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <th><p class="name">
+                                                <a href="https://www.ubcindex.com/indexes/IDX.UPBIT.UBAI_ST"
+                                                    target="_blank" rel="noopener noreferrer">UBAI BTC quote</a><span>189개 코인</span>
+                                            </p></th>
+                                        <td><p class="txt">
+                                                <a href="https://www.ubcindex.com/indexes/IDX.UPBIT.UBAI_ST"
+                                                    target="_blank" rel="noopener noreferrer">UBAI 인덱스를 비트코인 기준으로 환산한 인덱스 </a>
+                                            </p></td>
+                                        <td><p class="change up">
+                                                <strong>679.66</strong><span><i>6.45</i>+0.96%</span>
+                                            </p></td>
+                                        <td><p class="down">-8.48%</p></td>
+                                        <td><p class="down">-4.00%</p></td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
 		                    <a href="#" class="btnViewA">전체보기<em>▼</em></a>
 		                </article>
-		                <article>
+				<div style="text-align: center;">
+					<nav aria-label="Page navigation example">
+						<ul class="pagination justify-content-center">
+							<li class="page-item"><a class="page-link" >1</a></li>
+							<li class="page-item"><a class="page-link" >2</a></li>
+			 				<li class="page-item"><a class="page-link" >3</a></li>
+							<li class="page-item"><a class="page-link" >4</a></li>
+							<li class="page-item"><a class="page-link" >5</a></li>
+							<li class="page-item"><a class="page-link" >6</a></li>
+							<li class="page-item"><a class="page-link" >7</a></li>
+							<li class="page-item"><a class="page-link" >8</a></li>
+							<li class="page-item"><a class="page-link" >9</a></li>
+							<li class="page-item"><a class="page-link" >10</a></li> 
+						</ul>
+					</nav>
+				</div>
+				<article>
 		                    <span class="titB"><strong>암호화폐</strong><span
 		                        class="tabB tabR"><ul class="col2">
 		                                <li><a href="#" class="on" title="기간별 상승률">기간별 상승률</a></li>
@@ -333,7 +351,7 @@
 		                                        src="https://cdn.upbit.com/images/ico_sort.267365d.png" alt=""></a></th>
 		                                <th class=""><a href="#">6개월 <img
 		                                        src="https://cdn.upbit.com/images/ico_sort.267365d.png" alt=""></a></th>
-		                                <th class=""><a href="#">1년 <img
+		                                <th class=""><a href="#">3년 <img
 		                                        src="https://cdn.upbit.com/images/ico_sort.267365d.png" alt=""></a></th>
 		                            </tr>
 		                        </thead>
@@ -552,11 +570,14 @@
 <script src="<%=application.getContextPath()%>/resources/js/team/ksa.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/team/kth.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/team/ngh.js"></script>
+<script src="<%=application.getContextPath()%>/resources/js/team/coinart.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/app.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/router.js"></script>
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
 <script type="text/javascript">initMoving(document.getElementById("right_content"), 50, 50, 50)</script>	
 <script>
 	app.init('<%=application.getContextPath()%>');
+	coinart.init('<%=application.getContextPath()%>');
 </script>
 </html>

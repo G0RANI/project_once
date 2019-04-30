@@ -34,10 +34,14 @@
 	crossorigin="anonymous"></script>
 <script async="" src="https://platform.twitter.com/widgets.js"></script>
 <style data-styled="" data-styled-version="4.2.0"></style>
+<<<<<<< HEAD
+
+=======
 <script src="http://www.amcharts.com/lib/3/amcharts.js"></script>
 <script src="http://www.amcharts.com/lib/3/serial.js"></script>
 <script src="http://www.amcharts.com/lib/3/themes/light.js"></script>
 <script src="http://www.amcharts.com/lib/3/amstock.js"></script>
+>>>>>>> d8f569880484084dfba131122d17a9d505e2089c
 <style type="text/css">
 html, body {
   width: 100%;
@@ -204,7 +208,7 @@ html, body {
 									<a style="cursor:pointer" class="" id="kth" title="코인동향">코인동향</a>
 									<a style="cursor:pointer" class="" id="kth2" title="고객센터">고객센터</a>
 								</nav>
-								<ul class="tnb">
+								<ul class="tnb" id="nav3">
 									<li><a style="cursor:pointer" id="ksa" title="로그인">로그인</a></li>
 									<li><a style="cursor:pointer" id="ksa_m" title="회원가입">회원가입</a></li>
 								</ul>
@@ -217,8 +221,8 @@ html, body {
 								<article>
 									<span class="titB link"> <a href="" class="select">
 											<em> <img src="https://static.upbit.com/logos/BTC.png" 	alt="https://static.upbit.com/logos/BTC.png">
-										</em> <strong>비트코인</strong>
-											<p>BTC/KRW</p>
+										</em> <strong>원스코인</strong>
+											<p>ONCE/KRW</p>
 									</a> <a href="" class="Arrow">Arrow</a>
 										<div class="exchangeList" style="display: block;"></div>
 										<div class="inforTab">
@@ -1426,10 +1430,14 @@ html, body {
 									</span>
 								</article>
 							</section>
+							
 							<section class="ty02">
+							
 								<div style="height: 0px;"></div>
+								<div id="right_content">
 								<article>
-									<span class="searchB"><div class="search">
+									<span class="searchB">
+										<div class="search">
 											<input type="text" placeholder="코인명/심볼검색" value=""><a
 												href="#" class="btn" title="검색">검색</a>
 										</div>
@@ -1474,7 +1482,7 @@ html, body {
 										<div class="scrollB">
 											<div
 												style="position: relative; overflow: hidden; width: 100%; height: 630px;">
-												<div
+												<div id="right_con"
 													style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; overflow: scroll; margin-right: -17px; margin-bottom: -17px;">
 													<table class="highlight">
 														<colgroup>
@@ -1487,23 +1495,34 @@ html, body {
 														</colgroup>
 														<tbody>
 															<tr class="down on">
-																<td><span class="bookmark"><a href="#">즐겨찾기</a></span></td>
+																<td>
+																	<span class="bookmark">
+																		<a href="#">즐겨찾기</a>
+																	</span>
+																</td>
 																<td class="cAlign"><a href="#">
 																		<div class="bar down">
-																			<span class="line"
-																				style="top: 13.3682px; height: 0.519935px;">-</span>
+																			<span class="line" style="top: 13.3682px; height: 0.519935px;">-</span>
 																			<span class="box" style="top: 13.5px; height: 1px;">-</span>
 																		</div>
-																</a></td>
-																<td class="tit"><a href="#"> <strong>비트코인</strong>
-																</a> <em>BTC<span>/KRW</span></em></td>
-																<td class="price"><strong>6,122,000</strong> <span
-																	class=""> </span></td>
-																<td class="percent"><p>-0.37%</p> <em>-23,000</em>
+																	</a>
 																</td>
-																<td class="rAlign"><p>
-																		40,636<i>백만</i>
-																	</p></td>
+																<td class="tit">
+																	<a href="#">
+																		 <strong>비트코인</strong>
+																	</a>
+																 	<em>BTC<span>/KRW</span></em>
+																</td>
+																<td class="price">
+																	<strong>6,122,000</strong>
+																	<span class=""> </span>
+																</td>
+																<td class="percent">
+																	<p>-0.37%</p><em>-23,000</em>
+																</td>
+																<td class="rAlign">
+																	<p>40,636<i>백만</i></p>
+																</td>
 															</tr>
 														</tbody>
 													</table>
@@ -1523,8 +1542,13 @@ html, body {
 											</div>
 										</div></span>
 								</article>
+								</div>
+								
 								<article class="app__main--erefX">
-						<footer>
+						
+					</article>
+							</section>
+							<footer>
 							<div class="app__wrap--2K1mv">
 								<a title="UpBit" class="app__logo--1S5fo" href="/home">Upbit</a>
 								<div class="app__aboutUs--2XC3i">
@@ -1629,10 +1653,10 @@ html, body {
 								</div>
 							</div>
 						</footer>
-					</article>
-							</section>
 						</div>
+							
 					</div>
+				
 </body>
 <!-- upbit -->
 <script src="https://cdn.upbit.com/vendors-chunk-344e4004ead25be2326b.js"></script>
@@ -1657,8 +1681,15 @@ html, body {
 <script src="<%=application.getContextPath()%>/resources/js/team/ngh.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/app.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/router.js"></script>
+<<<<<<< HEAD
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+=======
 <script src="<%=application.getContextPath()%>/resources/js/ngh/nghchart.js"></script>
+<script src="<%=application.getContextPath()%>/resources/js/kth/scroll.js"></script>
+<script type="text/javascript">initMoving(document.getElementById("right_content"), 50, 50, 50)</script>	
+>>>>>>> d8f569880484084dfba131122d17a9d505e2089c
 <script>
 app.init('<%=application.getContextPath()%>');
+ngh.init('<%=application.getContextPath()%>');
 </script>
 </html>

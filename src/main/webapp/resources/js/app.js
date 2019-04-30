@@ -11,7 +11,6 @@ app=(()=>{
         });
         $('#ngh').click(function(){
             location.assign($.ctx()+"/ngh");
-            $.getScript($.js()+'/team/ngh.js');	
         });
         $('#kth').click(function(){
             location.assign($.ctx()+"/kth");

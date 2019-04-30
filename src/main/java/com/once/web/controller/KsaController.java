@@ -1,6 +1,5 @@
 package com.once.web.controller;
 
-import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
@@ -26,6 +25,7 @@ public class KsaController {
 	
 	@Autowired Map<String,Object> map;
 	@Autowired CustomersServiceImpl cust;
+	@Autowired Customers ct;
 	
 	@RequestMapping("/ksa")
 	public String ksaMain(Locale locale, Model model) {
@@ -33,25 +33,19 @@ public class KsaController {
 		return "ksa";
 	}
 	
-	@SuppressWarnings("unchecked")
 	@ResponseBody
 	@RequestMapping(value = "/login", method = {RequestMethod.POST, RequestMethod.GET})
 	public Map<String,Object> login(@RequestBody Map<String, Object> res) {
 		System.out.println("카카오정보 : "+res.get("id"));
-		map = new HashMap<String,Object>();
 		
 		IFunction f = (Object o) -> cust.retrieveCustomer(res); 
-		map = (Map<String, Object>) f.apply(res.get("id"));
+		ct = (Customers) f.apply(res.get("id"));
 		
-		if(map == null) {
+		if(ct == null) {
 			IConsumer c = (Object o) -> cust.registCustomer((Map<String, Object>) res); 
 			c.accept(res);
 		}
 		
-		 map.clear(); 
-		 map.put("msg", res);
-		
-		
-		return map;
+		return res;
 	}
 }

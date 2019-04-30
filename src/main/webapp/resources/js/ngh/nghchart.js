@@ -201,8 +201,8 @@ setInterval( function() {
   //chartData2.shift();
   //chartData3.shift();
  // chartData4.shift();
-
   // add new datapoint at the end
+  
   var newDate = new Date( chartData1[ chartData1.length - 1 ].date );
   newDate.setDate( newDate.getDate() + 1 );
 
@@ -242,4 +242,4 @@ setInterval( function() {
   } );
 
   chart.validateData();
-}, 10000 );
+}, 5000 );
