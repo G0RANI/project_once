@@ -15,11 +15,6 @@ public class CommonController {
 	@GetMapping("/")
 	public String home(Locale locale, Model model) {
 		logger.info("===============루트 진입===============");
-<<<<<<< HEAD
-		//test123123123123
-=======
-		//test 111
->>>>>>> d8f569880484084dfba131122d17a9d505e2089c
 		return "index";
 	}
 }

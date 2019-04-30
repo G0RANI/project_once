@@ -31,13 +31,8 @@ ksa=(()=>{
 			 $.getScript($.js()+'/component/ksa_compo.js',()=>{
 				 $(ksa_compo.investment_coin()).appendTo('#once');
 				 $('#nav2 a').attr('class', '');
-<<<<<<< HEAD
 				 $('#ksa_i').attr('class', 'on');	
 				 });
-=======
-				 $('#ksa_i').attr('class', 'on');
-			 });
->>>>>>> a84fd774846a2eabce0db83e17b1d4c954d31106
 			break;
 		case 'm':
 			$('#once').empty();
