@@ -11,5 +11,5 @@ public class CoinArticle {
 				   nseq,
 				   title,
 				   adate,
-				   content;
+				   url;
 }
