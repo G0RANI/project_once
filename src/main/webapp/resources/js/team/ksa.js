@@ -37,7 +37,7 @@ ksa=(()=>{
 				 $(ksa_compo.navi()).appendTo('#navi');
 				 $(ksa_compo.investment_coin()).appendTo('#once');
 				 $('#nav2 a').attr('class', '');
-				 $('#ksa_i').attr('class', 'on');
+				 $('#ksa_i').attr('class', 'on');	
 				 });
 			break;
 		case 'm':
