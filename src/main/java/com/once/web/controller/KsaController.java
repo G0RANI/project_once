@@ -36,7 +36,7 @@ public class KsaController {
 	@ResponseBody
 	@RequestMapping(value = "/login", method = {RequestMethod.POST, RequestMethod.GET})
 	public Map<String,Object> login(@RequestBody Map<String, Object> res) {
-		System.out.println("카카오정보 : "+res.get("id"));
+		System.out.println("카카오정보 : "+res);
 		
 		IFunction f = (Object o) -> cust.retrieveCustomer(res); 
 		ct = (Customers) f.apply(res.get("id"));
