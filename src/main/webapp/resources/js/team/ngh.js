@@ -113,6 +113,7 @@ ngh=(()=>{
 		/*getscript*/
 	};
 	/*right_nav*/
+	/*SDSD*/
 	
 	
 	/*let once_coin=()=>{
