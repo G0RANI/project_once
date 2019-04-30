@@ -7,7 +7,6 @@
 	INSERT INTO CUSTOMERS (kaid, hcoin, hqua, pprice)
 	VALUES (#{id}, 11, 11, 11)
 </insert>
-
  <select id="selectCustomer" resultType="com.once.web.domain.Customers">
  	SELECT * 
  	FROM CUSTOMERS
