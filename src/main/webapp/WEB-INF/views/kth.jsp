@@ -200,7 +200,7 @@
 	<div class="mainB">
 		<section class="ty01">              
 		<div id="wordSpace"></div>
-			<div style="width: 40%;"></div>
+			<div style="width: 30%;" ></div>
 			<script src="https://d3js.org/d3.v3.min.js"></script>
 		                <article>
 		                    <span class="titB">
@@ -474,10 +474,9 @@
 		            <div id="right_content">
 		            <section class="ty02">
 		                <article>
-		                    <span class="titB"><strong>코인 Play!</strong><span
-		                        class="list_more"><a href="#" class="b_prv">이전</a><a
-		                            href="#" class="b_nxt">다음</a></span></span><span class="coinList"><ul
-		                            class="clist">
+		                    <span class="titB"><strong>비트코인 기초강의</strong></span>
+		                    <span class="coinList">
+		                    <ul class="clist" id="basic">
 		                            <li><a href="https://youtu.be/6n2ka284nuA" target="_blank"
 		                                rel="noopener noreferrer"><img
 		                                    src="https://api-manager-production.s3.ap-northeast-2.amazonaws.com/ftdcnt/data/1242:d6f16e43-5442-4fa7-9180-e8c1f581899e.png?1555572826"
