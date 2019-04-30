@@ -28,7 +28,7 @@ ngh=(()=>{
 	            }
 		});*/
 	}
-	let right_con=()=>{
+/*	let right_con=()=>{
 		$.getScript($.js()+'/component/ngh_compo.js',()=>{
 			$('#right_con').empty();
 			$(ngh_compo.r_con()).appendTo('#right_con');
@@ -49,7 +49,7 @@ ngh=(()=>{
 				
 			});
 		});
-	};
+	};*/
 	return{init:init,
 		onCreate:onCreate};
 })();
