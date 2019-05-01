@@ -13,7 +13,10 @@ import com.once.web.mapper.CustServiceMapper;
 @Service
 public class CustServiceServiceImpl implements CustServiceService{
 	@Autowired CustServiceMapper cusemap;
+<<<<<<< HEAD
 	
+=======
+>>>>>>> 6e3550840f5feb1d5a83647513d4f619a31b46f3
 	@Override
 	public void insertCustService(CustService cuse) {
 		// TODO Auto-generated method stub
