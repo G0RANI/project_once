@@ -1,55 +1,72 @@
-		/**
- * Generate random chart data
+
+
+/**
+  Generate random chart data
+
  */
+
+
+
+
 var chartData1 = [];
 var chartData2 = [];
 var chartData3 = [];
 var chartData4 = [];
 
+
+
+
+
 function generateChartData() {
-  var firstDate = new Date();
-  firstDate.setDate( firstDate.getDate() - 500 );
-  firstDate.setHours( 0, 0, 0, 0 );
 
-  for ( var i = 0; i < 500; i++ ) {
-    var newDate = new Date( firstDate );
-    newDate.setDate( newDate.getDate() + i );
-
-    var a1 = Math.round( Math.random() * ( 40 + i ) ) + 100 + i;
-    var b1 = Math.round( Math.random() * ( 1000 + i ) ) + 500 + i * 2;
-
-    var a2 = Math.round( Math.random() * ( 100 + i ) ) + 200 + i;
-    var b2 = Math.round( Math.random() * ( 1000 + i ) ) + 600 + i * 2;
-
-    var a3 = Math.round( Math.random() * ( 100 + i ) ) + 200;
-    var b3 = Math.round( Math.random() * ( 1000 + i ) ) + 600 + i * 2;
-
-    var a4 = Math.round( Math.random() * ( 100 + i ) ) + 200 + i;
-    var b4 = Math.round( Math.random() * ( 100 + i ) ) + 600 + i;
-
-    chartData1.push( {
-      "date": newDate,
-      "value": a1,
-      "volume": b1
-    } );
-    chartData2.push( {
-      "date": newDate,
-      "value": a2,
-      "volume": b2
-    } );
-    chartData3.push( {
-      "date": newDate,
-      "value": a3,
-      "volume": b3
-    } );
-    chartData4.push( {
-      "date": newDate,
-      "value": a4,
-      "volume": b4
-    } );
-  }
+		  var firstDate = new Date();
+		  firstDate.setDate( firstDate.getDate() - 500 );
+		  firstDate.setHours( 0, 0, 0, 0 );
+		  
+		  for ( var i = 0; i < 500; i++ ) {
+			    var newDate = new Date( firstDate );
+			    newDate.setDate( newDate.getDate() + i );
+			    
+			    $.getJSON('/web/ngh/chart/'+i,d=>{
+			    	
+			    	var a1 = Math.round( Math.random() * ( 40 + d.ls ) ) + 100 + d.ls;
+				    var b1 = Math.round( Math.random() * ( 1000 + d.ls ) ) + 500 + d.ls * 2;
+	
+				    var a2 = Math.round( Math.random() * ( 100 + d.ls ) ) + 200 + d.ls;
+				    var b2 = Math.round( Math.random() * ( 1000 + d.ls ) ) + 600 + d.ls * 2;
+	
+				    var a3 = Math.round( Math.random() * ( 100 + d.ls ) ) + 200;
+				    var b3 = Math.round( Math.random() * ( 1000 + d.ls ) ) + 600 + d.ls * 2;
+	
+				    var a4 = Math.round( Math.random() * ( 100 + d.ls ) ) + 200 + d.ls;
+				    var b4 = Math.round( Math.random() * ( 100 + d.ls ) ) + 600 + d.ls;
+				    chartData1.push( {
+					      "date": newDate,
+					      "value": a1,
+					      "volume": b1
+					    } );
+					    chartData2.push( {
+					      "date": newDate,
+					      "value": a2,
+					      "volume": b2
+					    } );
+					    chartData3.push( {
+					      "date": newDate,
+					      "value": a3,
+					      "volume": b3
+					    } );
+					    chartData4.push( {
+					      "date": newDate,
+					      "value": a4,
+					      "volume": b4
+					    } );
+				  });
+			  }
 }
 generateChartData();
+
+
+
 
 /**
  * Create the chart
@@ -138,7 +155,7 @@ var chart = AmCharts.makeChart( "chartdiv", {
     "usePeriod": "WW"
   },
 
-  // Period Selector
+ /* // Period Selector
   "periodSelector": {
     "position": "left",
     "periods": [ {
@@ -161,12 +178,12 @@ var chart = AmCharts.makeChart( "chartdiv", {
       "period": "MAX",
       "label": "MAX"
     } ]
-  },
+  },*/
 
-  // Data Set Selector
+/*  // Data Set Selector
   "dataSetSelector": {
     "position": "left"
-  },
+  },*/
 
   // Event listeners
   "listeners": [ {
@@ -242,4 +259,4 @@ setInterval( function() {
   } );
 
   chart.validateData();
-}, 5000 );
+}, 3000 );

@@ -1,14 +1,15 @@
 package com.once.web.controller;
 
 import java.util.Locale;
+import java.util.Map;
 import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -16,7 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class NghController {
-	
+	@Autowired Map<String, Object> map;
 	private static final Logger logger = LoggerFactory.getLogger(NghController.class);
 	@RequestMapping("/ngh")
 	public String nghMain(Locale locale, Model model) {
@@ -26,18 +27,24 @@ public class NghController {
 	
 	@ResponseBody
 	@RequestMapping("/ngh/once")
-	public String once() {
+	public Map<String, Object> once() {
 		logger.info("원스 코인에 들어왔습니다!!!");	
-	
-		return null;
+		  Random rand = new Random(); 
+		  System.out.println(rand.nextInt(1200)+1000); 
+		  map.clear();
+		  int ls =  rand.nextInt(1200)+1000;
+		  map.put("ls",ls);
+		  return map;
 	}
-	/*
-	 * public static void main(String[] args) { Random rand = new Random(); Timer
-	 * timer = new Timer(); TimerTask task = new TimerTask() {
-	 * 
-	 * @Override public void run() { for (int i = 0; i <= 20; i++) {
-	 * System.out.println(rand.nextInt(9990)+100); } } }; timer.schedule(task,5000);
-	 * 
-	 * }
-	 */
+	@ResponseBody
+	@RequestMapping("/ngh/chart/{seq}")
+	public Map<String, Object> chart(
+			@PathVariable String seq){
+		logger.info("원스차트에 들어왔습니다!!!");	
+		 map.clear();
+		 System.out.println(seq);
+		 
+		 map.put("ls",seq);
+		 return map;
+	}
 }

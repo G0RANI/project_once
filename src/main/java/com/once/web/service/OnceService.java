@@ -14,7 +14,7 @@ public interface OnceService {
 	
 	public List<?> selectAllOnceList();
 	
-	public List<?> selectOnce();
+	public Map<String, Object> selectOnce(Once once);
 	
 	public Once selectOnces(Once once);
 	

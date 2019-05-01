@@ -244,7 +244,8 @@ html, body {
 												style="position: relative; overflow: hidden; width: 100%; height: 572px;">
 												<div
 													style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; overflow: scroll; margin-right: -17px; margin-bottom: -17px;">
-													<span class="inforB"><div class="title">
+													<span class="inforB">
+														<div class="title">
 															Bitcoin
 															<div class="linkWrap">
 																<a href="https://bitcoin.org/" target="_blank">웹사이트</a>
@@ -354,7 +355,9 @@ html, body {
 										</div>
 									</div>
 									<div style="display: block;">
-										<span class="marketB"><div class="down ty01">
+										<span class="marketB">
+										<div id="l_val">
+										<div class="down ty01">
 												<span class="first">
 												 <strong>6,122,000</strong>
 												  <em>KRW</em>
@@ -364,126 +367,10 @@ html, body {
 														<strong>-0.37%</strong>
 												<strong class="upDown">-23,000</strong></span>
 											</div>
-											<div class="ty02">
-												<a href="#"><div class="highstock"
-														data-highcharts-chart="0" style="overflow: hidden;">
-														<div id="highcharts-b33avt4-0" dir="ltr"
-															class="highcharts-container "
-															style="position: relative; overflow: hidden; width: 140px; height: 50px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
-															<svg version="1.1" class="highcharts-root"
-																style="font-family: &amp; amp; quot; Lucida Grande&amp;amp; quot; , &amp; amp; quot; Lucida Sans Unicode&amp;amp; quot; , Arial , Helvetica, sans-serif; font-size: 12px;"
-																xmlns="http://www.w3.org/2000/svg" width="140"
-																height="50" viewBox="0 0 140 50">
-																<desc>Created with Highcharts 7.0.3</desc>
-																<defs>
-																<clipPath id="highcharts-b33avt4-1">
-																<rect x="0" y="0" width="140" height="50" fill="none"></rect></clipPath>
-																<clipPath id="highcharts-b33avt4-32">
-																<rect x="0" y="13" width="140" height="37" fill="none"></rect></clipPath>
-																<clipPath id="highcharts-b33avt4-33">
-																<rect x="0" y="0" width="140" height="13" fill="none"></rect></clipPath></defs>
-																<rect fill="transparent" class="highcharts-background"
-																	x="0" y="0" width="140" height="50" rx="0" ry="0"></rect>
-																<rect fill="none" class="highcharts-plot-background"
-																	x="0" y="0" width="140" height="50"></rect>
-																<rect fill="none" class="highcharts-plot-border"
-																	data-z-index="1" x="0" y="0" width="140" height="50"></rect>
-																<g class="highcharts-grid highcharts-xaxis-grid "
-																	data-z-index="1">
-																<path fill="none" data-z-index="1"
-																	class="highcharts-grid-line" d="M -0.5 0 L -0.5 50"
-																	opacity="1"></path>
-																<path fill="none" data-z-index="1"
-																	class="highcharts-grid-line" d="M 69.5 0 L 69.5 50"
-																	opacity="1"></path>
-																<path fill="none" data-z-index="1"
-																	class="highcharts-grid-line" d="M 139.5 0 L 139.5 50"
-																	opacity="1"></path></g>
-																<g class="highcharts-grid highcharts-yaxis-grid "
-																	data-z-index="1">
-																<path fill="none" stroke="#e6e6e6" stroke-width="1"
-																	data-z-index="1" class="highcharts-grid-line"
-																	d="M 0 50.5 L 140 50.5" opacity="1"></path>
-																<path fill="none" stroke="#e6e6e6" stroke-width="1"
-																	data-z-index="1" class="highcharts-grid-line"
-																	d="M 0 -0.5 L 140 -0.5" opacity="1"></path></g>
-																<g class="highcharts-axis highcharts-xaxis "
-																	data-z-index="2">
-																<path fill="none" class="highcharts-tick"
-																	stroke="#ccd6eb" stroke-width="1"
-																	d="M -0.5 50 L -0.5 60" opacity="1"></path>
-																<path fill="none" class="highcharts-tick"
-																	stroke="#ccd6eb" stroke-width="1"
-																	d="M 69.5 50 L 69.5 60" opacity="1"></path>
-																<path fill="none" class="highcharts-tick"
-																	stroke="#ccd6eb" stroke-width="1"
-																	d="M 140.5 50 L 140.5 60" opacity="1"></path>
-																<path fill="none" class="highcharts-axis-line"
-																	stroke="#ccd6eb" stroke-width="1" data-z-index="7"
-																	d="M 0 50.5 L 140 50.5"></path></g>
-																<g class="highcharts-axis highcharts-yaxis "
-																	data-z-index="2">
-																<path fill="none" class="highcharts-axis-line"
-																	data-z-index="7" d="M 0 0 L 0 50"></path></g>
-																<g class="highcharts-series-group" data-z-index="3">
-																<g data-z-index="0.1"
-																	class="highcharts-series highcharts-series-0 highcharts-area-series "
-																	transform="translate(0,0) scale(1 1)"
-																	clip-path="url(#highcharts-b33avt4-1)">
-																<path fill="rgba( 210, 79, 69, 0.1)"
-																	d="M 0 3.125 L 1.4 13.125 L 2.8 14.375 L 4.2 18.125 L 5.6 23.75 L 7 26.25 L 8.4 30 L 9.8 36.25 L 11.2 28.125 L 12.6 25.625 L 14 30.625 L 15.4 37.5 L 16.8 36.875 L 18.2 35 L 19.6 31.875 L 21 33.125 L 22.4 31.25 L 23.8 31.25 L 25.2 28.75 L 26.6 28.125 L 28 20.625 L 29.4 22.5 L 30.8 25.625 L 32.2 30 L 33.6 25.625 L 35 27.5 L 36.4 27.5 L 37.8 25 L 39.2 22.5 L 40.6 26.25 L 42 25 L 42 12.5 L 40.6 12.5 L 39.2 12.5 L 37.8 12.5 L 36.4 12.5 L 35 12.5 L 33.6 12.5 L 32.2 12.5 L 30.8 12.5 L 29.4 12.5 L 28 12.5 L 26.6 12.5 L 25.2 12.5 L 23.8 12.5 L 22.4 12.5 L 21 12.5 L 19.6 12.5 L 18.2 12.5 L 16.8 12.5 L 15.4 12.5 L 14 12.5 L 12.6 12.5 L 11.2 12.5 L 9.8 12.5 L 8.4 12.5 L 7 12.5 L 5.6 12.5 L 4.2 12.5 L 2.8 12.5 L 1.4 12.5 L 0 12.5"
-																	class="highcharts-area" data-z-index="0"
-																	visibility="hidden"></path>
-																<path fill="rgba( 18, 97, 196, 0.1)"
-																	d="M 0 3.125 L 1.4 13.125 L 2.8 14.375 L 4.2 18.125 L 5.6 23.75 L 7 26.25 L 8.4 30 L 9.8 36.25 L 11.2 28.125 L 12.6 25.625 L 14 30.625 L 15.4 37.5 L 16.8 36.875 L 18.2 35 L 19.6 31.875 L 21 33.125 L 22.4 31.25 L 23.8 31.25 L 25.2 28.75 L 26.6 28.125 L 28 20.625 L 29.4 22.5 L 30.8 25.625 L 32.2 30 L 33.6 25.625 L 35 27.5 L 36.4 27.5 L 37.8 25 L 39.2 22.5 L 40.6 26.25 L 42 25 L 42 12.5 L 40.6 12.5 L 39.2 12.5 L 37.8 12.5 L 36.4 12.5 L 35 12.5 L 33.6 12.5 L 32.2 12.5 L 30.8 12.5 L 29.4 12.5 L 28 12.5 L 26.6 12.5 L 25.2 12.5 L 23.8 12.5 L 22.4 12.5 L 21 12.5 L 19.6 12.5 L 18.2 12.5 L 16.8 12.5 L 15.4 12.5 L 14 12.5 L 12.6 12.5 L 11.2 12.5 L 9.8 12.5 L 8.4 12.5 L 7 12.5 L 5.6 12.5 L 4.2 12.5 L 2.8 12.5 L 1.4 12.5 L 0 12.5"
-																	class="highcharts-area highcharts-zone-area-0 highcharts-negative"
-																	data-z-index="0"
-																	clip-path="url(#highcharts-b33avt4-32)"></path>
-																<path fill="rgba( 210, 79, 69, 0.1)"
-																	d="M 0 3.125 L 1.4 13.125 L 2.8 14.375 L 4.2 18.125 L 5.6 23.75 L 7 26.25 L 8.4 30 L 9.8 36.25 L 11.2 28.125 L 12.6 25.625 L 14 30.625 L 15.4 37.5 L 16.8 36.875 L 18.2 35 L 19.6 31.875 L 21 33.125 L 22.4 31.25 L 23.8 31.25 L 25.2 28.75 L 26.6 28.125 L 28 20.625 L 29.4 22.5 L 30.8 25.625 L 32.2 30 L 33.6 25.625 L 35 27.5 L 36.4 27.5 L 37.8 25 L 39.2 22.5 L 40.6 26.25 L 42 25 L 42 12.5 L 40.6 12.5 L 39.2 12.5 L 37.8 12.5 L 36.4 12.5 L 35 12.5 L 33.6 12.5 L 32.2 12.5 L 30.8 12.5 L 29.4 12.5 L 28 12.5 L 26.6 12.5 L 25.2 12.5 L 23.8 12.5 L 22.4 12.5 L 21 12.5 L 19.6 12.5 L 18.2 12.5 L 16.8 12.5 L 15.4 12.5 L 14 12.5 L 12.6 12.5 L 11.2 12.5 L 9.8 12.5 L 8.4 12.5 L 7 12.5 L 5.6 12.5 L 4.2 12.5 L 2.8 12.5 L 1.4 12.5 L 0 12.5"
-																	class="highcharts-area highcharts-zone-area-1 undefined"
-																	data-z-index="0"
-																	clip-path="url(#highcharts-b33avt4-33)"></path>
-																<path fill="none"
-																	d="M 0 3.125 L 1.4 13.125 L 2.8 14.375 L 4.2 18.125 L 5.6 23.75 L 7 26.25 L 8.4 30 L 9.8 36.25 L 11.2 28.125 L 12.6 25.625 L 14 30.625 L 15.4 37.5 L 16.8 36.875 L 18.2 35 L 19.6 31.875 L 21 33.125 L 22.4 31.25 L 23.8 31.25 L 25.2 28.75 L 26.6 28.125 L 28 20.625 L 29.4 22.5 L 30.8 25.625 L 32.2 30 L 33.6 25.625 L 35 27.5 L 36.4 27.5 L 37.8 25 L 39.2 22.5 L 40.6 26.25 L 42 25"
-																	class="highcharts-graph" data-z-index="1"
-																	stroke="#D24F45" stroke-width="1" visibility="hidden"></path>
-																<path fill="none"
-																	d="M 0 3.125 L 1.4 13.125 L 2.8 14.375 L 4.2 18.125 L 5.6 23.75 L 7 26.25 L 8.4 30 L 9.8 36.25 L 11.2 28.125 L 12.6 25.625 L 14 30.625 L 15.4 37.5 L 16.8 36.875 L 18.2 35 L 19.6 31.875 L 21 33.125 L 22.4 31.25 L 23.8 31.25 L 25.2 28.75 L 26.6 28.125 L 28 20.625 L 29.4 22.5 L 30.8 25.625 L 32.2 30 L 33.6 25.625 L 35 27.5 L 36.4 27.5 L 37.8 25 L 39.2 22.5 L 40.6 26.25 L 42 25"
-																	class="highcharts-graph highcharts-zone-graph-0 highcharts-negative"
-																	data-z-index="1" stroke="#0966C6" stroke-width="1"
-																	clip-path="url(#highcharts-b33avt4-32)"></path>
-																<path fill="none"
-																	d="M 0 3.125 L 1.4 13.125 L 2.8 14.375 L 4.2 18.125 L 5.6 23.75 L 7 26.25 L 8.4 30 L 9.8 36.25 L 11.2 28.125 L 12.6 25.625 L 14 30.625 L 15.4 37.5 L 16.8 36.875 L 18.2 35 L 19.6 31.875 L 21 33.125 L 22.4 31.25 L 23.8 31.25 L 25.2 28.75 L 26.6 28.125 L 28 20.625 L 29.4 22.5 L 30.8 25.625 L 32.2 30 L 33.6 25.625 L 35 27.5 L 36.4 27.5 L 37.8 25 L 39.2 22.5 L 40.6 26.25 L 42 25"
-																	class="highcharts-graph highcharts-zone-graph-1 "
-																	data-z-index="1" stroke="#D24F45" stroke-width="1"
-																	clip-path="url(#highcharts-b33avt4-33)"></path>
-																<path fill="none"
-																	d="M -10 3.125 L 0 3.125 L 1.4 13.125 L 2.8 14.375 L 4.2 18.125 L 5.6 23.75 L 7 26.25 L 8.4 30 L 9.8 36.25 L 11.2 28.125 L 12.6 25.625 L 14 30.625 L 15.4 37.5 L 16.8 36.875 L 18.2 35 L 19.6 31.875 L 21 33.125 L 22.4 31.25 L 23.8 31.25 L 25.2 28.75 L 26.6 28.125 L 28 20.625 L 29.4 22.5 L 30.8 25.625 L 32.2 30 L 33.6 25.625 L 35 27.5 L 36.4 27.5 L 37.8 25 L 39.2 22.5 L 40.6 26.25 L 42 25 L 52 25"
-																	visibility="visible" data-z-index="2"
-																	class="highcharts-tracker-line" stroke-linejoin="round"
-																	stroke="rgba(192,192,192,0.0001)" stroke-width="21"></path></g>
-																<g data-z-index="0.1"
-																	class="highcharts-markers highcharts-series-0 highcharts-area-series  highcharts-tracker"
-																	transform="translate(0,0) scale(1 1)"></g></g>
-																<text x="70" text-anchor="middle"
-																	class="highcharts-title" data-z-index="4"
-																	style="color:#333333;font-size:18px;display:none;fill:#333333;"
-																	y="24"></text>
-																<text x="70" text-anchor="middle"
-																	class="highcharts-subtitle" data-z-index="4"
-																	style="color:#666666;fill:#666666;" y="24"></text>
-																<g class="highcharts-axis-labels highcharts-xaxis-labels "
-																	data-z-index="7"></g>
-																<g 	class="highcharts-axis-labels highcharts-yaxis-labels "
-																	data-z-index="7"></g>
-																	</svg>
-														</div>
-													</div></a>
-											</div>
+										</div>
 											<div class="ty03">
 												<dl class="first">
-													<dt>고가</dt>
+													<dt>가격</dt>
 													<dd>
 														<strong class="up"></strong>
 													</dd>
@@ -540,12 +427,12 @@ html, body {
 																			original="right-click to manage"> /
 																		manage</translate></span><span><translate original=")">)</translate></span></span></span>
 														</div>
-														<div class="stx_crosshair stx_crosshair_x" style="left: 1037.5px; display: none;" id="crossX"></div>
+														<!-- <div class="stx_crosshair stx_crosshair_x" style="left: 1037.5px; display: none;" id="crossX"></div>
 														<div class="stx_crosshair stx_crosshair_y" style="top: 171px; left: 0px; width: 894px; display: none;"	id="crossY"></div>
 														<div class="stx_chart_controls" style="display: block; bottom: 119px;" id="chartControls">
 														
 														</div>
-														<div class="stx-float-date"style="left: 996.5px; bottom: 77px; visibility: hidden;" id="floatDate"></div>
+	 												<div class="stx-float-date"style="left: 996.5px; bottom: 77px; visibility: hidden;" id="floatDate"></div>
 														<div class="stx-panel-control" id="iconsTemplate">
 															<div class="stx-panel-title"></div>
 															<div class="stx-btn-panel">
@@ -563,9 +450,9 @@ html, body {
 															<div class="stx-btn-panel">
 																<span class="stx-ico-close"></span>
 															</div>
-														</div>
-														<div class="stx-baseline-handle" style="display: none;" id="baselineHandle"></div>
-														<div class="stx-holder stx-panel-chart" cq-panel-name="chart" 	style="right: 0px; top: 0px; left: 0px; height: 308px; display: block;">
+														</div>  -->
+													<!-- 	<div class="stx-baseline-handle" style="display: none;" id="baselineHandle"></div> -->
+														<!-- <div class="stx-holder stx-panel-chart" cq-panel-name="chart" 	style="right: 0px; top: 0px; left: 0px; height: 308px; display: block;">
 															<div class="stx-subholder" cq-panel-name="chart" style="z-index: 1; left: 0px; width: 901px; top: 0px; height: 278px;">
 																<div class="stx-panel-control stx-show stx-chart-panel" id="iconsTemplate">
 																	<div class="stx-panel-title chart-title">BTC/KRW</div>
@@ -589,23 +476,22 @@ html, body {
 																	<span></span>
 																</div>
 															</div>
-														</div> 
+														</div>  -->
 														<stx-hu-tooltip style="left: -1000px; right: auto; top: 131px;">
 														<stx-hu-tooltip-field auto=""> <stx-hu-tooltip-field-name>일시:</stx-hu-tooltip-field-name>
 														<stx-hu-tooltip-field-value>04/22</stx-hu-tooltip-field-value></stx-hu-tooltip-field>
-														<stx-hu-tooltip-field auto=""> <stx-hu-tooltip-field-name>시가:</stx-hu-tooltip-field-name>
-														<stx-hu-tooltip-field-value>6,128,000</stx-hu-tooltip-field-value></stx-hu-tooltip-field>
-														<stx-hu-tooltip-field auto=""> <stx-hu-tooltip-field-name>고가:</stx-hu-tooltip-field-name>
-														<stx-hu-tooltip-field-value>6,134,000</stx-hu-tooltip-field-value></stx-hu-tooltip-field>
-														<stx-hu-tooltip-field auto=""> <stx-hu-tooltip-field-name>저가:</stx-hu-tooltip-field-name>
-														<stx-hu-tooltip-field-value>6,121,000</stx-hu-tooltip-field-value></stx-hu-tooltip-field>
-														<stx-hu-tooltip-field auto=""> <stx-hu-tooltip-field-name>종가:</stx-hu-tooltip-field-name>
-														<stx-hu-tooltip-field-value>6,123,000</stx-hu-tooltip-field-value></stx-hu-tooltip-field>
-														<stx-hu-tooltip-field auto=""> <stx-hu-tooltip-field-name>거래량:</stx-hu-tooltip-field-name>
-														<stx-hu-tooltip-field-value>123.1</stx-hu-tooltip-field-value></stx-hu-tooltip-field></stx-hu-tooltip>
+														<stx-hu-tooltip-field auto="">
+														 <stx-hu-tooltip-field-name>가격:</stx-hu-tooltip-field-name>
+														<stx-hu-tooltip-field-value>6,128,000</stx-hu-tooltip-field-value>
+														</stx-hu-tooltip-field>
+														<stx-hu-tooltip-field auto="">
+														 <stx-hu-tooltip-field-name>거래량:</stx-hu-tooltip-field-name>
+														<stx-hu-tooltip-field-value>123.1</stx-hu-tooltip-field-value>
+														</stx-hu-tooltip-field>
+														</stx-hu-tooltip>
 														<!-- 메인차트 -->
 														<div id="chartdiv"></div>
-													<!-- 	<canvas height="385" width="966" style="position: absolute; left: 0px; width: 966px; height: 385px;"></canvas>
+													<!--<canvas height="385" width="966" style="position: absolute; left: 0px; width: 966px; height: 385px;"></canvas>
 														<canvas height="385" width="966" 	style="position: absolute; left: 0px; display: none; width: 966px; height: 385px;"></canvas>
 														<canvas height="385" width="966" 	style="position: absolute; left: 0px; display: none; width: 966px; height: 385px;"></canvas> -->
 													</div>
@@ -1159,7 +1045,7 @@ html, body {
 															</div>
 															<div class="stx-baseline-handle" style="display: none;"
 																id="baselineHandle"></div>
-															<div class="stx-holder stx-panel-chart"
+															<!-- <div class="stx-holder stx-panel-chart"
 																cq-panel-name="chart"
 																style="right: 0px; top: 0px; left: 0px; height: 198.4px; display: block;">
 																<div class="stx-subholder" cq-panel-name="chart"
@@ -1188,7 +1074,7 @@ html, body {
 																		<span></span>
 																	</div>
 																</div>
-															</div>
+															</div> -->
 															<div class="stx-ico-handle"
 																style="display: none; left: 0px; width: 415px;"
 																id="null">
@@ -1331,9 +1217,6 @@ html, body {
 										<span class="tabB">
 										<ul class="ty05">
 											<li><a href="#" class="on" title="원화거래">원화거래</a></li>
-											<li><a href="#" class="" title="BTC">BTC</a></li>
-											<li><a href="#" class="" title="ETH">ETH</a></li>
-											<li><a href="#" class="" title="USDT">USDT</a></li>
 											<li><a href="#" class="" title="보유코인">보유코인</a></li>
 										</ul>
 										<table class="highlight">
