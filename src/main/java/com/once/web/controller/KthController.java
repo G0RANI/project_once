@@ -21,12 +21,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.once.web.domain.CoinArticle;
+import com.once.web.domain.CustService;
+import com.once.web.kth.Proxy;
+import com.once.web.lambda.IFunction;
+import com.once.web.lambda.ISupplier;
+import com.once.web.service.CustServiceServiceImpl;
 
 @Controller
 public class KthController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(KthController.class);
 	@Autowired Map<String, Object> map;
+	@Autowired Proxy pxy;
+	@Autowired CustServiceServiceImpl cuseservice;
+
 	@RequestMapping("/kth")
 	public String kthMain() {
 		logger.info("김태혁 컨트롤 진입 했씁니다!!!");	
@@ -76,6 +84,27 @@ public class KthController {
         
 		return map;
 	}
-
+	
+	
+	@RequestMapping(value = "/notice/{npage}", method = {RequestMethod.GET})
+	public Map<String, Object> notice(@PathVariable String npage){
+		List<CustService> list = new ArrayList<>();
+		System.out.println("이동완료");
+		list.clear();
+		map.put("page_num", npage);
+		map.put("page_size", "5");
+		map.put("block_size", "5");
+		ISupplier sup =()->cuseservice.countCustServices();
+		System.out.println(sup.get());
+		map.put("rowCount", sup.get());
+		pxy.carryOut(map);
+		IFunction i = (Object o) -> cuseservice.selectCustServiceList(pxy);
+		List<?> ls = (List<?>) i.apply(pxy);
+		map.clear();
+		map.put("ls", ls);
+		map.put("pxy", pxy);
+		pxy.carryOut(map);
+		return map;
+	}
 
 }

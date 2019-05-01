@@ -3,13 +3,17 @@ package com.once.web.service;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.once.web.domain.CustService;
+import com.once.web.kth.Proxy;
+import com.once.web.mapper.CustServiceMapper;
 
 @Service
 public class CustServiceServiceImpl implements CustServiceService{
-
+	@Autowired CustServiceMapper cusemap;
+	
 	@Override
 	public void insertCustService(CustService cuse) {
 		// TODO Auto-generated method stub
@@ -17,9 +21,8 @@ public class CustServiceServiceImpl implements CustServiceService{
 	}
 
 	@Override
-	public List<CustService> selectCustServiceList(Map<?, ?> map) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<CustService> selectCustServiceList(Proxy pxy) {
+		return cusemap.selectCustServiceList(pxy);
 	}
 
 	@Override
@@ -30,8 +33,7 @@ public class CustServiceServiceImpl implements CustServiceService{
 
 	@Override
 	public int countCustServices() {
-		// TODO Auto-generated method stub
-		return 0;
+		return cusemap.countCustServices();
 	}
 
 	@Override
