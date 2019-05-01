@@ -15,7 +15,7 @@ public interface CustomersService {
 	
 	public Customers retrieveCustomer(Map<String,Object> map);
 	public int countCustomers();
-	public boolean existsCustomerID(Customers cust);
+	public boolean existsCustomerID(Map<String,Object> map);
 	
 	public void modifyCustomer(Customers cust);
 	public void removeCustomer(Customers cust);

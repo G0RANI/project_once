@@ -18,110 +18,104 @@ ksa=(()=>{
 			});*/
 			break;
 		case 'd':
-			$('#once').empty();
-			alert(sessionStorage.getItem('session'));
-			
-			$.getScript($.js()+'/component/ksa_compo.js',()=>{
-			if(sessionStorage.getItem('session') === null){
-				$('#once').html(ksa_compo.kakao_login);
-				kakao('<%=application.getContextPath()%>');
-			}else{
-				 $(ksa_compo.d_w_charge()).appendTo('#once');
-				 $('#nav2 a').attr('class', '');
-				 $('#ksa_d').attr('class', 'on');
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-				 
-=======
->>>>>>> 81c9c6d9c461102656f4a1ecf31d4f442e167c80
-				 $('.tabB a').eq(0).click(function(){
-						alert('충전');
-						$('.tabB a').attr('class', '');
-						$(this).attr('class', 'on');
-						$('.TabArea').empty();
-						$(ksa_compo.d_w_krw()).appendTo('.TabArea');
-					});
-				 $('.tabB a').eq(1).click(function(){
-						alert('출금');
-						$('.tabB a').attr('class', '');
-						$(this).attr('class', 'on');
-						$('.TabArea').empty();
-						$('.TabArea').html(ksa_compo.d_w_application());
-				 });
-				 $('.tabB a').eq(2).click(function(){
-						alert('입출금');
-						$('.tabB a').attr('class', '');
-						$(this).attr('class', 'on');
-						$('.TabArea').empty();
-						$('.TabArea').html(ksa_compo.d_w_trx());			
-				 });
-<<<<<<< HEAD
->>>>>>> 56437f5d304e0ec02d35c90e4d9c2c89e0694c59
-=======
-			}
->>>>>>> 81c9c6d9c461102656f4a1ecf31d4f442e167c80
-			});
-			break;
+            $('#once').empty();
+            $.getScript($.js()+'/component/ksa_compo.js',()=>{
+            if(sessionStorage.getItem('session') === null){
+                location.assign($.ctx()+"/ksa");
+            }else{
+                 $(ksa_compo.d_w_charge()).appendTo('#once');
+                 $('#nav2 a').attr('class', '');
+                 $('#ksa_d').attr('class', 'on');
+                 $('#ksa').remove();
+                 $('.tnb').html('<li><a style="cursor:pointer" id="off" title="로그아웃">로그아웃</a></li>');
+                 $('#off').click(e=>{
+                     alert('클릭 로그아웃!');
+                     logout();
+                });
+                 let cu = sessionStorage.getItem('info');
+                 alert(cu);
+                 $.ajax({
+                	 url:$.ctx()+'/select/'+cu,
+                	 data:cu,
+                	 type:'POST',
+                	 dataType:'json',
+                	 contentType:'application/json',
+                	 success:s=>{
+                		 alert('성공!'+s.hcoin);
+                		$('.totalB p').empty()
+                		$('<p> '+s.hcoin+' <i>KRW</i></p>').appendTo('.totalB');
+                	 },
+                	 error:e=>{
+                		 alert('실패!');
+                	 }
+                 });
+                 
+                 $('.tabB a').eq(0).click(function(){
+                        alert('충전');
+                        $('.tabB a').attr('class', '');
+                        $(this).attr('class', 'on');
+                        $('.TabArea').empty();
+                        $(ksa_compo.d_w_krw()).appendTo('.TabArea');
+                    });
+                 $('.tabB a').eq(1).click(function(){
+                        alert('출금');
+                        $('.tabB a').attr('class', '');
+                        $(this).attr('class', 'on');
+                        $('.TabArea').empty();
+                        $('.TabArea').html(ksa_compo.d_w_application());
+                 });
+                 $('.tabB a').eq(2).click(function(){
+                        alert('입출금');
+                        $('.tabB a').attr('class', '');
+                        $(this).attr('class', 'on');
+                        $('.TabArea').empty();
+                        $('.TabArea').html(ksa_compo.d_w_trx());            
+                 });
+            }
+            });
+            break;
 		case 'i':
 			$('#once').empty();
-			 $.getScript($.js()+'/component/ksa_compo.js',()=>{
-				 $(ksa_compo.investment_coin()).appendTo('#once');
-				 $('#nav2 a').attr('class', '');
-				 $('#ksa_i').attr('class', 'on');	
-				 $('.ty04 a').eq(0).click(function(){
-						alert('보유코인');
-						$('.ty04 a').attr('class', '');
-						$(this).attr('class', 'on');
-						$('.ownB').empty();
-						$('.ownB').html(ksa_compo.investment_hcoin());
-					});
-				 $('.ty04 a').eq(1).click(function(){
-						alert('거래내역');
-						$('.ty04 a').attr('class', '');
-						$(this).attr('class', 'on');
-						$('.ownB').empty();
-						$('.ownB').html(ksa_compo.investment_trx());
-				 });
-			});
-			break;
-		case 'm':
-			$('#once').empty();
-			 $.getScript($.js()+'/component/ksa_compo.js',()=>{
-				 $(ksa_compo.cust_infor()).appendTo('#once');
-				 $('#nav2 a').attr('class', '');
-				 $('.listB a').eq(0).click(function(){
-						alert('회원정보');
-						$('.listB a').attr('class', '');
-						$(this).attr('class', 'on');
-						$('#right').empty();
-						$('#right').html(ksa_compo.cust_info_navi());
-				 });
-				 $('.listB a').eq(2).click(function(){
-						alert('접속관리');
-						$('.listB a').attr('class', '');
-						$(this).attr('class', 'on');
-						$('#right').empty();
-						$('#right').html(ksa_compo.cust_acc());
-				 });
-			 });
-			break;
+            $.getScript($.js()+'/component/ksa_compo.js',()=>{
+            if(sessionStorage.getItem('session') === null){
+                location.assign($.ctx()+"/ksa");
+            }else{
+                $(ksa_compo.investment_coin()).appendTo('#once');
+                $('#nav2 a').attr('class', '');
+                $('#ksa_i').attr('class', 'on');    
+                $('#ksa').remove();
+                $('.tnb').html('<li><a style="cursor:pointer" id="off" title="로그아웃">로그아웃</a></li>');
+                $('#off').click(e=>{
+                    alert('클릭 로그아웃!');
+                    logout();
+               });
+                $('.ty04 a').eq(0).click(function(){
+                       alert('보유코인');
+                       $('.ty04 a').attr('class', '');
+                       $(this).attr('class', 'on');
+                       $('.ownB').empty();
+                       $('.ownB').html(ksa_compo.investment_hcoin());
+                   });
+                $('.ty04 a').eq(1).click(function(){
+                       alert('거래내역');
+                       $('.ty04 a').attr('class', '');
+                       $(this).attr('class', 'on');
+                       $('.ownB').empty();
+                       $('.ownB').html(ksa_compo.investment_trx());
+                });
+            }
+           });
+           break;
 		}
-<<<<<<< HEAD
-	};	
-
-=======
 	};
-	
->>>>>>> 56437f5d304e0ec02d35c90e4d9c2c89e0694c59
 	let kakao=(x)=>{
 		Kakao.init('84c6f4f17078c92b08795e362bbe2d2d');
 		$('#custom-login-btn').click(function loginWithKakao() {
 		      Kakao.Auth.login({
-		        success: function(authObj) {
+		        success: (authObj)=> {
 		        	 Kakao.API.request({
 		        	       url: '/v1/user/me',
-		        	       success: function(res) {
+		        	       success: (res)=>{
 		        	             alert(JSON.stringify(res));
 		        	             alert(JSON.stringify(authObj));
 		        	             console.log(res.id);
@@ -130,20 +124,21 @@ ksa=(()=>{
 		        	             console.log(authObj.access_token);
 		        	             Kakao.Auth.setAccessToken(authObj.access_token, true);
 		        	         	 sessionStorage.setItem('session', Kakao.Auth.getAccessToken());
+		        	         	 sessionStorage.setItem('info', res.id);
 		        	         	$.ajax({
 		    	             		url:x+'/login',
 		    	             		type: 'POST',
 		    	             		data: JSON.stringify(res, authObj),
 		    	             		dataType:'json',
 		    	             		contentType : "application/json; charset=UTF-8",
-		    	             		success:function(res){
+		    	             		success:(res)=>{
 		    	             			alert('성공');
 		    	             			location.assign(x+"/ngh");
 		    	             			/*$('#nav3').empty();
 		    	             			$('<li><a style="cursor:pointer" id="ksa_m" title="마이페이지">마이페이지</a></li>').appendTo('#nav3');
 		    	             			$('<li><a style="cursor:pointer" id="logout" title="로그아웃">로그아웃</a></li>').appendTo('#nav3');*/
 		    	             		},
-		    	             		error:function(err){
+		    	             		error:(err)=>{
 		    	             			alert('실패');
 		    	             			kakao(x);
 		    	             		}
@@ -151,11 +146,16 @@ ksa=(()=>{
 		        	           }
 		        	         })
 		        },
-		        fail: function(err) {
+		        fail: (err)=> {
 		          alert(JSON.stringify(err));
 		        }
 		      });
 		    });
 	};	
+	let logout=()=>{
+        sessionStorage.removeItem('session');
+         location.assign($.ctx());
+    };
+	
 	return{init:init, kakao:kakao};
 })();

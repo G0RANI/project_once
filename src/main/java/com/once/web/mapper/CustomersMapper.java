@@ -15,7 +15,7 @@ public interface CustomersMapper {
 	
 	public Customers selectCustomer(Map<String,Object> map);
 	public int countCustomers();
-	public boolean existsCustomerID(Customers cust);
+	public boolean existsCustomerID(Map<String,Object> map);
 	
 	public void updateCustomer(Customers cust);
 	public void deleteCustomer(Customers cust);

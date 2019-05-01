@@ -42,9 +42,9 @@ public class CustomersServiceImpl implements CustomersService{
 	}
 
 	@Override
-	public boolean existsCustomerID(Customers cust) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean existsCustomerID(Map<String,Object> map) {
+		
+		return cm.existsCustomerID(map);
 	}
 
 	@Override
