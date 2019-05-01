@@ -964,7 +964,7 @@ ksa_compo = {
 			+'				<section class="loginB">'
 			+'					<article>'
 			+'						<h2 class="logo">UPbit</h2>'
-			+'						<a id="custom-login-btn" href="javascript:loginWithKakao()">'
+			+'						<a id="custom-login-btn">'
 			+'							<img'
 			+'							src="//mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg"'
 			+'							width="380" />'
