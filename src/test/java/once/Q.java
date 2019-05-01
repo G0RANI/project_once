@@ -2,10 +2,15 @@ package once;
 
 public class Q {
 	public static void main(String[] args) {
-		for(int i=0;i<60;i++) {
-			for(int j=0;j<60;j++) {
-				System.out.format("INSERT INTO ONCE(date, price) VALUES('2019-04-30 00:%d:%d', '%d');\n",i,j,1000);
-			}			
-		}
+		double all = 20000000;
+		double all2 = 10000;
+		double coin = 1000;
+		double once = 0;
+		double once2 = 0;
+		
+		once = 20000000/all*coin;
+		System.out.println(once);
+		once2 = 20000000/all2*coin;
+		System.out.println(once2);
 	}
 }
