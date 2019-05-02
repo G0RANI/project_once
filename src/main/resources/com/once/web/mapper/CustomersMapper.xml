@@ -12,6 +12,7 @@
  	FROM CUSTOMERS
  	WHERE id LIKE #{id}
  </select>
+<<<<<<< HEAD
  
  <select id="existsCustomerID" parameterType="map" resultType="boolean">
  	SELECT if(COUNT(*)>0,'false', 'true')
@@ -20,4 +21,7 @@
  </select>
  
  
+=======
+
+>>>>>>> 29bfec9fb7ba9fd13e7e66795a8cf81237abe170
 </mapper>

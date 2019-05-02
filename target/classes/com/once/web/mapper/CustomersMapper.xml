@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
@@ -20,4 +21,21 @@
  </select>
  
  
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.once.web.mapper.CustomersMapper">
+<insert id="insertCustomer">
+	INSERT INTO CUSTOMERS (kaid, hcoin, hqua, pprice)
+	VALUES (#{id}, 11, 11, 11)
+</insert>
+ <select id="selectCustomer" resultType="com.once.web.domain.Customers">
+ 	SELECT * 
+ 	FROM CUSTOMERS
+ 	WHERE kaid LIKE #{id}
+ </select>
+
+>>>>>>> 29bfec9fb7ba9fd13e7e66795a8cf81237abe170
 </mapper>

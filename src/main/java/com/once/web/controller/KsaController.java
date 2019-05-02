@@ -9,6 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
+<<<<<<< HEAD
+=======
+import org.springframework.web.bind.annotation.PostMapping;
+>>>>>>> 29bfec9fb7ba9fd13e7e66795a8cf81237abe170
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -43,6 +47,7 @@ public class KsaController {
 	@RequestMapping(value = "/login", method = {RequestMethod.POST, RequestMethod.GET})
 	public boolean login(@RequestBody Map<String,Object> res) {
 		System.out.println("카카오정보 : "+res);
+<<<<<<< HEAD
 		IPredicate p = (Object o) -> cust.existsCustomerID(res); 
 		if(p.test(res.get("id"))) {
 			IConsumer c = (Object o) -> cust.registCustomer(res); 
@@ -76,5 +81,21 @@ public class KsaController {
 		ac = (Accounts) f.apply(id);
 		System.out.println("ac는 : "+ac);
 		return ac;
+=======
+		IFunction f = (Object o) -> cust.retrieveCustomer(res); 
+		ct = (Customers) f.apply(res.get("id"));
+		if(ct == null) {
+			IConsumer c = (Object o) -> cust.registCustomer((Map<String, Object>) res); 
+			c.accept(res);
+		}
+		return res;
+>>>>>>> 29bfec9fb7ba9fd13e7e66795a8cf81237abe170
+	}
+	
+	@PostMapping("/select/{userid}")
+	public Customers select_info(@PathVariable Map<String, Object> userid) {
+		System.out.println("카카오정보 : "+userid);
+		
+		return null;
 	}
 }

@@ -957,9 +957,16 @@ ksa_compo = {
 			+'				<section class="loginB">'
 			+'					<article>'
 			+'						<h2 class="logo">UPbit</h2>'
+<<<<<<< HEAD
 			+'							<img'
 			+'							src="//mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg"'
 			+'							width="380" id="custom-login-btn" style="cursor:pointer"/>'
+=======
+			+'						<a id="custom-login-btn">'
+			+'							<img src="http://mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg"'
+			+'								width="380" id="custom-login-btn" style="cursor:pointer"/>'
+			+'						</a>'
+>>>>>>> 29bfec9fb7ba9fd13e7e66795a8cf81237abe170
 			+'						<div class="chkBox">'
 			+'							<a href="#">checkbox</a><label for="">로그인 상태 유지</label>'
 			+'						</div>'
@@ -990,7 +997,6 @@ ksa_compo = {
 						+'</nav>'
 						+'<ul class="tnb">'
 							+'<li><a style="cursor:pointer" id="ksa" title="로그인">로그인</a></li>'
-							+'<li><a style="cursor:pointer" title="회원가입">회원가입</a></li>'
 						+'</ul>'
 					+'</section>'
 				+'</header>'

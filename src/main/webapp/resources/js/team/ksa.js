@@ -10,14 +10,16 @@ ksa=(()=>{
 	let setContentView=(x)=>{
 		switch (x) {
 		case 'login':
-		/*	$('#once').empty();
+			$('#once').empty();
 			$.getScript($.js()+'/component/ksa_compo.js',()=>{
-				 
 				 $('#nav2 a').attr('class', '');
 				 $('#ksa_d').attr('class', 'on');
-			});*/
+				 $('#once').html(ksa_compo.kakao_login);
+				 kakao($.ctx());
+			});
 			break;
 		case 'd':
+<<<<<<< HEAD
             $('#once').empty();
             $.getScript($.js()+'/component/ksa_compo.js',()=>{
             if(sessionStorage.getItem('session') === null){
@@ -125,6 +127,96 @@ ksa=(()=>{
             }
            });
            break;
+=======
+			$('#once').empty();
+			$.getScript($.js()+'/component/ksa_compo.js',()=>{
+			if(sessionStorage.getItem('session') === null){
+				location.assign($.ctx()+"/ksa");
+			}else{
+				 alert(sessionStorage.getItem('cust_id')); 
+				 $(ksa_compo.d_w_charge()).appendTo('#once');
+				 $('#nav2 a').attr('class', '');
+				 $('#ksa_d').attr('class', 'on');
+				 $('#ksa').remove();
+				 $('.tnb').html('<li><a style="cursor:pointer" id="off" title="로그아웃">로그아웃</a></li>');
+				 $('#off').click(e=>{
+					 alert('클릭 로그아웃!');
+					 logout();
+				});
+				 let kakao_id = sessionStorage.getItem('cust_id');
+				 $.ajax({
+	             		url:$.ctx()+'/select/'+kakao_id,
+	             		type: 'POST',
+	             		data: JSON.stringify(kakao_id),
+	             		dataType:'json',
+	             		contentType : "application/json; charset=UTF-8",
+	             		success: s=>{
+	             			alert('성공');
+	             		},
+	             		error:e=>{
+	             			alert('실패');
+	             		}
+	             	});
+				 
+				 
+				 
+				 $('.tabB a').eq(0).click(function(){
+						alert('충전');
+						$('.tabB a').attr('class', '');
+						$(this).attr('class', 'on');
+						$('.TabArea').empty();
+						$(ksa_compo.d_w_krw()).appendTo('.TabArea');
+					});
+				 $('.tabB a').eq(1).click(function(){
+						alert('출금');
+						$('.tabB a').attr('class', '');
+						$(this).attr('class', 'on');
+						$('.TabArea').empty();
+						$('.TabArea').html(ksa_compo.d_w_application());
+				 });
+				 $('.tabB a').eq(2).click(function(){
+						alert('입출금');
+						$('.tabB a').attr('class', '');
+						$(this).attr('class', 'on');
+						$('.TabArea').empty();
+						$('.TabArea').html(ksa_compo.d_w_trx());			
+				 });
+			}
+			});
+			break;
+		case 'i':
+			$('#once').empty();
+			 $.getScript($.js()+'/component/ksa_compo.js',()=>{
+			 if(sessionStorage.getItem('session') === null){
+				 location.assign($.ctx()+"/ksa");
+			 }else{
+				 $(ksa_compo.investment_coin()).appendTo('#once');
+				 $('#nav2 a').attr('class', '');
+				 $('#ksa_i').attr('class', 'on');	
+				 $('#ksa').remove();
+				 $('.tnb').html('<li><a style="cursor:pointer" id="off" title="로그아웃">로그아웃</a></li>');
+				 $('#off').click(e=>{
+					 alert('클릭 로그아웃!');
+					 logout();
+				});
+				 $('.ty04 a').eq(0).click(function(){
+						alert('보유코인');
+						$('.ty04 a').attr('class', '');
+						$(this).attr('class', 'on');
+						$('.ownB').empty();
+						$('.ownB').html(ksa_compo.investment_hcoin());
+					});
+				 $('.ty04 a').eq(1).click(function(){
+						alert('거래내역');
+						$('.ty04 a').attr('class', '');
+						$(this).attr('class', 'on');
+						$('.ownB').empty();
+						$('.ownB').html(ksa_compo.investment_trx());
+				 });
+			 }
+			});
+			break;
+>>>>>>> 29bfec9fb7ba9fd13e7e66795a8cf81237abe170
 		}
 	};
 	let kakao=(x)=>{
@@ -143,7 +235,11 @@ ksa=(()=>{
 		        	             console.log(authObj.access_token);
 		        	             Kakao.Auth.setAccessToken(authObj.access_token, true);
 		        	         	 sessionStorage.setItem('session', Kakao.Auth.getAccessToken());
+<<<<<<< HEAD
 		        	         	 sessionStorage.setItem('info', res.id);
+=======
+		        	         	 sessionStorage.setItem('cust_id', res.id);
+>>>>>>> 29bfec9fb7ba9fd13e7e66795a8cf81237abe170
 		        	         	$.ajax({
 		    	             		url:x+'/login',
 		    	             		type: 'POST',
@@ -172,9 +268,17 @@ ksa=(()=>{
 		    });
 	};	
 	let logout=()=>{
+<<<<<<< HEAD
         sessionStorage.removeItem('session');
          location.assign($.ctx());
     };
 	
 	return{init:init, kakao:kakao};
+=======
+		sessionStorage.removeItem('session');
+		 location.assign($.ctx());
+	};
+	
+	return{init:init, kakao:kakao, logout:logout};
+>>>>>>> 29bfec9fb7ba9fd13e7e66795a8cf81237abe170
 })();
