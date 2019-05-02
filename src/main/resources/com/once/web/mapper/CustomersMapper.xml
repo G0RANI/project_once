@@ -4,12 +4,20 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.once.web.mapper.CustomersMapper">
 <insert id="insertCustomer">
-	INSERT INTO CUSTOMERS (kaid, hcoin, hqua, pprice)
+	INSERT INTO CUSTOMERS (id, hcoin, hqua, pprice)
 	VALUES (#{id}, 11, 11, 11)
 </insert>
  <select id="selectCustomer" resultType="com.once.web.domain.Customers">
  	SELECT * 
  	FROM CUSTOMERS
- 	WHERE kaid LIKE #{id}
+ 	WHERE id LIKE #{id}
  </select>
+ 
+ <select id="existsCustomerID" parameterType="map" resultType="boolean">
+ 	SELECT if(COUNT(*)>0,'false', 'true')
+ 	FROM CUSTOMERS
+ 	WHERE id LIKE #{id}
+ </select>
+ 
+ 
 </mapper>
