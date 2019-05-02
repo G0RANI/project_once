@@ -298,6 +298,10 @@
 			<scope>test</scope>
 		</dependency>
 		<!--crawler  -->
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 09fc948617b9abf9edf754134ba45936d5042bda
 	<dependency>
 		<groupId>org.jsoup</groupId>
 		<artifactId>jsoup</artifactId>

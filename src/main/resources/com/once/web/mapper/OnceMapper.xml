@@ -3,4 +3,12 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
      <mapper namespace="com.once.web.mapper.OnceMapper">
+     
+<select id="selectOnce" resultType="com.once.web.domain.Once" parameterType="com.once.web.domain.Once">
+SELECT OSEQ,
+	   DATE,
+	   PRICE
+		FROM ONCE
+		WHERE OSEQ LIKE #{oseq}
+</select>
 </mapper>

@@ -13,7 +13,7 @@ public void insertOnce(Once once);
 	
 	public List<?> selectAllOnceList();
 	
-	public List<?> selectOnce();
+	public Once  selectOnce(Once once);
 	
 	public Once selectOnces(Once once);
 	

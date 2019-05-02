@@ -3,12 +3,15 @@ package com.once.web.service;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.once.web.domain.Once;
+import com.once.web.mapper.OnceMapper;
 @Service
 public class OnceServiceImpl implements OnceService {
-
+	@Autowired OnceMapper mapper;
+	
 	@Override
 	public void insertOnce(Once once) {
 		// TODO Auto-generated method stub
@@ -22,9 +25,9 @@ public class OnceServiceImpl implements OnceService {
 	}
 
 	@Override
-	public List<?> selectOnce() {
-		// TODO Auto-generated method stub
-		return null;
+	public  Once selectOnce(Once once) {
+		
+		return mapper.selectOnce(once);
 	}
 
 	@Override
