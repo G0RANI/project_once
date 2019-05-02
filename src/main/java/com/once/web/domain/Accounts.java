@@ -6,5 +6,5 @@ import lombok.Data;
 
 @Data @Component
 public class Accounts {
-	private String acnum, money;
+	private String acnum, money, id;
 }

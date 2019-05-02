@@ -173,6 +173,11 @@
 	  .crawler_text{
 	  	text-align: center;
 	  }  
+	      @font-face {
+        font-family: 'overwatch';
+        src: url('fonts/koverwatch.woff2');
+    }
+	  
 	</style>
 </head>
 <body>
@@ -200,7 +205,7 @@
 	<div class="mainB">
 		<section class="ty01">              
 		<div id="wordSpace"></div>
-			<div style="width: 30%;" ></div>
+		<script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js" type="text/JavaScript"></script>
 			<script src="https://d3js.org/d3.v3.min.js"></script>
 		                <article>
 		                    <span class="titB">
@@ -573,6 +578,8 @@
 <script src="<%=application.getContextPath()%>/resources/js/app.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/router.js"></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 
 <script type="text/javascript">initMoving(document.getElementById("right_content"), 50, 50, 50)</script>	
 <script>

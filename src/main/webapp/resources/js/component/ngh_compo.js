@@ -3,7 +3,7 @@ var ngh_compo = ngh_compo || {}
 ngh_compo={
 		
 		r_con : ()=>{
-			return  		'			<table class="highlight">'
+			return  '<table class="highlight">'
 			+'						<colgroup>'
 			+'							<col width="26">'
 			+'							<col width="26">'

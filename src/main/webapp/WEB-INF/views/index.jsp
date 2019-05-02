@@ -821,6 +821,7 @@
 <script src="<%=application.getContextPath()%>/resources/js/app.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/router.js"></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+
 <script>
 	app.init('<%=application.getContextPath()%>');
 </script>

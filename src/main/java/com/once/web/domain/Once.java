@@ -8,11 +8,9 @@ import lombok.Data;
 
 @Data @Component @Lazy
 public class Once {
-	private String high,
-				   low,
-				   open,
-				   close,
-				   data;
-	private int    oseq;
+	private String price,
+				   date,
+				   oseq;
 
 }
+

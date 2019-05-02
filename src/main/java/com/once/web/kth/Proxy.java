@@ -16,6 +16,9 @@ import org.springframework.stereotype.Component;
 
 import com.once.web.domain.CoinArticle;
 import lombok.Data;
+
+
+
 @Data @Component @Lazy
 public class Proxy {
      private int pageNum, pageSize, blockSize,  startRow, endRow, startPage, endPage, prevBlock,  nextBlock,rowCount,pageCount,blockNum;
@@ -69,18 +72,18 @@ public class Proxy {
         Document doc = Jsoup.connect(url).get();
         Elements elements = doc.select("ul.type01 li  dl dt a");
 
-        for(Element element: elements) {
-        	String title = element.ownText().trim();
-        	String[] arg = title.split(" ");
-        	for(int i =0; i<arg.length;i++) {
-        		System.out.println(arg[i]);
-        		Files.write(Paths.get(title + ".csv"), arg[i].getBytes("UTF-8"));
-        	}
+//        for(Element element: elements) {
+//        	String title = element.ownText().trim();
+//        	String[] arg = title.split(" ");
+//        	for(int i =0; i<arg.length;i++) {
+//        		System.out.println(arg[i]);
+//        		Files.write(Paths.get(title + ".csv"), arg[i].getBytes("UTF-8"));
+//        	}
 //                String name[] =nextTitle.split("  ");
 //                for(int i =0; i<=name.length;i++) {
 //                	System.out.println(name[i]);
 //                }
-        }
+//        }
          
    }
 }
