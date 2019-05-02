@@ -298,6 +298,14 @@
 			<scope>test</scope>
 		</dependency>
 		<!--crawler  -->
+<<<<<<< HEAD
+=======
+<!-- 	<dependency>
+		<groupId>edu.uci.ics</groupId>
+		<artifactId>crawler4j</artifactId>
+		<version>4.3</version>
+	</dependency> -->
+>>>>>>> d49ad779cade5edfb2fe3864f8b5a444c555d30c
 	<dependency>
 		<groupId>org.jsoup</groupId>
 		<artifactId>jsoup</artifactId>
