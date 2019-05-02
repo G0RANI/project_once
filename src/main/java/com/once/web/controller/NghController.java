@@ -1,9 +1,9 @@
 package com.once.web.controller;
 
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Random;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,11 +13,19 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.once.web.domain.Once;
+import com.once.web.lambda.IFunction;
+import com.once.web.service.OnceServiceImpl;
+
 
 
 @Controller
 public class NghController {
 	@Autowired Map<String, Object> map;
+	@Autowired Once once;
+	@Autowired OnceServiceImpl onceimpl;
+	
+	
 	private static final Logger logger = LoggerFactory.getLogger(NghController.class);
 	@RequestMapping("/ngh")
 	public String nghMain(Locale locale, Model model) {
@@ -38,13 +46,30 @@ public class NghController {
 	}
 	@ResponseBody
 	@RequestMapping("/ngh/chart/{seq}")
-	public Map<String, Object> chart(
+	public Once chart(
 			@PathVariable String seq){
-		logger.info("원스차트에 들어왔습니다!!!");	
-		 map.clear();
-		 System.out.println(seq);
+		 logger.info("원스차트에 들어왔습니다!!!");
+		 once = new Once();
+		 once.setOseq(seq);
+		 IFunction i = (Object o)-> onceimpl.selectOnce(once);
+		 once = (Once) i.apply(once);
+		 System.out.println("원스 값 : "+once.toString());
 		 
-		 map.put("ls",seq);
-		 return map;
+		 return once;
+	}
+	
+	
+	@ResponseBody
+	@RequestMapping("/ngh/chart2/{seq}")
+	public Once chart2(
+			@PathVariable String seq){
+		 logger.info("원스차트에 들어왔습니다!!!");
+		 once = new Once();
+		 once.setOseq(seq);
+		 IFunction i = (Object o)-> onceimpl.selectOnce(once);
+		 once = (Once) i.apply(once);
+		 System.out.println("원스 값 : "+once.toString());
+		 
+		 return once;
 	}
 }

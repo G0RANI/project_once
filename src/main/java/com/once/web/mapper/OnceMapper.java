@@ -13,7 +13,7 @@ public void insertOnce(Once once);
 	
 	public List<?> selectAllOnceList();
 	
-	public Map<String, Object>  selectOnce(Once once);
+	public Once  selectOnce(Once once);
 	
 	public Once selectOnces(Once once);
 	

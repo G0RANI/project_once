@@ -25,7 +25,7 @@ public class OnceServiceImpl implements OnceService {
 	}
 
 	@Override
-	public  Map<String, Object> selectOnce(Once once) {
+	public  Once selectOnce(Once once) {
 		
 		return mapper.selectOnce(once);
 	}
