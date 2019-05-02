@@ -1,9 +1,6 @@
 package com.once.web.controller;
-<<<<<<< HEAD
 
-=======
-import java.io.IOException;
->>>>>>> d49ad779cade5edfb2fe3864f8b5a444c555d30c
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -15,19 +12,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import  org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-<<<<<<< HEAD
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-=======
-import org.springframework.ui.Model;
-import  org.springframework.web.bind.annotation.PathVariable;
-import  org.springframework.web.bind.annotation.RequestMapping;
-import  org.springframework.web.bind.annotation.RequestMethod;
-import  org.springframework.web.bind.annotation.ResponseBody;
->>>>>>> d49ad779cade5edfb2fe3864f8b5a444c555d30c
 import com.once.web.domain.CoinArticle;
 import com.once.web.domain.CustService;
 import com.once.web.kth.Proxy;
