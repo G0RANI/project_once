@@ -173,6 +173,11 @@
 	  .crawler_text{
 	  	text-align: center;
 	  }  
+	      @font-face {
+        font-family: 'overwatch';
+        src: url('fonts/koverwatch.woff2');
+    }
+	  
 	</style>
 </head>
 <body>
@@ -200,7 +205,7 @@
 	<div class="mainB">
 		<section class="ty01">              
 		<div id="wordSpace"></div>
-			<div style="width: 30%;" ></div>
+		<script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js" type="text/JavaScript"></script>
 			<script src="https://d3js.org/d3.v3.min.js"></script>
 		                <article>
 		                    <span class="titB">

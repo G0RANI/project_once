@@ -3,18 +3,10 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
    <mapper namespace="com.once.web.mapper.CustServiceMapper">
-<<<<<<< HEAD
-   <select id="countCustServices" resultType="int">
-   		SELECT COUNT(*) FROM CS;
-   </select>
-   <select id="selectCustServiceList" resultType="com.once.web.domain.CustService">
-		SELECT * FROM CS;
-=======
       <select id="countCustServices" resultType="int">
          SELECT COUNT(*) FROM CS;
    </select>
    <select id="selectCustServiceList"  resultType="com.once.web.domain.CustService">
          SELECT * FROM CS;
->>>>>>> 6e3550840f5feb1d5a83647513d4f619a31b46f3
    </select>
 </mapper>

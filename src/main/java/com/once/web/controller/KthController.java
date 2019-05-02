@@ -23,25 +23,6 @@ import com.once.web.kth.Proxy;
 import com.once.web.lambda.IFunction;
 import com.once.web.lambda.ISupplier;
 import com.once.web.service.CustServiceServiceImpl;
-<<<<<<< HEAD
-
-@Controller
-public class KthController {
-	
-	private static final Logger logger = LoggerFactory.getLogger(KthController.class);
-	@Autowired Map<String, Object> map;
-	@Autowired Proxy pxy;
-	@Autowired CustServiceServiceImpl cuseservice;
-
-	@RequestMapping("/kth")
-	public String kthMain() {
-		logger.info("김태혁 컨트롤 진입 했씁니다!!!");	
-		return "kth";
-	}
-	@ResponseBody
-	@RequestMapping(value = "/crawler/naver/{page}", method = {RequestMethod.GET})
-	public Map<String, Object> crawler(@PathVariable int page) throws Exception{
-=======
 @Controller
 public class KthController {
      
@@ -57,7 +38,6 @@ public class KthController {
      @ResponseBody
      @RequestMapping(value = "/crawler/naver/{page}",  method = {RequestMethod.GET})
      public Map<String, Object> crawler(@PathVariable  int page) throws Exception{
->>>>>>> 6e3550840f5feb1d5a83647513d4f619a31b46f3
         if(page!=1) {
          page = (page-1)*10+1;
         }
@@ -97,34 +77,7 @@ public class KthController {
         }
         map.put("ls", list);
         
-<<<<<<< HEAD
-		return map;
-	}
-	
-	
-	@RequestMapping(value = "/notice/{npage}", method = {RequestMethod.GET})
-	public Map<String, Object> notice(@PathVariable String npage){
-		List<CustService> list = new ArrayList<>();
-		System.out.println("이동완료");
-		list.clear();
-		map.put("page_num", npage);
-		map.put("page_size", "5");
-		map.put("block_size", "5");
-		ISupplier sup =()->cuseservice.countCustServices();
-		System.out.println(sup.get());
-		map.put("rowCount", sup.get());
-		pxy.carryOut(map);
-		IFunction i = (Object o) -> cuseservice.selectCustServiceList(pxy);
-		List<?> ls = (List<?>) i.apply(pxy);
-		map.clear();
-		map.put("ls", ls);
-		map.put("pxy", pxy);
-		pxy.carryOut(map);
-		return map;
-	}
 
-}
-=======
          return map;
      }
      
@@ -147,4 +100,3 @@ public class KthController {
          return map;
      }
 }
->>>>>>> 6e3550840f5feb1d5a83647513d4f619a31b46f3
