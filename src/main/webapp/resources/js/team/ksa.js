@@ -10,25 +10,47 @@ ksa=(()=>{
 	let setContentView=(x)=>{
 		switch (x) {
 		case 'login':
-		/*	$('#once').empty();
+			$('#once').empty();
 			$.getScript($.js()+'/component/ksa_compo.js',()=>{
-				 
 				 $('#nav2 a').attr('class', '');
 				 $('#ksa_d').attr('class', 'on');
-			});*/
+				 $('#once').html(ksa_compo.kakao_login);
+				 kakao($.ctx());
+			});
 			break;
 		case 'd':
 			$('#once').empty();
-			alert(sessionStorage.getItem('session'));
-			
 			$.getScript($.js()+'/component/ksa_compo.js',()=>{
 			if(sessionStorage.getItem('session') === null){
-				$('#once').html(ksa_compo.kakao_login);
-				kakao('<%=application.getContextPath()%>');
+				location.assign($.ctx()+"/ksa");
 			}else{
+				 alert(sessionStorage.getItem('cust_id')); 
 				 $(ksa_compo.d_w_charge()).appendTo('#once');
 				 $('#nav2 a').attr('class', '');
 				 $('#ksa_d').attr('class', 'on');
+				 $('#ksa').remove();
+				 $('.tnb').html('<li><a style="cursor:pointer" id="off" title="로그아웃">로그아웃</a></li>');
+				 $('#off').click(e=>{
+					 alert('클릭 로그아웃!');
+					 logout();
+				});
+				 let kakao_id = sessionStorage.getItem('cust_id');
+				 $.ajax({
+	             		url:$.ctx()+'/select/'+kakao_id,
+	             		type: 'POST',
+	             		data: JSON.stringify(kakao_id),
+	             		dataType:'json',
+	             		contentType : "application/json; charset=UTF-8",
+	             		success: s=>{
+	             			alert('성공');
+	             		},
+	             		error:e=>{
+	             			alert('실패');
+	             		}
+	             	});
+				 
+				 
+				 
 				 $('.tabB a').eq(0).click(function(){
 						alert('충전');
 						$('.tabB a').attr('class', '');
@@ -56,9 +78,18 @@ ksa=(()=>{
 		case 'i':
 			$('#once').empty();
 			 $.getScript($.js()+'/component/ksa_compo.js',()=>{
+			 if(sessionStorage.getItem('session') === null){
+				 location.assign($.ctx()+"/ksa");
+			 }else{
 				 $(ksa_compo.investment_coin()).appendTo('#once');
 				 $('#nav2 a').attr('class', '');
 				 $('#ksa_i').attr('class', 'on');	
+				 $('#ksa').remove();
+				 $('.tnb').html('<li><a style="cursor:pointer" id="off" title="로그아웃">로그아웃</a></li>');
+				 $('#off').click(e=>{
+					 alert('클릭 로그아웃!');
+					 logout();
+				});
 				 $('.ty04 a').eq(0).click(function(){
 						alert('보유코인');
 						$('.ty04 a').attr('class', '');
@@ -73,28 +104,8 @@ ksa=(()=>{
 						$('.ownB').empty();
 						$('.ownB').html(ksa_compo.investment_trx());
 				 });
+			 }
 			});
-			break;
-		case 'm':
-			$('#once').empty();
-			 $.getScript($.js()+'/component/ksa_compo.js',()=>{
-				 $(ksa_compo.cust_infor()).appendTo('#once');
-				 $('#nav2 a').attr('class', '');
-				 $('.listB a').eq(0).click(function(){
-						alert('회원정보');
-						$('.listB a').attr('class', '');
-						$(this).attr('class', 'on');
-						$('#right').empty();
-						$('#right').html(ksa_compo.cust_info_navi());
-				 });
-				 $('.listB a').eq(2).click(function(){
-						alert('접속관리');
-						$('.listB a').attr('class', '');
-						$(this).attr('class', 'on');
-						$('#right').empty();
-						$('#right').html(ksa_compo.cust_acc());
-				 });
-			 });
 			break;
 		}
 	};
@@ -115,20 +126,21 @@ ksa=(()=>{
 		        	             console.log(authObj.access_token);
 		        	             Kakao.Auth.setAccessToken(authObj.access_token, true);
 		        	         	 sessionStorage.setItem('session', Kakao.Auth.getAccessToken());
+		        	         	 sessionStorage.setItem('cust_id', res.id);
 		        	         	$.ajax({
 		    	             		url:x+'/login',
 		    	             		type: 'POST',
 		    	             		data: JSON.stringify(res, authObj),
 		    	             		dataType:'json',
 		    	             		contentType : "application/json; charset=UTF-8",
-		    	             		success:function(res){
+		    	             		success:(res)=>{
 		    	             			alert('성공');
 		    	             			location.assign(x+"/ngh");
 		    	             			/*$('#nav3').empty();
 		    	             			$('<li><a style="cursor:pointer" id="ksa_m" title="마이페이지">마이페이지</a></li>').appendTo('#nav3');
 		    	             			$('<li><a style="cursor:pointer" id="logout" title="로그아웃">로그아웃</a></li>').appendTo('#nav3');*/
 		    	             		},
-		    	             		error:function(err){
+		    	             		error:(err)=>{
 		    	             			alert('실패');
 		    	             			kakao(x);
 		    	             		}
@@ -142,5 +154,10 @@ ksa=(()=>{
 		      });
 		    });
 	};	
-	return{init:init, kakao:kakao};
+	let logout=()=>{
+		sessionStorage.removeItem('session');
+		 location.assign($.ctx());
+	};
+	
+	return{init:init, kakao:kakao, logout:logout};
 })();
