@@ -9,13 +9,13 @@ import com.once.web.domain.Customers;
 
 @Repository
 public interface CustomersMapper {
-	public void insertCustomer(Map<String,Object> map);
+	public void insertCustomer(Map<?,?> map);
 	public List<Customers> selectAllAmount(Customers cust);
 	public List<Customers> selectSomeCoin(Customers cust);
 	
-	public Customers selectCustomer(Map<String,Object> map);
+	public Customers selectCustomer(Map<?,?> map);
 	public int countCustomers();
-	public boolean existsCustomerID(Map<String,Object> map);
+	public boolean existsCustomerID(Map<?,?> map);
 	
 	public void updateCustomer(Customers cust);
 	public void deleteCustomer(Customers cust);

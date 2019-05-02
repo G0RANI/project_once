@@ -10,7 +10,7 @@
  <select id="selectCustomer" resultType="com.once.web.domain.Customers">
  	SELECT * 
  	FROM CUSTOMERS
- 	WHERE id LIKE #{userid}
+ 	WHERE id LIKE #{id}
  </select>
  
  <select id="existsCustomerID" parameterType="map" resultType="boolean">

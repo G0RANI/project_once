@@ -32,16 +32,14 @@ ksa=(()=>{
                      alert('클릭 로그아웃!');
                      logout();
                 });
-                 let cu = sessionStorage.getItem('info');
-                 alert(cu);
+                 let cust_id = sessionStorage.getItem('info');
                  $.ajax({
-                	 url:$.ctx()+'/select/'+cu,
-                	 data:cu,
+                	 url:$.ctx()+'/select/'+cust_id,
+                	 data:cust_id,
                 	 type:'POST',
                 	 dataType:'json',
                 	 contentType:'application/json',
                 	 success:s=>{
-                		 alert('성공!'+s.hcoin);
                 		$('.totalB p').empty()
                 		$('<p> '+s.hcoin+' <i>KRW</i></p>').appendTo('.totalB');
                 	 },
@@ -49,6 +47,27 @@ ksa=(()=>{
                 		 alert('실패!');
                 	 }
                  });
+                 $('#acc').click(e=>{
+                	 $.ajax({
+                    	 url:$.ctx()+'/account/'+cust_id,
+                    	 data:cust_id,
+                    	 type:'POST',
+                    	 dataType:'json',
+                    	 contentType:'application/json',
+                    	 success:s=>{
+                    		 alert('성공!');
+                    		 $('.btnB em').empty();
+                    		 $('.btnB em').html('계좌번호  :  '+s.acnum);
+                    		 $('#acc').remove();
+                    		 $('<a id="acc" class="btn" title="충전하기">충전하기</a>').appendTo('.btnB');
+                    	 },
+                    	 error:e=>{
+                    		 alert('실패!');
+                    	 }
+                     });
+                 });
+                 
+                 
                  
                  $('.tabB a').eq(0).click(function(){
                         alert('충전');
