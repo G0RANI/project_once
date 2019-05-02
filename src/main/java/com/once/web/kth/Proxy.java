@@ -54,7 +54,7 @@ public class Proxy {
          System.out.println("스타트페이지 "+startPage);
          System.out.println("엔드페이지 "+endPage);
          System.out.println("스타트로우 "+startRow);
-         System.out.println("엔드로우 "+endRow);
+         System.out.println("엔드로우q "+endRow);
          System.out.println("페이지사이즈 "+pageSize);
          System.out.println("블록사이즈 "+blockSize);
          System.out.println("페이지넘버 "+pageNum);
