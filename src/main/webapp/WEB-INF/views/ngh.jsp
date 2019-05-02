@@ -34,15 +34,24 @@
 	crossorigin="anonymous"></script>
 <script async="" src="https://platform.twitter.com/widgets.js"></script>
 <style data-styled="" data-styled-version="4.2.0"></style>
-<<<<<<< HEAD
 
-=======
-<script src="http://www.amcharts.com/lib/3/amcharts.js"></script>
+<!-- <script src="http://www.amcharts.com/lib/3/amcharts.js"></script>
 <script src="http://www.amcharts.com/lib/3/serial.js"></script>
 <script src="http://www.amcharts.com/lib/3/themes/light.js"></script>
-<script src="http://www.amcharts.com/lib/3/amstock.js"></script>
->>>>>>> d8f569880484084dfba131122d17a9d505e2089c
+<script src="http://www.amcharts.com/lib/3/amstock.js"></script> -->
+<script src="https://www.amcharts.com/lib/4/core.js"></script>
+<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
 <style type="text/css">
+
+
+
+#chartdiv {
+  width: 100%;
+  height: 500px;
+}
+
 html, body {
   width: 100%;
   height: 100%;
@@ -219,11 +228,15 @@ html, body {
 						<div class="mainB">
 							<section class="ty01">
 								<article>
-									<span class="titB link"> <a href="" class="select">
-											<em> <img src="https://static.upbit.com/logos/BTC.png" 	alt="https://static.upbit.com/logos/BTC.png">
-										</em> <strong>원스코인</strong>
-											<p>ONCE/KRW</p>
-									</a> <a href="" class="Arrow">Arrow</a>
+									<span class="titB link">
+									 <a href="" class="select">
+										<em> 
+											<img src="https://static.upbit.com/logos/BTC.png" 	alt="https://static.upbit.com/logos/BTC.png">
+										</em> 
+										<strong>원스코인</strong>
+										<p>ONCE/KRW</p>
+									</a> 
+									<a href="" class="Arrow">Arrow</a>
 										<div class="exchangeList" style="display: block;"></div>
 										<div class="inforTab">
 											<dl>
@@ -243,7 +256,8 @@ html, body {
 												style="position: relative; overflow: hidden; width: 100%; height: 572px;">
 												<div
 													style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; overflow: scroll; margin-right: -17px; margin-bottom: -17px;">
-													<span class="inforB"><div class="title">
+													<span class="inforB">
+														<div class="title">
 															Bitcoin
 															<div class="linkWrap">
 																<a href="https://bitcoin.org/" target="_blank">웹사이트</a>
@@ -353,7 +367,9 @@ html, body {
 										</div>
 									</div>
 									<div style="display: block;">
-										<span class="marketB"><div class="down ty01">
+										<span class="marketB">
+										<div id="l_val">
+										<div class="down ty01">
 												<span class="first">
 												 <strong>6,122,000</strong>
 												  <em>KRW</em>
@@ -363,126 +379,10 @@ html, body {
 														<strong>-0.37%</strong>
 												<strong class="upDown">-23,000</strong></span>
 											</div>
-											<div class="ty02">
-												<a href="#"><div class="highstock"
-														data-highcharts-chart="0" style="overflow: hidden;">
-														<div id="highcharts-b33avt4-0" dir="ltr"
-															class="highcharts-container "
-															style="position: relative; overflow: hidden; width: 140px; height: 50px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
-															<svg version="1.1" class="highcharts-root"
-																style="font-family: &amp; amp; quot; Lucida Grande&amp;amp; quot; , &amp; amp; quot; Lucida Sans Unicode&amp;amp; quot; , Arial , Helvetica, sans-serif; font-size: 12px;"
-																xmlns="http://www.w3.org/2000/svg" width="140"
-																height="50" viewBox="0 0 140 50">
-																<desc>Created with Highcharts 7.0.3</desc>
-																<defs>
-																<clipPath id="highcharts-b33avt4-1">
-																<rect x="0" y="0" width="140" height="50" fill="none"></rect></clipPath>
-																<clipPath id="highcharts-b33avt4-32">
-																<rect x="0" y="13" width="140" height="37" fill="none"></rect></clipPath>
-																<clipPath id="highcharts-b33avt4-33">
-																<rect x="0" y="0" width="140" height="13" fill="none"></rect></clipPath></defs>
-																<rect fill="transparent" class="highcharts-background"
-																	x="0" y="0" width="140" height="50" rx="0" ry="0"></rect>
-																<rect fill="none" class="highcharts-plot-background"
-																	x="0" y="0" width="140" height="50"></rect>
-																<rect fill="none" class="highcharts-plot-border"
-																	data-z-index="1" x="0" y="0" width="140" height="50"></rect>
-																<g class="highcharts-grid highcharts-xaxis-grid "
-																	data-z-index="1">
-																<path fill="none" data-z-index="1"
-																	class="highcharts-grid-line" d="M -0.5 0 L -0.5 50"
-																	opacity="1"></path>
-																<path fill="none" data-z-index="1"
-																	class="highcharts-grid-line" d="M 69.5 0 L 69.5 50"
-																	opacity="1"></path>
-																<path fill="none" data-z-index="1"
-																	class="highcharts-grid-line" d="M 139.5 0 L 139.5 50"
-																	opacity="1"></path></g>
-																<g class="highcharts-grid highcharts-yaxis-grid "
-																	data-z-index="1">
-																<path fill="none" stroke="#e6e6e6" stroke-width="1"
-																	data-z-index="1" class="highcharts-grid-line"
-																	d="M 0 50.5 L 140 50.5" opacity="1"></path>
-																<path fill="none" stroke="#e6e6e6" stroke-width="1"
-																	data-z-index="1" class="highcharts-grid-line"
-																	d="M 0 -0.5 L 140 -0.5" opacity="1"></path></g>
-																<g class="highcharts-axis highcharts-xaxis "
-																	data-z-index="2">
-																<path fill="none" class="highcharts-tick"
-																	stroke="#ccd6eb" stroke-width="1"
-																	d="M -0.5 50 L -0.5 60" opacity="1"></path>
-																<path fill="none" class="highcharts-tick"
-																	stroke="#ccd6eb" stroke-width="1"
-																	d="M 69.5 50 L 69.5 60" opacity="1"></path>
-																<path fill="none" class="highcharts-tick"
-																	stroke="#ccd6eb" stroke-width="1"
-																	d="M 140.5 50 L 140.5 60" opacity="1"></path>
-																<path fill="none" class="highcharts-axis-line"
-																	stroke="#ccd6eb" stroke-width="1" data-z-index="7"
-																	d="M 0 50.5 L 140 50.5"></path></g>
-																<g class="highcharts-axis highcharts-yaxis "
-																	data-z-index="2">
-																<path fill="none" class="highcharts-axis-line"
-																	data-z-index="7" d="M 0 0 L 0 50"></path></g>
-																<g class="highcharts-series-group" data-z-index="3">
-																<g data-z-index="0.1"
-																	class="highcharts-series highcharts-series-0 highcharts-area-series "
-																	transform="translate(0,0) scale(1 1)"
-																	clip-path="url(#highcharts-b33avt4-1)">
-																<path fill="rgba( 210, 79, 69, 0.1)"
-																	d="M 0 3.125 L 1.4 13.125 L 2.8 14.375 L 4.2 18.125 L 5.6 23.75 L 7 26.25 L 8.4 30 L 9.8 36.25 L 11.2 28.125 L 12.6 25.625 L 14 30.625 L 15.4 37.5 L 16.8 36.875 L 18.2 35 L 19.6 31.875 L 21 33.125 L 22.4 31.25 L 23.8 31.25 L 25.2 28.75 L 26.6 28.125 L 28 20.625 L 29.4 22.5 L 30.8 25.625 L 32.2 30 L 33.6 25.625 L 35 27.5 L 36.4 27.5 L 37.8 25 L 39.2 22.5 L 40.6 26.25 L 42 25 L 42 12.5 L 40.6 12.5 L 39.2 12.5 L 37.8 12.5 L 36.4 12.5 L 35 12.5 L 33.6 12.5 L 32.2 12.5 L 30.8 12.5 L 29.4 12.5 L 28 12.5 L 26.6 12.5 L 25.2 12.5 L 23.8 12.5 L 22.4 12.5 L 21 12.5 L 19.6 12.5 L 18.2 12.5 L 16.8 12.5 L 15.4 12.5 L 14 12.5 L 12.6 12.5 L 11.2 12.5 L 9.8 12.5 L 8.4 12.5 L 7 12.5 L 5.6 12.5 L 4.2 12.5 L 2.8 12.5 L 1.4 12.5 L 0 12.5"
-																	class="highcharts-area" data-z-index="0"
-																	visibility="hidden"></path>
-																<path fill="rgba( 18, 97, 196, 0.1)"
-																	d="M 0 3.125 L 1.4 13.125 L 2.8 14.375 L 4.2 18.125 L 5.6 23.75 L 7 26.25 L 8.4 30 L 9.8 36.25 L 11.2 28.125 L 12.6 25.625 L 14 30.625 L 15.4 37.5 L 16.8 36.875 L 18.2 35 L 19.6 31.875 L 21 33.125 L 22.4 31.25 L 23.8 31.25 L 25.2 28.75 L 26.6 28.125 L 28 20.625 L 29.4 22.5 L 30.8 25.625 L 32.2 30 L 33.6 25.625 L 35 27.5 L 36.4 27.5 L 37.8 25 L 39.2 22.5 L 40.6 26.25 L 42 25 L 42 12.5 L 40.6 12.5 L 39.2 12.5 L 37.8 12.5 L 36.4 12.5 L 35 12.5 L 33.6 12.5 L 32.2 12.5 L 30.8 12.5 L 29.4 12.5 L 28 12.5 L 26.6 12.5 L 25.2 12.5 L 23.8 12.5 L 22.4 12.5 L 21 12.5 L 19.6 12.5 L 18.2 12.5 L 16.8 12.5 L 15.4 12.5 L 14 12.5 L 12.6 12.5 L 11.2 12.5 L 9.8 12.5 L 8.4 12.5 L 7 12.5 L 5.6 12.5 L 4.2 12.5 L 2.8 12.5 L 1.4 12.5 L 0 12.5"
-																	class="highcharts-area highcharts-zone-area-0 highcharts-negative"
-																	data-z-index="0"
-																	clip-path="url(#highcharts-b33avt4-32)"></path>
-																<path fill="rgba( 210, 79, 69, 0.1)"
-																	d="M 0 3.125 L 1.4 13.125 L 2.8 14.375 L 4.2 18.125 L 5.6 23.75 L 7 26.25 L 8.4 30 L 9.8 36.25 L 11.2 28.125 L 12.6 25.625 L 14 30.625 L 15.4 37.5 L 16.8 36.875 L 18.2 35 L 19.6 31.875 L 21 33.125 L 22.4 31.25 L 23.8 31.25 L 25.2 28.75 L 26.6 28.125 L 28 20.625 L 29.4 22.5 L 30.8 25.625 L 32.2 30 L 33.6 25.625 L 35 27.5 L 36.4 27.5 L 37.8 25 L 39.2 22.5 L 40.6 26.25 L 42 25 L 42 12.5 L 40.6 12.5 L 39.2 12.5 L 37.8 12.5 L 36.4 12.5 L 35 12.5 L 33.6 12.5 L 32.2 12.5 L 30.8 12.5 L 29.4 12.5 L 28 12.5 L 26.6 12.5 L 25.2 12.5 L 23.8 12.5 L 22.4 12.5 L 21 12.5 L 19.6 12.5 L 18.2 12.5 L 16.8 12.5 L 15.4 12.5 L 14 12.5 L 12.6 12.5 L 11.2 12.5 L 9.8 12.5 L 8.4 12.5 L 7 12.5 L 5.6 12.5 L 4.2 12.5 L 2.8 12.5 L 1.4 12.5 L 0 12.5"
-																	class="highcharts-area highcharts-zone-area-1 undefined"
-																	data-z-index="0"
-																	clip-path="url(#highcharts-b33avt4-33)"></path>
-																<path fill="none"
-																	d="M 0 3.125 L 1.4 13.125 L 2.8 14.375 L 4.2 18.125 L 5.6 23.75 L 7 26.25 L 8.4 30 L 9.8 36.25 L 11.2 28.125 L 12.6 25.625 L 14 30.625 L 15.4 37.5 L 16.8 36.875 L 18.2 35 L 19.6 31.875 L 21 33.125 L 22.4 31.25 L 23.8 31.25 L 25.2 28.75 L 26.6 28.125 L 28 20.625 L 29.4 22.5 L 30.8 25.625 L 32.2 30 L 33.6 25.625 L 35 27.5 L 36.4 27.5 L 37.8 25 L 39.2 22.5 L 40.6 26.25 L 42 25"
-																	class="highcharts-graph" data-z-index="1"
-																	stroke="#D24F45" stroke-width="1" visibility="hidden"></path>
-																<path fill="none"
-																	d="M 0 3.125 L 1.4 13.125 L 2.8 14.375 L 4.2 18.125 L 5.6 23.75 L 7 26.25 L 8.4 30 L 9.8 36.25 L 11.2 28.125 L 12.6 25.625 L 14 30.625 L 15.4 37.5 L 16.8 36.875 L 18.2 35 L 19.6 31.875 L 21 33.125 L 22.4 31.25 L 23.8 31.25 L 25.2 28.75 L 26.6 28.125 L 28 20.625 L 29.4 22.5 L 30.8 25.625 L 32.2 30 L 33.6 25.625 L 35 27.5 L 36.4 27.5 L 37.8 25 L 39.2 22.5 L 40.6 26.25 L 42 25"
-																	class="highcharts-graph highcharts-zone-graph-0 highcharts-negative"
-																	data-z-index="1" stroke="#0966C6" stroke-width="1"
-																	clip-path="url(#highcharts-b33avt4-32)"></path>
-																<path fill="none"
-																	d="M 0 3.125 L 1.4 13.125 L 2.8 14.375 L 4.2 18.125 L 5.6 23.75 L 7 26.25 L 8.4 30 L 9.8 36.25 L 11.2 28.125 L 12.6 25.625 L 14 30.625 L 15.4 37.5 L 16.8 36.875 L 18.2 35 L 19.6 31.875 L 21 33.125 L 22.4 31.25 L 23.8 31.25 L 25.2 28.75 L 26.6 28.125 L 28 20.625 L 29.4 22.5 L 30.8 25.625 L 32.2 30 L 33.6 25.625 L 35 27.5 L 36.4 27.5 L 37.8 25 L 39.2 22.5 L 40.6 26.25 L 42 25"
-																	class="highcharts-graph highcharts-zone-graph-1 "
-																	data-z-index="1" stroke="#D24F45" stroke-width="1"
-																	clip-path="url(#highcharts-b33avt4-33)"></path>
-																<path fill="none"
-																	d="M -10 3.125 L 0 3.125 L 1.4 13.125 L 2.8 14.375 L 4.2 18.125 L 5.6 23.75 L 7 26.25 L 8.4 30 L 9.8 36.25 L 11.2 28.125 L 12.6 25.625 L 14 30.625 L 15.4 37.5 L 16.8 36.875 L 18.2 35 L 19.6 31.875 L 21 33.125 L 22.4 31.25 L 23.8 31.25 L 25.2 28.75 L 26.6 28.125 L 28 20.625 L 29.4 22.5 L 30.8 25.625 L 32.2 30 L 33.6 25.625 L 35 27.5 L 36.4 27.5 L 37.8 25 L 39.2 22.5 L 40.6 26.25 L 42 25 L 52 25"
-																	visibility="visible" data-z-index="2"
-																	class="highcharts-tracker-line" stroke-linejoin="round"
-																	stroke="rgba(192,192,192,0.0001)" stroke-width="21"></path></g>
-																<g data-z-index="0.1"
-																	class="highcharts-markers highcharts-series-0 highcharts-area-series  highcharts-tracker"
-																	transform="translate(0,0) scale(1 1)"></g></g>
-																<text x="70" text-anchor="middle"
-																	class="highcharts-title" data-z-index="4"
-																	style="color:#333333;font-size:18px;display:none;fill:#333333;"
-																	y="24"></text>
-																<text x="70" text-anchor="middle"
-																	class="highcharts-subtitle" data-z-index="4"
-																	style="color:#666666;fill:#666666;" y="24"></text>
-																<g class="highcharts-axis-labels highcharts-xaxis-labels "
-																	data-z-index="7"></g>
-																<g 	class="highcharts-axis-labels highcharts-yaxis-labels "
-																	data-z-index="7"></g>
-																	</svg>
-														</div>
-													</div></a>
-											</div>
+										</div>
 											<div class="ty03">
 												<dl class="first">
-													<dt>고가</dt>
+													<dt>가격</dt>
 													<dd>
 														<strong class="up"></strong>
 													</dd>
@@ -508,96 +408,7 @@ html, body {
 												<span></span> 
 												<span></span>
 												<span></span>
-												<nav class="ciq-nav">
-													<div class="tool_wrap">
-														<span>
-															<a class="fullchart-btn" target="_blank" href="/full_chart?code=CRIX.UPBIT.KRW-BTC">
-															</a>
-															</span>
-															<span>
-															<a href="#" class="resetLayout">
-															<translate original="초기화">초기화</translate> 
-															</a>
-															</span>
-															<span>
-															<menu-select id="timezoneSelect">
-															<button class="timezone-btn"></button>
-															</menu-select></span><span><menu-select id="periodicitySelect">
-															<span class="title">30분</span> <menu-select-options
-																classname="menu-hover"> <menu-option
-																classname="option"> <translate
-																original="1 Min">1분</translate></menu-option> <menu-option
-																classname="option"> <translate
-																original="3 Min">3분</translate></menu-option> <menu-option
-																classname="option"> <translate
-																original="5 Min">5분</translate></menu-option> <menu-option
-																classname="option"> <translate
-																original="10 Min">10분</translate></menu-option> <menu-option
-																classname="option"> <translate
-																original="15 Min">15분</translate></menu-option> <menu-option
-																classname="option"> <translate
-																original="30 Min">30분</translate></menu-option> <menu-option
-																classname="option"> <translate
-																original="1 Hour">1시간</translate></menu-option> <menu-option
-																classname="option"> <translate
-																original="4 Hour">4시간</translate></menu-option> <menu-option
-																classname="option"> <translate
-																original="1 Day">1일</translate></menu-option> <menu-option
-																classname="option"> <translate
-																original="1 Wk">1주</translate></menu-option> <menu-option
-																classname="option"> <translate
-																original="1 Mon">1달</translate> </menu-option> </menu-select-options> </menu-select> </span>
-														<menu-select id="chartTypeSelect"> <span
-															class="title">캔들</span> <menu-select-options
-															classname="menu-hover"> <menu-option
-															classname="option"> <translate
-															original="Bar">바</translate></menu-option> <menu-option
-															classname="option"> <translate
-															original="Line break">삼선전환도</translate></menu-option> <menu-option
-															classname="option"> <translate
-															original="Line">선</translate></menu-option> <menu-option
-															classname="option"> <translate
-															original="Candle">캔들</translate></menu-option> <menu-option
-															classname="option"> <translate
-															original="Volume candle">캔들볼륨</translate></menu-option> <menu-option
-															classname="option"> <translate
-															original="Hollow candle">투명캔들</translate> </menu-option> </menu-select-options> </menu-select>
-														<span> <menu-select id="studySelect">
-															<span class="title"><translate original="Studies">지표</translate></span>
-
-															<menu-select-options classname="ps-container">
-															<menu-option> <span><translate
-																	original="Volume Chart">거래량</translate></span></menu-option> <menu-option>
-
-															<menu-select id="themeSelect"> <span
-																class="title"> <translate original="테마">테마</translate></span>
-															<menu-select-options> <menu-option
-																classname="option"> <translate
-																original="Default">기본</translate></menu-option> <menu-option
-																classname="option"> <translate
-																original="메로나">메로나</translate></menu-option> <menu-option
-																classname="option"> <translate
-																original="Dark">Dark</translate></menu-option> <menu-option
-																classname="option"> <translate
-																original="+ 테마 수정 / 새 테마 생성">+ 테마 수정 / 새 테마
-															생성</translate></menu-option> <menu-option classname="option"> <translate
-																original="+ 현재 테마 삭제">+ 현재 테마 삭제</translate></menu-option></menu-select-options></menu-select></span>
-														<div id="toolSelect">
-															<menu-select> <span class="title"><translate
-																	original="도구">도구</translate></span> <menu-select-options
-																classname="menu-hover"> <menu-option
-																classname="option"> <translate
-																original="도구 선택 안함">도구 선택 안함</translate></menu-option> <menu-option
-																classname="option">가틀리 패턴</menu-option> <span></span>
-														</div>
-													</div>
-													<div class="Selecttor">
-														<span class="chkB"><a href="#" class="on"><em><translate
-																		original="-">-</translate></em> <translate original="기본 차트">기본
-																차트</translate></a><a href="#" class="disable"><em><translate
-																		original="-">-</translate></em> <translate original="트레이딩뷰">트레이딩뷰</translate></a></span>
-													</div>
-												</nav>
+											
 												</ciq-ui-wrapper>
 												
 												<!-- 차트 시작 -->
@@ -628,20 +439,12 @@ html, body {
 																			original="right-click to manage"> /
 																		manage</translate></span><span><translate original=")">)</translate></span></span></span>
 														</div>
-														<div class="stx_crosshair stx_crosshair_x" style="left: 1037.5px; display: none;" id="crossX"></div>
+														<!-- <div class="stx_crosshair stx_crosshair_x" style="left: 1037.5px; display: none;" id="crossX"></div>
 														<div class="stx_crosshair stx_crosshair_y" style="top: 171px; left: 0px; width: 894px; display: none;"	id="crossY"></div>
 														<div class="stx_chart_controls" style="display: block; bottom: 119px;" id="chartControls">
-															<div id="chartSize">
-																<span id="zoomOut" class="stx-zoom-out"><div class="zoom-div">
-																		<translate original="*Alt+스크롤: 차트 기간 확대/축소">*Alt+스크롤:			차트 기간 확대/축소</translate>
-																	</div></span><span id="zoomIn" class="stx-zoom-in">
-																	<div class="zoom-div">
-																		<translate original="*Alt+스크롤: 차트 기간 확대/축소">*Alt+스크롤:
-																		차트 기간 확대/축소</translate>
-																	</div></span>
-															</div>
+														
 														</div>
-														<div class="stx-float-date"style="left: 996.5px; bottom: 77px; visibility: hidden;" id="floatDate"></div>
+	 												<div class="stx-float-date"style="left: 996.5px; bottom: 77px; visibility: hidden;" id="floatDate"></div>
 														<div class="stx-panel-control" id="iconsTemplate">
 															<div class="stx-panel-title"></div>
 															<div class="stx-btn-panel">
@@ -659,9 +462,9 @@ html, body {
 															<div class="stx-btn-panel">
 																<span class="stx-ico-close"></span>
 															</div>
-														</div>
-														<div class="stx-baseline-handle" style="display: none;" id="baselineHandle"></div>
-														<div class="stx-holder stx-panel-chart" cq-panel-name="chart" 	style="right: 0px; top: 0px; left: 0px; height: 308px; display: block;">
+														</div>  -->
+													<!-- 	<div class="stx-baseline-handle" style="display: none;" id="baselineHandle"></div> -->
+														<!-- <div class="stx-holder stx-panel-chart" cq-panel-name="chart" 	style="right: 0px; top: 0px; left: 0px; height: 308px; display: block;">
 															<div class="stx-subholder" cq-panel-name="chart" style="z-index: 1; left: 0px; width: 901px; top: 0px; height: 278px;">
 																<div class="stx-panel-control stx-show stx-chart-panel" id="iconsTemplate">
 																	<div class="stx-panel-title chart-title">BTC/KRW</div>
@@ -685,40 +488,28 @@ html, body {
 																	<span></span>
 																</div>
 															</div>
-														</div> 
-										
-
-
+														</div>  -->
 														<stx-hu-tooltip style="left: -1000px; right: auto; top: 131px;">
 														<stx-hu-tooltip-field auto=""> <stx-hu-tooltip-field-name>일시:</stx-hu-tooltip-field-name>
 														<stx-hu-tooltip-field-value>04/22</stx-hu-tooltip-field-value></stx-hu-tooltip-field>
-														<stx-hu-tooltip-field auto=""> <stx-hu-tooltip-field-name>시가:</stx-hu-tooltip-field-name>
-														<stx-hu-tooltip-field-value>6,128,000</stx-hu-tooltip-field-value></stx-hu-tooltip-field>
-														<stx-hu-tooltip-field auto=""> <stx-hu-tooltip-field-name>고가:</stx-hu-tooltip-field-name>
-														<stx-hu-tooltip-field-value>6,134,000</stx-hu-tooltip-field-value></stx-hu-tooltip-field>
-														<stx-hu-tooltip-field auto=""> <stx-hu-tooltip-field-name>저가:</stx-hu-tooltip-field-name>
-														<stx-hu-tooltip-field-value>6,121,000</stx-hu-tooltip-field-value></stx-hu-tooltip-field>
-														<stx-hu-tooltip-field auto=""> <stx-hu-tooltip-field-name>종가:</stx-hu-tooltip-field-name>
-														<stx-hu-tooltip-field-value>6,123,000</stx-hu-tooltip-field-value></stx-hu-tooltip-field>
-														<stx-hu-tooltip-field auto=""> <stx-hu-tooltip-field-name>거래량:</stx-hu-tooltip-field-name>
-														<stx-hu-tooltip-field-value>123.1</stx-hu-tooltip-field-value></stx-hu-tooltip-field></stx-hu-tooltip>
+														<stx-hu-tooltip-field auto="">
+														 <stx-hu-tooltip-field-name>가격:</stx-hu-tooltip-field-name>
+														<stx-hu-tooltip-field-value>6,128,000</stx-hu-tooltip-field-value>
+														</stx-hu-tooltip-field>
+														<stx-hu-tooltip-field auto="">
+														 <stx-hu-tooltip-field-name>거래량:</stx-hu-tooltip-field-name>
+														<stx-hu-tooltip-field-value>123.1</stx-hu-tooltip-field-value>
+														</stx-hu-tooltip-field>
+														</stx-hu-tooltip>
 														<!-- 메인차트 -->
-																<div id="chartdiv"></div>
-														<canvas height="385" width="966" style="position: absolute; left: 0px; width: 966px; height: 385px;"></canvas>
+														<div id="chartdiv"></div>
+													<!--<canvas height="385" width="966" style="position: absolute; left: 0px; width: 966px; height: 385px;"></canvas>
 														<canvas height="385" width="966" 	style="position: absolute; left: 0px; display: none; width: 966px; height: 385px;"></canvas>
-														<canvas height="385" width="966" 	style="position: absolute; left: 0px; display: none; width: 966px; height: 385px;"></canvas>
+														<canvas height="385" width="966" 	style="position: absolute; left: 0px; display: none; width: 966px; height: 385px;"></canvas> -->
 													</div>
 												</div>
-											</div> </span>
-										<!-- <span class="graphB" id="tv_chart_container"
-										style="display: none; width: 100%; position: relative; overflow: hidden; height: 451px;"><iframe
-											id="tradingview_eb9c4" name="tradingview_eb9c4"
-											src="js/charting_library/static/ko-tv-chart.1f5f8727d52f80cf1894.html#symbol=BTCKRW%2FCRIX.UPBIT.KRW-BTC&amp;interval=1D&amp;widgetbar=%7B%22details%22%3Afalse%2C%22watchlist%22%3Afalse%2C%22watchlist_settings%22%3A%7B%22default_symbols%22%3A%5B%5D%7D%7D&amp;timeFrames=%5B%7B%22text%22%3A%221m%22%2C%22resolution%22%3A%2230%22%7D%2C%7B%22text%22%3A%225d%22%2C%22resolution%22%3A%225%22%7D%2C%7B%22text%22%3A%221d%22%2C%22resolution%22%3A%221%22%7D%5D&amp;locale=ko&amp;uid=tradingview_eb9c4&amp;clientId=upbit.com&amp;userId=public_user_id&amp;chartsStorageUrl=https%3A%2F%2Fsaveload.tradingview.com&amp;chartsStorageVer=1.1&amp;customCSS=%2Fcss%2Ftvcustom.css%3F2&amp;debug=false&amp;timezone=Asia%2FSeoul&amp;theme=light"
-											frameborder="0" allowtransparency="true" scrolling="no"
-											allowfullscreen=""
-											style="display: block; width: 100%; height: 100%;">
-											</iframe>
-										</span>  -->
+											</div> 
+										</span>
 									</div>
 								</article>
 								<div class="halfB">
@@ -1266,7 +1057,7 @@ html, body {
 															</div>
 															<div class="stx-baseline-handle" style="display: none;"
 																id="baselineHandle"></div>
-															<div class="stx-holder stx-panel-chart"
+															<!-- <div class="stx-holder stx-panel-chart"
 																cq-panel-name="chart"
 																style="right: 0px; top: 0px; left: 0px; height: 198.4px; display: block;">
 																<div class="stx-subholder" cq-panel-name="chart"
@@ -1295,7 +1086,7 @@ html, body {
 																		<span></span>
 																	</div>
 																</div>
-															</div>
+															</div> -->
 															<div class="stx-ico-handle"
 																style="display: none; left: 0px; width: 415px;"
 																id="null">
@@ -1432,25 +1223,12 @@ html, body {
 							</section>
 							
 							<section class="ty02">
-							
-								<div style="height: 0px;"></div>
+								<div style="height:0px;"></div>
 								<div id="right_content">
 								<article>
-									<span class="searchB">
-										<div class="search">
-											<input type="text" placeholder="코인명/심볼검색" value=""><a
-												href="#" class="btn" title="검색">검색</a>
-										</div>
-										<div class="bookmark">
-											<a href="#" class="" title="관심코인">관심코인</a>
-										</div>
-										<div class="setting">
-											<a href="#" class="" title="화면설정">화면설정</a>
-										</div></span><span class="tabB"><ul class="ty05">
+										<span class="tabB">
+										<ul class="ty05">
 											<li><a href="#" class="on" title="원화거래">원화거래</a></li>
-											<li><a href="#" class="" title="BTC">BTC</a></li>
-											<li><a href="#" class="" title="ETH">ETH</a></li>
-											<li><a href="#" class="" title="USDT">USDT</a></li>
 											<li><a href="#" class="" title="보유코인">보유코인</a></li>
 										</ul>
 										<table class="highlight">
@@ -1479,11 +1257,12 @@ html, body {
 												</tr>
 											</thead>
 										</table>
+										<div id="r_root">
 										<div class="scrollB">
-											<div
-												style="position: relative; overflow: hidden; width: 100%; height: 630px;">
+											<div style="position: relative; overflow: hidden; width: 100%; height: 630px;">
 												<div id="right_con"
 													style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; overflow: scroll; margin-right: -17px; margin-bottom: -17px;">
+													<!-- 오른쪽 네비바 -->
 													<table class="highlight">
 														<colgroup>
 															<col width="26">
@@ -1494,7 +1273,7 @@ html, body {
 															<col width="*">
 														</colgroup>
 														<tbody>
-															<tr class="down on">
+															<tr id="" class="down on">
 																<td>
 																	<span class="bookmark">
 																		<a href="#">즐겨찾기</a>
@@ -1540,13 +1319,11 @@ html, body {
 													</div>
 												</div>
 											</div>
-										</div></span>
+										</div>
+										</span>
+										</div>
 								</article>
 								</div>
-								
-								<article class="app__main--erefX">
-						
-					</article>
 							</section>
 							<footer>
 							<div class="app__wrap--2K1mv">
@@ -1656,6 +1433,7 @@ html, body {
 						</div>
 							
 					</div>
+					
 				
 </body>
 <!-- upbit -->
@@ -1681,13 +1459,20 @@ html, body {
 <script src="<%=application.getContextPath()%>/resources/js/team/ngh.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/app.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/router.js"></script>
-<<<<<<< HEAD
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-=======
+<<<<<<< HEAD
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+
 <script src="<%=application.getContextPath()%>/resources/js/ngh/nghchart.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/kth/scroll.js"></script>
 <script type="text/javascript">initMoving(document.getElementById("right_content"), 50, 50, 50)</script>	
->>>>>>> d8f569880484084dfba131122d17a9d505e2089c
+
+=======
+<script src="<%=application.getContextPath()%>/resources/js/ngh/nghchart.js"></script>
+<%-- <script src="<%=application.getContextPath()%>/resources/js/kth/scroll.js"></script>
+<script type="text/javascript">initMoving(document.getElementById("right_content"), 50, 50, 50)</script>	 --%>
+>>>>>>> 09fc948617b9abf9edf754134ba45936d5042bda
 <script>
 app.init('<%=application.getContextPath()%>');
 ngh.init('<%=application.getContextPath()%>');

@@ -14,7 +14,7 @@ public class CustomersServiceImpl implements CustomersService{
 	@Autowired CustomersMapper cm;
 
 	@Override
-	public void registCustomer(Map<String,Object> map) {
+	public void registCustomer(Map<?,?> map) {
 		cm.insertCustomer(map);
 	}
 
@@ -31,7 +31,7 @@ public class CustomersServiceImpl implements CustomersService{
 	}
 
 	@Override
-	public Customers retrieveCustomer(Map<String,Object> map) {
+	public Customers retrieveCustomer(Map<?,?> map) {
 		return cm.selectCustomer(map);
 	}
 
@@ -42,9 +42,9 @@ public class CustomersServiceImpl implements CustomersService{
 	}
 
 	@Override
-	public boolean existsCustomerID(Customers cust) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean existsCustomerID(Map<?,?> map) {
+		
+		return cm.existsCustomerID(map);
 	}
 
 	@Override
