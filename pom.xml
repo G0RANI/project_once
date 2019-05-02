@@ -298,15 +298,11 @@
 			<scope>test</scope>
 		</dependency>
 		<!--crawler  -->
-	<dependency>
-		<groupId>edu.uci.ics</groupId>
-		<artifactId>crawler4j</artifactId>
-		<version>4.3</version>
-	</dependency>
+	
 	<dependency>
 		<groupId>org.jsoup</groupId>
 		<artifactId>jsoup</artifactId>
-		<version>1.10.3</version>
+		<version>1.8.3</version>
 	</dependency>           
 	</dependencies>
     <build>

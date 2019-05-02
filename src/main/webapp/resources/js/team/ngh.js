@@ -9,29 +9,40 @@ ngh=(()=>{
 		setContentView();
 	};
 	let setContentView=()=>{	
+		
 		once_chart();
 		right_con();
+		once_val();
 	};
 	
-	/*차트*/
+	/*once 차트 */
 	let once_chart=()=>{
 		alert('ONCE 들어왔다');
-	/*	$.ajax({
-			 url : $.ctx()+'/ngh/once',
-	   		 type : 'get',
-	   		 dataType : 'json',
-	   		 contentType : 'application/json',
-	   		 success : d =>{
-	   			 alert('성공');
-	            },
-	            error : e=>{
-	             alert('실패');
-	            }
-		});*/
+		
+		$.getJSON($.ctx()+'/ngh/once',d=>{
+			 $('#l_val').empty();
+			 $('<div id="l_val">'
+					 +'	<div class="down ty01">'
+					 +'		<span class="first">'
+					 +'		 <strong>'+d.ls+'</strong>'
+					 +'		  <em>KRW</em>'
+					 +'		  </span>'
+					 +'		  <span>'
+					 +'		  <p class="tit">전일대비</p> '
+					 +'			<strong>-0.37%</strong>'
+					 +'		<strong class="upDown">-23,000</strong></span>'
+					 +'	</div>'
+					 +'</div>').appendTo('.marketB');
+			 
+		/*	playAlert = setInterval(()=>{
+				alert(d.ls);
+			},3000);*/
+		});
 	}
 	
 	/*오른쪽 네비*/
 	let right_con=()=>{
+		
 		alert('오른쪽  네비  들어왔다');
 		$.getScript($.js()+'/component/ngh_compo.js',()=>{
 			$('#r_root').empty();
@@ -139,7 +150,11 @@ ngh=(()=>{
 			alert('riple');
 		})
 	}*/
-	
+	 let once_val=()=>{
+		 
+		 
+		
+	 }
 	
 	return{init:init,
 		onCreate:onCreate};
