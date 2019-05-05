@@ -1,7 +1,7 @@
 
 
 
-
+/*메인차트*/
 
  /**
  * Generate random chart data
