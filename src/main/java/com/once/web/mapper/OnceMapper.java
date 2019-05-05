@@ -11,11 +11,11 @@ import com.once.web.domain.Once;
 public interface OnceMapper {
 public void insertOnce(Once once);
 	
-	public List<?> selectAllOnceList();
+	public List<Once> selectAllOnceList();
 	
-	public Once  selectOnce(Once once);
+	public Map<String, Object>  selectOnce(Once once);
 	
-	public Once selectOnces(Once once);
+	public List<Once> selectPrice();
 	
 	public Once retriveOnce(Once once);
 	

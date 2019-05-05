@@ -4,11 +4,18 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
      <mapper namespace="com.once.web.mapper.OnceMapper">
      
-<select id="selectOnce" resultType="com.once.web.domain.Once" parameterType="com.once.web.domain.Once">
-SELECT OSEQ,
-	   DATE,
-	   PRICE
-		FROM ONCE
-		WHERE OSEQ LIKE #{oseq}
+<select id="selectAllOnceList" resultType="com.once.web.domain.Once">
+	SELECT OSEQ,
+		   ODATE,
+		   PRICE
+			FROM ONCE
 </select>
+<select id="selectPrice" resultType="com.once.web.domain.Once">
+	SELECT *
+	FROM ONCE
+	ORDER BY OSEQ DESC
+	LIMIT 2;
+</select>
+
+
 </mapper>

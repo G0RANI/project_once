@@ -35,26 +35,19 @@
 <script async="" src="https://platform.twitter.com/widgets.js"></script>
 <style data-styled="" data-styled-version="4.2.0"></style>
 
+<!-- <script src="http://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="http://www.amcharts.com/lib/3/serial.js"></script>
+<script src="http://www.amcharts.com/lib/3/themes/light.js"></script>
+<script src="http://www.amcharts.com/lib/3/amstock.js"></script> -->
 <script src="https://www.amcharts.com/lib/4/core.js"></script>
 <script src="https://www.amcharts.com/lib/4/charts.js"></script>
 <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
 
- <script src="http://www.amcharts.com/lib/3/amcharts.js"></script>
-<script src="http://www.amcharts.com/lib/3/serial.js"></script>
-<script src="http://www.amcharts.com/lib/3/themes/light.js"></script>
-<script src="http://www.amcharts.com/lib/3/amstock.js"></script>
-
-
-
 <style type="text/css">
 
-/* #chartdiv {
-  width: 100%;
-  height: 500px;
-} */
 #chartdiv {
   width: 100%;
-  height: 100%;
+  height: 500px;
 }
 
 html, body {
@@ -305,6 +298,48 @@ html, body {
 																</tbody>
 															</table>
 														</div>
+														<div class="title">코인 소개</div>
+														<div class="desc">
+															<p>
+																<span>비트코인은 최초로 구현된 암호화폐입니다. 발행 및 유통을 관리하는 중앙권력이나
+																	중간상인 없이, P2P 네트워크 기술을 이용하여 네트워크에 참여하는 사용자들이 주체적으로 화폐를
+																	발행하고 이체내용을 공동으로 관리합니다. 이를 가능하게 한 블록체인 기술을 처음으로 코인에 도입한
+																	것이 바로 비트코인입니다.<br>
+															</p>
+														</div>
+														<div class="title">코인 특징</div>
+														<div class="desc">
+															<p>
+														</div>
+														<div class="title">핵심 가치</div>
+														<div class="desc">
+															<p>
+																<span>(키워드: 통화로 사용될 수 있는 보편성 및 편의성)<br></span><span>
+																	<br>
+															</p>
+														</div>
+														<div class="title">개발자 정보</div>
+														<div class="tableLayout">
+															<table>
+																<colgroup>
+																	<col width="100px">
+																	<col width="*">
+																	<col width="100px">
+																	<col width="*">
+																</colgroup>
+																<tbody>
+																	<tr>
+																		<th>대표인물</th>
+																		<td>나카모토 사토시(가명)</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+														<div class="etcNotice">
+															위 정보는 코인에 대한 이해를 돕기 위해서 제공하는 것으로, 투자 권유를 목적으로 하지 않습니다.<br>제공되는
+															정보는 오류 또는 지연이 발생할 수 있으며, 두나무는 제공된 정보에 의한 투자결과에 대해 법적인 책임을
+															지지 않습니다.<br>
+														</div>
 														<div class="apiBox">
 															<div>
 																<iframe id="twitter-widget-0" scrolling="no"
@@ -359,6 +394,79 @@ html, body {
 													<div id="chartContainerexchangeChartiq"
 														class="chartContainer toolbarOn"
 														style="background-color: rgb(255, 255, 255);">
+														
+														<div class=""></div>
+														<span class="stx-btn stx_annotation_save"
+															style="display: none;" id="annotationSave"><translate
+																original="save">save</translate></span><span
+															class="stx-btn stx_annotation_cancel"
+															style="display: none; margin-left: 10px;"
+															id="annotationCancel"><translate original="cancel">cancel</translate></span>
+														
+														<div id="mSticky"
+															style="display: none; top: 33px; right: 221.5px;">
+															<span id="mStickyInterior" style="display: none;"></span>
+															<span id="mStickyRightClick" class="rightclick_drawing"><span
+																class="overlayEdit stx-btn" style="display: none"><span>&nbsp;</span></span>
+																<span id="overlayTrashCan" class="stx-btn"
+																style="display: none"><span>&nbsp;</span></span> <span
+																id="mouseDeleteInstructions" style="display: none;"><span><translate
+																			original="(">(</translate></span><span id="mouseDeleteText"><translate
+																			original="right-click to delete">right
+																		click to delete</translate></span><span id="mouseManageText"><translate
+																			original="right-click to manage"> /
+																		manage</translate></span><span><translate original=")">)</translate></span></span></span>
+														</div>
+														<!-- <div class="stx_crosshair stx_crosshair_x" style="left: 1037.5px; display: none;" id="crossX"></div>
+														<div class="stx_crosshair stx_crosshair_y" style="top: 171px; left: 0px; width: 894px; display: none;"	id="crossY"></div>
+														<div class="stx_chart_controls" style="display: block; bottom: 119px;" id="chartControls">
+														
+														</div>
+	 												<div class="stx-float-date"style="left: 996.5px; bottom: 77px; visibility: hidden;" id="floatDate"></div>
+														<div class="stx-panel-control" id="iconsTemplate">
+															<div class="stx-panel-title"></div>
+															<div class="stx-btn-panel">
+																<span class="stx-ico-up"></span>
+															</div>
+															<div class="stx-btn-panel">
+																<span class="stx-ico-focus"></span>
+															</div>
+															<div class="stx-btn-panel">
+																<span class="stx-ico-down"></span>
+															</div>
+															<div class="stx-btn-panel">
+																<span class="stx-ico-edit"></span>
+															</div>
+															<div class="stx-btn-panel">
+																<span class="stx-ico-close"></span>
+															</div>
+														</div>  -->
+													<!-- 	<div class="stx-baseline-handle" style="display: none;" id="baselineHandle"></div> -->
+														<!-- <div class="stx-holder stx-panel-chart" cq-panel-name="chart" 	style="right: 0px; top: 0px; left: 0px; height: 308px; display: block;">
+															<div class="stx-subholder" cq-panel-name="chart" style="z-index: 1; left: 0px; width: 901px; top: 0px; height: 278px;">
+																<div class="stx-panel-control stx-show stx-chart-panel" id="iconsTemplate">
+																	<div class="stx-panel-title chart-title">BTC/KRW</div>
+																	<div class="stx-btn-panel" style="display: none;">
+																		<span class="stx-ico-up"></span>
+																	</div>
+																	<div class="stx-btn-panel" style="">
+																		<span class="stx-ico-focus"></span>
+																	</div>
+																	<div class="stx-btn-panel">
+																		<span class="stx-ico-down"></span>
+																	</div>
+																	<div class="stx-btn-panel" style="display: none;">
+																		<span class="stx-ico-edit"></span>
+																	</div>
+																	<div class="stx-btn-panel" style="display: none;">
+																		<span class="stx-ico-close"></span>
+																	</div>
+																</div>
+																<div id="home" class="stx_jump_today home" 	style="display: none">
+																	<span></span>
+																</div>
+															</div>
+														</div>  -->
 														<stx-hu-tooltip style="left: -1000px; right: auto; top: 131px;">
 														<stx-hu-tooltip-field auto=""> <stx-hu-tooltip-field-name>일시:</stx-hu-tooltip-field-name>
 														<stx-hu-tooltip-field-value>04/22</stx-hu-tooltip-field-value></stx-hu-tooltip-field>
@@ -373,6 +481,9 @@ html, body {
 														</stx-hu-tooltip>
 														<!-- 메인차트 -->
 														<div id="chartdiv"></div>
+													<!--<canvas height="385" width="966" style="position: absolute; left: 0px; width: 966px; height: 385px;"></canvas>
+														<canvas height="385" width="966" 	style="position: absolute; left: 0px; display: none; width: 966px; height: 385px;"></canvas>
+														<canvas height="385" width="966" 	style="position: absolute; left: 0px; display: none; width: 966px; height: 385px;"></canvas> -->
 													</div>
 												</div>
 											</div> 
@@ -380,31 +491,370 @@ html, body {
 									</div>
 								</article>
 								<div class="halfB">
-									<div class="leftB" style="height: 420px;">
-									<span class="dataNone" id="exchangeChartiq1">
-											<div id="chartIQexchangeChartiq1" class="">
-												<ciq-ui-wrapper>
-													 	<span></span>
-													 	<span></span>
-														<span></span>
-													<nav class="ciq-nav-mini">
-														<div class="left">
-															<strong><translate original="미니차트">미니차트</translate></strong>
+									<div class="leftB">
+										<article>
+											<span class="cell03 tabB type02"><div class="askPrice">
+													<ul class="top">
+														<li><a href="#" class="on" title="일반호가">일반호가</a></li>
+														<li><a href="#" class="" title="누적호가">누적호가</a></li>
+														<li><a href="#" class="" title="호가주문">호가주문</a>
+															<div class="tooltip">
+																<i></i>업데이트된 호가주문 기능으로 빠르고 간편하게 주문해보세요.<a href="">X</a>
+															</div></li>
+													</ul>
+												</div>
+												</span>
+												<span class="askpriceB"><div class="scrollB" style="height: 629px;">
+													<div style="position: relative; overflow: hidden; width: 100%; height: 629px;">
+														<div style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; overflow: scroll; margin-right: -17px; margin-bottom: -17px;">
+															<table>
+																<colgroup>
+																	<col width="42">
+																	<col width="120">
+																	<col width="*">
+																	<col width="120">
+																	<col width="42">
+																</colgroup>
+																<tbody>
+																	<tr class="down">
+																		<td></td>
+																		<td class="bar"><a href="#"><div style="width: 12.8097%;">-</div>
+																				<p>0.766</p></a></td>
+																		<td class="downB"><a href="#"><div class="ty03">
+																					<strong>6,136,000</strong>
+																				</div>
+																				<div class="ty02">-0.15%</div></a></td>
+																		<td colspan="2" rowspan="15" class="inner01"><dl
+																				class="first">
+																				<dt>거래량</dt>
+																				<dd>
+																					6,642 <i>BTC</i>
+																				</dd>
+																				<dt>거래대금</dt>
+																				<dd>
+																					40,636 <i><img
+																						src="https://cdn.upbit.com/images/ico_million.a7e2ecb.png"
+																						alt="백만원"></i><em>(최근24시간)</em>
+																				</dd>
+																			</dl>
+																			<dl>
+																				<dt>52주 최고</dt>
+																				<dd class="up">
+																					10,963,000<em>(2018.05.06)</em>
+																				</dd>
+																				<dt>52주 최저</dt>
+																				<dd class="down">
+																					3,562,000<em>(2018.12.15)</em>
+																				</dd>
+																			</dl>
+																			<dl>
+																				<dt>전일종가</dt>
+																				<dd>6,145,000</dd>
+																				<dt>당일고가</dt>
+																				<dd class="up">
+																					6,163,000<em class="up">+0.29%</em>
+																				</dd>
+																				<dt>당일저가</dt>
+																				<dd class="down">
+																					6,092,000<em class="down">-0.86%</em>
+																				</dd>
+																			</dl></td>
+																	</tr>
+																	<tr class="down">
+																		<td></td>
+																		<td class="bar"><a href="#"><div style="width: 27.6096%;">-</div>
+																				<p>1.652</p></a></td>
+																		<td class="downB"><a href="#"><div 	class="ty03">
+																					<strong>6,135,000</strong>
+																				</div>
+																			<div class="ty02">-0.16%</div></a></td>
+																	</tr>
+																	<tr class="down">
+																		<td></td>
+																		<td class="bar"><a href="#"><div 	style="width: 8.86624%;">-</div>
+																				<p>0.530</p></a></td>
+																		<td class="downB"><a href="#"><div 	class="ty03">
+																					<strong>6,134,000</strong>
+																				</div>
+																				<div class="ty02">-0.18%</div></a></td>
+																	</tr>
+																	<tr class="down">
+																		<td></td>
+																		<td class="bar"><a href="#"><div 		style="width: 51.3802%;">-</div>
+																				<p>3.074</p></a></td>
+																		<td class="downB"><a href="#"><div 	class="ty03">
+																					<strong>6,133,000</strong>
+																				</div>
+																				<div class="ty02">-0.20%</div></a></td>
+																	</tr>
+																	<tr class="down">
+																		<td></td>
+																		<td class="bar"><a href="#"><div 	style="width: 77.812%;">-</div>
+																				<p>4.655</p></a></td>
+																		<td class="downB"><a href="#"><div 	class="ty03">
+																					<strong>6,132,000</strong>
+																				</div>
+																				<div class="ty02">-0.21%</div></a></td>
+																	</tr>
+																	<tr class="down">
+																		<td></td>
+																		<td class="bar"><a href="#"><div style="width: 83.585%;">-</div>
+																				<p>5.000</p></a></td>
+																		<td class="downB"><a href="#"><div class="ty03">
+																					<strong>6,131,000</strong>
+																				</div>
+																				<div class="ty02">-0.23%</div></a></td>
+																	</tr>
+																	<tr class="down">
+																		<td></td>
+																		<td class="bar"><a href="#"><div style="width: 100%;">-</div>
+																				<p>5.982</p></a></td>
+																		<td class="downB"><a href="#"><div class="ty03">
+																					<strong>6,130,000</strong>
+																				</div>
+																				<div class="ty02">-0.24%</div></a></td>
+																	</tr>
+																	<tr class="down">
+																		<td></td>
+																		<td class="bar"><a href="#"><div
+																					style="width: 37.221%;">-</div>
+																				<p>2.227</p></a></td>
+																		<td class="downB"><a href="#"><div
+																					class="ty03">
+																					<strong>6,129,000</strong>
+																				</div>
+																				<div class="ty02">-0.26%</div></a></td>
+																	</tr>
+																	<tr class="down">
+																		<td></td>
+																		<td class="bar"><a href="#"><div
+																					style="width: 25.8843%;">-</div>
+																				<p>1.548</p></a></td>
+																		<td class="downB"><a href="#"><div
+																					class="ty03">
+																					<strong>6,128,000</strong>
+																				</div>
+																				<div class="ty02">-0.28%</div></a></td>
+																	</tr>
+																	<tr class="down">
+																		<td></td>
+																		<td class="bar"><a href="#"><div style="width: 19.1055%;">-</div>
+																				<p>1.143</p></a></td>
+																		<td class="downB"><a href="#"><div 				class="ty03">
+																					<strong>6,127,000</strong>
+																				</div>
+																				<div class="ty02">-0.29%</div></a></td>
+																	</tr>
+																	<tr class="down">
+																		<td></td>
+																		<td class="bar"><a href="#"><div style="width: 88.1533%;">-</div>
+																				<p>5.273</p></a></td>
+																		<td class="downB"><a href="#">
+																				<div class="ty03">
+																					<strong>6,126,000</strong>
+																				</div>
+																				<div class="ty02">-0.31%</div>
+																		</a></td>
+																	</tr>
+																	<tr class="down">
+																		<td></td>
+																		<td class="bar"><a href="#"><div style="width: 24.4421%;">-</div>
+																				<p>1.462</p></a></td>
+																		<td class="downB"><a href="#"><div 	class="ty03">
+																					<strong>6,125,000</strong>
+																				</div>
+																				<div class="ty02">-0.33%</div></a></td>
+																	</tr>
+																	<tr class="down">
+																		<td></td>
+																		<td class="bar"><a href="#"><div style="width: 50.151%;">-</div>
+																				<p>3.000</p></a></td>
+																		<td class="downB"><a href="#"><div class="ty03">
+																					<strong>6,124,000</strong>
+																				</div>
+																			<div class="ty02">-0.34%</div></a></td>
+																	</tr>
+																	<tr class="down">
+																		<td></td>
+																		<td class="bar"><a href="#">
+																			<div style="width: 5.80194%;">-</div>
+																				<p>0.347</p></a></td>
+																		<td class="downB"><a href="#"><div class="ty03">
+																					<strong>6,123,000</strong>
+																				</div>
+																				<div class="ty02">-0.36%</div></a></td>
+																	</tr>
+																	<tr class="down">
+																		<td></td>
+																		<td class="bar"><a href="#"><div style="width: 55.9475%;">-</div>
+																				<p>3.347</p></a></td>
+																		<td class="downB positionR"><a href="#"><div class="ty03">
+																					<span class="selected"></span><strong>6,122,000</strong>
+																				</div>
+																				<div class="ty02">-0.37%</div></a></td>
+																	</tr>
+																	<tr class="up">
+																		<td colspan="2" rowspan="15" class="inner02"><dl>
+																				<dt>체결강도</dt>
+																				<dd>+113.11%</dd>
+																			</dl>
+																			<div class="overflow">
+																				<table>
+																					<colgroup>
+																						<col width="50%">
+																						<col width="*">
+																					</colgroup>
+																					<thead>
+																						<tr>
+																							<th>체결가</th>
+																							<th>체결량</th>
+																						</tr>
+																					</thead>
+																					<tbody>
+																						<tr>
+																							<td>6,122,000</td>
+																							<td class="up">2.000</td>
+																						</tr>
+																						<tr>
+																							<td>6,122,000</td>
+																							<td class="up">0.092</td>
+																						</tr>
+																						<tr>
+																							<td>6,122,000</td>
+																							<td class="down">0.289</td>
+																						</tr>
+																					</tbody>
+																				</table>
+																			</div></td>
+																		<td class="downB"><a href="#">
+																				<div class="ty03">
+																					<strong>6,121,000</strong>
+																				</div>
+																				<div class="ty02">-0.39%</div>
+																		</a></td>
+																		<td class="bar"><a href="#"><div
+																					style="width: 9.20584%;">-</div>
+																				<p>0.551</p> </a></td>
+																		<td class="last"></td>
+																	</tr>
+																	<tr class="up">
+																		<td class="downB"><a href="#">
+																				<div class="ty03">
+																					<strong>6,120,000</strong>
+																				</div>
+																				<div class="ty02">-0.41%</div>
+																		</a></td>
+																		<td class="bar"><a href="#">
+																				<div style="width: 11.4826%;">-</div>
+																				<p>0.687</p>
+																		</a></td>
+																		<td class="last"></td>
+																	</tr>
+																	<tr class="up">
+																		<td class="downB"><a href="#">
+																				<div class="ty03">
+																					<strong>6,119,000</strong>
+																				</div>
+																				<div class="ty02">-0.42%</div>
+																		</a></td>
+																		<td class="bar"><a href="#">
+																				<div style="width: 31.3608%;">-</div>
+																				<p>1.876</p>
+																		</a></td>
+																		<td class="last"></td>
+																	</tr>
+																	<tr class="up">
+																		<td class="downB"><a href="#">
+																				<div class="ty03">
+																					<strong>6,118,000</strong>
+																				</div>
+																				<div class="ty02">-0.44%</div>
+																		</a></td>
+																		<td class="bar"><a href="#">
+																				<div style="width: 34.2546%;">-</div>
+																				<p>2.049</p>
+																		</a></td>
+																		<td class="last"></td>
+																	</tr>
+																	<tr class="up">
+																		<td class="downB"><a href="#">
+																				<div class="ty03">
+																					<strong>6,117,000</strong>
+																				</div>
+																				<div class="ty02">-0.46%</div>
+																		</a></td>
+
+																		<td class="bar"><a href="#">
+																				<div style="width: 66.135%;">-</div>
+																				<p>3.956</p>
+																		</a></td>
+																		<td class="last"></td>
+																	</tr>
+																	<tr class="up">
+																		<td class="downB"><a href="#"><div
+																					class="ty03">
+																					<strong>6,116,000</strong>
+																				</div>
+																				<div class="ty02">-0.47%</div></a></td>
+																		<td class="bar"><a href="#"><div
+																					style="width: 74.9488%;">-</div>
+																				<p>4.483</p></a></td>
+																		<td class="last"></td>
+																	</tr>
+																	<tr class="up">
+																		<td class="downB"><a href="#"><div
+																					class="ty03">
+																					<strong>6,115,000</strong>
+																				</div>
+																				<div class="ty02">-0.49%</div></a></td>
+																		<td class="bar"><a href="#"><div
+																					style="width: 37.3129%;">-</div>
+																				<p>2.232</p></a></td>
+																		<td class="last"></td>
+																	</tr>
+																	<tr class="up">
+																		<td class="downB"><a href="#"><div
+																					class="ty03">
+																					<strong>6,114,000</strong>
+																				</div>
+																				<div class="ty02">-0.50%</div></a></td>
+																		<td class="bar"><a href="#"><div
+																					style="width: 0.933641%;">-</div>
+																				<p>0.056</p></a></td>
+																		<td class="last"></td>
+																	</tr>
+																</tbody>
+															</table>
 														</div>
-													</nav>
-													</ciq-ui-wrapper>
-													<div class="exchangeChartiq1 ciq-chart-area" style="height: 374px;">
-														<div id="chartContainerexchangeChartiq1"
-															class="chartContainer toolbarOn"
-															style="background-color: rgb(255, 255, 255);">
-															<div id="chartdiv_1"></div>
-															<div class=""></div>
-															<!-- 미니차트 -->
+														<div style="position: absolute; height: 6px; right: 2px; bottom: 2px; left: 2px; border-radius: 3px;">
+															<div style="position: relative; display: block; height: 100%; cursor: pointer; border-radius: inherit; background-color: rgba(0, 0, 0, 0.2); width: 0px; transform: translateX(0px);"></div>
+														</div>
+														<div style="position: absolute; width: 6px; right: 2px; bottom: 2px; top: 2px; border-radius: 3px;">
+															<div style="position: relative; display: block; width: 100%; cursor: pointer; border-radius: inherit; background-color: rgba(0, 0, 0, 0.2); height: 292px; transform: translateY(166.269px);"></div>
 														</div>
 													</div>
 												</div>
-												</span>
-										
+												<table class="total">
+													<colgroup>
+														<col width="42">
+														<col width="120">
+														<col width="*">
+														<col width="120">
+														<col width="42">
+													</colgroup>
+													<tbody>
+														<tr>
+															<td></td>
+															<td class="rAlign" style="font-size: 12px;">40.005</td>
+															<td class="askPrice"><p>
+																	주문잔량합계<i>(BTC)</i>
+																</p></td>
+															<td class="lAlign" style="font-size: 12px;">27.692</td>
+															<td class="last"></td>
+														</tr>
+													</tbody>
+												</table>
+											</span>
 										</article>
 									</div>
 									<div class="rightB">
@@ -479,7 +929,29 @@ html, body {
 												</div></span>
 										</article>
 										<article>
-											
+											<span class="dataNone" id="exchangeChartiq1">
+											<div id="chartIQexchangeChartiq1" class="">
+												<ciq-ui-wrapper>
+													 	<span></span>
+													 	<span></span>
+														<span></span>
+													<nav class="ciq-nav-mini">
+														<div class="left">
+															<strong><translate original="미니차트">미니차트</translate></strong>
+														</div>
+													</nav>
+													</ciq-ui-wrapper>
+													<div class="exchangeChartiq1 ciq-chart-area">
+														<div id="chartContainerexchangeChartiq1"
+															class="chartContainer toolbarOn"
+															style="background-color: rgb(255, 255, 255);">
+															<div class=""></div>
+															<div id="chartdiv"></div>
+															<!-- 미니차트 -->
+														</div>
+													</div>
+												</div>
+												</span>
 										</article>
 									</div>
 								</div>
