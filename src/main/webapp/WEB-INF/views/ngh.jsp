@@ -1413,7 +1413,7 @@ html, body {
 										<dd>
 											<a target="_blank" rel="noopener noreferrer"
 												href="https://static.upbit.com/common/bzc_kakao.html"
-												title="카카오톡 문의(24시간)">카카오톡 문의(24시간)</a>
+												title="카카오톡 문의(25시간)">카카오톡 문의(24시간)</a>
 										</dd>
 										<dd>
 											<a title="1:1 문의하기" href="/service_center/qna">1:1 문의하기</a>
@@ -1460,7 +1460,6 @@ html, body {
 <script src="<%=application.getContextPath()%>/resources/js/app.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/router.js"></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-<<<<<<< HEAD
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 
@@ -1468,11 +1467,7 @@ html, body {
 <script src="<%=application.getContextPath()%>/resources/js/kth/scroll.js"></script>
 <script type="text/javascript">initMoving(document.getElementById("right_content"), 50, 50, 50)</script>	
 
-=======
 <script src="<%=application.getContextPath()%>/resources/js/ngh/nghchart.js"></script>
-<%-- <script src="<%=application.getContextPath()%>/resources/js/kth/scroll.js"></script>
-<script type="text/javascript">initMoving(document.getElementById("right_content"), 50, 50, 50)</script>	 --%>
->>>>>>> 09fc948617b9abf9edf754134ba45936d5042bda
 <script>
 app.init('<%=application.getContextPath()%>');
 ngh.init('<%=application.getContextPath()%>');
