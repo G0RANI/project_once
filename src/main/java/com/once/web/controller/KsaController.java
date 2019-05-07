@@ -81,18 +81,15 @@ public class KsaController {
 		return ac;
 	}
 	
+	@SuppressWarnings("unchecked")
 	@ResponseBody
 	@RequestMapping(value ="/retrieve_cust/{id}", method = RequestMethod.POST)
 	public Map<String,Object> selectCustInfo(@PathVariable String id) {
 		System.out.println("selectCustInfo 회원아이디 : "+id);
 		IFunction f = (Object o) -> cust.retrieveCustomer(id);
-		ct = (Customers) f.apply(id);
-		tr = (Transactions) f.apply(id);
-//		map.put("ct", ct);
-//		map.put("tr", tr);
-		System.out.println("cust정보 : "+ct);
-		System.out.println("tr정보 : "+tr);
-		return map;
+		System.out.println(f.apply(id));
+		//map.put("ct", f.apply(id));
+		return (Map<String, Object>) f.apply(id);
 	}
 	
 	@GetMapping("/payment")

@@ -99,19 +99,30 @@ ksa=(()=>{
                      		 $('#assets strong').eq(1).html(s.hcoin+' <i>KRW</i>');
                           });
                        $('.ty04 a').eq(1).click(function(){
-                              alert('거래내역');
+                    	   let tx_date = new Date(s.date);
+                    	   function convert(x) {
+                    		    var date = new Date(x),
+                    		        mnth = ("0" + (date.getMonth()+1)).slice(-2),
+                    		        day  = ("0" + date.getDate()).slice(-2),
+                    		    	hours  = ("0" + date.getHours()).slice(-2),
+                    		        minutes = ("0" + date.getMinutes()).slice(-2);
+                    		    var date2 = [date.getFullYear(), mnth, day].join("-");
+                    		    var date3 = [hours, minutes ].join(":");
+                    		   return [ date2, date3 ].join(" ");
+                    		}
                               $('.ty04 a').attr('class', '');
                               $(this).attr('class', 'on');
                               $('.ownB').empty();
                               $('.ownB').html(ksa_compo.investment_trx());
                               $('.ty04 tbody').empty();
-                              $('.ty04 tbody').html('<tr>'
-                            		  			+'<td class="lAlign">'+s.date+'</td>'
-					                			+'<td class="cAlign"><strong>'+s.tseq+'</strong></td>'
-					                			+'<td class="cAlign up">'+s.rw+'</td>'
-					                			+'<td><strong>0.00015797 <i>'+s.rwm+'</i></strong></td>'
-					                			+'</tr>');
-                                                       
+                            	  $('.ty04 tbody').html('<tr>'
+                      		  			+'<td class="lAlign">'+convert(tx_date)+'</td>'
+				                			+'<td class="cAlign"><strong>'+s.tseq+'</strong></td>'
+				                			+'<td class="cAlign up">'+s.rw+'</td>'
+				                			+'<td><strong>0.00015797 <i>'+s.rwm+'</i></strong></td>'
+				                			+'<td><strong>0.00015797 <i>'+s.rwm+'</i></strong></td>'
+				                			+'<td><strong>0.00015797 <i>'+s.rwm+'</i></strong></td>'
+				                			+'</tr>');
                        });
                   	 },
                   	 error:e=>{	 
@@ -202,7 +213,7 @@ ksa=(()=>{
 		    	             		contentType : "application/json; charset=UTF-8",
 		    	             		success:(res)=>{
 		    	             			alert('성공');
-		    	             			location.assign(x+"/ngh");
+		    	             			location.assign(x);
 		    	             			/*$('#nav3').empty();
 		    	             			$('<li><a style="cursor:pointer" id="ksa_m" title="마이페이지">마이페이지</a></li>').appendTo('#nav3');
 		    	             			$('<li><a style="cursor:pointer" id="logout" title="로그아웃">로그아웃</a></li>').appendTo('#nav3');*/
