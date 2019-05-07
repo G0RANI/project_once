@@ -17,7 +17,6 @@ ngh=(()=>{
 	
 	/*once 차트 */
 	let once_chart=()=>{
-		alert('ONCE 들어왔다');
 		
 		$.getJSON($.ctx()+'/ngh/once',d=>{
 			 $('#l_val').empty();
@@ -33,17 +32,11 @@ ngh=(()=>{
 					 +'		<strong class="upDown">-23,000</strong></span>'
 					 +'	</div>'
 					 +'</div>').appendTo('.marketB');
-			 
-		/*	playAlert = setInterval(()=>{
-				alert(d.ls);
-			},3000);*/
 		});
 	}
-	
 	/*오른쪽 네비*/
 	let right_con=()=>{
 		
-		alert('오른쪽  네비  들어왔다');
 		$.getScript($.js()+'/component/ngh_compo.js',()=>{
 			$('#r_root').empty();
 			let arr=[{

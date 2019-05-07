@@ -53,23 +53,7 @@ public class NghController {
 		 once.setOseq(seq);
 		 IFunction i = (Object o)-> onceimpl.selectOnce(once);
 		 once = (Once) i.apply(once);
-		 System.out.println("원스 값 : "+once.toString());
-		 
-		 return once;
-	}
-	
-	
-	@ResponseBody
-	@RequestMapping("/ngh/chart2/{seq}")
-	public Once chart2(
-			@PathVariable String seq){
-		 logger.info("원스차트에 들어왔습니다!!!");
-		 once = new Once();
-		 once.setOseq(seq);
-		 IFunction i = (Object o)-> onceimpl.selectOnce(once);
-		 once = (Once) i.apply(once);
-		 System.out.println("원스 값 : "+once.toString());
-		 
+		 System.out.println("원스 값 : "+once.toString());		 
 		 return once;
 	}
 }

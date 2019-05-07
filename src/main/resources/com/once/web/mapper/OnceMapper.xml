@@ -6,7 +6,7 @@
      
 <select id="selectOnce" resultType="com.once.web.domain.Once" parameterType="com.once.web.domain.Once">
 SELECT OSEQ,
-	   DATE,
+	   ODATE,
 	   PRICE
 		FROM ONCE
 		WHERE OSEQ LIKE #{oseq}

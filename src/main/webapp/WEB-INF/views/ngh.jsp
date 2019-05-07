@@ -45,11 +45,9 @@
 
 <style type="text/css">
 
-
-
 #chartdiv {
   width: 100%;
-  height: 500px;
+  height: 700px;
 }
 
 html, body {
@@ -1460,7 +1458,6 @@ html, body {
 <script src="<%=application.getContextPath()%>/resources/js/app.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/router.js"></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-<<<<<<< HEAD
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 
@@ -1468,13 +1465,12 @@ html, body {
 <script src="<%=application.getContextPath()%>/resources/js/kth/scroll.js"></script>
 <script type="text/javascript">initMoving(document.getElementById("right_content"), 50, 50, 50)</script>	
 
-=======
 <script src="<%=application.getContextPath()%>/resources/js/ngh/nghchart.js"></script>
 <%-- <script src="<%=application.getContextPath()%>/resources/js/kth/scroll.js"></script>
 <script type="text/javascript">initMoving(document.getElementById("right_content"), 50, 50, 50)</script>	 --%>
->>>>>>> 09fc948617b9abf9edf754134ba45936d5042bda
 <script>
 app.init('<%=application.getContextPath()%>');
 ngh.init('<%=application.getContextPath()%>');
+
 </script>
 </html>
