@@ -11,6 +11,7 @@
   <result property="tseq" column="tseq"/>
   <result property="rw" column="rw"/>
   <result property="rwm" column="rwm"/>
+  <result property="date" column="date" />
 </resultMap>
 
 <insert id="insertCustomer">
