@@ -24,11 +24,16 @@ public class CustServiceServiceImpl implements CustServiceService{
 	public List<CustService> selectCustServiceList(Proxy pxy) {
 		return cusemap.selectCustServiceList(pxy);
 	}
+	
+	@Override
+	public List<CustService> selectSearchCustServiceList(Proxy pxy) {
+		// TODO Auto-generated method stub
+		return cusemap.selectSearchCustServiceList(pxy);
+	}
 
 	@Override
 	public CustService selectCustService(CustService cuse) {
-		// TODO Auto-generated method stub
-		return null;
+		return cusemap.selectCustService(cuse);
 	}
 
 	@Override
@@ -36,6 +41,11 @@ public class CustServiceServiceImpl implements CustServiceService{
 		return cusemap.countCustServices();
 	}
 
+	@Override
+	public int searchCountCustServices(String search) {
+		return cusemap.searchCountCustServices(search);
+	}
+	
 	@Override
 	public boolean existsCustService(CustService cuse) {
 		// TODO Auto-generated method stub
@@ -53,5 +63,12 @@ public class CustServiceServiceImpl implements CustServiceService{
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void updateViews(CustService cuse) {
+		cusemap.updateViews(cuse);
+	}
+
+
 
 }

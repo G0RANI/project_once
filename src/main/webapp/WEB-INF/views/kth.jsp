@@ -173,9 +173,9 @@
 	  .crawler_text{
 	  	text-align: center;
 	  }  
-	      @font-face {
+    @font-face {
         font-family: 'overwatch';
-        src: url('fonts/koverwatch.woff2');
+        src: url('resources/csv/koverwatch.woff2');
     }
 	  
 	</style>
@@ -204,9 +204,7 @@
 <div class="trends" id="once">
 	<div class="mainB">
 		<section class="ty01">              
-		<div id="wordSpace"></div>
-		<script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js" type="text/JavaScript"></script>
-			<script src="https://d3js.org/d3.v3.min.js"></script>
+		<div id="word"></div>
 		                <article>
 		                    <span class="titB">
 		                    <strong>
@@ -519,7 +517,7 @@
 		                            </div>
 		                        </div></a>
 		                </article>
-		                <article>
+		                <article id="decode">
 		                    <span class="titB"><strong>암호화폐 해독하기</strong><span
 		                        class="list_more"><a href="#" class="b_prv">이전</a><a
 		                            href="#" class="b_nxt">다음</a></span></span><span class="coinList"><ul
@@ -567,7 +565,7 @@
 <script src="<%=application.getContextPath()%>/resources/js/component/component.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/component/ksa_compo.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/component/kth_compo.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/kth/d3.js"></script>
+<%-- <script src="<%=application.getContextPath()%>/resources/js/kth/d3.js"></script> --%>
 <script src="<%=application.getContextPath()%>/resources/js/kth/scroll.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/app.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/common/util.js"></script>

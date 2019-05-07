@@ -10,5 +10,6 @@ public class CustService {
 	private String csq,
 				   title,
 				   cdate,
+				   content,
 				   views;
 }
