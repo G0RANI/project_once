@@ -21,8 +21,6 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script
-	src="https://cdn.upbit.com/manifest-bundle-f95e81eead967f24e5c0.js"></script>
 <script src="https://cdn.upbit.com/js/bluebird-3.3.4.min.js"
 	integrity="sha384-Zum86V5Chub72Pcj/UopirJ0QwQ+LgKZFTlVMt/yaVwYbROQJl/q8Nj2e72vZel2"
 	crossorigin="anonymous"></script>
@@ -34,17 +32,13 @@
 	crossorigin="anonymous"></script>
 <script async="" src="https://platform.twitter.com/widgets.js"></script>
 <style data-styled="" data-styled-version="4.2.0"></style>
-
 <script src="https://www.amcharts.com/lib/4/core.js"></script>
 <script src="https://www.amcharts.com/lib/4/charts.js"></script>
 <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-
  <script src="http://www.amcharts.com/lib/3/amcharts.js"></script>
 <script src="http://www.amcharts.com/lib/3/serial.js"></script>
 <script src="http://www.amcharts.com/lib/3/themes/light.js"></script>
 <script src="http://www.amcharts.com/lib/3/amstock.js"></script>
-
-
 
 <style type="text/css">
 
@@ -789,7 +783,6 @@ html, body {
 
 <!-- once -->
 <script src="<%=application.getContextPath()%>/resources/js/common/auth.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/common/once.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/common/util.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/component/component.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/component/ksa_compo.js"></script>
