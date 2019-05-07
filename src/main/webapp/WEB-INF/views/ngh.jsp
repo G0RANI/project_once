@@ -35,7 +35,7 @@
 <script src="https://www.amcharts.com/lib/4/core.js"></script>
 <script src="https://www.amcharts.com/lib/4/charts.js"></script>
 <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
- <script src="http://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="http://www.amcharts.com/lib/3/amcharts.js"></script>
 <script src="http://www.amcharts.com/lib/3/serial.js"></script>
 <script src="http://www.amcharts.com/lib/3/themes/light.js"></script>
 <script src="http://www.amcharts.com/lib/3/amstock.js"></script>
@@ -46,6 +46,7 @@
   width: 100%;
   height: 500px;
 } */
+
 #chartdiv {
   width: 100%;
   height: 100%;
@@ -769,10 +770,7 @@ html, body {
 							</div>
 						</footer>
 						</div>
-							
 					</div>
-					
-				
 </body>
 <!-- upbit -->
 <script src="https://cdn.upbit.com/vendors-chunk-344e4004ead25be2326b.js"></script>
@@ -798,11 +796,7 @@ html, body {
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
-
 <script src="<%=application.getContextPath()%>/resources/js/ngh/nghchart.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/kth/scroll.js"></script>
-<script type="text/javascript">initMoving(document.getElementById("right_content"), 50, 50, 50)</script>	
-
 
 <script>
 app.init('<%=application.getContextPath()%>');

@@ -54,7 +54,7 @@ ngh=(()=>{
 			 /*오른쪽 네비*/
 			 $('#r_root').empty();
 			 
-				let arr=[{txt : '원쓰코인', name : 'once'},	  
+				let arr=[{txt : '원스코인', name : 'once'},	  
 		              {txt : '비트코인', name : 'bit'},
 		              {txt : '비트코인캐시', name : 'cash'}, 
 		              {txt : '리플', name : 'riple'}, 
@@ -132,11 +132,8 @@ ngh=(()=>{
 					/*click*/
 				});
 				/*each*/
-				
-			
 		});
 	}
-	
 	return{init:init,
 		onCreate:onCreate};
 })();

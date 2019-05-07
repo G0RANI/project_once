@@ -3,19 +3,16 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
      <mapper namespace="com.once.web.mapper.OnceMapper">
-     
 <select id="selectAllOnceList" resultType="com.once.web.domain.Once">
-	SELECT OSEQ,
-		   ODATE,
-		   PRICE
-			FROM ONCE
+	SELECT OSEQ,ODATE,PRICE
+    FROM ONCE
+    WHERE ODATE BETWEEN '2019-05-06 14:00:00' AND '2019-05-06 16:00:00'
 </select>
-
 
 <select id="selectPrice" resultType="com.once.web.domain.Once">
 	SELECT *
 	FROM ONCE
 	ORDER BY OSEQ DESC
-	LIMIT 2;
+	LIMIT 2
 </select>
 </mapper>
