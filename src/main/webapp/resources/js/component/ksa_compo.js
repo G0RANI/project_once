@@ -603,11 +603,7 @@ ksa_compo = {
 		    +'        </span>'
 		},
 		investment_trx:()=>{
-<<<<<<< HEAD
-			return '<center>' 
-=======
 			return '<center>'
->>>>>>> 82d8dc075535a40dde0e25bb80825ed9bf7f7ca7
 			+'        <div class="profitW">'
 			+'            <div class="proSearch">'
 			+'                <select>'
@@ -619,16 +615,6 @@ ksa_compo = {
 			+'                </select>'
 			+'            </div>'
 			+'            <table class="ty04">'
-<<<<<<< HEAD
-			+'                <thead>'
-			+'                    <tr>'
-			+'                        <th style="text-align:center">주문시간</th>'
-			+'                        <th style="text-align:center">코인</th>'
-			+'                        <th style="text-align:center">거래종류</th>'
-			+'                        <th style="text-align:center">거래수량</th>'
-			+'                        <th style="text-align:center">거래단가</th>'
-			+'                        <th style="text-align:center">거래금액</th>'
-=======
 			+'                <colgroup>'
 			+'                    <col width="95">'
 			+'                    <col width="90">'
@@ -646,7 +632,6 @@ ksa_compo = {
 			+'                        <th>거래수량</th>'
 			+'                        <th>거래단가&nbsp;<a href="#" class="tooltip"><div>입출금 내역의 거래단가는 입출금 시점의 시세를 반영해 계산합니다.</div></a></th>'
 			+'                        <th>거래금액</th>'
->>>>>>> 82d8dc075535a40dde0e25bb80825ed9bf7f7ca7
 			+'                    </tr>'
 			+'                </thead>'
 			+'            </table>'
@@ -662,17 +647,6 @@ ksa_compo = {
 			+'                                    <td><strong>0.00015797 <i>BTC</i></strong></td>'
 			+'                                    <td><strong>19,470,000 <i>KRW</i></strong></td>'
 			+'                                    <td><strong>3,076 <i>KRW</i></strong></td>'
-<<<<<<< HEAD
-			+'                                </tr>'
-			+'                                <tr>'
-			+'                                    <td class="lAlign">2017.12.30 17:48</td>'
-			+'                                    <td class="cAlign"><strong>KRW</strong></td>'
-			+'                                    <td class="cAlign down">출금</td>'
-			+'                                    <td><strong>286,536 <i>KRW</i></strong></td>'
-			+'                                    <td><strong>0 <i>KRW</i></strong></td>'
-			+'                                    <td><strong>286,536 <i>KRW</i></strong></td>'
-=======
->>>>>>> 82d8dc075535a40dde0e25bb80825ed9bf7f7ca7
 			+'                                </tr>'
 			+'                                <tr>'
 			+'                                    <td class="lAlign">2017.12.30 17:39</td>'
@@ -701,11 +675,7 @@ ksa_compo = {
 			+'                </div>'
 			+'            </div>'
 			+'        </div>'
-<<<<<<< HEAD
-			+'</center>' 
-=======
 			+'</center>'
->>>>>>> 82d8dc075535a40dde0e25bb80825ed9bf7f7ca7
 		},
 		d_w_charge:()=>{
 			return'<div id="root">'

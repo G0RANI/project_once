@@ -30,6 +30,4 @@
  	FROM CUSTOMERS
  	WHERE id LIKE #{id}
  </select>
- 
- 
 </mapper>
