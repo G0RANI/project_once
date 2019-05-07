@@ -298,7 +298,6 @@
 			<scope>test</scope>
 		</dependency>
 		<!--crawler  -->
-	
 	<dependency>
 		<groupId>org.jsoup</groupId>
 		<artifactId>jsoup</artifactId>

@@ -10,5 +10,6 @@ public class CoinArticle {
 				   nseq,
 				   title,
 				   adate,
-				   url;
+				   url,
+				   keyword	;
 }
