@@ -31,8 +31,8 @@ public class CustomersServiceImpl implements CustomersService{
 	}
 
 	@Override
-	public Customers retrieveCustomer(Map<?,?> map) {
-		return cm.selectCustomer(map);
+	public Customers retrieveCustomer(String id) {
+		return cm.selectCustomer(id);
 	}
 
 	@Override
