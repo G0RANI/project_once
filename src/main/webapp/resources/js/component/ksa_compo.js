@@ -568,7 +568,7 @@ ksa_compo = {
 			+'                    </ul></span>'
 			+'                  <div class="TabArea BgGrey KRW">'
 			+'                    <span class="btnB"><em>KRW 입금(충전)을 위해 실명확인 입출금 계좌'
-			+'                        인증이 필요합니다.</em><a id="port" class="btn" title="실명확인 입출금 계좌 인증하기"'
+			+'                        인증이 필요합니다.</em><a id="port" class="btn btn-info btn-lg" data-toggle="modal" href="payment" title="실명확인 입출금 계좌 인증하기"'
 			+'                      ">실명확인 입출금 계좌 인증하기</a></span><span'
 			+'                      class="listB" style="height: 431px;"><strong><i>!</i>KRW'
 			+'                        입출금 유의사항</strong>'
