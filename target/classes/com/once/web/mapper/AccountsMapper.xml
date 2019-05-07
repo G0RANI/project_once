@@ -8,8 +8,10 @@
 	VALUES (#{acnum}, #{money}, #{id})
   </insert>
   <select id="selectAccount" resultType="com.once.web.domain.Accounts">
- 	SELECT * 
- 	FROM ACCOUNT
- 	WHERE id LIKE #{id}
+ 	SELECT AC.id, AC.acnum, CU.hcoin
+	FROM ACCOUNT AS AC 
+	  INNER join CUSTOMERS AS CU
+	  ON  AC.id LIKE CU.id
+	WHERE AC.id LIKE #{id};
   </select>
 </mapper>
