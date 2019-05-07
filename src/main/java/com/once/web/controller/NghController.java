@@ -44,20 +44,7 @@ public class NghController {
 		  return map;
 	}
 	@ResponseBody
-<<<<<<< HEAD
-	@RequestMapping("/ngh/chart/{seq}")
-	public Once chart(
-			@PathVariable String seq){
-		 logger.info("원스차트에 들어왔습니다!!!");
-		 once = new Once();
-		 once.setOseq(seq);
-		 IFunction i = (Object o)-> onceimpl.selectOnce(once);
-		 once = (Once) i.apply(once);
-		 System.out.println("원스 값 : "+once.toString());		 
-		 return once;
-	}
-=======
-	@RequestMapping("/ngh/chart")
+	@RequestMapping("/ngh/ch")
 	public Map<String, Object>  chart(
 			){
 		logger.info("원스차트에 들어왔습니다!!!");
@@ -68,9 +55,7 @@ public class NghController {
 		System.out.println(ls.toString());
 		System.out.println("원스에 값"+i.apply(once).toString());
 		map.put("ls", ls);
-		
 		 return map;
 	}
 	
->>>>>>> 045a3ec049ff6bbf3279d0805cc72625a2c4df9d
 }

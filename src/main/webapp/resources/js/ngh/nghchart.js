@@ -1,101 +1,50 @@
 
-<<<<<<< HEAD
-	// Themes begin
-	am4core.useTheme(am4themes_animated);
-	// Themes end
-
-	var chart = am4core.create("chartdiv", am4charts.XYChart);
-
-	var data = [];
-	var value = 50;
-	for(let i = 0; i < 300; i++){
-
-		  date = new Date();
-		  date.setHours(0,0,0,0);
-		  date.setDate(i);
-		 // $.getJSON('/web/ngh/chart/'+i,d=>{
-			  value -= Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 10);
-//});
-		  
-		  data.push({date:date, value: value});
-	
-	}
-
-	chart.data = data;
-
-	// Create axes
-	var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
-	dateAxis.renderer.minGridDistance = 60;
-
-	var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-
-	// Create series
-	var series = chart.series.push(new am4charts.LineSeries());
-	series.dataFields.valueY = "value";
-	series.dataFields.dateX = "date";
-	series.tooltipText = "{value}"
-
-	series.tooltip.pointerOrientation = "vertical";
-
-	chart.cursor = new am4charts.XYCursor();
-	chart.cursor.snapToSeries = series;
-	chart.cursor.xAxis = dateAxis;
-
-	//chart.scrollbarY = new am4core.Scrollbar();
-	chart.scrollbarX = new am4core.Scrollbar();
-
-	}); // end am4core.ready()
-=======
-
-
 /*메인차트*/
-
  /**
  * Generate random chart data
  */
 var chartData1 = [];
 function generateChartData() {
- /* var firstDate = new Date();
-  firstDate.setDate( firstDate.getDate() - 30 );
-  firstDate.setHours( 0, 0, 0, 0 );*/
-setInterval( function() {
+	let firstDate = new Date();
+	firstDate.setDate( firstDate.getDate() - 2000);
+	firstDate.setHours(0, 0, 0, 0);
+//setInterval( function() {
   $.ajax({
-		url : '/web/ngh/chart',
+		url : '/web/ngh/ch',
 		type : 'get',
 	    dataType:'json',
 		 success : d=>{
-				 alert('once의 값 : 성공 ');
-
-				  for ( var i = 0; i < d.ls.length; i++ ) {
-				  /*  var newDate = new Date(firstDate);
-				    newDate.setDate( newDate.getDate() + i );*/
-					var date1 = d.ls[i].odate;
-				    var a1 = d.ls[i].price;
-				    var b1 = d.ls[i].price;
+			 		let i = 0;
+				  for ( i = 0; i < d.ls.length; i++ ) {
+				    let newDate = new Date(d.ls[i].odate);
+				    newDate.setDate(newDate.getDate() + i );
+				 /*   newDate = d.ls[i].odate;*/
+				    let a1 = d.ls[i].price;
+				    let b1 = d.ls[i].price;
 				    chartData1.push({
-				      "date": date1,
+				      "date": newDate,
 				      "value": a1,
 				      "volume": b1
 				    });
-					  chart.dataSets[ 0 ].dataProvider.push( {
-						  date: date1,
+					  chart.dataSets[0].dataProvider.push( {
+						  date: newDate,
 						  value: a1,
 						  volume: b1
-					  } );
+					  });
 					  chart.validateData();
 				  }
-					  if ( chart.mouseDown )
+					  if (chart.mouseDown)
 						  return;
 				   /*	  var newDate = new Date( chartData1[ chartData1.length - 1 ].date );
 				      newDate.setDate( newDate.getDate() + 1 );
 					  var i = chartData1.length;*/
 		 },
 		 error : e =>{
-			alert('ajax 실팩'); 
+			alert('ajax 실패'); 
 			console.log(e);
 		 }
 	});
-  }, 6000 );
+ // }, 6000 );
   //ajax
 }
 generateChartData();
@@ -110,7 +59,7 @@ var chart = AmCharts.makeChart( "chartdiv", {
   "glueToTheEnd": true,
 
   // Defining data sets
-  "dataSets": [ {
+  "dataSets": [{
     "title": "first data set",
     "fieldMappings": [ {
       "fromField": "value",
@@ -153,38 +102,57 @@ var chart = AmCharts.makeChart( "chartdiv", {
     "graph": "g1",
     "usePeriod": "WW"
   },
+	
+/*	// Create axes
+	var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+	dateAxis.renderer.minGridDistance = 60;
+	var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+	// Create series
+	var series = chart.series.push(new am4charts.LineSeries());
+	series.dataFields.valueY = "value";
+	series.dataFields.dateX = "date";
+	series.tooltipText = "{value}"
+	series.tooltip.pointerOrientation = "vertical";
+	chart.cursor = new am4charts.XYCursor();
+	chart.cursor.snapToSeries = series;
+	chart.cursor.xAxis = dateAxis;
+	//chart.scrollbarY = new am4core.Scrollbar();
+	chart.scrollbarX = new am4core.Scrollbar();
+	}); */
+  
 
   // Period Selector
   "periodSelector": {
-    "position": "left",
-    "periods": [ {
-      "period": "DD",
-      "count": 10,
-      "label": "10 days"
-    }, {
-      "period": "MM",
-      "selected": true,
-      "count": 1,
-      "label": "1 month"
-    }, {
-      "period": "YYYY",
-      "count": 1,
-      "label": "1 year"
-    }, {
-      "period": "YTD",
-      "label": "YTD"
-    }, {
-      "period": "MAX",
-      "label": "MAX"
-    } ]
-  },
+	    "position": "left",
+	    "periods": [ {
+	      "period": "SS",
+	      "count": 10,
+	      "label": "10 days"
+	    }, {
+	      "period": "SS",
+	      "selected": true,
+	      "count": 1,
+	      "label": "1 month"
+	    }, {
+	      "period": "SS",
+	      "count": 1,
+	      "label": "1 year"
+	    }, {
+	      "period": "SS",
+	      "label": "YTD"
+	    }, {
+	      "period": "SS",
+	      "label": "MAX"
+	    } ]
+	  },
 
-  // Data Set Selector
+// Data Set Selector
   "dataSetSelector": {
     "position": "left"
   },
+
   // Event listeners
-  "listeners": [ {
+  "listeners": [{
     "event": "rendered",
     "method": function( event ) {
       chart.mouseDown = false;
@@ -195,13 +163,8 @@ var chart = AmCharts.makeChart( "chartdiv", {
         chart.mouseDown = false;
       }
     }
-  } ]
+  }]
 } );
-
-/**
- * Set up interval to update the data periodically
- */
-
 
 /*메인차트*/
 	/*am4core.ready(function() {
@@ -250,10 +213,6 @@ var chart = AmCharts.makeChart( "chartdiv", {
 		chart.scrollbarX = new am4core.Scrollbar();
 		}); */
 	
-	
-	
-	
-	
 //미니차트
 	// end am4core.ready()
 		am4core.ready(function() {
@@ -264,11 +223,10 @@ var chart = AmCharts.makeChart( "chartdiv", {
 			var data = [];
 			var value = 0;
 				$.ajax({
-					url : '/web/ngh/chart',
+					url : '/web/ngh/ch',
 					type : 'get',
 				    dataType:'json',
 					 success : d=>{
-							 alert('once의 값 : 성공 ');
 							 for(let i = 0; i < d.ls.length; i++){
 								 console.log(d.ls[i].price);	
 								  let date = new Date();
@@ -280,7 +238,6 @@ var chart = AmCharts.makeChart( "chartdiv", {
 								console.log(date);
 								  data.push({date:d.ls[i].odate,
 									  		value:d.ls[i].price});
-
 						}
 						console.log(data);
 						  chart.data = data;
@@ -290,6 +247,8 @@ var chart = AmCharts.makeChart( "chartdiv", {
 						console.log(e);
 					 }
 				});
+				
+				
 			// Create axes
 			var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
 			dateAxis.renderer.minGridDistance = 60;
@@ -309,85 +268,3 @@ var chart = AmCharts.makeChart( "chartdiv", {
 	
 	
 	
-	
-	/*am4core.ready(function() {
-		// Themes begin
-		am4core.useTheme(am4themes_animated);
-		// Themes end
-		// Create chart
-		var chart = am4core.create("chartdiv_1", am4charts.XYChart);
-		chart.paddingRight = 20;
-		chart.data = generateChartData();
-		var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
-		dateAxis.baseInterval = {
-		  "timeUnit": "minute",
-		  "count": 1
-		};
-		dateAxis.tooltipDateFormat = "HH:mm, d MMMM";
-		var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-		valueAxis.tooltip.disabled = true;
-		valueAxis.title.text = "Unique visitors";
-		var series = chart.series.push(new am4charts.LineSeries());
-		series.dataFields.dateX = "date";
-		series.dataFields.valueY = "visits";
-		series.tooltipText = "Visits: [bold]{valueY}[/]";
-		series.fillOpacity = 0.3;
-		chart.cursor = new am4charts.XYCursor();
-		chart.cursor.lineY.opacity = 0;
-		chart.scrollbarX = new am4charts.XYChartScrollbar();
-		chart.scrollbarX.series.push(series);
-		chart.events.on("datavalidated", function () {
-		    dateAxis.zoom({start:0.8, end:1});
-		});
-		function generateChartData() {
-		    var chartData = [];
-		    // current date
-		    var firstDate = new Date();
-		    // now set 500 minutes back
-		   firstDate.setMinutes(firstDate.getDate() - 500);
-		    // and generate 500 data items
-		    var visits = 500;
-			$.ajax({
-				url : '/web/ngh/chart',
-				type : 'get',
-			    dataType:'json',
-				 success : d=>{
-						 alert('once의 값 : 성공 ');
-						 for(let i = 0; i < d.ls.length; i++){
-							 console.log(d.ls[i].price);
-							  let newDate = new Date(firstDate);
-							  newDate.setMinutes(newDate.getMinutes() + i);
-							  visits -= Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 10);
-							  //let date = Date.parse(d.ls[i].date);
-							console.log(d.ls[i].odate);
-							chartData.push({date:newDate,
-								  		visits:visits});
-							return chartData;
-					}
-					console.log(data);
-				 },
-				 error : e =>{
-					alert('ajax 실팩'); 
-					console.log(e);
-				 }
-			});
-		    for (var i = 0; i < 500; i++) {
-		        var newDate = new Date(firstDate);
-		        
-		        
-		        newDate.setMinutes(newDate.getMinutes() + i);
-		        visits += Math.round((Math.random()<0.5?1:-1)*Math.random()*10);
-		        
-		        chartData.push({
-		            date: newDate,
-		            visits: visits
-		        });
-		    }
-		    return chartData;
-		}
-		});
-	*/
-		
-
-		
->>>>>>> 045a3ec049ff6bbf3279d0805cc72625a2c4df9d
