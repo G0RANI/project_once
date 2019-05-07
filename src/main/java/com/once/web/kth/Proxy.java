@@ -136,9 +136,15 @@ public class Proxy {
     public void word(int wordpage) throws Exception {
 //    	page = wordpage;
     	page =1;
+<<<<<<< HEAD
     	File file = new File("C:\\Users\\\\1027\\git\\project_once\\src\\main\\webapp\\resources\\csv\\csv.csv");
     	file.delete();
     	String csvFileName = "C:\\Users\\\\1027\\git\\project_once\\src\\main\\webapp\\resources\\csv\\csv.csv";
+=======
+    	File file = new File("C:\\Users\\namgi\\git\\project_once\\src\\main\\webapp\\resources\\csv\\csv.csv");
+    	file.delete();
+    	String csvFileName = "C:\\Users\\namgi\\git\\project_once\\src\\main\\webapp\\resources\\csv\\csv.csv";
+>>>>>>> c20f323bdee56a3ffd8a1e220d8077a87b7d8765
     	BufferedWriter writer = new BufferedWriter(
     			new OutputStreamWriter(new FileOutputStream(csvFileName),"UTF-8"));
     	writer.write("text,frequency\n");

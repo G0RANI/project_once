@@ -2,6 +2,7 @@ Manifest-Version: 1.0
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Built-By: 1027
 Build-Jdk: 1.8.0_201
 =======
@@ -16,5 +17,9 @@ Build-Jdk: 1.8.0_191
 Built-By: hb1005
 Build-Jdk: 1.8.0_211
 >>>>>>> ngh
+=======
+Built-By: namgi
+Build-Jdk: 1.8.0_201
+>>>>>>> c20f323bdee56a3ffd8a1e220d8077a87b7d8765
 Created-By: Maven Integration for Eclipse
 

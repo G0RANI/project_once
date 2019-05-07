@@ -5,15 +5,22 @@
  */
 var chartData1 = [];
 function generateChartData() {
+<<<<<<< HEAD
 	let firstDate = new Date();
 	firstDate.setDate( firstDate.getDate() - 2000);
 	firstDate.setHours(0, 0, 0, 0);
+=======
+ /* var firstDate = new Date();
+  firstDate.setDate( firstDate.getDate() - 30 );
+  firstDate.setHours( 0, 0, 0, 0 );*/
+>>>>>>> c20f323bdee56a3ffd8a1e220d8077a87b7d8765
 //setInterval( function() {
   $.ajax({
 		url : '/web/ngh/ch',
 		type : 'get',
 	    dataType:'json',
 		 success : d=>{
+<<<<<<< HEAD
 			 		let i = 0;
 				  for ( i = 0; i < d.ls.length; i++ ) {
 				    let newDate = new Date();
@@ -21,6 +28,15 @@ function generateChartData() {
 				 /*   newDate = d.ls[i].odate;*/
 				    let a1 = d.ls[i].price;
 				    let b1 = d.ls[i].price;
+=======
+
+				  for ( var i = 0; i < d.ls.length; i++ ) {
+				  /*  var newDate = new Date(firstDate);
+				    newDate.setDate( newDate.getDate() + i );*/
+					var date1 = d.ls[i].odate;
+				    var a1 = d.ls[i].price;
+				    var b1 = d.ls[i].price;
+>>>>>>> c20f323bdee56a3ffd8a1e220d8077a87b7d8765
 				    chartData1.push({
 				      "date": newDate,
 				      "value": a1,
@@ -44,7 +60,11 @@ function generateChartData() {
 			console.log(e);
 		 }
 	});
+<<<<<<< HEAD
  // }, 6000 );
+=======
+//  }, 6000 );
+>>>>>>> c20f323bdee56a3ffd8a1e220d8077a87b7d8765
   //ajax
 }
 generateChartData();

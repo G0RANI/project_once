@@ -5,12 +5,17 @@
      <mapper namespace="com.once.web.mapper.OnceMapper">
 <select id="selectAllOnceList" resultType="com.once.web.domain.Once">
 	SELECT OSEQ,ODATE,PRICE
+<<<<<<< HEAD
     FROM ONCE
     WHERE ODATE BETWEEN '2019-05-06 14:00:00' AND '2019-05-06 16:00:00'
+=======
+	FROM ONCE
+	WHERE ODATE BETWEEN '2019-05-06 14:00:00' AND '2019-05-06 16:00:00'
+>>>>>>> c20f323bdee56a3ffd8a1e220d8077a87b7d8765
 </select>
 
 <select id="selectPrice" resultType="com.once.web.domain.Once">
-	SELECT *
+	SELECT OSEQ,ODATE,PRICE
 	FROM ONCE
 	ORDER BY OSEQ DESC
 	LIMIT 2
