@@ -565,7 +565,6 @@
 <script src="<%=application.getContextPath()%>/resources/js/component/component.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/component/ksa_compo.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/component/kth_compo.js"></script>
-<%-- <script src="<%=application.getContextPath()%>/resources/js/kth/d3.js"></script> --%>
 <script src="<%=application.getContextPath()%>/resources/js/kth/scroll.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/app.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/common/util.js"></script>
