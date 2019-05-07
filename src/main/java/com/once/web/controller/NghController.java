@@ -44,7 +44,7 @@ public class NghController {
 		  return map;
 	}
 	@ResponseBody
-	@RequestMapping("/ngh/chart")
+	@RequestMapping("/ngh/ch")
 	public Map<String, Object>  chart(
 			){
 		logger.info("원스차트에 들어왔습니다!!!");
@@ -55,7 +55,6 @@ public class NghController {
 		System.out.println(ls.toString());
 		System.out.println("원스에 값"+i.apply(once).toString());
 		map.put("ls", ls);
-		
 		 return map;
 	}
 	

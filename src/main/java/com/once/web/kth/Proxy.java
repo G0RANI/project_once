@@ -4,8 +4,10 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
@@ -15,6 +17,8 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
+
+import com.once.web.domain.CoinArticle;
 
 import lombok.Data;
 
@@ -74,10 +78,57 @@ public class Proxy {
 
          }
          
-    public void youtube() throws Exception {
-    	String url ="https://www.youtube.com/watch?v=mFw8la7W-LU";
-    	Document doc = Jsoup.connect(url).get();
-    	Elements element1 = doc.select("");
+    public List<CoinArticle> youtube() throws Exception {
+        List<CoinArticle> list = new ArrayList<CoinArticle>();
+        String[] url = {"https://www.youtube.com/watch?v=mFw8la7W-LU","https://www.youtube.com/watch?v=iALw-CsLQog&list=PL-r3nv8Pk2S2CdICd8IcNk9O8a6hBq2GS&index=3"};
+        String[] url1 = {"https://www.youtube.com/watch?v=3pXQe7FHFF4&list=PL-r3nv8Pk2S2CdICd8IcNk9O8a6hBq2GS&index=3&t=0s","https://www.youtube.com/watch?v=R4dolIUp4sU&list=PL-r3nv8Pk2S2CdICd8IcNk9O8a6hBq2GS&index=4"};
+        CoinArticle article = null;
+       for(int i =0;i<2;i++) {
+        article =new CoinArticle();
+        article.setUrl(url[i]);
+        Document doc = Jsoup.connect(url[i]).get();
+        int text = doc.select("h1.watch-title-container span").attr("title").indexOf("]")+1;
+        int text2 = doc.select("h1.watch-title-container span").attr("title").indexOf("암");
+        article.setTitle(doc.select("h1.watch-title-container span").attr("title").substring(text,text2));
+        article.setAdate(doc.select("strong.watch-time-text").text().substring(5));
+       
+        article.setYouUrl(url1[i]);
+        Document docu = Jsoup.connect(url1[i]).get();
+        int text3 = doc.select("h1.watch-title-container span").attr("title").indexOf("]")+1;
+        int text4 = doc.select("h1.watch-title-container span").attr("title").indexOf("암");
+        article.setYouTitle(docu.select("h1.watch-title-container span").attr("title").substring(text3,text4));
+        article.setYouDate(docu.select("strong.watch-time-text").text().substring(5));
+        list.add(article);
+      
+          String url2 ="https://www.youtube.com/playlist?list=PL-r3nv8Pk2S2CdICd8IcNk9O8a6hBq2GS";
+          Document doc2 = Jsoup.connect(url2).get();
+           if(i==0) {
+             int j=0;
+             for(Element element:doc2.select("tr img")) {
+                 if(j<2) {
+                      if(j==0) {
+                           article.setImg(element.attr("data-thumb"));
+                      }else {
+                           article.setYouImg(element.attr("data-thumb"));
+                      }
+                 }
+                 j++;
+             }
+           }else {
+             int j=0;
+             for(Element element:doc2.select("tr img")) {
+                 if(j>1&&j<=3) {
+                      if(j==2) {
+                           article.setImg(element.attr("data-thumb"));
+                      }else{
+                           article.setYouImg(element.attr("data-thumb"));
+                      }
+                 }
+                 j++;
+             }
+           }
+       }
+           return list;
     	
     }     
          
@@ -85,9 +136,9 @@ public class Proxy {
     public void word(int wordpage) throws Exception {
 //    	page = wordpage;
     	page =1;
-    	File file = new File("C:\\Users\\\\SEUNGAH\\git\\project_once\\src\\main\\webapp\\resources\\csv\\csv.csv");
+    	File file = new File("C:\\Users\\\\1027\\git\\project_once\\src\\main\\webapp\\resources\\csv\\csv.csv");
     	file.delete();
-    	String csvFileName = "C:\\Users\\\\SEUNGAH\\git\\project_once\\src\\main\\webapp\\resources\\csv\\csv.csv";
+    	String csvFileName = "C:\\Users\\\\1027\\git\\project_once\\src\\main\\webapp\\resources\\csv\\csv.csv";
     	BufferedWriter writer = new BufferedWriter(
     			new OutputStreamWriter(new FileOutputStream(csvFileName),"UTF-8"));
     	writer.write("text,frequency\n");
@@ -139,10 +190,11 @@ public class Proxy {
       title = title.replaceAll("가상화폐", " ");
       title = title.replaceAll("암호화폐", " ");
       title = title.replaceAll("월", " ");
+      title = title.replaceAll("만", " ");
       title = title.replaceAll(match, " ");
         String[] arg = title.split(" ");
         arg = new HashSet<String>(Arrays.asList(arg)).toArray(new String[0]);
-        System.out.println("after "+arg.length);
+        System.out.println("afteer "+arg.length);
         
         for(String s :arg) {
         	writer.write(s+","+(random.nextInt(20)+10)+"\n");

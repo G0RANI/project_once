@@ -21,8 +21,6 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script
-	src="https://cdn.upbit.com/manifest-bundle-f95e81eead967f24e5c0.js"></script>
 <script src="https://cdn.upbit.com/js/bluebird-3.3.4.min.js"
 	integrity="sha384-Zum86V5Chub72Pcj/UopirJ0QwQ+LgKZFTlVMt/yaVwYbROQJl/q8Nj2e72vZel2"
 	crossorigin="anonymous"></script>
@@ -34,17 +32,13 @@
 	crossorigin="anonymous"></script>
 <script async="" src="https://platform.twitter.com/widgets.js"></script>
 <style data-styled="" data-styled-version="4.2.0"></style>
-
 <script src="https://www.amcharts.com/lib/4/core.js"></script>
 <script src="https://www.amcharts.com/lib/4/charts.js"></script>
 <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-
- <script src="http://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="http://www.amcharts.com/lib/3/amcharts.js"></script>
 <script src="http://www.amcharts.com/lib/3/serial.js"></script>
 <script src="http://www.amcharts.com/lib/3/themes/light.js"></script>
 <script src="http://www.amcharts.com/lib/3/amstock.js"></script>
-
-
 
 <style type="text/css">
 
@@ -52,6 +46,7 @@
   width: 100%;
   height: 500px;
 } */
+
 #chartdiv {
   width: 100%;
   height: 100%;
@@ -775,10 +770,7 @@ html, body {
 							</div>
 						</footer>
 						</div>
-							
 					</div>
-					
-				
 </body>
 <!-- upbit -->
 <script src="https://cdn.upbit.com/vendors-chunk-344e4004ead25be2326b.js"></script>
@@ -789,7 +781,6 @@ html, body {
 
 <!-- once -->
 <script src="<%=application.getContextPath()%>/resources/js/common/auth.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/common/once.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/common/util.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/component/component.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/component/ksa_compo.js"></script>
@@ -805,11 +796,7 @@ html, body {
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
-
 <script src="<%=application.getContextPath()%>/resources/js/ngh/nghchart.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/kth/scroll.js"></script>
-<script type="text/javascript">initMoving(document.getElementById("right_content"), 50, 50, 50)</script>	
-
 
 <script>
 app.init('<%=application.getContextPath()%>');
