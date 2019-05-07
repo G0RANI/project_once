@@ -10,12 +10,12 @@
 		   PRICE
 			FROM ONCE
 </select>
+
+
 <select id="selectPrice" resultType="com.once.web.domain.Once">
 	SELECT *
 	FROM ONCE
 	ORDER BY OSEQ DESC
 	LIMIT 2;
 </select>
-
-
 </mapper>

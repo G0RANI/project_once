@@ -11,7 +11,7 @@ function generateChartData() {
  /* var firstDate = new Date();
   firstDate.setDate( firstDate.getDate() - 30 );
   firstDate.setHours( 0, 0, 0, 0 );*/
-  
+setInterval( function() {
   $.ajax({
 		url : '/web/ngh/chart',
 		type : 'get',
@@ -30,28 +30,26 @@ function generateChartData() {
 				      "value": a1,
 				      "volume": b1
 				    });
-				    
-				    setInterval( function() {
-				    	  if ( chart.mouseDown )
-				    	    return;
-				    	/*  var newDate = new Date( chartData1[ chartData1.length - 1 ].date );
-				    	  newDate.setDate( newDate.getDate() + 1 );
-				    	  var i = chartData1.length;*/
-
-				    	  chart.dataSets[ 0 ].dataProvider.push( {
-				    	    date: date1,
-				    	    value: a1,
-				    	    volume: b1
-				    	  } );
-				    	  chart.validateData();
-				    	}, 3000 );
+					  chart.dataSets[ 0 ].dataProvider.push( {
+						  date: date1,
+						  value: a1,
+						  volume: b1
+					  } );
+					  chart.validateData();
 				  }
+					  if ( chart.mouseDown )
+						  return;
+				   /*	  var newDate = new Date( chartData1[ chartData1.length - 1 ].date );
+				      newDate.setDate( newDate.getDate() + 1 );
+					  var i = chartData1.length;*/
 		 },
 		 error : e =>{
 			alert('ajax 실팩'); 
 			console.log(e);
 		 }
 	});
+  }, 6000 );
+  //ajax
 }
 generateChartData();
 
