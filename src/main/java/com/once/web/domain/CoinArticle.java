@@ -11,6 +11,7 @@ public class CoinArticle {
 				   title,
 				   adate,
 				   url,
+				   img,
 				   youTitle,
 				   youDate,
 				   youUrl,
