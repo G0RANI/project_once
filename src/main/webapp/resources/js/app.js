@@ -6,16 +6,20 @@ app=(()=>{
 	};
 	let onCreate=()=>{	
 		setContentView();
-		$('#home').click(function(){
+		$('#home').click(function(e){
+			e.preventDefault();
             location.assign($.ctx());
         });
-        $('#ngh').click(function(){
+        $('#ngh').click(function(e){
+        	e.preventDefault();
             location.assign($.ctx()+"/ngh");
         });
-        $('#kth').click(function(){
+        $('#kth').click(function(e){
+        	e.preventDefault();
             location.assign($.ctx()+"/kth");
         });
-        $('#ksa').click(function(){    
+        $('#ksa').click(function(e){    
+        	e.preventDefault();
             location.assign($.ctx()+"/ksa");
         });
 	};

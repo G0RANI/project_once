@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.once.web.domain.Accounts;
 import com.once.web.domain.Customers;
+import com.once.web.domain.Transactions;
 import com.once.web.lambda.IConsumer;
 import com.once.web.lambda.IFunction;
 import com.once.web.lambda.IPredicate;
@@ -26,12 +28,12 @@ import com.once.web.service.CustomersServiceImpl;
 @Controller
 public class KsaController {
 	private static final Logger logger = LoggerFactory.getLogger(KsaController.class);
-	
 	@Autowired Map<String,Object> map;
 	@Autowired Customers ct;
 	@Autowired CustomersServiceImpl cust;
 	@Autowired Accounts ac;
 	@Autowired AccountsServiceImpl acc;
+	@Autowired Transactions tr;
 	
 	@RequestMapping("/ksa")
 	public String ksaMain(Locale locale, Model model) {
@@ -50,17 +52,18 @@ public class KsaController {
 		}
 		return p.test(res.get("id"));
 	}
+
 	@ResponseBody
-	@RequestMapping(value ="/select/{id}", method = RequestMethod.POST)
-	public Customers selectInfo(@PathVariable Map<String,Object> id) {
-		System.out.println("selectInfo 회원아이디 : "+id);
-		IFunction f = (Object o) -> cust.retrieveCustomer(id);
-		ct = (Customers) f.apply(id);
-		System.out.println("cust정보 : "+ct);
-		return ct;
+	@RequestMapping(value ="/retrieve_acc/{id}", method = RequestMethod.POST)
+	public Accounts selectAccountInfo(@PathVariable String id) {
+		System.out.println("selectAccountInfo 회원아이디 : "+id);
+		IFunction f = (Object o) -> acc.retrieveAccount(id);
+		ac = (Accounts) f.apply(id);
+		return ac;
 	}
+	
 	@ResponseBody
-	@RequestMapping(value ="/account/{id}", method = RequestMethod.POST)
+	@RequestMapping(value ="/open_acc/{id}", method = RequestMethod.POST)
 	public Accounts openAccount(@PathVariable String id) {
 		System.out.println("openAccount 회원아이디 : "+id);
 		String account = "";
@@ -76,5 +79,25 @@ public class KsaController {
 		ac = (Accounts) f.apply(id);
 		System.out.println("ac는 : "+ac);
 		return ac;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value ="/retrieve_cust/{id}", method = RequestMethod.POST)
+	public Map<String,Object> selectCustInfo(@PathVariable String id) {
+		System.out.println("selectCustInfo 회원아이디 : "+id);
+		IFunction f = (Object o) -> cust.retrieveCustomer(id);
+		ct = (Customers) f.apply(id);
+		tr = (Transactions) f.apply(id);
+//		map.put("ct", ct);
+//		map.put("tr", tr);
+		System.out.println("cust정보 : "+ct);
+		System.out.println("tr정보 : "+tr);
+		return map;
+	}
+	
+	@GetMapping("/payment")
+	public String payment(Locale locale, Model model) {
+		logger.info("===============테스트 진입===============");
+		return "payment";
 	}
 }

@@ -6,5 +6,5 @@ import lombok.Data;
 
 @Data @Component
 public class Transactions {
-	private String tseq, rw, rwm;
+	private String tseq, rw, rwm, date, id;
 }

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.once.web.domain.Once;
 import com.once.web.lambda.IFunction;
+import com.once.web.lambda.ISupplier;
 import com.once.web.service.OnceServiceImpl;
 
 
@@ -25,26 +26,25 @@ public class NghController {
 	@Autowired Once once;
 	@Autowired OnceServiceImpl onceimpl;
 	
-	
 	private static final Logger logger = LoggerFactory.getLogger(NghController.class);
 	@RequestMapping("/ngh")
 	public String nghMain(Locale locale, Model model) {
 		logger.info("남기호 컨트롤 진입 했씁니다!!!");	
 		return "ngh";
 	}
-	
 	@ResponseBody
 	@RequestMapping("/ngh/once")
 	public Map<String, Object> once() {
-		logger.info("원스 코인에 들어왔습니다!!!");	
-		  Random rand = new Random(); 
-		  System.out.println(rand.nextInt(1200)+1000); 
+		logger.info("원스 코인에 들어왔습니다!!!");
 		  map.clear();
-		  int ls =  rand.nextInt(1200)+1000;
-		  map.put("ls",ls);
+		  ISupplier i = ()-> onceimpl.selectPrice();
+		  List<?> ls = (List<?>) i.get();
+		  System.out.println("ls 의 값 : "+ls);
+		  map.put("ls", ls);
 		  return map;
 	}
 	@ResponseBody
+<<<<<<< HEAD
 	@RequestMapping("/ngh/chart/{seq}")
 	public Once chart(
 			@PathVariable String seq){
@@ -56,4 +56,21 @@ public class NghController {
 		 System.out.println("원스 값 : "+once.toString());		 
 		 return once;
 	}
+=======
+	@RequestMapping("/ngh/chart")
+	public Map<String, Object>  chart(
+			){
+		logger.info("원스차트에 들어왔습니다!!!");
+		once = new Once();
+		map.clear();
+		IFunction i = (Object o) -> onceimpl.selectAllOnceList(); 
+		List<?> ls = (List<?>) i.apply(once);
+		System.out.println(ls.toString());
+		System.out.println("원스에 값"+i.apply(once).toString());
+		map.put("ls", ls);
+		
+		 return map;
+	}
+	
+>>>>>>> 045a3ec049ff6bbf3279d0805cc72625a2c4df9d
 }

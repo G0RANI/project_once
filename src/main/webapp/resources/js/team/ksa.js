@@ -32,49 +32,14 @@ ksa=(()=>{
                      alert('클릭 로그아웃!');
                      logout();
                 });
-                 let cust_id = sessionStorage.getItem('info');
-                 $.ajax({
-                	 url:$.ctx()+'/select/'+cust_id,
-                	 data:cust_id,
-                	 type:'POST',
-                	 dataType:'json',
-                	 contentType:'application/json',
-                	 success:s=>{
-                		$('.totalB p').empty()
-                		$('<p> '+s.hcoin+' <i>KRW</i></p>').appendTo('.totalB');
-                	 },
-                	 error:e=>{
-                		 alert('실패!');
-                	 }
-                 });
-                 $('#acc').click(e=>{
-                	 $.ajax({
-                    	 url:$.ctx()+'/account/'+cust_id,
-                    	 data:cust_id,
-                    	 type:'POST',
-                    	 dataType:'json',
-                    	 contentType:'application/json',
-                    	 success:s=>{
-                    		 alert('성공!');
-                    		 $('.btnB em').empty();
-                    		 $('.btnB em').html('계좌번호  :  '+s.acnum);
-                    		 $('#acc').remove();
-                    		 $('<a id="acc" class="btn" title="충전하기">충전하기</a>').appendTo('.btnB');
-                    	 },
-                    	 error:e=>{
-                    		 alert('실패!');
-                    	 }
-                     });
-                 });
-                 
-                 
-                 
+                 charge_btn(cust_id);
                  $('.tabB a').eq(0).click(function(){
-                        alert('충전');
+                        alert('충전');                                                
                         $('.tabB a').attr('class', '');
                         $(this).attr('class', 'on');
                         $('.TabArea').empty();
                         $(ksa_compo.d_w_krw()).appendTo('.TabArea');
+                        charge_btn(cust_id);
                     });
                  $('.tabB a').eq(1).click(function(){
                         alert('출금');
@@ -108,24 +73,109 @@ ksa=(()=>{
                     alert('클릭 로그아웃!');
                     logout();
                });
-                $('.ty04 a').eq(0).click(function(){
-                       alert('보유코인');
-                       $('.ty04 a').attr('class', '');
-                       $(this).attr('class', 'on');
-                       $('.ownB').empty();
-                       $('.ownB').html(ksa_compo.investment_hcoin());
-                   });
-                $('.ty04 a').eq(1).click(function(){
-                       alert('거래내역');
-                       $('.ty04 a').attr('class', '');
-                       $(this).attr('class', 'on');
-                       $('.ownB').empty();
-                       $('.ownB').html(ksa_compo.investment_trx());
+                $.ajax({
+                  	 url:$.ctx()+'/retrieve_cust/'+cust_id,
+                  	 data:cust_id,
+                  	 type:'POST',
+                  	 dataType:'json',
+                  	 contentType:'application/json',
+                  	 success:s=>{
+                  		 alert('성공!'+s.hcoin);
+                  			 $('#total_price strong').eq(1).empty();			/*총평가금액*/
+                    		 $('#total_price strong').eq(1).html(s.hcoin+' <i>KRW</i>');
+                    		 
+                    		 $('#assets strong').eq(1).empty();			/*총보유자산*/
+                    		 $('#assets strong').eq(1).html(s.hcoin+' <i>KRW</i>');
+                  	      $('.ty04 a').eq(0).click(function(){
+                              alert('보유코인');
+                              $('.ty04 a').attr('class', '');
+                              $(this).attr('class', 'on');
+                              $('.ownB').empty();
+                              $('.ownB').html(ksa_compo.investment_hcoin());
+                              $('#total_price strong').eq(1).empty();			/*총평가금액*/
+                     		 $('#total_price strong').eq(1).html(s.hcoin+' <i>KRW</i>');
+                     		 
+                     		 $('#assets strong').eq(1).empty();			/*총보유자산*/
+                     		 $('#assets strong').eq(1).html(s.hcoin+' <i>KRW</i>');
+                          });
+                       $('.ty04 a').eq(1).click(function(){
+                              alert('거래내역');
+                              $('.ty04 a').attr('class', '');
+                              $(this).attr('class', 'on');
+                              $('.ownB').empty();
+                              $('.ownB').html(ksa_compo.investment_trx());
+                              $('.ty04 tbody').empty();
+                              $('.ty04 tbody').html('<tr>'
+                            		  			+'<td class="lAlign">'+s.date+'</td>'
+					                			+'<td class="cAlign"><strong>'+s.tseq+'</strong></td>'
+					                			+'<td class="cAlign up">'+s.rw+'</td>'
+					                			+'<td><strong>0.00015797 <i>'+s.rwm+'</i></strong></td>'
+					                			+'</tr>');
+                                                       
+                       });
+                  	 },
+                  	 error:e=>{	 
+                  		 alert('실패!');
+                  	 }
                 });
             }
            });
            break;
 		}
+	};
+	
+	
+	
+	
+	let cust_id = sessionStorage.getItem('info');
+	
+	let charge_btn=(x)=>{
+		$.ajax({
+       	 url:$.ctx()+'/retrieve_acc/'+x,
+       	 data:x,
+       	 type:'POST',
+       	 dataType:'json',
+       	 contentType:'application/json',
+       	 success:s=>{
+       		 alert('성공!'+s.acnum);
+       			 $('.totalB p').empty();
+       			 $('<p> '+s.hcoin+' <i>KRW</i></p>').appendTo('.totalB');
+       			 $('.btnB em').empty();
+           		 $('.btnB em').html('계좌번호  :  '+s.acnum);
+           		 $('#acc').remove();
+           		 $('<a id="charge" class="btn" style="padding-top:1px;" title="충전하기">충전하기</a>').appendTo('.btnB');
+           		 $('#charge').click(e=>{
+   					 e.preventDefault();
+   					 window.open('payment', "a", "width=1000, height=800, left=100, top=50");		 
+   				 });
+       	 },
+       	 error:e=>{
+                $('#acc').click(e=>{
+               	 $.ajax({
+                   	 url:$.ctx()+'/open_acc/'+x,
+                   	 data:x,
+                   	 type:'POST',
+                   	 dataType:'json',
+                   	 contentType:'application/json',
+                   	 success:s=>{
+                   		 let account= s.acnum;
+                   		 alert(account);
+                   		 $('.btnB em').empty();
+                   		 $('.btnB em').html('계좌번호  :  '+s.acnum);
+                   		 $('#acc').remove();
+                   		 $('<a id="charge" class="btn" style="padding-top:1px;" title="충전하기">충전하기</a>').appendTo('.btnB');
+                   		 $('#charge').click(e=>{
+           					 e.preventDefault();
+           					 window.open('payment', "a", "width=1000, height=800, left=100, top=50");		 
+           				 });
+                   	 },
+                   	 error:e=>{
+                   		 alert('실패!');
+                   	 }
+                    });
+                });
+       	 }
+        });
 	};
 	let kakao=(x)=>{
 		Kakao.init('84c6f4f17078c92b08795e362bbe2d2d');
@@ -173,7 +223,10 @@ ksa=(()=>{
 	};	
 	let logout=()=>{
         sessionStorage.removeItem('session');
-         location.assign($.ctx());
+       /* Kakao.Auth.logout(function(){
+        	alert("카카오로그아웃");
+        });*/
+        location.assign($.ctx());
     };
 	
 	return{init:init, kakao:kakao};
