@@ -19,21 +19,20 @@ public class OnceServiceImpl implements OnceService {
 	}
 
 	@Override
-	public List<?> selectAllOnceList() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Once> selectAllOnceList() {
+		
+		return mapper.selectAllOnceList();
 	}
 
 	@Override
-	public  Once selectOnce(Once once) {
+	public  Map<String, Object> selectOnce(Once once) {
 		
 		return mapper.selectOnce(once);
 	}
 
 	@Override
-	public Once selectOnces(Once once) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Once> selectPrice() {
+		return mapper.selectPrice();
 	}
 
 	@Override
