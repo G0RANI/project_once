@@ -11,13 +11,12 @@ function generateChartData() {
  /* var firstDate = new Date();
   firstDate.setDate( firstDate.getDate() - 30 );
   firstDate.setHours( 0, 0, 0, 0 );*/
-setInterval( function() {
+//setInterval( function() {
   $.ajax({
 		url : '/web/ngh/chart',
 		type : 'get',
 	    dataType:'json',
 		 success : d=>{
-				 alert('once의 값 : 성공 ');
 
 				  for ( var i = 0; i < d.ls.length; i++ ) {
 				  /*  var newDate = new Date(firstDate);
@@ -48,7 +47,7 @@ setInterval( function() {
 			console.log(e);
 		 }
 	});
-  }, 6000 );
+//  }, 6000 );
   //ajax
 }
 generateChartData();
