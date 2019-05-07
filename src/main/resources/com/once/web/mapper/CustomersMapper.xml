@@ -3,14 +3,26 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.once.web.mapper.CustomersMapper">
+<resultMap id="result" type="hashmap">
+  <id property="id" column="id" />
+  <result property="hcoin" column="hcoin"/>
+  <result property="hqua" column="hqua"/>
+  <result property="pprice" column="pprice"/>
+  <result property="tseq" column="tseq"/>
+  <result property="rw" column="rw"/>
+  <result property="rwm" column="rwm"/>
+</resultMap>
+
 <insert id="insertCustomer">
 	INSERT INTO CUSTOMERS (id, hcoin, hqua, pprice)
 	VALUES (#{id}, 11, 11, 11)
 </insert>
- <select id="selectCustomer" resultType="com.once.web.domain.Customers">
+ <select id="selectCustomer" resultMap="result">
  	SELECT * 
- 	FROM CUSTOMERS
- 	WHERE id LIKE #{id}
+ 	FROM CUSTOMERS as cu
+ 		inner join TRANSACTIONS as tr
+ 		on cu.id like tr.id
+ 	WHERE cu.id LIKE #{id};
  </select>
  
  <select id="existsCustomerID" parameterType="map" resultType="boolean">
@@ -18,6 +30,4 @@
  	FROM CUSTOMERS
  	WHERE id LIKE #{id}
  </select>
- 
- 
 </mapper>

@@ -13,7 +13,7 @@ public interface CustomersService {
 	public List<Customers> bringAllAmount(Customers cust);
 	public List<Customers> bringSomeCoin(Customers cust);
 	
-	public Customers retrieveCustomer(Map<?,?> map);
+	public Customers retrieveCustomer(String id);
 	public int countCustomers();
 	public boolean existsCustomerID(Map<?,?> map);
 	

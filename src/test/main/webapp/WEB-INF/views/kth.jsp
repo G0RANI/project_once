@@ -173,11 +173,6 @@
 	  .crawler_text{
 	  	text-align: center;
 	  }  
-    @font-face {
-        font-family: 'overwatch';
-        src: url('resources/csv/koverwatch.woff2');
-    }
-	  
 	</style>
 </head>
 <body>
@@ -204,7 +199,9 @@
 <div class="trends" id="once">
 	<div class="mainB">
 		<section class="ty01">              
-		<div id="word"></div>
+		<div id="wordSpace"></div>
+			<div style="width: 40%;"></div>
+			<script src="https://d3js.org/d3.v3.min.js"></script>
 		                <article>
 		                    <span class="titB">
 		                    <strong>
@@ -477,9 +474,10 @@
 		            <div id="right_content">
 		            <section class="ty02">
 		                <article>
-		                    <span class="titB"><strong>비트코인 기초강의</strong></span>
-		                    <span class="coinList">
-		                    <ul class="clist" id="basic">
+		                    <span class="titB"><strong>코인 Play!</strong><span
+		                        class="list_more"><a href="#" class="b_prv">이전</a><a
+		                            href="#" class="b_nxt">다음</a></span></span><span class="coinList"><ul
+		                            class="clist">
 		                            <li><a href="https://youtu.be/6n2ka284nuA" target="_blank"
 		                                rel="noopener noreferrer"><img
 		                                    src="https://api-manager-production.s3.ap-northeast-2.amazonaws.com/ftdcnt/data/1242:d6f16e43-5442-4fa7-9180-e8c1f581899e.png?1555572826"
@@ -517,7 +515,7 @@
 		                            </div>
 		                        </div></a>
 		                </article>
-		                <article id="decode">
+		                <article>
 		                    <span class="titB"><strong>암호화폐 해독하기</strong><span
 		                        class="list_more"><a href="#" class="b_prv">이전</a><a
 		                            href="#" class="b_nxt">다음</a></span></span><span class="coinList"><ul
@@ -565,6 +563,7 @@
 <script src="<%=application.getContextPath()%>/resources/js/component/component.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/component/ksa_compo.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/component/kth_compo.js"></script>
+<script src="<%=application.getContextPath()%>/resources/js/kth/d3.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/kth/scroll.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/app.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/common/util.js"></script>
@@ -575,8 +574,6 @@
 <script src="<%=application.getContextPath()%>/resources/js/app.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/router.js"></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
-<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 
 <script type="text/javascript">initMoving(document.getElementById("right_content"), 50, 50, 50)</script>	
 <script>

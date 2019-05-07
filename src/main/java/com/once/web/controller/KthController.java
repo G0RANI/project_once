@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.once.web.domain.CoinArticle;
 import com.once.web.domain.CustService;
 import com.once.web.kth.Proxy;
+import com.once.web.lambda.IConsumer;
 import com.once.web.lambda.IFunction;
 import com.once.web.lambda.ISupplier;
 import com.once.web.service.CustServiceServiceImpl;
@@ -40,6 +41,7 @@ public class KthController {
         if(page!=1) {
          page = (page-1)*10+1;
         }
+        pxy.word(page);
         String url =  "https://search.naver.com/search.naver?&where=news&query=%EB%B9%84%ED%8A%B8%EC%BD%94%EC%9D%B8%20%EC%8B%9C%EC%84%B8&sm=tab_pge&sort=0&photo=0&field=0&reporter_article=&pd=0&ds=&de=&docid=&nso=so:r,p:all,a:all&mynews=0&cluster_rank=10&start="+page+"&refresh_start=0";
         Document doc = Jsoup.connect(url).get();
         Elements elements = doc.select("ul.type01 li dl  dt a");
@@ -79,14 +81,23 @@ public class KthController {
 
          return map;
      }
-     
+@ResponseBody
+@RequestMapping(value = "/crawler/youtube",  method = {RequestMethod.GET})
+public Map<String, Object> youcrawler() throws Exception{
+	map.clear();
+	List<CoinArticle> list = new ArrayList<>();
+	
+	map.put("lis", list);
+	return map;
+};
      @ResponseBody
      @RequestMapping(value = "/notice/{npage}", method  = {RequestMethod.GET})
      public Map<String, Object> notice(@PathVariable  String npage){
          List<CustService> list = new ArrayList<>();
          list.clear();
+         System.out.println(npage);
          map.put("page_num", npage);
-         map.put("page_size", "5");
+         map.put("page_size", "10");
          map.put("block_size", "5");
          ISupplier sup  =()->cuseservice.countCustServices();
          map.put("rowCount", sup.get());
@@ -98,4 +109,38 @@ public class KthController {
          map.put("pxy", pxy);
          return map;
      }
+     @ResponseBody
+     @RequestMapping(value = "/detail/{seq}", method  = {RequestMethod.GET})
+     public Map<String, Object> detail(@PathVariable  String seq){
+    	 map.clear();
+    	 CustService service = new CustService();
+    	 service.setCsq(seq);
+    	 IConsumer c = (Object o)-> cuseservice.updateViews(service);
+    	 c.accept(service);
+    	 IFunction f = (Object o) -> cuseservice.selectCustService(service);
+    	 CustService cuse = (CustService) f.apply(service);
+    	 map.put("cuse", cuse);
+    	 return map;
+     }
+     @ResponseBody
+     @RequestMapping(value = "/search/{search}/{page}", method  = {RequestMethod.GET})
+     public Map<String, Object> search(@PathVariable  String search,
+    		 		  				   @PathVariable String page){
+    	 map.clear();
+    	 String srh = "%"+search+"%";
+    	 ISupplier f =  () -> cuseservice.searchCountCustServices(srh);
+ 		map.put("page_num", page);
+ 		map.put("page_size", "5");
+ 		map.put("block_size", "5");
+ 		map.put("rowCount", f.get());
+ 		map.put("search", srh);
+ 		pxy.carryOut(map);
+		IFunction i = (Object o) -> cuseservice.selectSearchCustServiceList(pxy);
+		List<?> ls = (List<?>) i.apply(pxy);	
+		map.clear();
+		map.put("ls", ls);
+		map.put("pxy", pxy);
+    	 return map;
+     };
+     
 }
