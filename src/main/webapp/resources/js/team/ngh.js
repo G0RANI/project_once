@@ -10,14 +10,44 @@ ngh=(()=>{
 	};
 	let setContentView=()=>{	
 		once_chart();
+<<<<<<< HEAD
 		$.getScript($.js()+'/component/ngh_compo.js',()=>{				  			  	
 			  $('.top a').eq(0).click(function(){
+=======
+	
+		
+		$.getScript($.js()+'/component/ngh_compo.js',()=>{		
+		  
+			  	
+			 /* $('.top a').eq(0).click(function(){
+>>>>>>> richard_lt
 					$('#b').empty();
 				  $(ngh_compo.l_buy()).appendTo('#b');
 				  $('.top a').attr('class', '');
 				  $('.top li').attr('class', 't2');
+<<<<<<< HEAD
 		          $(this).attr('class', 'on');			  
 			  	});			  
+=======
+		          $(this).attr('class', 'on');
+		          let once_p = [];
+		          $.ajax({
+		        	  url : $.ctx()+'/ngh/buy',
+		        	  data : '',
+		        	  dataType : '',
+		        	  Type : '',
+		        	  contentType: '',
+		        	  success : d=>{
+		        		  
+		        	  },
+		        	  error : e=>{
+		        		  
+		        	  }
+		          })
+			  
+			  	});*/
+			  
+>>>>>>> richard_lt
 			  $('.top a').eq(1).click(function(){
 				  $('.top a').attr('class', '');
 				  $('.top li').attr('class', 't3');
@@ -29,9 +59,16 @@ ngh=(()=>{
 				  $('.top a').attr('class', '');
 				  $('.top li').attr('class', 't4');
 		          $(this).attr('class', 'on');
+<<<<<<< HEAD
 		     	 $('#b').empty();
 					$(ngh_compo.trx()).appendTo('#b');			
 			  	});			  
+=======
+		     	  $('#b').empty();
+		     	  $(ngh_compo.trx()).appendTo('#b');			
+			  	});
+			  
+>>>>>>> richard_lt
 			  $('#chr_1').empty();
 			  	$(ngh_compo.chr()).appendTo('#chr_1');
              })
@@ -144,6 +181,29 @@ ngh=(()=>{
 					/*click*/
 				});
 				/*each*/
+				 $('.top a').eq(0).click(function(){
+					  $('.top a').attr('class', '');
+					  $('.top li').attr('class', 't2');
+			          $(this).attr('class', 'on');
+						$('#b').empty();
+					  $(ngh_compo.l_buy()).appendTo('#b');
+					  $('#priceall').remove();
+					  $( '<input id="priceall" type="text" class="txt" value="'+tp[0]+'">')
+					  	.prependTo('.marginB101');
+					  
+					  $(' <li class="ty04"><a title="매수">매수</a></li>')
+					  	.appendTo('#btn_mesu')
+					  	.click(()=>{
+					  		alert('가격'+tp[0]);
+					  		let price = tp[0];
+					  		let unit = $('#count').val();
+					  		let id = sessionStorage.getItem('info');
+					          $.getJSON($.ctx()+'/ngh/buy/'+unit+'/'+price+'/'+id,d=>{
+					        	  alert('성공');
+					        	  
+					          })
+				    	  });
+					  	});
 		});
 	}	
 	return{init:init,
