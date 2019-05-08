@@ -767,14 +767,10 @@ h1 {
 	</div>
 </body>
 <!-- upbit -->
-<script
-	src="https://cdn.upbit.com/vendors-chunk-344e4004ead25be2326b.js"></script>
-<script
-	src="https://cdn.upbit.com/lodash-vendor-chunk-07379bacb0c3f397e40f.js"></script>
-<script
-	src="https://cdn.upbit.com/react-vendor-chunk-bceefdde649afea71d7f.js"></script>
-<script
-	src="https://cdn.upbit.com/commons-chunk-30703bb927f1099d8531.js"></script>
+<script src="https://cdn.upbit.com/vendors-chunk-344e4004ead25be2326b.js"></script>
+<script src="https://cdn.upbit.com/lodash-vendor-chunk-07379bacb0c3f397e40f.js"></script>
+<script src="https://cdn.upbit.com/react-vendor-chunk-bceefdde649afea71d7f.js"></script>
+<script src="https://cdn.upbit.com/commons-chunk-30703bb927f1099d8531.js"></script>
 <script src="https://cdn.upbit.com/KR_PC-chunk-1b0a4e1e53868b6001ef.js"></script>
 
 <!-- once -->
