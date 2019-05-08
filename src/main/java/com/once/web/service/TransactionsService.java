@@ -14,6 +14,6 @@ public interface TransactionsService {
 	public List<Transactions> bringWithdrawals(Transactions trx);
 	public List<Transactions> bringDeposits(Transactions trx);
 	public int countTransactions();
-	public void modifyTransaction(Transactions trx);
+	public void modifyTransaction(Map<?,?> map);
 	public void removeTransaction(Transactions trx);
 }

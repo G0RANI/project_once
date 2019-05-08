@@ -209,11 +209,19 @@
 		                        </thead>
 		                        <tbody>
 		                            <tr>
+<<<<<<< HEAD
 		                                <th><em class="logo"
 		                                    style="background: url(https://assets.coingecko.com/coins/images/677/large/basic-attention-token.png?1547034427) 0px 0px/cover no-repeat;">-</em><a
 		                                    class="tit" href="/exchange?code=CRIX.UPBIT.KRW-BAT"><strong>베이직어텐션토큰</strong></a></th>
 		                                <td class="lAlign"><i>BAT/KRW</i></td>
 		                                <td class=""><p class="up">+39.76%</p></td>
+=======
+		  		                        <th><em class="logo"
+		                                    style="background: url(https://assets.coingecko.com/coins/images/677/large/basic-attention-token.png?1547034427) 0px 0px/cover no-repeat;">-</em><a
+		                                    class="tit" href="/exchange?code=CRIX.UPBIT.KRW-BAT"><strong>베이직어텐션토큰</strong></a></th>
+		                                <td class="lAlign"><i>BAT/KRW</i></td>
+		                                <td class=""><p class="up">+39.77%</p></td>
+>>>>>>> kth_lt
 		                                <td class=""><p class="up">+110.57%</p></td>
 		                                <td class=""><p class="up">+248.91%</p></td>
 		                                <td class=""><p class="up">+52.72%</p></td>

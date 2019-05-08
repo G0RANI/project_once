@@ -8,17 +8,42 @@ ngh=(()=>{
 	let onCreate=()=>{	
 		setContentView();
 	};
+<<<<<<< HEAD
 	let setContentView=()=>{
 		once_chart();		
 		$.getScript($.js()+'/component/ngh_compo.js',()=>{					  	
 			  $('.top a').eq(0).click(function(){
+=======
+	let setContentView=()=>{	
+		once_chart();
+	
+		
+		$.getScript($.js()+'/component/ngh_compo.js',()=>{		
+		  
+			  	
+			 /* $('.top a').eq(0).click(function(){
+>>>>>>> 30c365af1344a72d06b46d2dc6d2ba5d50a74214
 					$('#b').empty();
 				  $(ngh_compo.l_buy()).appendTo('#b');
 				  $('.top a').attr('class', '');
 				  $('.top li').attr('class', 't2');
 		          $(this).attr('class', 'on');
+		          let once_p = [];
+		          $.ajax({
+		        	  url : $.ctx()+'/ngh/buy',
+		        	  data : '',
+		        	  dataType : '',
+		        	  Type : '',
+		        	  contentType: '',
+		        	  success : d=>{
+		        		  
+		        	  },
+		        	  error : e=>{
+		        		  
+		        	  }
+		          })
 			  
-			  	});
+			  	});*/
 			  
 			  $('.top a').eq(1).click(function(){
 				  $('.top a').attr('class', '');
@@ -32,8 +57,8 @@ ngh=(()=>{
 				  $('.top a').attr('class', '');
 				  $('.top li').attr('class', 't4');
 		          $(this).attr('class', 'on');
-		     	 $('#b').empty();
-					$(ngh_compo.trx()).appendTo('#b');			
+		     	  $('#b').empty();
+		     	  $(ngh_compo.trx()).appendTo('#b');			
 			  	});
 			  
 			  $('#chr_1').empty();
@@ -158,6 +183,29 @@ ngh=(()=>{
 					/*click*/
 				});
 				/*each*/
+				 $('.top a').eq(0).click(function(){
+					  $('.top a').attr('class', '');
+					  $('.top li').attr('class', 't2');
+			          $(this).attr('class', 'on');
+						$('#b').empty();
+					  $(ngh_compo.l_buy()).appendTo('#b');
+					  $('#priceall').remove();
+					  $( '<input id="priceall" type="text" class="txt" value="'+tp[0]+'">')
+					  	.prependTo('.marginB101');
+					  
+					  $(' <li class="ty04"><a title="매수">매수</a></li>')
+					  	.appendTo('#btn_mesu')
+					  	.click(()=>{
+					  		alert('가격'+tp[0]);
+					  		let price = tp[0];
+					  		let unit = $('#count').val();
+					  		let id = sessionStorage.getItem('info');
+					          $.getJSON($.ctx()+'/ngh/buy/'+unit+'/'+price+'/'+id,d=>{
+					        	  alert('성공');
+					        	  
+					          })
+				    	  });
+					  	});
 		});
 	}
 	
