@@ -26,61 +26,6 @@
     <script src="https://cdn.upbit.com/js/pc-inline-1.2.js" integrity="sha384-qTbmS4jWPoNJ/fbbtBgeNTj7u3P1Mlp0wn9pKGGp1+ehUyuSFYVGJosc800zYG+n" crossorigin="anonymous"></script>
     <script async="" src="https://platform.twitter.com/widgets.js"></script>
     <style data-styled="" data-styled-version="4.2.0"></style>
-<<<<<<< HEAD
-    <script type="text/javascript" src="http://wowslider.com/images/demo/jquery.js"></script>
-<script type="text/javascript" src="http://wowslider.com/styles/a.js"></script>
-<script type="text/javascript">
-
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-25854704-1']);
-_gaq.push(['_setDomainName', '.wowslider.com']);
-_gaq.push(['_setAllowLinker', true]);
-_gaq.push(['_setAllowHash', false]);
-if(document.cookie.match("(^|;\\s)__utma") && !/utmcsr=\(direct\)/.test(unescape(document.cookie))) {
-    _gaq.push(
-      ['_setReferrerOverride', ''],
-      ['_setCampNameKey', 'aaan'], 
-      ['_setCampMediumKey', 'aaam'], 
-      ['_setCampSourceKey', 'aaas'], 
-      ['_setCampTermKey', 'aaat'], 
-      ['_setCampContentKey', 'aaac'], 
-      ['_setCampCIdKey', 'aaaci']
-    )
-}
-
-_gaq.push(['_trackPageview']);  
-
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
-
-</script>
-
-<!-- WOW Visits -->
-<script type="text/javascript">
-/* <![CDATA[ */
-var google_conversion_id = 1071863997;
-var google_conversion_language = "en";
-var google_conversion_format = "3";
-var google_conversion_color = "ffffff";
-var google_conversion_label = "YwhdCOff5AIQvbGN_wM";
-var google_conversion_value = 0;
-/* ]]> */
-</script>
-<script type="text/javascript" src="http://www.googleadservices.com/pagead/conversion.js">
-</script><script src="https://www.googleadservices.com/pagead/conversion/1071863997/?random=1557227011480&amp;cv=9&amp;fst=1557227011480&amp;num=1&amp;value=0&amp;label=YwhdCOff5AIQvbGN_wM&amp;bg=ffffff&amp;hl=en&amp;guid=ON&amp;resp=GooglemKTybQhCsO&amp;u_h=864&amp;u_w=1536&amp;u_ah=824&amp;u_aw=1536&amp;u_cd=24&amp;u_his=3&amp;u_tz=540&amp;u_java=false&amp;u_nplug=3&amp;u_nmime=4&amp;sendb=1&amp;frm=0&amp;url=http%3A%2F%2Fwowslider.com%2Fbootstrap-carousel-demo.html&amp;ref=https%3A%2F%2Fwww.google.com%2F&amp;tiba=Carousel%20Bootstrap%20Fade%20Template&amp;rfmt=3&amp;fmt=4"></script>
-<noscript>
-<div style="display:inline;">
-<img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/1071863997/?label=YwhdCOff5AIQvbGN_wM&amp;guid=ON&amp;script=0"/>
-</div>
-</noscript>
-<script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script>var SITE_URL = 'http://wowslider.com/';</script>
-
-<link rel="stylesheet" href="http://wowslider.com/styles/mainstyle.css" type="text/css" media="screen">
-
-=======
 	<link href="https://fonts.googleapis.com/css?family=Lato"rel="stylesheet">
 	
 <style type="text/css">
@@ -307,7 +252,6 @@ h1 {
 <script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script>
 <script src="https://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101"></script>
 <script src="https://pagead2.googlesyndication.com/pub-config/r20160913/ca-pub-2783044520727903.js"></script>
->>>>>>> 3f2dac915554640b2f16d4fb69930eb270b150a8
 </head>
 <body class="bgWhite">
 	<div id="root">
@@ -330,12 +274,8 @@ h1 {
 									<a style="cursor: pointer" class="" id="kth2" title="고객센터">고객센터</a>
 								</nav>
 								<ul class="tnb">
-<<<<<<< HEAD
-									<li><a style="cursor:pointer" id="ksa" title="로그인">로그인</a></li>
-=======
 									<li><a style="cursor: pointer" id="ksa" title="로그인">로그인</a></li>
 									<li><a style="cursor: pointer" id="ksa_m" title="회원가입">회원가입</a></li>
->>>>>>> 3f2dac915554640b2f16d4fb69930eb270b150a8
 								</ul>
 							</section>
 						</header>
@@ -848,7 +788,6 @@ h1 {
 <script src="<%=application.getContextPath()%>/resources/js/app.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/router.js"></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-
 
 <script>
 	app.init('<%=application.getContextPath()%>');

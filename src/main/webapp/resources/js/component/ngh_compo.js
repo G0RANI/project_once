@@ -52,8 +52,6 @@ ngh_compo={
 			+'                          </div>'
 			+'                        </div>'
 		},
-		
-<<<<<<< HEAD
 		r_con : ()=>{
 			return  '<table class="highlight">'
 			+'						<colgroup>'
@@ -97,8 +95,6 @@ ngh_compo={
 			+'							</tr>'
 			+'						</tbody>'
 			+'					</table>'
-			
-
 		},
 		investment_trx:()=>{
 			return '<div class="max">'
@@ -266,7 +262,7 @@ ngh_compo={
 			+'</div>'
 		+'</div>'
 	+'</div>'
-=======
+		},
 		l_medo:()=>{
 			return '<div style="height: 347px;">'
 			+'                          <dl>'
@@ -481,8 +477,7 @@ ngh_compo={
 				+'</div>'
 			+'</div>'
 		+'</div></span>'
-		},
-		
+		},		
 		chr : ()=>{
 			return  '<table class="ty01">'
             +'<colgroup>'
@@ -555,7 +550,5 @@ ngh_compo={
               +'</div>'
             +'</div>'
           +'</div>'
->>>>>>> 3f2dac915554640b2f16d4fb69930eb270b150a8
 		}
-		
 }

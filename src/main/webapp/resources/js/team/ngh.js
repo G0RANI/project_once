@@ -8,25 +8,9 @@ ngh=(()=>{
 	let onCreate=()=>{	
 		setContentView();
 	};
-<<<<<<< HEAD
 	let setContentView=()=>{
-		$('#a').click(e=>{
-			e.preventDefault();
-			$('#b').empty();
-			$.getScript($.js()+'/component/ngh_compo.js',()=>{
-				$('#b').html(ngh_compo.investment_trx());
-			});
-		})
-		
-=======
-	let setContentView=()=>{	
->>>>>>> 3f2dac915554640b2f16d4fb69930eb270b150a8
-		once_chart();
-	
-		
-		$.getScript($.js()+'/component/ngh_compo.js',()=>{		
-		  
-			  	
+		once_chart();		
+		$.getScript($.js()+'/component/ngh_compo.js',()=>{					  	
 			  $('.top a').eq(0).click(function(){
 					$('#b').empty();
 				  $(ngh_compo.l_buy()).appendTo('#b');

@@ -219,6 +219,7 @@ html, body {
 								</nav>
 								<ul class="tnb" id="nav3">
 									<li><a style="cursor:pointer" id="ksa" title="로그인">로그인</a></li>
+									<li><a style="cursor:pointer" id="ksa_m" title="회원가입">회원가입</a></li>
 								</ul>
 							</section>
 						</header>
@@ -407,18 +408,12 @@ html, body {
 											
 											<ul class="top">
 													<li class="t2"><a href="#" class="on" title="매수">매수</a></li>
-<<<<<<< HEAD
-													<li class="t3"><a href="#" class="" title="매도">매도</a></li>
-													<li class="t4"><a id="a" href="#" class="" title="거래내역">거래내역</a></li>
-												</ul></span><span id="b" class="orderB"><div style="height: 347px;">
-=======
 													<li class=""><a href="#" class="" title="매도">매도</a></li>
 													<li class=""><a href="#" class="" title="거래내역">거래내역</a></li>
 												</ul>
 												</span>
 												<span id="b" class="orderB" style="height: 374px;">
 												<div style="height: 347px;">
->>>>>>> 3f2dac915554640b2f16d4fb69930eb270b150a8
 													<dl>
 														<dt class="price">
 															<strong>주문가능</strong>
