@@ -16,7 +16,12 @@ coinart=(()=>{
 		$('.btnViewA').remove();
 		$('.pagination').empty();
 		$('<div id="word"></div>').appendTo('.ty01');
-		$.getJSON($.ctx()+'/crawler/naver/'+x,d=>{
+		$.ajax({
+            url : $.ctx()+'/crawler/naver/'+x,
+            dataType : 'json',
+            enctype: 'multipart',
+            type : 'GET',
+            success : d=>{
 			$.each(d.ls,(i,j)=>{
 				$('<tr><th target="_blank" class="crawler_text">'+j.nseq+'</th>'
 						+'<td><p class="txt"><a href="'+j.url+'" target="_blank">'+j.title+'</a></p></td>'
@@ -43,7 +48,7 @@ coinart=(()=>{
 			
 		}
 		
-		
+}
 		
 		});
 

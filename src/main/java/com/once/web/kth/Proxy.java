@@ -15,6 +15,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import lombok.Data;
 
@@ -72,19 +73,7 @@ public class Proxy {
     		System.out.println("페이지넘버 "+pageNum);
     		System.out.println("로우카운트 "+rowCount);
 
-<<<<<<< HEAD
-     		prevBlock = startPage - pageSize;
-     		nextBlock = startPage + pageSize;
-         System.out.println("스타트페이지 "+startPage);
-         System.out.println("엔드페이지 "+endPage);
-         System.out.println("스타트로우 "+startRow);
-         System.out.println("엔드로우q "+endRow);
-         System.out.println("페이지사이즈 "+pageSize);
-         System.out.println("블록사이즈 "+blockSize);
-         System.out.println("페이지넘버 "+pageNum);
-         System.out.println("로우카운트  "+rowCount);
-=======
->>>>>>> 045a3ec049ff6bbf3279d0805cc72625a2c4df9d
+
          }
          
     public void youtube() throws Exception {
@@ -94,13 +83,10 @@ public class Proxy {
     	
     }     
          
-         
-    public void word(int wordpage) throws Exception {
-//    	page = wordpage;
+    public static final String SAVED_FILES = "C:\\Users\\1027\\git\\project_once\\src\\main\\webapp\\resources\\csv\\";     
+    public void word() throws Exception {
     	page =1;
-    	File file = new File("C:\\Users\\1027\\git\\project_once\\src\\main\\webapp\\resources\\csv\\csv.csv");
-    	file.delete();
-    	String csvFileName = "C:\\Users\\1027\\git\\project_once\\src\\main\\webapp\\resources\\csv\\csv.csv";
+    	String csvFileName = SAVED_FILES+"csv.csv";
     	BufferedWriter writer = new BufferedWriter(
     			new OutputStreamWriter(new FileOutputStream(csvFileName),"UTF-8"));
     	writer.write("text,frequency\n");

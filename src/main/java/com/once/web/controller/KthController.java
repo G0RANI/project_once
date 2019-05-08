@@ -41,7 +41,7 @@ public class KthController {
         if(page!=1) {
          page = (page-1)*10+1;
         }
-        pxy.word(page);
+        pxy.word();
         String url =  "https://search.naver.com/search.naver?&where=news&query=%EB%B9%84%ED%8A%B8%EC%BD%94%EC%9D%B8%20%EC%8B%9C%EC%84%B8&sm=tab_pge&sort=0&photo=0&field=0&reporter_article=&pd=0&ds=&de=&docid=&nso=so:r,p:all,a:all&mynews=0&cluster_rank=10&start="+page+"&refresh_start=0";
         Document doc = Jsoup.connect(url).get();
         Elements elements = doc.select("ul.type01 li dl  dt a");
