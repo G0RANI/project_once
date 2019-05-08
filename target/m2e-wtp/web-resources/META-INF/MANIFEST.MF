@@ -1,10 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< HEAD
 Built-By: taehy
 Build-Jdk: 1.8.0_191
-=======
-Built-By: 1027
-Build-Jdk: 1.8.0_201
->>>>>>> b89a21347b22955673ff28fdf60e2c1b5af2a67b
 Created-By: Maven Integration for Eclipse
 
