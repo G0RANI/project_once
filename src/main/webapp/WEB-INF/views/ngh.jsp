@@ -801,5 +801,6 @@ html, body {
 <script>
 app.init('<%=application.getContextPath()%>');
 ngh.init('<%=application.getContextPath()%>');
+app.$$.init();
 </script>
 </html>

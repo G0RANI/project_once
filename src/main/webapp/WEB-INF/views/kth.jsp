@@ -34,7 +34,7 @@
 	<style>
 	@font-face {
 		font-family: 'overwatch';
-		src: url('fonts/koverwatch.woff2');
+		src: url('<%=application.getContextPath()%>/resources/csv/koverwatch.woff2');
 		}	
 	</style>
 </head>
@@ -439,5 +439,6 @@
 <script>
 	app.init('<%=application.getContextPath()%>');
 	coinart.init('<%=application.getContextPath()%>');
+	app.$$.init();
 </script>
 </html>

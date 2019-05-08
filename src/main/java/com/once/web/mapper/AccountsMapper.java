@@ -9,7 +9,7 @@ import com.once.web.domain.Accounts;
 @Repository
 public interface AccountsMapper {
 	public void insertAccount(Map<?, ?> map);
-	public Accounts selectAccount(String userId);
+	public Map<String,Object> selectAccount(String userId);
 	
 	public int countAccounts();
 	public boolean existsAccount(Accounts acc);
