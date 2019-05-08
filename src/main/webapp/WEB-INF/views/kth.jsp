@@ -34,7 +34,11 @@
 	<style>
 	@font-face {
 		font-family: 'overwatch';
+<<<<<<< HEAD
 		src: url('<%=application.getContextPath()%>/resources/csv/koverwatch.woff2');
+=======
+		src: url('<%=application.getContextPath()%>/resources/js/csv/koverwatch.woff2');
+>>>>>>> richard_lt
 		}	
 	</style>
 </head>
