@@ -8,12 +8,6 @@ ngh=(()=>{
 	let onCreate=()=>{	
 		setContentView();
 	};
-<<<<<<< HEAD
-	let setContentView=()=>{
-		once_chart();		
-		$.getScript($.js()+'/component/ngh_compo.js',()=>{					  	
-			  $('.top a').eq(0).click(function(){
-=======
 	let setContentView=()=>{	
 		once_chart();
 	
@@ -22,7 +16,6 @@ ngh=(()=>{
 		  
 			  	
 			 /* $('.top a').eq(0).click(function(){
->>>>>>> 30c365af1344a72d06b46d2dc6d2ba5d50a74214
 					$('#b').empty();
 				  $(ngh_compo.l_buy()).appendTo('#b');
 				  $('.top a').attr('class', '');
