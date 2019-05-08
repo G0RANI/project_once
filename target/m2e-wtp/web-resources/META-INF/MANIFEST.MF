@@ -1,15 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< HEAD
-<<<<<<< HEAD
 Built-By: 1027
 Build-Jdk: 1.8.0_201
-=======
-Built-By: taehy
-Build-Jdk: 1.8.0_191
->>>>>>> kth_lt
-=======
-Built-By: SEUNGAH
-Build-Jdk: 1.8.0_211
->>>>>>> eden_lt
 Created-By: Maven Integration for Eclipse
 
