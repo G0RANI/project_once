@@ -59,4 +59,10 @@ public class CustomersServiceImpl implements CustomersService{
 		
 	}
 
+	@Override
+	public Customers searchCoin(Map<?, ?> map) {
+		
+		return cm.selectCoin(map);
+	}
+
 }

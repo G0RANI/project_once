@@ -3,16 +3,13 @@ package com.once.web.controller;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Random;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.once.web.domain.Once;
 import com.once.web.lambda.IFunction;
 import com.once.web.lambda.ISupplier;
@@ -44,7 +41,7 @@ public class NghController {
 		  return map;
 	}
 	@ResponseBody
-	@RequestMapping("/ngh/chart")
+	@RequestMapping("/ngh/ch")
 	public Map<String, Object>  chart(
 			){
 		logger.info("원스차트에 들어왔습니다!!!");
@@ -55,8 +52,9 @@ public class NghController {
 		System.out.println(ls.toString());
 		System.out.println("원스에 값"+i.apply(once).toString());
 		map.put("ls", ls);
-		
 		 return map;
 	}
+	
+	
 	
 }

@@ -21,8 +21,6 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script
-	src="https://cdn.upbit.com/manifest-bundle-f95e81eead967f24e5c0.js"></script>
 <script src="https://cdn.upbit.com/js/bluebird-3.3.4.min.js"
 	integrity="sha384-Zum86V5Chub72Pcj/UopirJ0QwQ+LgKZFTlVMt/yaVwYbROQJl/q8Nj2e72vZel2"
 	crossorigin="anonymous"></script>
@@ -34,17 +32,13 @@
 	crossorigin="anonymous"></script>
 <script async="" src="https://platform.twitter.com/widgets.js"></script>
 <style data-styled="" data-styled-version="4.2.0"></style>
-
 <script src="https://www.amcharts.com/lib/4/core.js"></script>
 <script src="https://www.amcharts.com/lib/4/charts.js"></script>
 <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-
- <script src="http://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="http://www.amcharts.com/lib/3/amcharts.js"></script>
 <script src="http://www.amcharts.com/lib/3/serial.js"></script>
 <script src="http://www.amcharts.com/lib/3/themes/light.js"></script>
 <script src="http://www.amcharts.com/lib/3/amstock.js"></script>
-
-
 
 <style type="text/css">
 
@@ -52,6 +46,7 @@
   width: 100%;
   height: 500px;
 } */
+
 #chartdiv {
   width: 100%;
   height: 100%;
@@ -408,27 +403,18 @@ html, body {
 										</article>
 									</div>
 									<div class="rightB">
-										<article>
-											<span class="tabB"><ul class="top">
+										<article id="l_buy">
+											<span class="tabB">
+											
+											<ul class="top">
 													<li class="t2"><a href="#" class="on" title="매수">매수</a></li>
-													<li class="t3"><a href="#" class="" title="매도">매도</a></li>
-													<li class="t4"><a href="#" class="" title="거래내역">거래내역</a></li>
-												</ul></span><span class="orderB"><div style="height: 347px;">
+													<li class=""><a href="#" class="" title="매도">매도</a></li>
+													<li class=""><a href="#" class="" title="거래내역">거래내역</a></li>
+												</ul>
+												</span>
+												<span id="b" class="orderB" style="height: 374px;">
+												<div style="height: 347px;">
 													<dl>
-														<dt class="checkOption">
-															<strong>주문구분 <a href="#" class="tooltipDown"><div>
-																		<h5>[지정가 주문]</h5>
-																		주문 수량과 가격을 직접 결정하는 주문입니다. 매매체결 여부보다 가격을 우선으로 생각할 때 사용
-																		합니다.
-																		<h5>[시장가 주문]</h5>
-																		매수 시 주문 금액/매도 시 주문 수량만 설정하면, 시장가격으로 즉시 체결시키는 주문입니다.
-																		빠르게 매매를 체결하고 싶을 때 사용합니다.
-																	</div></a></strong>
-														</dt>
-														<dd class="checkOption">
-															<span class="chkB"><a class="on"><em>-</em>지정가</a><a
-																class="disable"><em>-</em>시장가</a></span>
-														</dd>
 														<dt class="price">
 															<strong>주문가능</strong>
 														</dt>
@@ -472,11 +458,11 @@ html, body {
 																포함): 0.05%</p>
 															<p class="fr">최소주문금액: 1,000 KRW</p></span>
 														<ul class="btnB">
-															<li class="ty01"><a title="회원가입" href="/signup">회원가입</a></li>
-															<li class="ty02"><a title="로그인" href="/signin">로그인</a></li>
+														<li class="ty04"><a href="#" title="매수">매수</a></li>
 														</ul>
 													</div>
-												</div></span>
+												</div>
+												</span>
 										</article>
 										<article>
 											
@@ -489,7 +475,7 @@ html, body {
 											<li><a href="#" class="on" title="체결">체결</a></li>
 											<li><a href="#" class="" title="일별">일별</a></li>
 										</ul>
-										<div>
+										<div id="chr_1">
 											<table class="ty01">
 												<colgroup>
 													<col width="96">
@@ -506,7 +492,7 @@ html, body {
 													</tr>
 												</thead>
 											</table>
-											<div class="scrollB" style="height: 360px;">
+											<div id="bt_list" class="scrollB" style="height: 360px;">
 												<div
 													style="position: relative; overflow: hidden; width: 100%; height: 360px;">
 													<div
@@ -775,10 +761,7 @@ html, body {
 							</div>
 						</footer>
 						</div>
-							
 					</div>
-					
-				
 </body>
 <!-- upbit -->
 <script src="https://cdn.upbit.com/vendors-chunk-344e4004ead25be2326b.js"></script>
@@ -789,7 +772,6 @@ html, body {
 
 <!-- once -->
 <script src="<%=application.getContextPath()%>/resources/js/common/auth.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/common/once.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/common/util.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/component/component.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/component/ksa_compo.js"></script>
@@ -805,18 +787,22 @@ html, body {
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
-
 <script src="<%=application.getContextPath()%>/resources/js/ngh/nghchart.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/kth/scroll.js"></script>
-<script type="text/javascript">initMoving(document.getElementById("right_content"), 50, 50, 50)</script>	
+<<<<<<< HEAD
+=======
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <script src="<%=application.getContextPath()%>/resources/js/ngh/nghchart.js"></script>
 =======
+=======
+>>>>>>> c20f323bdee56a3ffd8a1e220d8077a87b7d8765
+>>>>>>> b89a21347b22955673ff28fdf60e2c1b5af2a67b
 
 >>>>>>> 045a3ec049ff6bbf3279d0805cc72625a2c4df9d
 <script>
 app.init('<%=application.getContextPath()%>');
 ngh.init('<%=application.getContextPath()%>');
+app.$$.init();
 </script>
 </html>

@@ -112,5 +112,7 @@
 .pagination a:hover:not(.active) {
    background-color: #ddd;
 } 
-
+.center{
+	text-align :center;
+}
 	</style>

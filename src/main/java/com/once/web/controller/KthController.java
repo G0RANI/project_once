@@ -77,19 +77,17 @@ public class KthController {
             
         }
         map.put("ls", list);
-        
-
          return map;
      }
 @ResponseBody
 @RequestMapping(value = "/crawler/youtube",  method = {RequestMethod.GET})
 public Map<String, Object> youcrawler() throws Exception{
 	map.clear();
-	List<CoinArticle> list = new ArrayList<>();
-	
+	List<CoinArticle> list = pxy.youtube();
 	map.put("lis", list);
 	return map;
 };
+
      @ResponseBody
      @RequestMapping(value = "/notice/{npage}", method  = {RequestMethod.GET})
      public Map<String, Object> notice(@PathVariable  String npage){
@@ -130,7 +128,7 @@ public Map<String, Object> youcrawler() throws Exception{
     	 String srh = "%"+search+"%";
     	 ISupplier f =  () -> cuseservice.searchCountCustServices(srh);
  		map.put("page_num", page);
- 		map.put("page_size", "5");
+ 		map.put("page_size", "10");
  		map.put("block_size", "5");
  		map.put("rowCount", f.get());
  		map.put("search", srh);

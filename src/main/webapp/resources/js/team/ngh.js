@@ -9,8 +9,40 @@ ngh=(()=>{
 		setContentView();
 	};
 	let setContentView=()=>{	
-		
 		once_chart();
+	
+		
+		$.getScript($.js()+'/component/ngh_compo.js',()=>{		
+		  
+			  	
+			  $('.top a').eq(0).click(function(){
+					$('#b').empty();
+				  $(ngh_compo.l_buy()).appendTo('#b');
+				  $('.top a').attr('class', '');
+				  $('.top li').attr('class', 't2');
+		          $(this).attr('class', 'on');
+			  
+			  	});
+			  
+			  $('.top a').eq(1).click(function(){
+				  $('.top a').attr('class', '');
+				  $('.top li').attr('class', 't3');
+		          $(this).attr('class', 'on');
+				  $('#b').empty();
+				  $(ngh_compo.l_medo()).appendTo('#b');	
+			  	});
+			  
+			  $('.top a').eq(2).click(function(){
+				  $('.top a').attr('class', '');
+				  $('.top li').attr('class', 't4');
+		          $(this).attr('class', 'on');
+		     	 $('#b').empty();
+					$(ngh_compo.trx()).appendTo('#b');			
+			  	});
+			  
+			  $('#chr_1').empty();
+			  	$(ngh_compo.chr()).appendTo('#chr_1');
+             })
 	};
 	
 	/*once 차트 */
@@ -23,11 +55,9 @@ ngh=(()=>{
 				tp[i] = j.price;
 			});
 			 $('#l_val').empty();
-			 
 			 let prev1 = (tp[0] - tp[1]) / tp[1] *100;
-			 
-			 
 			 let minue = tp[0] - tp[1]
+			 
 			 let col = "";
 			 let prev = "1147";
 			 let giho = "";
@@ -54,7 +84,7 @@ ngh=(()=>{
 			 /*오른쪽 네비*/
 			 $('#r_root').empty();
 			 
-				let arr=[{txt : '원쓰코인', name : 'once'},	  
+				let arr=[{txt : '원스코인', name : 'once'},	  
 		              {txt : '비트코인', name : 'bit'},
 		              {txt : '비트코인캐시', name : 'cash'}, 
 		              {txt : '리플', name : 'riple'}, 
@@ -94,7 +124,7 @@ ngh=(()=>{
 						 +'		 	<em>BTC<span>/KRW</span></em>'
 						 +'		</td>'
 						 +'		<td class="price">'
-						 +'			<strong>'+d.ls.price+'</strong>'
+						 +'			<strong>'+tp[0]+'</strong>'
 						 +'			<span class=""> </span>'
 						 +'		</td>'
 						 +'		<td class="percent">'
@@ -132,8 +162,6 @@ ngh=(()=>{
 					/*click*/
 				});
 				/*each*/
-				
-			
 		});
 	}
 	

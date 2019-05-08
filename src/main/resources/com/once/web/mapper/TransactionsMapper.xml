@@ -2,5 +2,12 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-      <mapper namespace="com.once.web.mapper.TransactionsMapper">
+<mapper namespace="com.once.web.mapper.TransactionsMapper">
+ <select id="selectAllTransactions" resultType="hashMap">
+ 	SELECT * 
+ 	FROM TRANSACTIONS as tr
+ 		inner join CUSTOMERS as cu
+ 		on tr.id like cu.id
+ 	WHERE tr.id LIKE #{id};
+ </select>
 </mapper>
