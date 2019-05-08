@@ -407,9 +407,9 @@ html, body {
 											<span class="tabB">
 											
 											<ul class="top">
-													<li class="t2"><a href="#" class="on" title="매수">매수</a></li>
-													<li class=""><a href="#" class="" title="매도">매도</a></li>
-													<li class=""><a href="#" class="" title="거래내역">거래내역</a></li>
+													<li class="t2"><a class="on" title="매수">매수</a></li>
+													<li class=""><a  class="" title="매도">매도</a></li>
+													<li class=""><a  class="" title="거래내역">거래내역</a></li>
 												</ul>
 												</span>
 												<span id="b" class="orderB" style="height: 374px;">
@@ -435,7 +435,7 @@ html, body {
 															<strong>수량</strong> <i>(BTC)</i>
 														</dt>
 														<dd class="marginB6">
-															<input type="text" class="txt All" placeholder="0"
+															<input id="count" type="text" class="txt All" placeholder="0"
 																value="">
 														</dd>
 														<dd class="Quantity marginNone">
@@ -448,7 +448,7 @@ html, body {
 														</dt>
 														<dd class="marginB6">
 															<input type="txt" class="txt All" placeholder="0"
-																value="0.00">
+																value="">
 														</dd>
 														<dt></dt>
 														<dd></dd>

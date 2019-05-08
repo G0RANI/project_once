@@ -14,6 +14,6 @@ public interface TransactionsMapper {
 	public List<Transactions> selectWithdrawals(Transactions trx);
 	public List<Transactions> selectDeposits(Transactions trx);
 	public int countTransactions();
-	public void updateTransaction(Transactions trx);
+	public void updateTransaction(Map<?,?> map);
 	public void deleteTransaction(Transactions trx);
 }

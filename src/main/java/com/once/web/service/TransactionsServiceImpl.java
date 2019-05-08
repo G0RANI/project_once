@@ -44,9 +44,8 @@ public class TransactionsServiceImpl implements TransactionsService{
 	}
 
 	@Override
-	public void modifyTransaction(Transactions trx) {
-		// TODO Auto-generated method stub
-		
+	public void modifyTransaction(Map<?,?> map) {
+		tr.updateTransaction(map);
 	}
 
 	@Override
