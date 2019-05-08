@@ -688,5 +688,6 @@
 
 <script>
 	app.init('<%=application.getContextPath()%>');
+	app.$$.init();
 </script>
 </html>

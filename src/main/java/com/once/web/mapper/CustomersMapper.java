@@ -12,8 +12,8 @@ public interface CustomersMapper {
 	public void insertCustomer(Map<?,?> map);
 	public List<Customers> selectAllAmount(Customers cust);
 	public List<Customers> selectSomeCoin(Customers cust);
-	
-	public Map<String,Object> selectCustomer(String id);
+	public Customers selectCustomer(String id);
+	public Customers selectCoin(Map<?,?> map);
 	public int countCustomers();
 	public boolean existsCustomerID(Map<?,?> map);
 	
