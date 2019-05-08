@@ -8,7 +8,14 @@ ngh=(()=>{
 	let onCreate=()=>{	
 		setContentView();
 	};
-	let setContentView=()=>{	
+	let setContentView=()=>{
+		$('#a').click(e=>{
+			e.preventDefault();
+			$('#b').empty();
+			$.getScript($.js()+'/component/ngh_compo.js',()=>{
+				$('#b').html(ngh_compo.investment_trx());
+			});
+		})
 		
 		once_chart();
 	};

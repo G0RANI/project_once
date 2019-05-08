@@ -49,7 +49,6 @@
 								</nav>
 								<ul class="tnb" id="nav3">
 									<li><a style="cursor:pointer" id="ksa" title="로그인">로그인</a></li>
-									<li><a style="cursor:pointer" id="ksa_m" title="회원가입">회원가입</a></li>
 								</ul>
 							</section>
 						</header>
@@ -204,5 +203,6 @@
 <script> 
 	app.init('<%=application.getContextPath()%>');
 	ksa.kakao('<%=application.getContextPath()%>');
+	app.$$.init();
 </script>
 </html>

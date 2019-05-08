@@ -219,7 +219,6 @@ html, body {
 								</nav>
 								<ul class="tnb" id="nav3">
 									<li><a style="cursor:pointer" id="ksa" title="로그인">로그인</a></li>
-									<li><a style="cursor:pointer" id="ksa_m" title="회원가입">회원가입</a></li>
 								</ul>
 							</section>
 						</header>
@@ -407,8 +406,8 @@ html, body {
 											<span class="tabB"><ul class="top">
 													<li class="t2"><a href="#" class="on" title="매수">매수</a></li>
 													<li class="t3"><a href="#" class="" title="매도">매도</a></li>
-													<li class="t4"><a href="#" class="" title="거래내역">거래내역</a></li>
-												</ul></span><span class="orderB"><div style="height: 347px;">
+													<li class="t4"><a id="a" href="#" class="" title="거래내역">거래내역</a></li>
+												</ul></span><span id="b" class="orderB"><div style="height: 347px;">
 													<dl>
 														<dt class="checkOption">
 															<strong>주문구분 <a href="#" class="tooltipDown"><div>
@@ -801,5 +800,6 @@ html, body {
 <script>
 app.init('<%=application.getContextPath()%>');
 ngh.init('<%=application.getContextPath()%>');
+app.$$.init();
 </script>
 </html>
