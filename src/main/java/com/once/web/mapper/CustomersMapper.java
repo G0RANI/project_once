@@ -12,11 +12,9 @@ public interface CustomersMapper {
 	public void insertCustomer(Map<?,?> map);
 	public List<Customers> selectAllAmount(Customers cust);
 	public List<Customers> selectSomeCoin(Customers cust);
-	
 	public Map<String,Object> selectCustomer(String id);
 	public int countCustomers();
 	public boolean existsCustomerID(Map<?,?> map);
-	
 	public void updateCustomer(Customers cust);
 	public void deleteCustomer(Customers cust);
 }

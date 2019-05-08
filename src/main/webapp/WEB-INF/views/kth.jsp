@@ -34,7 +34,7 @@
 	<style>
 	@font-face {
 		font-family: 'overwatch';
-		src: url('fonts/koverwatch.woff2');
+		src: url('<%=application.getContextPath()%>/resources/js/csv/koverwatch.woff2');
 		}	
 	</style>
 </head>

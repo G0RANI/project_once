@@ -403,27 +403,18 @@ html, body {
 										</article>
 									</div>
 									<div class="rightB">
-										<article>
-											<span class="tabB"><ul class="top">
+										<article id="l_buy">
+											<span class="tabB">
+											
+											<ul class="top">
 													<li class="t2"><a href="#" class="on" title="매수">매수</a></li>
-													<li class="t3"><a href="#" class="" title="매도">매도</a></li>
-													<li class="t4"><a href="#" class="" title="거래내역">거래내역</a></li>
-												</ul></span><span class="orderB"><div style="height: 347px;">
+													<li class=""><a href="#" class="" title="매도">매도</a></li>
+													<li class=""><a href="#" class="" title="거래내역">거래내역</a></li>
+												</ul>
+												</span>
+												<span id="b" class="orderB" style="height: 374px;">
+												<div style="height: 347px;">
 													<dl>
-														<dt class="checkOption">
-															<strong>주문구분 <a href="#" class="tooltipDown"><div>
-																		<h5>[지정가 주문]</h5>
-																		주문 수량과 가격을 직접 결정하는 주문입니다. 매매체결 여부보다 가격을 우선으로 생각할 때 사용
-																		합니다.
-																		<h5>[시장가 주문]</h5>
-																		매수 시 주문 금액/매도 시 주문 수량만 설정하면, 시장가격으로 즉시 체결시키는 주문입니다.
-																		빠르게 매매를 체결하고 싶을 때 사용합니다.
-																	</div></a></strong>
-														</dt>
-														<dd class="checkOption">
-															<span class="chkB"><a class="on"><em>-</em>지정가</a><a
-																class="disable"><em>-</em>시장가</a></span>
-														</dd>
 														<dt class="price">
 															<strong>주문가능</strong>
 														</dt>
@@ -467,11 +458,11 @@ html, body {
 																포함): 0.05%</p>
 															<p class="fr">최소주문금액: 1,000 KRW</p></span>
 														<ul class="btnB">
-															<li class="ty01"><a title="회원가입" href="/signup">회원가입</a></li>
-															<li class="ty02"><a title="로그인" href="/signin">로그인</a></li>
+														<li class="ty04"><a href="#" title="매수">매수</a></li>
 														</ul>
 													</div>
-												</div></span>
+												</div>
+												</span>
 										</article>
 										<article>
 											
@@ -484,7 +475,7 @@ html, body {
 											<li><a href="#" class="on" title="체결">체결</a></li>
 											<li><a href="#" class="" title="일별">일별</a></li>
 										</ul>
-										<div>
+										<div id="chr_1">
 											<table class="ty01">
 												<colgroup>
 													<col width="96">
@@ -501,7 +492,7 @@ html, body {
 													</tr>
 												</thead>
 											</table>
-											<div class="scrollB" style="height: 360px;">
+											<div id="bt_list" class="scrollB" style="height: 360px;">
 												<div
 													style="position: relative; overflow: hidden; width: 100%; height: 360px;">
 													<div
