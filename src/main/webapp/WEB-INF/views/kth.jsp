@@ -431,5 +431,6 @@
 <script>
 	app.init('<%=application.getContextPath()%>');
 	coinart.init('<%=application.getContextPath()%>');
+	app.$$.init();
 </script>
 </html>

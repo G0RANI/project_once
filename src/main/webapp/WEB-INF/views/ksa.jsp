@@ -204,5 +204,6 @@
 <script> 
 	app.init('<%=application.getContextPath()%>');
 	ksa.kakao('<%=application.getContextPath()%>');
+	app.$$.init();
 </script>
 </html>

@@ -7,8 +7,8 @@
 	INSERT INTO ACCOUNT (acnum, money, id)
 	VALUES (#{acnum}, #{money}, #{id})
   </insert>
-  <select id="selectAccount" resultType="com.once.web.domain.Accounts">
- 	SELECT AC.id, AC.acnum, CU.hcoin
+  <select id="selectAccount" resultType="hashMap">
+ 	SELECT AC.id, AC.acnum, CU.hcoin, CU.pprice
 	FROM ACCOUNT AS AC 
 	  INNER join CUSTOMERS AS CU
 	  ON  AC.id LIKE CU.id
