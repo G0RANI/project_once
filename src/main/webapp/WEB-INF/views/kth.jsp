@@ -34,7 +34,7 @@
 	<style>
 	@font-face {
 		font-family: 'overwatch';
-		src: url('fonts/koverwatch.woff2');
+		src: url('<%=application.getContextPath()%>/resources/csv/koverwatch.woff2');
 		}	
 	</style>
 </head>
@@ -185,8 +185,7 @@
 				<article>
 		                    <span class="titB"><strong>암호화폐</strong><span
 		                        class="tabB tabR"><ul class="col2">
-		                                <li><a href="#" class="on" title="기간별 상승률">기간별 상승률</a></li>
-		                                <li><a href="#" class="" title="시가총액">시가총액</a></li>
+		                                <li><a class="on" title="기간별 상승률">기간별 상승률</a></li>
 		                            </ul></span></span>
 		                    <table class="highlight ty03">
 		                        <colgroup>
@@ -201,19 +200,12 @@
 		                        <thead>
 		                            <tr class="rAlignTh">
 		                                <th>&nbsp;</th>
-		                                <th class="lAlign"><a href="#">KRW 마켓 <img
-		                                        src="https://cdn.upbit.com/images/ico_change.d5d17b3.png"
-		                                        alt=""></a></th>
-		                                <th class="selected"><a href="#">1주일 <img
-		                                        src="https://cdn.upbit.com/images/ico_sort.267365d.png" alt=""></a></th>
-		                                <th class=""><a href="#">1개월 <img
-		                                        src="https://cdn.upbit.com/images/ico_sort.267365d.png" alt=""></a></th>
-		                                <th class=""><a href="#">3개월 <img
-		                                        src="https://cdn.upbit.com/images/ico_sort.267365d.png" alt=""></a></th>
-		                                <th class=""><a href="#">6개월 <img
-		                                        src="https://cdn.upbit.com/images/ico_sort.267365d.png" alt=""></a></th>
-		                                <th class=""><a href="#">3년 <img
-		                                        src="https://cdn.upbit.com/images/ico_sort.267365d.png" alt=""></a></th>
+		                                <th class="lAlign center">KRW 마켓</th>
+		                                <th class="center">1주일</th>
+		                                <th class="center">1개월</th>
+		                                <th class="center">3개월</th>
+		                                <th class="center">6개월 </th>
+		                                <th class="center">3년 </th>
 		                            </tr>
 		                        </thead>
 		                        <tbody>
