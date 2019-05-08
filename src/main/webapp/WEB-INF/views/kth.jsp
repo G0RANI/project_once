@@ -14,55 +14,13 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT">
-	<meta http-equiv="Expires" content="-1">
-	<meta http-equiv="Pragma" content="no-cache">
-	<meta http-equiv="Cache-Control" content="no-cache">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-	<script src="https://connect.facebook.net/signals/config/621223061560463?v=2.8.47&amp;r=stable" async=""></script>
-	<script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script>
-	<meta name="format-detection" content="telephone=no">
-	<meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 	<link rel="stylesheet" media="all" href="https://cdn.upbit.com/server_assets/assets/application-eed45448fcc8d15913d4046f854336c3e6d7dc7618b691d2e0500aa6583b42aa.css">
     <link rel="stylesheet" media="screen" href="https://cdn.upbit.com/commons-common-30703bb927f1099d8531.css">
     <link rel="stylesheet" media="screen" href="https://cdn.upbit.com/KR_PC-common-1b0a4e1e53868b6001ef.css">
-    <script src="https://cdn.upbit.com/manifest-bundle-f95e81eead967f24e5c0.js"></script>
-
     <link rel="icon" type="image/jpg" href="/favicon.jpg" sizes="32x32">
     <link rel="shortcut icon" href="/favicon.jpg">
-
-	<meta name="description" content="비트코인, 이더리움, 비트코인캐시, 리플, 라이트코인, 대시, 네오 등 100여 가지의 알트코인을 편리하고 안전하게 거래 #ONCE #모든 고객 거래 가능">
-	<meta name="keywords" content="web, software, mobile, app, ONCE">
-	<link rel="author" href="두나무">
-	<meta property="og:url" content="https://www.upbit.com/home">
-	<meta property="og:site_name" content="ONCE - 가장 신뢰받는 암호화폐 거래소">
-	<meta property="og:title" content="ONCE">
-	<meta property="og:image" content="https://static.upbit.com/upbit-pc/seo/upbit_facebook.png">
-	<meta property="og:image:width" content="1200">
-	<meta property="og:image:height" content="627">
-	<meta property="og:description" content="비트코인, 이더리움, 비트코인캐시, 리플, 라이트코인, 대시, 네오 등 100여 가지의 알트코인을 편리하고 안전하게 거래 #ONCE #모든 고객 거래 가능">
-	<meta property="og:locale" content="ko_kr">
-	<meta property="og:type" content="website">
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:url" content="https://www.upbit.com/">
-	<meta name="twitter:site_name" content="ONCE - 가장 신뢰받는 암호화폐 거래소">
-	<meta name="twitter:title" content="ONCE">
-	<meta name="twitter:image" content="https://static.upbit.com/upbit-pc/seo/upbit_facebook.png">
-	<meta name="twitter:image:width" content="1200">
-	<meta name="twitter:image:height" content="627">
-	<meta name="twitter:description" content="비트코인, 이더리움, 비트코인캐시, 리플, 라이트코인, 대시, 네오 등 100여 가지의 알트코인을 편리하고 안전하게 거래 #ONCE #모든 고객 거래 가능">
-	<meta name="twitter:locale" content="ko_kr">
-	<meta name="twitter:type" content="website">
-	<meta name="image" content="https://static.upbit.com/upbit-pc/seo/upbit_facebook.png">
-  	<meta name="csrf-param" content="authenticity_token">
-	<meta name="csrf-token" content="bYUDyRKfi9I0xcEBKbd7Q9lxS9+oWWqG1sWUdwi7/pzxhlU2g8EKyGdfyT9lOeDLfRsufoo2Cvb5VbuzZjNhuA==">
 	<script src="https://cdn.upbit.com/js/bluebird-3.3.4.min.js" integrity="sha384-Zum86V5Chub72Pcj/UopirJ0QwQ+LgKZFTlVMt/yaVwYbROQJl/q8Nj2e72vZel2" crossorigin="anonymous"></script>
-	
-    <script src=""<%=application.getContextPath()%>/resources/js/common/once.js""></script>
-    
     <script src="https://cdn.upbit.com/js/bluebird-3.3.4.min.js" integrity="sha384-Zum86V5Chub72Pcj/UopirJ0QwQ+LgKZFTlVMt/yaVwYbROQJl/q8Nj2e72vZel2" crossorigin="anonymous"></script>
     <script src="https://cdn.upbit.com/js/jquery-3.2.1.min.js" integrity="sha384-xBuQ/xzmlsLoJpyjoggmTEz8OWUFM0/RC5BsqQBDX2v5cMvDHcMakNTNrHIW2I5f" crossorigin="anonymous"></script>
     <script src="https://cdn.upbit.com/js/pc-inline-1.2.js" integrity="sha384-qTbmS4jWPoNJ/fbbtBgeNTj7u3P1Mlp0wn9pKGGp1+ehUyuSFYVGJosc800zYG+n" crossorigin="anonymous"></script>
@@ -76,108 +34,12 @@
 	<style>
 	@font-face {
 		font-family: 'overwatch';
-		src: url('fonts/koverwatch.woff2');
-		}
-		
-	</style>
-	<!-- Facebook Pixel Code -->
-	<noscript>
-		<img height="1" width="1" src="https://www.facebook.com/tr?id=621223061560463&ev=PageView&noscript=1"/>
-	</noscript>
-  	<!-- End Facebook Pixel Code -->
-	<style type="text/css">#markdown_notice_body {
-	  margin: 0;
-	  padding: 0;
-	  border: 0;
-	  word-break: break-all;
-	  width: 100%;
-	  padding: 0; }
-	  #markdown_notice_body * {
-	    background: #ffffff;
-	    color: #666;
-	    font-family: 'Noto Sans KR';
-	    line-height: 1.5em;
-	    font-size: 16px;
-	    box-sizing: border-box; }
-	  #markdown_notice_body p {
-	    padding: 0;
-	    margin: 1em 0;
-	    line-height: 1.5em; }
-	  #markdown_notice_body a:link, #markdown_notice_body a:visited, #markdown_notice_body a:hover {
-	    color: #165ab0;
-	    text-decoration: none; }
-	  #markdown_notice_body h1, #markdown_notice_body h2, #markdown_notice_body h3, #markdown_notice_body h4, #markdown_notice_body h5, #markdown_notice_body h6 {
-	    color: #2b2b2b;
-	    font-weight: 500;
-	    margin: 0.67em 0;
-	    height: auto; }
-	  #markdown_notice_body strong {
-	    font-weight: 500; }
-	  #markdown_notice_body h1 {
-	    font-size: 20px; }
-	  #markdown_notice_body h2 {
-	    font-size: 18px; }
-	  #markdown_notice_body h3, #markdown_notice_body h4, #markdown_notice_body h5, #markdown_notice_body h6 {
-	    font-size: 16px; }
-	  #markdown_notice_body del {
-	    color: #165ab0;
-	    text-decoration: none; }
-	  #markdown_notice_body em {
-	    color: #d80e35;
-	    font-style: normal; }
-	  #markdown_notice_body hr {
-	    background-color: #eeeeee;
-	    border-color: #eeeeee;
-	    color: #eeeeee;
-	    border-style: solid;
-	    display: block;
-	    border-width: 1px; }
-	  #markdown_notice_body pre {
-	    padding: 16px;
-	    overflow: auto;
-	    background-color: #f9fafc;
-	    border-radius: 5px;
-	    border-style: solid;
-	    border-color: #e3e5ec;
-	    border-width: 1px;
-	    margin: 1em 0; }
-	  #markdown_notice_body code {
-	    background: transparent; }
-	  #markdown_notice_body li p {
-	    margin: 0;
-	    padding: 0; }
-	  #markdown_notice_body ol > li, #markdown_notice_body ul > li {
-	    margin-left: 30px;
-	    padding-right: 30px;
-	    border-bottom: 0; }
-	  #markdown_notice_body ol > li {
-	    list-style: decimal; }
-	  #markdown_notice_body ul > li {
-	    list-style: initial; }
-	  #markdown_notice_body ul, #markdown_notice_body ol {
-	    margin: 1em 0; }
-	  #markdown_notice_body ul li ul,
-	  #markdown_notice_body ul li ol,
-	  #markdown_notice_body ol li ul,
-	  #markdown_notice_body ol li ol {
-	    margin: 0; }
-	  #markdown_notice_body blockquote {
-	    margin: 0;
-	    padding: 0 1em;
-	    /* color: #6a737d; */
-	    border-left: 0.25em solid #e9ecf1; }
-	  #markdown_notice_body blockquote > :first-child {
-	    margin-top: 0; }
-	  #markdown_notice_body blockquote > :last-child {
-	    margin-bottom: 0; }
-	  .crawler_text{
-	  	text-align: center;
-	  }  
-    @font-face {
-        font-family: 'overwatch';
-        src: url('resources/csv/koverwatch.woff2');
-    }
-	  
+<<<<<<< HEAD
+		src: url('<%=application.getContextPath()%>/resources/csv/koverwatch.woff2');
+=======
+		src: url('<%=application.getContextPath()%>/resources/js/csv/koverwatch.woff2');
+>>>>>>> richard_lt
+		}	
 	</style>
 </head>
 <body>
@@ -327,8 +189,7 @@
 				<article>
 		                    <span class="titB"><strong>암호화폐</strong><span
 		                        class="tabB tabR"><ul class="col2">
-		                                <li><a href="#" class="on" title="기간별 상승률">기간별 상승률</a></li>
-		                                <li><a href="#" class="" title="시가총액">시가총액</a></li>
+		                                <li><a class="on" title="기간별 상승률">기간별 상승률</a></li>
 		                            </ul></span></span>
 		                    <table class="highlight ty03">
 		                        <colgroup>
@@ -343,28 +204,21 @@
 		                        <thead>
 		                            <tr class="rAlignTh">
 		                                <th>&nbsp;</th>
-		                                <th class="lAlign"><a href="#">KRW 마켓 <img
-		                                        src="https://cdn.upbit.com/images/ico_change.d5d17b3.png"
-		                                        alt=""></a></th>
-		                                <th class="selected"><a href="#">1주일 <img
-		                                        src="https://cdn.upbit.com/images/ico_sort.267365d.png" alt=""></a></th>
-		                                <th class=""><a href="#">1개월 <img
-		                                        src="https://cdn.upbit.com/images/ico_sort.267365d.png" alt=""></a></th>
-		                                <th class=""><a href="#">3개월 <img
-		                                        src="https://cdn.upbit.com/images/ico_sort.267365d.png" alt=""></a></th>
-		                                <th class=""><a href="#">6개월 <img
-		                                        src="https://cdn.upbit.com/images/ico_sort.267365d.png" alt=""></a></th>
-		                                <th class=""><a href="#">3년 <img
-		                                        src="https://cdn.upbit.com/images/ico_sort.267365d.png" alt=""></a></th>
+		                                <th class="lAlign center">KRW 마켓</th>
+		                                <th class="center">1주일</th>
+		                                <th class="center">1개월</th>
+		                                <th class="center">3개월</th>
+		                                <th class="center">6개월 </th>
+		                                <th class="center">3년 </th>
 		                            </tr>
 		                        </thead>
 		                        <tbody>
 		                            <tr>
 		                                <th><em class="logo"
-		                                    style="background: url(https://www.w3schools.com/images/w3schools_green.jpg) 0px 0px/cover no-repeat;">-</em><a
+		                                    style="background: url(https://assets.coingecko.com/coins/images/677/large/basic-attention-token.png?1547034427) 0px 0px/cover no-repeat;">-</em><a
 		                                    class="tit" href="/exchange?code=CRIX.UPBIT.KRW-BAT"><strong>베이직어텐션토큰</strong></a></th>
 		                                <td class="lAlign"><i>BAT/KRW</i></td>
-		                                <td class="selected"><p class="up">+39.77%</p></td>
+		                                <td class=""><p class="up">+39.76%</p></td>
 		                                <td class=""><p class="up">+110.57%</p></td>
 		                                <td class=""><p class="up">+248.91%</p></td>
 		                                <td class=""><p class="up">+52.72%</p></td>
@@ -372,21 +226,10 @@
 		                            </tr>
 		                            <tr>
 		                                <th><em class="logo"
-		                                    style="background: url(https://www.w3schools.com/images/w3schools_green.jpg) 0px 0px/cover no-repeat;">-</em><a
-		                                    class="tit" href="/exchange?code=CRIX.UPBIT.KRW-MCO"><strong>크립토닷컴</strong></a></th>
-		                                <td class="lAlign"><i>MCO/KRW</i></td>
-		                                <td class="selected"><p class="up">+26.89%</p></td>
-		                                <td class=""><p class="up">+64.92%</p></td>
-		                                <td class=""><p class="up">+141.70%</p></td>
-		                                <td class=""><p class="up">+8.55%</p></td>
-		                                <td class=""><p class="down">-57.17%</p></td>
-		                            </tr>
-		                            <tr>
-		                                <th><em class="logo"
-		                                    style="background: url(https://www.w3schools.com/images/w3schools_green.jpg) 0px 0px/cover no-repeat;">-</em><a
+		                                    style="background: url(https://assets.coingecko.com/coins/images/2102/large/refereum.png?1548608001) 0px 0px/cover no-repeat;">-</em><a
 		                                    class="tit" href="/exchange?code=CRIX.UPBIT.KRW-RFR"><strong>리퍼리움</strong></a></th>
 		                                <td class="lAlign"><i>RFR/KRW</i></td>
-		                                <td class="selected"><p class="up">+21.71%</p></td>
+		                                <td class=""><p class="up">+21.71%</p></td>
 		                                <td class=""><p class="up">+24.60%</p></td>
 		                                <td class=""><p class="up">+39.56%</p></td>
 		                                <td class=""><p class="down">-52.57%</p></td>
@@ -394,10 +237,10 @@
 		                            </tr>
 		                            <tr>
 		                                <th><em class="logo"
-		                                    style="background: url(https://www.w3schools.com/images/w3schools_green.jpg) 0px 0px/cover no-repeat;">-</em><a
+		                                    style="background: url(https://assets.coingecko.com/coins/images/1102/large/enjin-coin-logo.png?1547035078) 0px 0px/cover no-repeat;">-</em><a
 		                                    class="tit" href="/exchange?code=CRIX.UPBIT.KRW-ENJ"><strong>엔진코인</strong></a></th>
 		                                <td class="lAlign"><i>ENJ/KRW</i></td>
-		                                <td class="selected"><p class="up">+21.02%</p></td>
+		                                <td class=""><p class="up">+21.02%</p></td>
 		                                <td class=""><p class="up">+2.40%</p></td>
 		                                <td class=""><p class="" style="text-align: center;">-</p></td>
 		                                <td class=""><p class="" style="text-align: center;">-</p></td>
@@ -405,10 +248,10 @@
 		                            </tr>
 		                            <tr>
 		                                <th><em class="logo"
-		                                    style="background: url(https://www.w3schools.com/images/w3schools_green.jpg) 0px 0px/cover no-repeat;">-</em><a
+		                                    style="background: url(https://assets.coingecko.com/coins/images/309/large/Webp.net-resizeimage_%288%29.png?1547034073) 0px 0px/cover no-repeat;">-</em><a
 		                                    class="tit" href="/exchange?code=CRIX.UPBIT.KRW-REP"><strong>어거</strong></a></th>
 		                                <td class="lAlign"><i>REP/KRW</i></td>
-		                                <td class="selected"><p class="up">+20.58%</p></td>
+		                                <td class=""><p class="up">+20.58%</p></td>
 		                                <td class=""><p class="up">+62.37%</p></td>
 		                                <td class=""><p class="up">+52.89%</p></td>
 		                                <td class=""><p class="up">+63.79%</p></td>
@@ -416,58 +259,14 @@
 		                            </tr>
 		                            <tr>
 		                                <th><em class="logo"
-		                                    style="background: url(https://www.w3schools.com/images/w3schools_green.jpg) 0px 0px/cover no-repeat;">-</em><a
+		                                    style="background: url(https://assets.coingecko.com/coins/images/1374/large/medibloc.png?1547035399) 0px 0px/cover no-repeat;">-</em><a
 		                                    class="tit" href="/exchange?code=CRIX.UPBIT.KRW-MEDX"><strong>메디블록</strong></a></th>
 		                                <td class="lAlign"><i>MEDX/KRW</i></td>
-		                                <td class="selected"><p class="up">+19.57%</p></td>
+		                                <td class=""><p class="up">+19.57%</p></td>
 		                                <td class=""><p class="up">+62.72%</p></td>
 		                                <td class=""><p class="up">+134.38%</p></td>
 		                                <td class=""><p class="up">+6.31%</p></td>
 		                                <td class=""><p class="" style="text-align: center;">-</p></td>
-		                            </tr>
-		                            <tr>
-		                                <th><em class="logo"
-		                                    style="background: url(https://www.w3schools.com/images/w3schools_green.jpg) 0px 0px/cover no-repeat;">-</em><a
-		                                    class="tit" href="/exchange?code=CRIX.UPBIT.KRW-IQ"><strong>에브리피디아</strong></a></th>
-		                                <td class="lAlign"><i>IQ/KRW</i></td>
-		                                <td class="selected"><p class="up">+17.20%</p></td>
-		                                <td class=""><p class="up">+27.54%</p></td>
-		                                <td class=""><p class="up">+75.37%</p></td>
-		                                <td class=""><p class="down">-57.41%</p></td>
-		                                <td class=""><p class="" style="text-align: center;">-</p></td>
-		                            </tr>
-		                            <tr>
-		                                <th><em class="logo"
-		                                    style="background: url(https://www.w3schools.com/images/w3schools_green.jpg) 0px 0px/cover no-repeat;">-</em><a
-		                                    class="tit" href="/exchange?code=CRIX.UPBIT.KRW-CPT"><strong>콘텐츠프로토콜토큰</strong></a></th>
-		                                <td class="lAlign"><i>CPT/KRW</i></td>
-		                                <td class="selected"><p class="up">+13.26%</p></td>
-		                                <td class=""><p class="down">-24.25%</p></td>
-		                                <td class=""><p class="" style="text-align: center;">-</p></td>
-		                                <td class=""><p class="" style="text-align: center;">-</p></td>
-		                                <td class=""><p class="" style="text-align: center;">-</p></td>
-		                            </tr>
-		                            <tr>
-		                                <th><em class="logo"
-		                                    style="background: url(https://www.w3schools.com/images/w3schools_green.jpg) 0px 0px/cover no-repeat;">-</em><a
-		                                    class="tit" href="/exchange?code=CRIX.UPBIT.KRW-ICX"><strong>아이콘</strong></a></th>
-		                                <td class="lAlign"><i>ICX/KRW</i></td>
-		                                <td class="selected"><p class="up">+9.20%</p></td>
-		                                <td class=""><p class="up">+23.90%</p></td>
-		                                <td class=""><p class="up">+74.81%</p></td>
-		                                <td class=""><p class="down">-40.34%</p></td>
-		                                <td class=""><p class="down">-88.21%</p></td>
-		                            </tr>
-		                            <tr>
-		                                <th><em class="logo"
-		                                    style="background: url(https://www.w3schools.com/images/w3schools_green.jpg) 0px 0px/cover no-repeat;">-</em><a
-		                                    class="tit" href="/exchange?code=CRIX.UPBIT.KRW-POWR"><strong>파워렛저</strong></a></th>
-		                                <td class="lAlign"><i>POWR/KRW</i></td>
-		                                <td class="selected"><p class="up">+8.76%</p></td>
-		                                <td class=""><p class="up">+24.17%</p></td>
-		                                <td class=""><p class="up">+30.70%</p></td>
-		                                <td class=""><p class="down">-24.37%</p></td>
-		                                <td class=""><p class="down">-72.66%</p></td>
 		                            </tr>
 		                        </tbody>
 		                    </table>
@@ -560,7 +359,6 @@
 
 <!-- once -->
 <script src="<%=application.getContextPath()%>/resources/js/common/auth.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/common/once.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/common/util.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/component/component.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/component/ksa_compo.js"></script>
@@ -582,5 +380,6 @@
 <script>
 	app.init('<%=application.getContextPath()%>');
 	coinart.init('<%=application.getContextPath()%>');
+	app.$$.init();
 </script>
 </html>
