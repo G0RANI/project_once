@@ -211,10 +211,10 @@
 		                        <tbody>
 		                            <tr>
 		                                <th><em class="logo"
-		                                    style="background: url(https://www.w3schools.com/images/w3schools_green.jpg) 0px 0px/cover no-repeat;">-</em><a
+		                                    style="background: url(https://assets.coingecko.com/coins/images/677/large/basic-attention-token.png?1547034427) 0px 0px/cover no-repeat;">-</em><a
 		                                    class="tit" href="/exchange?code=CRIX.UPBIT.KRW-BAT"><strong>베이직어텐션토큰</strong></a></th>
 		                                <td class="lAlign"><i>BAT/KRW</i></td>
-		                                <td class="selected"><p class="up">+39.77%</p></td>
+		                                <td class=""><p class="up">+39.77%</p></td>
 		                                <td class=""><p class="up">+110.57%</p></td>
 		                                <td class=""><p class="up">+248.91%</p></td>
 		                                <td class=""><p class="up">+52.72%</p></td>
@@ -222,21 +222,10 @@
 		                            </tr>
 		                            <tr>
 		                                <th><em class="logo"
-		                                    style="background: url(https://www.w3schools.com/images/w3schools_green.jpg) 0px 0px/cover no-repeat;">-</em><a
-		                                    class="tit" href="/exchange?code=CRIX.UPBIT.KRW-MCO"><strong>크립토닷컴</strong></a></th>
-		                                <td class="lAlign"><i>MCO/KRW</i></td>
-		                                <td class="selected"><p class="up">+26.89%</p></td>
-		                                <td class=""><p class="up">+64.92%</p></td>
-		                                <td class=""><p class="up">+141.70%</p></td>
-		                                <td class=""><p class="up">+8.55%</p></td>
-		                                <td class=""><p class="down">-57.17%</p></td>
-		                            </tr>
-		                            <tr>
-		                                <th><em class="logo"
-		                                    style="background: url(https://www.w3schools.com/images/w3schools_green.jpg) 0px 0px/cover no-repeat;">-</em><a
+		                                    style="background: url(https://assets.coingecko.com/coins/images/2102/large/refereum.png?1548608001) 0px 0px/cover no-repeat;">-</em><a
 		                                    class="tit" href="/exchange?code=CRIX.UPBIT.KRW-RFR"><strong>리퍼리움</strong></a></th>
 		                                <td class="lAlign"><i>RFR/KRW</i></td>
-		                                <td class="selected"><p class="up">+21.71%</p></td>
+		                                <td class=""><p class="up">+21.71%</p></td>
 		                                <td class=""><p class="up">+24.60%</p></td>
 		                                <td class=""><p class="up">+39.56%</p></td>
 		                                <td class=""><p class="down">-52.57%</p></td>
@@ -244,10 +233,10 @@
 		                            </tr>
 		                            <tr>
 		                                <th><em class="logo"
-		                                    style="background: url(https://www.w3schools.com/images/w3schools_green.jpg) 0px 0px/cover no-repeat;">-</em><a
+		                                    style="background: url(https://assets.coingecko.com/coins/images/1102/large/enjin-coin-logo.png?1547035078) 0px 0px/cover no-repeat;">-</em><a
 		                                    class="tit" href="/exchange?code=CRIX.UPBIT.KRW-ENJ"><strong>엔진코인</strong></a></th>
 		                                <td class="lAlign"><i>ENJ/KRW</i></td>
-		                                <td class="selected"><p class="up">+21.02%</p></td>
+		                                <td class=""><p class="up">+21.02%</p></td>
 		                                <td class=""><p class="up">+2.40%</p></td>
 		                                <td class=""><p class="" style="text-align: center;">-</p></td>
 		                                <td class=""><p class="" style="text-align: center;">-</p></td>
@@ -255,10 +244,10 @@
 		                            </tr>
 		                            <tr>
 		                                <th><em class="logo"
-		                                    style="background: url(https://www.w3schools.com/images/w3schools_green.jpg) 0px 0px/cover no-repeat;">-</em><a
+		                                    style="background: url(https://assets.coingecko.com/coins/images/309/large/Webp.net-resizeimage_%288%29.png?1547034073) 0px 0px/cover no-repeat;">-</em><a
 		                                    class="tit" href="/exchange?code=CRIX.UPBIT.KRW-REP"><strong>어거</strong></a></th>
 		                                <td class="lAlign"><i>REP/KRW</i></td>
-		                                <td class="selected"><p class="up">+20.58%</p></td>
+		                                <td class=""><p class="up">+20.58%</p></td>
 		                                <td class=""><p class="up">+62.37%</p></td>
 		                                <td class=""><p class="up">+52.89%</p></td>
 		                                <td class=""><p class="up">+63.79%</p></td>
@@ -266,58 +255,14 @@
 		                            </tr>
 		                            <tr>
 		                                <th><em class="logo"
-		                                    style="background: url(https://www.w3schools.com/images/w3schools_green.jpg) 0px 0px/cover no-repeat;">-</em><a
+		                                    style="background: url(https://assets.coingecko.com/coins/images/1374/large/medibloc.png?1547035399) 0px 0px/cover no-repeat;">-</em><a
 		                                    class="tit" href="/exchange?code=CRIX.UPBIT.KRW-MEDX"><strong>메디블록</strong></a></th>
 		                                <td class="lAlign"><i>MEDX/KRW</i></td>
-		                                <td class="selected"><p class="up">+19.57%</p></td>
+		                                <td class=""><p class="up">+19.57%</p></td>
 		                                <td class=""><p class="up">+62.72%</p></td>
 		                                <td class=""><p class="up">+134.38%</p></td>
 		                                <td class=""><p class="up">+6.31%</p></td>
 		                                <td class=""><p class="" style="text-align: center;">-</p></td>
-		                            </tr>
-		                            <tr>
-		                                <th><em class="logo"
-		                                    style="background: url(https://www.w3schools.com/images/w3schools_green.jpg) 0px 0px/cover no-repeat;">-</em><a
-		                                    class="tit" href="/exchange?code=CRIX.UPBIT.KRW-IQ"><strong>에브리피디아</strong></a></th>
-		                                <td class="lAlign"><i>IQ/KRW</i></td>
-		                                <td class="selected"><p class="up">+17.20%</p></td>
-		                                <td class=""><p class="up">+27.54%</p></td>
-		                                <td class=""><p class="up">+75.37%</p></td>
-		                                <td class=""><p class="down">-57.41%</p></td>
-		                                <td class=""><p class="" style="text-align: center;">-</p></td>
-		                            </tr>
-		                            <tr>
-		                                <th><em class="logo"
-		                                    style="background: url(https://www.w3schools.com/images/w3schools_green.jpg) 0px 0px/cover no-repeat;">-</em><a
-		                                    class="tit" href="/exchange?code=CRIX.UPBIT.KRW-CPT"><strong>콘텐츠프로토콜토큰</strong></a></th>
-		                                <td class="lAlign"><i>CPT/KRW</i></td>
-		                                <td class="selected"><p class="up">+13.26%</p></td>
-		                                <td class=""><p class="down">-24.25%</p></td>
-		                                <td class=""><p class="" style="text-align: center;">-</p></td>
-		                                <td class=""><p class="" style="text-align: center;">-</p></td>
-		                                <td class=""><p class="" style="text-align: center;">-</p></td>
-		                            </tr>
-		                            <tr>
-		                                <th><em class="logo"
-		                                    style="background: url(https://www.w3schools.com/images/w3schools_green.jpg) 0px 0px/cover no-repeat;">-</em><a
-		                                    class="tit" href="/exchange?code=CRIX.UPBIT.KRW-ICX"><strong>아이콘</strong></a></th>
-		                                <td class="lAlign"><i>ICX/KRW</i></td>
-		                                <td class="selected"><p class="up">+9.20%</p></td>
-		                                <td class=""><p class="up">+23.90%</p></td>
-		                                <td class=""><p class="up">+74.81%</p></td>
-		                                <td class=""><p class="down">-40.34%</p></td>
-		                                <td class=""><p class="down">-88.21%</p></td>
-		                            </tr>
-		                            <tr>
-		                                <th><em class="logo"
-		                                    style="background: url(https://www.w3schools.com/images/w3schools_green.jpg) 0px 0px/cover no-repeat;">-</em><a
-		                                    class="tit" href="/exchange?code=CRIX.UPBIT.KRW-POWR"><strong>파워렛저</strong></a></th>
-		                                <td class="lAlign"><i>POWR/KRW</i></td>
-		                                <td class="selected"><p class="up">+8.76%</p></td>
-		                                <td class=""><p class="up">+24.17%</p></td>
-		                                <td class=""><p class="up">+30.70%</p></td>
-		                                <td class=""><p class="down">-24.37%</p></td>
-		                                <td class=""><p class="down">-72.66%</p></td>
 		                            </tr>
 		                        </tbody>
 		                    </table>
