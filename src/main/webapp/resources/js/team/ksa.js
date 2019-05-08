@@ -26,12 +26,6 @@ ksa=(()=>{
                  $(ksa_compo.d_w_charge()).appendTo('#once');
                  $('#nav2 a').attr('class', '');
                  $('#ksa_d').attr('class', 'on');
-                 $('#ksa').remove();
-                 $('.tnb').html('<li><a style="cursor:pointer" id="off" title="로그아웃">로그아웃</a></li>');
-                 $('#off').click(e=>{
-                     alert('클릭 로그아웃!');
-                     logout();
-                });
                  charge_btn(cust_id);
                  $('.tabB a').eq(0).click(function(){
                         alert('충전');                                                
@@ -67,12 +61,6 @@ ksa=(()=>{
                 $(ksa_compo.investment_coin()).appendTo('#once');
                 $('#nav2 a').attr('class', '');
                 $('#ksa_i').attr('class', 'on');    
-                $('#ksa').remove();
-                $('.tnb').html('<li><a style="cursor:pointer" id="off" title="로그아웃">로그아웃</a></li>');
-                $('#off').click(e=>{
-                    alert('클릭 로그아웃!');
-                    logout();
-               });
                 $.ajax({
                   	 url:$.ctx()+'/retrieve_cust/'+cust_id,
                   	 data:cust_id,
@@ -98,36 +86,55 @@ ksa=(()=>{
                      		 $('#assets strong').eq(1).empty();			/*총보유자산*/
                      		 $('#assets strong').eq(1).html(s.hcoin+' <i>KRW</i>');
                           });
-                       $('.ty04 a').eq(1).click(function(){
-                    	   let tx_date = new Date(s.date);
-                    	   function convert(x) {
-                    		    var date = new Date(x),
-                    		        mnth = ("0" + (date.getMonth()+1)).slice(-2),
-                    		        day  = ("0" + date.getDate()).slice(-2),
-                    		    	hours  = ("0" + date.getHours()).slice(-2),
-                    		        minutes = ("0" + date.getMinutes()).slice(-2);
-                    		    var date2 = [date.getFullYear(), mnth, day].join("-");
-                    		    var date3 = [hours, minutes ].join(":");
-                    		   return [ date2, date3 ].join(" ");
-                    		}
-                              $('.ty04 a').attr('class', '');
-                              $(this).attr('class', 'on');
-                              $('.ownB').empty();
-                              $('.ownB').html(ksa_compo.investment_trx());
-                              $('.ty04 tbody').empty();
-                            	  $('.ty04 tbody').html('<tr>'
-                      		  			+'<td class="lAlign">'+convert(tx_date)+'</td>'
-				                			+'<td class="cAlign"><strong>'+s.tseq+'</strong></td>'
-				                			+'<td class="cAlign up">'+s.rw+'</td>'
-				                			+'<td><strong>0.00015797 <i>'+s.rwm+'</i></strong></td>'
-				                			+'<td><strong>0.00015797 <i>'+s.rwm+'</i></strong></td>'
-				                			+'<td><strong>0.00015797 <i>'+s.rwm+'</i></strong></td>'
-				                			+'</tr>');
-                       });
                   	 },
                   	 error:e=>{	 
                   		 alert('실패!');
                   	 }
+                });
+                $('.ty04 a').eq(1).click(function(){
+                	 $.ajax({
+                      	 url:$.ctx()+'/retrieve_trx/'+cust_id,
+                      	 data:cust_id,
+                      	 type:'POST',
+                      	 dataType:'json',
+                      	 contentType:'application/json',
+                      	 success:s=>{
+                      		 alert('성공!'+s.hcoin);
+                      		let tx_date = new Date(s.date);
+                      	   function convert(x) {
+                      		    var date = new Date(x),
+                      		        mnth = ("0" + (date.getMonth()+1)).slice(-2),
+                      		        day  = ("0" + date.getDate()).slice(-2),
+                      		    	hours  = ("0" + date.getHours()).slice(-2),
+                      		        minutes = ("0" + date.getMinutes()).slice(-2);
+                      		    var date2 = [date.getFullYear(), mnth, day].join("-");
+                      		    var date3 = [hours, minutes ].join(":");
+                      		   return [ date2, date3 ].join(" ");
+                      		}
+                                $('.ty04 a').attr('class', '');
+                                $(this).attr('class', 'on');
+                                $('.ownB').empty();
+                                $('.ownB').html(ksa_compo.investment_trx());
+                                $('.ty04 tbody').empty();
+                              	  $('.ty04 tbody').html('<tr>'
+                        		  			+'<td class="lAlign">'+convert(tx_date)+'</td>'
+         			                			+'<td class="cAlign"><strong>'+s.tseq+'</strong></td>'
+         			                			+'<td class="cAlign up">'+s.rw+'</td>'
+         			                			+'<td><strong>0.00015797 <i>'+s.rwm+'</i></strong></td>'
+         			                			+'<td><strong>0.00015797 <i>'+s.rwm+'</i></strong></td>'
+         			                			+'<td><strong>0.00015797 <i>'+s.rwm+'</i></strong></td>'
+         			                			+'</tr>');
+                      	 },
+                      	 error:e=>{	 
+                      		 alert('실패!');
+                      		 $('.ty04 a').attr('class', '');
+                             $(this).attr('class', 'on');
+                             $('.ownB').empty();
+                             $('.ownB').html(ksa_compo.investment_trx());
+                             $('.ty04 tbody').empty();
+                           	 $('.ty04 tbody').html('<td colspan="8" class="dataNone"><p>과거 거래내역이 없습니다.</p></td>');
+                      	 }
+                    });
                 });
             }
            });
@@ -139,7 +146,6 @@ ksa=(()=>{
 	
 	
 	let cust_id = sessionStorage.getItem('info');
-	
 	let charge_btn=(x)=>{
 		$.ajax({
        	 url:$.ctx()+'/retrieve_acc/'+x,
@@ -148,9 +154,12 @@ ksa=(()=>{
        	 dataType:'json',
        	 contentType:'application/json',
        	 success:s=>{
-       		 alert('성공!'+s.acnum);
        			 $('.totalB p').empty();
        			 $('<p> '+s.hcoin+' <i>KRW</i></p>').appendTo('.totalB');
+       			 $('#won strong').eq(1).empty();
+       			 $('#won strong').eq(1).html('<strong>'+s.pprice+' <i>KRW</i></strong>');
+       			 $('#bitcoin strong').eq(1).empty();
+       			 $('#bitcoin strong').eq(1).html('<strong>'+s.hcoin+' <i>BTC</i></strong>');
        			 $('.btnB em').empty();
            		 $('.btnB em').html('계좌번호  :  '+s.acnum);
            		 $('#acc').remove();
@@ -159,6 +168,22 @@ ksa=(()=>{
    					 e.preventDefault();
    					 window.open('payment', "a", "width=1000, height=800, left=100, top=50");		 
    				 });
+           		 $('.serchBt').click(e=>{
+           			let search_word = $('.serchInput input').val();
+               		$.ajax({
+                      	 url:$.ctx()+'/search',
+                      	 data:search_word,
+                      	 type:'GET',
+                      	 dataType:'json',
+                      	 contentType:'application/json',
+                      	 success:s=>{
+                      		alert('성공!');
+                      	 },
+                      	 error:e=>{
+                      		 alert('실패!');
+                      	 }
+                       });
+           		 });
        	 },
        	 error:e=>{
                 $('#acc').click(e=>{
@@ -214,9 +239,6 @@ ksa=(()=>{
 		    	             		success:(res)=>{
 		    	             			alert('성공');
 		    	             			location.assign(x);
-		    	             			/*$('#nav3').empty();
-		    	             			$('<li><a style="cursor:pointer" id="ksa_m" title="마이페이지">마이페이지</a></li>').appendTo('#nav3');
-		    	             			$('<li><a style="cursor:pointer" id="logout" title="로그아웃">로그아웃</a></li>').appendTo('#nav3');*/
 		    	             		},
 		    	             		error:(err)=>{
 		    	             			alert('실패');

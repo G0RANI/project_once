@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,6 +26,7 @@
     <script src="https://cdn.upbit.com/js/pc-inline-1.2.js" integrity="sha384-qTbmS4jWPoNJ/fbbtBgeNTj7u3P1Mlp0wn9pKGGp1+ehUyuSFYVGJosc800zYG+n" crossorigin="anonymous"></script>
     <script async="" src="https://platform.twitter.com/widgets.js"></script>
     <style data-styled="" data-styled-version="4.2.0"></style>
+<<<<<<< HEAD
     <script type="text/javascript" src="http://wowslider.com/images/demo/jquery.js"></script>
 <script type="text/javascript" src="http://wowslider.com/styles/a.js"></script>
 <script type="text/javascript">
@@ -79,9 +80,237 @@ var google_conversion_value = 0;
 
 <link rel="stylesheet" href="http://wowslider.com/styles/mainstyle.css" type="text/css" media="screen">
 
+=======
+	<link href="https://fonts.googleapis.com/css?family=Lato"rel="stylesheet">
+	
+<style type="text/css">
+* {
+	font-family: 'Lato', sans-serif;
+}
+
+.dp-wrap {
+	margin: 0 auto;
+	position: relative;
+	perspective: 1000px;
+	height: 100%;
+}
+
+.dp-slider {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	transform-style: preserve-3d;
+}
+
+.dp-slider div {
+	transform-style: preserve-3d;
+}
+
+.dp_item {
+	display: block;
+	position: absolute;
+	text-align: center;
+	color: #FFF;
+	border-radius: 10px;
+	transition: transform 1.2s;
+}
+
+.dp-img img {
+	border-left: 1px solid #fff;
+}
+
+#dp-slider .dp_item:first-child {
+	z-index: 10 !important;
+	transform: rotateY(0deg) translateX(0px) !important;
+}
+
+.dp_item[data-position="2"] {
+	z-index: 9;
+	transform: rotateY(0deg) translateX(10%) scale(0.9);
+}
+
+.dp_item[data-position="3"] {
+	z-index: 8;
+	transform: rotateY(0deg) translateX(20%) scale(0.8);
+}
+
+.dp_item[data-position="4"] {
+	z-index: 7;
+	transform: rotateY(0deg) translateX(30%) scale(0.7);
+}
+
+#dp-next, #dp-prev {
+	position: absolute;
+	top: 50%;
+	right: 16%;
+	height: 33px;
+	width: 33px;
+	z-index: 10;
+	cursor: pointer;
+}
+
+#dp-prev {
+	left: 15px;
+	transform: rotate(180deg);
+}
+
+#dp-dots {
+	position: absolute;
+	bottom: 25px;
+	z-index: 12;
+	left: 38%;
+	cursor: default;
+}
+
+#dp-dots li {
+	display: inline-block;
+	width: 13px;
+	height: 13px;
+	background: #ffff;
+	border-radius: 50%;
+}
+
+#dp-dots li:hover {
+	cursor: pointer;
+	background: #FA8C8C;
+	transition: background .3s;
+}
+
+#dp-dots li.active {
+	background: #093687;
+}
+
+.dp_item {
+	width: 85%;
+}
+
+.dp-content, .dp-img {
+	text-align: left;
+}
+
+.dp_item {
+	display: flex;
+	align-items: center;
+	background: #fff;
+	border-radius: 10px;
+	overflow: hidden;
+	border-top: 5px solid #093687;
+}
+
+.dp-content {
+	padding-left: 100px;
+	padding-right: 0;
+	display: inline-block;
+	width: 100%;
+}
+
+.dp-content h2 {
+	color: #41414B;
+	font-family: Circular Std Bold;
+	font-size: 48px;
+	max-width: 460px;
+	margin-top: 8px;
+	margin-bottom: 0px;
+}
+
+.dp-content p {
+	color: #74747F;
+	max-width: 490px;
+	margin-top: 15px;
+	font-size: 24px;
+}
+
+.dp-content .site-btn {
+	margin-top: 15px;
+	font-size: 13px;
+	padding: 19px 40px;
+}
+
+.dp-img:before {
+	background: -webkit-linear-gradient(-90deg, rgba(255, 255, 255, 0.25),
+		rgba(255, 255, 255, 0));
+	background: -o-linear-gradient(-90deg, rgba(255, 255, 255, 0.25),
+		rgba(255, 255, 255, 0));
+	background: -moz-linear-gradient(-90deg, rgba(255, 255, 255, 0.25),
+		rgba(255, 255, 255, 0));
+	background: linear-gradient(-90deg, rgba(255, 255, 255, 0.75),
+		rgba(255, 255, 255, 0));
+	content: "";
+	position: absolute;
+	height: 100%;
+	width: 25%;
+	z-index: 1;
+	top: 0;
+	pointer-events: none;
+	background: -webkit-linear-gradient(-90deg, rgba(255, 255, 255, 0),
+		rgba(255, 255, 255, 0.75));
+	background: -o-linear-gradient(-90deg, rgba(255, 255, 255, 0),
+		rgba(255, 255, 255, 0.75));
+	background: -moz-linear-gradient(-90deg, rgba(255, 255, 255, 0),
+		rgba(255, 255, 255, 0.75));
+	background: linear-gradient(-90deg, rgba(255, 255, 255, 0),
+		rgb(255, 255, 255));
+}
+
+.dp-img img {
+	object-fit: cover;
+	object-position: right;
+}
+
+#dp-slider, .dp-img img {
+	height: 738px;
+}
+
+#dp-slider
+ 
+.dp_item
+:hover
+:not
+ 
+(
+:first-child
+ 
+)
+{
+cursor
+:
+ 
+pointer
+;
+
+
+}
+.site-btn {
+	color: #fff;
+	font-size: 18px;
+	font-family: "Circular Std Medium";
+	background: #093687;
+	padding: 14px 43px;
+	display: inline-block;
+	border-radius: 2px;
+	position: relative;
+	top: -12px;
+	text-decoration: none;
+}
+
+.site-btn:hover {
+	text-decoration: none;
+	color: #fff;
+}
+
+h1 {
+	margin: 30px auto 30px auto;
+	text-align: center;
+}
+</style>
+<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script>
+<script src="https://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101"></script>
+<script src="https://pagead2.googlesyndication.com/pub-config/r20160913/ca-pub-2783044520727903.js"></script>
+>>>>>>> 3f2dac915554640b2f16d4fb69930eb270b150a8
 </head>
 <body class="bgWhite">
-<div id="root">
+	<div id="root">
 		<div>
 			<div>
 				<div class="">
@@ -91,98 +320,186 @@ var google_conversion_value = 0;
 						<header class="" style="z-index: 100;">
 							<section>
 								<h1>
-									<a style="cursor:pointer" title="UpBit" id="home">UpBit</a>
+									<a style="cursor: pointer" title="UpBit" id="home">ONCE</a>
 								</h1>
 								<nav id="nav2">
-									<a style="cursor:pointer" class="" id="ngh" title="거래소">거래소</a>
-									<a style="cursor:pointer" class="" id="ksa_d" title="입출금">입출금</a>
-									<a style="cursor:pointer" class="" id="ksa_i" title="투자내역">투자내역</a>
-									<a style="cursor:pointer" class="" id="kth" title="코인동향">코인동향</a>
-									<a style="cursor:pointer" class="" id="kth2" title="고객센터">고객센터</a>
+									<a style="cursor: pointer" class="" id="ngh" title="거래소">거래소</a>
+									<a style="cursor: pointer" class="" id="ksa_d" title="입출금">입출금</a>
+									<a style="cursor: pointer" class="" id="ksa_i" title="투자내역">투자내역</a>
+									<a style="cursor: pointer" class="" id="kth" title="코인동향">코인동향</a>
+									<a style="cursor: pointer" class="" id="kth2" title="고객센터">고객센터</a>
 								</nav>
 								<ul class="tnb">
+<<<<<<< HEAD
 									<li><a style="cursor:pointer" id="ksa" title="로그인">로그인</a></li>
+=======
+									<li><a style="cursor: pointer" id="ksa" title="로그인">로그인</a></li>
+									<li><a style="cursor: pointer" id="ksa_m" title="회원가입">회원가입</a></li>
+>>>>>>> 3f2dac915554640b2f16d4fb69930eb270b150a8
 								</ul>
 							</section>
 						</header>
 					</article>
 					<div class="" id="once">
+						<h1>ONCE</h1>
+						<!-- slider -->
+						<div class="container" style="max-width: 1400px; margin: 0 auto;">
+							<div id="slider">
+								<div class="dp-wrap">
+									<div id="dp-slider">
+										<div class="dp_item" data-class="1" data-position="1">
+											<div class="dp-content">
+												<h2>Exchange</h2>
+												<p>거래소</p>
+												<a href="#" class="site-btn"></a>
+											</div>
+											<div class="dp-img">
+												<img class="img-fluid" src="https://3.bp.blogspot.com/-uG4g2ru306M/WSmOaS9-dLI/AAAAAAAAA3Q/b4BlZd8-qsgoFv4aW2wOEzOijxmQ7Pm2QCLcB/s1600/NYSE.JPG" alt="investing">
+											</div>
+										</div>
+										<div class="dp_item" data-class="2" data-position="2">
+											<div class="dp-content">
+												<h2>Wallets</h2>
+												<p>입출금</p>
+												<a href="#" class="site-btn"></a>
+											</div>
+											<div class="dp-img">
+												<img class="img-fluid" src="https://img.seoul.co.kr/img/upload/2017/05/15/SSI_20170515143932.jpg" alt="investing">
+											</div>
+										</div>
+										<div class="dp_item" data-class="3" data-position="3">
+											<div class="dp-content">
+												<h2>My Trade</h2>
+												<p>투자내역</p>
+												<a href="#" class="site-btn"></a>
+											</div>
+											<div class="dp-img">
+												<img class="img-fluid" src="https://www.v-on.kr/wp-content/uploads/2018/11/%EB%B2%A4%EC%B2%98%EA%B8%B0%EC%97%85%EC%9D%84-%EC%9C%84%ED%95%9C-%ED%88%AC%EC%9E%90%EA%B3%84%EC%95%BD%EC%84%9C-%ED%95%B4%EC%84%A4%EC%84%9C-%EB%8C%80%ED%91%9C%EC%9D%B4%EB%AF%B8%EC%A7%80.jpg" alt="investing">
+											</div>
+										</div>
+										<div class="dp_item" data-class="4" data-position="4">
+											<div class="dp-content">
+												<h2>Trend</h2>
+												<p>코인동향</p>
+												<a href="#" class="site-btn"></a>
+											</div>
+											<div class="dp-img">
+												<img class="img-fluid" src="http://platum.kr/wp-content/uploads/2016/03/12.jpg" alt="investing">
+											</div>
+										</div>
+									</div>					
+									<span id="dp-next"> 
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51.401 51.401">
+						        			<defs>
+										        <style>
+												.cls-1 {
+													fill: none;
+													stroke: #093687;
+													stroke-miterlimit: 10;
+													stroke-width: 7px;
+												}
+												</style>
+						        			</defs>
+						        			<path id="Rectangle_4_Copy" data-name="Rectangle 4 Copy" class="cls-1" d="M32.246,0V33.178L0,31.953" transform="translate(0.094 25.276) rotate(-45)"></path>
+						      			</svg>
+									</span> 
+									<span id="dp-prev"> 
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51.401 51.401">
+						        			<defs>
+										        <style>
+													.cls-1 {
+														fill: none;
+														stroke: ##093687;
+														stroke-miterlimit: 10;
+														stroke-width: 7px;
+													}
+												</style>
+						        			</defs>
+						        			<path id="Rectangle_4_Copy" data-name="Rectangle 4 Copy" class="cls-1" d="M32.246,0V33.178L0,31.953" transform="translate(0.094 25.276) rotate(-45)"></path>
+						      			</svg>
+									</span>
+									<ul id="dp-dots">
+										<li data-class="1" class="active"></li>
+										<li data-class="2"></li>
+										<li data-class="3"></li>
+										<li data-class="4"></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						
+						<iframe id="google_osd_static_frame_4839156847173" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe>
+						<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+						<script type="text/javascript">
+						        jQuery(document).ready(function(){
+						            function detect_active(){
+						                // get active
+						                var get_active = $("#dp-slider .dp_item:first-child").data("class");
+						                $("#dp-dots li").removeClass("active");
+						                $("#dp-dots li[data-class="+ get_active +"]").addClass("active");
+						            }
+						            $("#dp-next").click(function(){
+						                var total = $(".dp_item").length;
+						                $("#dp-slider .dp_item:first-child").hide().appendTo("#dp-slider").fadeIn();
+						                $.each($('.dp_item'), function (index, dp_item) {
+						                    $(dp_item).attr('data-position', index + 1);
+						                });
+						                detect_active();
+						
+						            });
+						
+						            $("#dp-prev").click(function(){
+						                var total = $(".dp_item").length;
+						                $("#dp-slider .dp_item:last-child").hide().prependTo("#dp-slider").fadeIn();
+						                $.each($('.dp_item'), function (index, dp_item) {
+						                    $(dp_item).attr('data-position', index + 1);
+						                });
+						
+						                detect_active();
+						            });
+						
+						            $("#dp-dots li").click(function(){
+						                $("#dp-dots li").removeClass("active");
+						                $(this).addClass("active");
+						                var get_slide = $(this).attr('data-class');
+						                console.log(get_slide);
+						                $("#dp-slider .dp_item[data-class=" + get_slide + "]").hide().prependTo("#dp-slider").fadeIn();
+						                $.each($('.dp_item'), function (index, dp_item) {
+						                    $(dp_item).attr('data-position', index + 1);
+						                });
+						            });
+						
+						
+						            $("body").on("click", "#dp-slider .dp_item:not(:first-child)", function(){
+						                var get_slide = $(this).attr('data-class');
+						                console.log(get_slide);
+						                $("#dp-slider .dp_item[data-class=" + get_slide + "]").hide().prependTo("#dp-slider").fadeIn();
+						                $.each($('.dp_item'), function (index, dp_item) {
+						                    $(dp_item).attr('data-position', index + 1);
+						                });
+						
+						                detect_active();
+						            });
+						        });
+						</script>
+						<script type="text/javascript">
+							var _gaq = _gaq || [];
+							_gaq.push(['_setAccount', 'UA-36251023-1']);
+							_gaq.push(['_setDomainName', 'jqueryscript.net']);
+							_gaq.push(['_trackPageview']);
+						
+							(function() {
+							var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+							ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+							var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+							})();
+						</script>
+						<iframe id="google_shimpl" style="display: none;"></iframe>
+						<iframe id="google_esf" name="google_esf" src="https://googleads.g.doubleclick.net/pagead/html/r20190501/r20190131/zrt_lookup.html#" data-ad-client="ca-pub-2783044520727903" style="display: none;"></iframe>
 						<div style="background-color: rgb(255, 255, 255);">
-							0
+							<h1>ONCE</h1>
 							<article class="app__main--erefX home">
-								<section class="app__WrapPopup--3rEKi">
-									<div class="app__LayerList--1pDH1">
-										<div class="app__mainInnerNotice--YDtkP">
-											<p class="app__header--2OuvG">
-												<span>Notice</span><a title="공지사항"
-													class="app__moreBt--z2tfy" href="/service_center/notice">More</a>
-											</p>
-											<dl>
-												<dd>
-													<a href="/service_center/notice?id=815">[암호화폐] 4월 3주차
-														GAS, ONG 지급 안내</a>
-												</dd>
-												<dd>
-													<a href="/service_center/notice?id=814">[입출금] 베리블록 VBK
-														입출금 지원</a>
-												</dd>
-												<dd>
-													<a href="/service_center/notice?id=813">[암호화폐] 3월 NPXS
-														지급 안내</a>
-												</dd>
-												<dd>
-													<a href="/service_center/press?id=802">[뉴스] ONCE, BTI 4월
-														리포트에서 거래 볼륨 기준 글로벌 암호화폐 거래소 3위 차지</a>
-												</dd>
-											</dl>
-										</div>
-									</div>
-								</section>
 								<section class="app__container--2DgeA">
-									<article class="app__mainGal--25yie">
-										<div class="app__wrap--2K1mv">
-											<i class="app__ico01--15xJ1"></i><i class="app__ico02--1oplF"></i><i
-												class="app__ico03--1DO14"></i><i class="app__ico04--z0H8z"></i><i
-												class="app__ico05--2dzcf"></i>
-											<h1>가장 신뢰받는 글로벌 표준 암호화폐 거래소</h1>
-											<span class="app__subTitle--3hvKt">세계적 거래소인 Bittrex와
-												독점 제휴하여 신규 코인을 글로벌과 동시 상장합니다.</span>
-											<div class="app__ViewInfo--3m8hr">
-												<ul>
-													<li><p class="app__num--3n6BN num">
-															<span>202</span>
-														</p>
-														<p class="app__txt--14-B2">Coins</p></li>
-													<li><p class="app__num--3n6BN num">
-															<span>331</span>
-														</p>
-														<p class="app__txt--14-B2">Markets</p></li>
-												</ul>
-												<p class="app__btn--1iONf btn">
-													<a class="ty01" title="거래소 둘러보기" href="/exchange">거래소
-														둘러보기</a><a title="로그인" href="/signin">로그인</a>
-												</p>
-											</div>
-										</div>
-									</article>
-									<article class="app__banner--3YYew">
-										<div class="app__rollingBanner--2ndjR">
-											<div class="slick-slider slick-vertical slick-initialized">
-												<div class="slick-list">
-													<div class="slick-track"
-														style="opacity: 1; transform: translate3d(0px, 0px, 0px); height: 270px; transition: -webkit-transform 500ms ease 0s;">
-														<div data-index="0"
-															class="slick-slide slick-active slick-current"
-															tabindex="-1" aria-hidden="false"
-															style="outline: none; width: 1200px;">
-															<div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</article>
 									<article class="app__DataDisplay--Wc51W">
 										<div id="chart"
 											class="app__wrap--2K1mv app__paddingSide--wUIeO">
@@ -190,11 +507,11 @@ var google_conversion_value = 0;
 												<div class="app__col-4--ls7AG">
 													<div class="app__chartModule--3B8eL">
 														<div class="app__header--2OuvG">
-															<label>ONMI</label><span
+															<label>ONCE</label><span
 																class="app__dataColor--1Uj_q app__down--2bdgI">1,085.62</span>
 														</div>
 														<div class="app__IndexData--I2viT">
-															<label>ONCE Market Index </label><span
+															<label>ONCE Coin Index </label><span
 																class="app__dataColor--1Uj_q app__down--2bdgI"><i></i><em>2.28</em>
 																<em>-0.21%</em></span>
 														</div>
@@ -382,198 +699,7 @@ var google_conversion_value = 0;
 													</div>
 												</div>
 												<div class="app__col-4--ls7AG">
-													<div class="app__chartModule--3B8eL">
-														<div class="app__header--2OuvG">
-															<label>ONAI</label><span
-																class="app__dataColor--1Uj_q app__down--2bdgI">844.21</span>
-														</div>
-														<div class="app__IndexData--I2viT">
-															<label>ONCE Altcoin Index </label><span
-																class="app__dataColor--1Uj_q app__down--2bdgI"><i></i><em>0.92</em>
-																<em>-0.11%</em></span>
-														</div>
-														<div class="app__chart--1O1dA">
-															<div>
-																<div class="highstock" data-highcharts-chart="1"
-																	style="overflow: hidden;">
-																	<div id="highcharts-dknsddu-131" dir="ltr"
-																		class="highcharts-container "
-																		style="position: relative; overflow: hidden; width: 358px; height: 148px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
-																		<svg version="1.1" class="highcharts-root"
-																			style="font-family: &amp; quot; Lucida Grande&amp;quot; , &amp; quot; Lucida Sans Unicode&amp;quot; , Arial , Helvetica, sans-serif; font-size: 12px;"
-																			xmlns="http://www.w3.org/2000/svg" width="358"
-																			height="148" viewBox="0 0 358 148">
-																			<desc>Created with Highcharts 7.0.3</desc>
-																			<defs>
-																			<clipPath id="highcharts-dknsddu-132">
-																			<rect x="0" y="0" width="358" height="148"
-																				fill="none"></rect></clipPath>
-																			<linearGradient x1="1" x2="1" y1="1" y2="0"
-																				id="highcharts-dknsddu-231">
-																			<stop offset="0" stop-color="rgb(255,255,255)"
-																				stop-opacity="0.2"></stop>
-																			<stop offset="0.4" stop-color="rgb(219,223,229)"
-																				stop-opacity="0.2"></stop>
-																			<stop offset="1" stop-color="rgb(183,190,202)"
-																				stop-opacity="0.2"></stop></linearGradient>
-																			<clipPath id="highcharts-dknsddu-260">
-																			<rect x="0" y="86" width="358" height="62"
-																				fill="none"></rect></clipPath>
-																			<clipPath id="highcharts-dknsddu-261">
-																			<rect x="0" y="0" width="358" height="86" fill="none"></rect></clipPath></defs>
-																			<rect fill="transparent"
-																				class="highcharts-background" x="0" y="0"
-																				width="358" height="148" rx="0" ry="0"></rect>
-																			<rect fill="none" class="highcharts-plot-background"
-																				x="0" y="0" width="358" height="148"></rect>
-																			<g class="highcharts-plot-lines-0" data-z-index="0">
-																			<path fill="none" class="highcharts-plot-line "
-																				stroke="rgba(238, 238, 238, 1)" stroke-width="2"
-																				stroke-dasharray="2,6" d="M 0 86 L 358 86"
-																				visibility="visible"></path></g>
-																			<rect fill="none" class="highcharts-plot-border"
-																				data-z-index="1" x="0" y="0" width="358"
-																				height="148"></rect>
-																			<g class="highcharts-grid highcharts-xaxis-grid "
-																				data-z-index="1">
-																			<path fill="none" stroke="rgba(238, 238, 238, 0.4)"
-																				stroke-width="1" data-z-index="1"
-																				class="highcharts-grid-line" d="M -0.5 0 L -0.5 148"
-																				opacity="1"></path>
-																			<path fill="none" stroke="rgba(238, 238, 238, 0.4)"
-																				stroke-width="1" data-z-index="1"
-																				class="highcharts-grid-line" d="M 89.5 0 L 89.5 148"
-																				opacity="1"></path>
-																			<path fill="none" stroke="rgba(238, 238, 238, 0.4)"
-																				stroke-width="1" data-z-index="1"
-																				class="highcharts-grid-line"
-																				d="M 178.5 0 L 178.5 148" opacity="1"></path>
-																			<path fill="none" stroke="rgba(238, 238, 238, 0.4)"
-																				stroke-width="1" data-z-index="1"
-																				class="highcharts-grid-line"
-																				d="M 268.5 0 L 268.5 148" opacity="1"></path>
-																			<path fill="none" stroke="rgba(238, 238, 238, 0.4)"
-																				stroke-width="1" data-z-index="1"
-																				class="highcharts-grid-line"
-																				d="M 358.5 0 L 358.5 148" opacity="1"></path></g>
-																			<g class="highcharts-grid highcharts-yaxis-grid "
-																				data-z-index="1">
-																			<path fill="none" data-z-index="1"
-																				class="highcharts-grid-line"
-																				d="M 0 148.5 L 358 148.5" opacity="1"></path>
-																			<path fill="none" data-z-index="1"
-																				class="highcharts-grid-line" d="M 0 99.5 L 358 99.5"
-																				opacity="1"></path>
-																			<path fill="none" data-z-index="1"
-																				class="highcharts-grid-line" d="M 0 49.5 L 358 49.5"
-																				opacity="1"></path>
-																			<path fill="none" data-z-index="1"
-																				class="highcharts-grid-line" d="M 0 0.5 L 358 0.5"
-																				opacity="1"></path></g>
-																			<g class="highcharts-axis highcharts-xaxis "
-																				data-z-index="2">
-																			<path fill="none" class="highcharts-tick"
-																				stroke="#ccd6eb" stroke-width="1"
-																				d="M -0.5 148 L -0.5 158" opacity="1"></path>
-																			<path fill="none" class="highcharts-tick"
-																				stroke="#ccd6eb" stroke-width="1"
-																				d="M 89.5 148 L 89.5 158" opacity="1"></path>
-																			<path fill="none" class="highcharts-tick"
-																				stroke="#ccd6eb" stroke-width="1"
-																				d="M 178.5 148 L 178.5 158" opacity="1"></path>
-																			<path fill="none" class="highcharts-tick"
-																				stroke="#ccd6eb" stroke-width="1"
-																				d="M 268.5 148 L 268.5 158" opacity="1"></path>
-																			<path fill="none" class="highcharts-tick"
-																				stroke="#ccd6eb" stroke-width="1"
-																				d="M 358.5 148 L 358.5 158" opacity="1"></path>
-																			<path fill="none" class="highcharts-axis-line"
-																				stroke="#ccd6eb" stroke-width="1" data-z-index="7"
-																				d="M 0 148.5 L 358 148.5"></path></g>
-																			<g class="highcharts-axis highcharts-yaxis "
-																				data-z-index="2">
-																			<text x="-12" data-z-index="7" text-anchor="middle"
-																				transform="translate(0,0) rotate(270 -12 74)"
-																				class="highcharts-axis-title"
-																				style="color:#666666;fill:#666666;" y="74">
-																			<tspan>Values</tspan></text>
-																			<path fill="none" class="highcharts-axis-line"
-																				data-z-index="7" d="M 0 0 L 0 148"></path></g>
-																			<g class="highcharts-series-group" data-z-index="3">
-																			<g data-z-index="0.1"
-																				class="highcharts-series highcharts-series-0 highcharts-area-series highcharts-color-0 "
-																				transform="translate(0,0) scale(1 1)"
-																				clip-path="url(#highcharts-dknsddu-132)">
-																			<path fill="url(#highcharts-dknsddu-231)"
-																				d="M 0 34.939804257999995 L 3.7684210526316 31.86881466733344 L 7.5368421052632 32.4237783086666 L 11.305263157895 29.275051915333222 L 15.073684210526 30.584865531333236 L 18.842105263158 32.46174593266663 L 22.610526315789 34.5486458819999 L 26.378947368421 34.16777883399993 L 30.147368421053 33.89713352799998 L 33.915789473684 32.87149212200002 L 37.684210526316 32.3705024773334 L 41.452631578947 29.73704536066657 L 45.221052631579 29.003859798666653 L 48.989473684211 28.467200772666757 L 52.757894736842 30.463429755333323 L 56.526315789474 30.39351786066659 L 60.294736842105 30.914745790000097 L 64.063157894737 34.366192715333284 L 67.831578947368 33.75067877133324 L 71.6 34.56750564533327 L 75.368421052632 37.1081768013334 L 79.136842105263 39.635389602000075 L 82.905263157895 42.432204925333394 L 86.673684210526 44.37160607666674 L 90.442105263158 48.2375774206666 L 94.210526315789 47.53817591733322 L 97.978947368421 46.81693745800008 L 101.74736842105 45.87405530866657 L 105.51578947368 42.91611273066677 L 109.28421052632 44.88912670466654 L 113.05263157895 46.10713128333333 L 116.82105263158 49.372825776666545 L 120.58947368421 58.77450643800002 L 124.35789473684 69.99940553733333 L 128.12631578947 78.83865965733328 L 131.89473684211 75.8757861139999 L 135.66315789474 83.92188936399997 L 139.43157894737 87.9473595186667 L 143.2 105.78228772533333 L 146.96842105263 119.5086954786667 L 150.73684210526 104.74887039933343 L 154.50526315789 100.33629842533335 L 158.27368421053 99.6143968026666 L 162.04210526316 100.36920213066674 L 165.81052631579 103.30175723266655 L 169.57894736842 109.68006552733326 L 173.34736842105 107.5491978120001 L 177.11578947368 107.51768397466665 L 180.88421052632 113.35711748600013 L 184.65263157895 129.60951630000014 L 188.42105263158 121.7238759820001 L 192.18947368421 116.74402965266661 L 195.95789473684 107.9816457706667 L 199.72631578947 105.15336113333325 L 203.49473684211 105.65909679266673 L 207.26315789474 99.41169526266657 L 211.03157894737 100.87029720066676 L 214.8 103.7757110020001 L 218.56842105263 100.92729774800011 L 222.33684210526 101.16458863933336 L 226.10526315789 105.18062137666678 L 229.87368421053 107.5130429166667 L 233.64210526316 103.09154905866677 L 237.41052631579 100.05514124666664 L 241.17894736842 104.55129084333345 L 244.94736842105 102.12032885600001 L 248.71578947368 102.30854018466661 L 252.48421052632 106.15763595200002 L 256.25263157895 107.90788585133319 L 260.02105263158 112.12240866533347 L 263.78947368421 111.28135320466657 L 267.55789473684 110.14255181266664 L 271.32631578947 109.20351253266669 L 275.09473684211 109.11057349066664 L 278.86315789474 109.8522371586666 L 282.63157894737 110.78097810533342 L 286.4 111.43623093733338 L 290.16842105263 108.92174465666677 L 293.93684210526 107.98320369266673 L 297.70526315789 106.83441812199996 L 301.47368421053 103.7841712986667 L 305.24210526316 103.33424414533323 L 309.01052631579 103.56825042333324 L 312.77894736842 106.87169475866676 L 316.54736842105 103.32316158466665 L 320.31578947368 101.5766110193334 L 324.08421052632 98.31773979466655 L 327.85263157895 96.799585444 L 331.62105263158 94.62014351200008 L 335.38947368421 91.19983590999996 L 339.15789473684 86.58313108799987 L 342.92631578947 87.78175852000007 L 346.69473684211 89.22196151733343 L 350.46315789474 88.55660909133343 L 354.23157894737 87.88145097466659 L 358 86.00507029533338 L 358 148 L 354.23157894737 148 L 350.46315789474 148 L 346.69473684211 148 L 342.92631578947 148 L 339.15789473684 148 L 335.38947368421 148 L 331.62105263158 148 L 327.85263157895 148 L 324.08421052632 148 L 320.31578947368 148 L 316.54736842105 148 L 312.77894736842 148 L 309.01052631579 148 L 305.24210526316 148 L 301.47368421053 148 L 297.70526315789 148 L 293.93684210526 148 L 290.16842105263 148 L 286.4 148 L 282.63157894737 148 L 278.86315789474 148 L 275.09473684211 148 L 271.32631578947 148 L 267.55789473684 148 L 263.78947368421 148 L 260.02105263158 148 L 256.25263157895 148 L 252.48421052632 148 L 248.71578947368 148 L 244.94736842105 148 L 241.17894736842 148 L 237.41052631579 148 L 233.64210526316 148 L 229.87368421053 148 L 226.10526315789 148 L 222.33684210526 148 L 218.56842105263 148 L 214.8 148 L 211.03157894737 148 L 207.26315789474 148 L 203.49473684211 148 L 199.72631578947 148 L 195.95789473684 148 L 192.18947368421 148 L 188.42105263158 148 L 184.65263157895 148 L 180.88421052632 148 L 177.11578947368 148 L 173.34736842105 148 L 169.57894736842 148 L 165.81052631579 148 L 162.04210526316 148 L 158.27368421053 148 L 154.50526315789 148 L 150.73684210526 148 L 146.96842105263 148 L 143.2 148 L 139.43157894737 148 L 135.66315789474 148 L 131.89473684211 148 L 128.12631578947 148 L 124.35789473684 148 L 120.58947368421 148 L 116.82105263158 148 L 113.05263157895 148 L 109.28421052632 148 L 105.51578947368 148 L 101.74736842105 148 L 97.978947368421 148 L 94.210526315789 148 L 90.442105263158 148 L 86.673684210526 148 L 82.905263157895 148 L 79.136842105263 148 L 75.368421052632 148 L 71.6 148 L 67.831578947368 148 L 64.063157894737 148 L 60.294736842105 148 L 56.526315789474 148 L 52.757894736842 148 L 48.989473684211 148 L 45.221052631579 148 L 41.452631578947 148 L 37.684210526316 148 L 33.915789473684 148 L 30.147368421053 148 L 26.378947368421 148 L 22.610526315789 148 L 18.842105263158 148 L 15.073684210526 148 L 11.305263157895 148 L 7.5368421052632 148 L 3.7684210526316 148 L 0 148"
-																				class="highcharts-area" data-z-index="0"></path>
-																			<path fill="none"
-																				d="M 0 34.939804257999995 L 3.7684210526316 31.86881466733344 L 7.5368421052632 32.4237783086666 L 11.305263157895 29.275051915333222 L 15.073684210526 30.584865531333236 L 18.842105263158 32.46174593266663 L 22.610526315789 34.5486458819999 L 26.378947368421 34.16777883399993 L 30.147368421053 33.89713352799998 L 33.915789473684 32.87149212200002 L 37.684210526316 32.3705024773334 L 41.452631578947 29.73704536066657 L 45.221052631579 29.003859798666653 L 48.989473684211 28.467200772666757 L 52.757894736842 30.463429755333323 L 56.526315789474 30.39351786066659 L 60.294736842105 30.914745790000097 L 64.063157894737 34.366192715333284 L 67.831578947368 33.75067877133324 L 71.6 34.56750564533327 L 75.368421052632 37.1081768013334 L 79.136842105263 39.635389602000075 L 82.905263157895 42.432204925333394 L 86.673684210526 44.37160607666674 L 90.442105263158 48.2375774206666 L 94.210526315789 47.53817591733322 L 97.978947368421 46.81693745800008 L 101.74736842105 45.87405530866657 L 105.51578947368 42.91611273066677 L 109.28421052632 44.88912670466654 L 113.05263157895 46.10713128333333 L 116.82105263158 49.372825776666545 L 120.58947368421 58.77450643800002 L 124.35789473684 69.99940553733333 L 128.12631578947 78.83865965733328 L 131.89473684211 75.8757861139999 L 135.66315789474 83.92188936399997 L 139.43157894737 87.9473595186667 L 143.2 105.78228772533333 L 146.96842105263 119.5086954786667 L 150.73684210526 104.74887039933343 L 154.50526315789 100.33629842533335 L 158.27368421053 99.6143968026666 L 162.04210526316 100.36920213066674 L 165.81052631579 103.30175723266655 L 169.57894736842 109.68006552733326 L 173.34736842105 107.5491978120001 L 177.11578947368 107.51768397466665 L 180.88421052632 113.35711748600013 L 184.65263157895 129.60951630000014 L 188.42105263158 121.7238759820001 L 192.18947368421 116.74402965266661 L 195.95789473684 107.9816457706667 L 199.72631578947 105.15336113333325 L 203.49473684211 105.65909679266673 L 207.26315789474 99.41169526266657 L 211.03157894737 100.87029720066676 L 214.8 103.7757110020001 L 218.56842105263 100.92729774800011 L 222.33684210526 101.16458863933336 L 226.10526315789 105.18062137666678 L 229.87368421053 107.5130429166667 L 233.64210526316 103.09154905866677 L 237.41052631579 100.05514124666664 L 241.17894736842 104.55129084333345 L 244.94736842105 102.12032885600001 L 248.71578947368 102.30854018466661 L 252.48421052632 106.15763595200002 L 256.25263157895 107.90788585133319 L 260.02105263158 112.12240866533347 L 263.78947368421 111.28135320466657 L 267.55789473684 110.14255181266664 L 271.32631578947 109.20351253266669 L 275.09473684211 109.11057349066664 L 278.86315789474 109.8522371586666 L 282.63157894737 110.78097810533342 L 286.4 111.43623093733338 L 290.16842105263 108.92174465666677 L 293.93684210526 107.98320369266673 L 297.70526315789 106.83441812199996 L 301.47368421053 103.7841712986667 L 305.24210526316 103.33424414533323 L 309.01052631579 103.56825042333324 L 312.77894736842 106.87169475866676 L 316.54736842105 103.32316158466665 L 320.31578947368 101.5766110193334 L 324.08421052632 98.31773979466655 L 327.85263157895 96.799585444 L 331.62105263158 94.62014351200008 L 335.38947368421 91.19983590999996 L 339.15789473684 86.58313108799987 L 342.92631578947 87.78175852000007 L 346.69473684211 89.22196151733343 L 350.46315789474 88.55660909133343 L 354.23157894737 87.88145097466659 L 358 86.00507029533338"
-																				class="highcharts-graph" data-z-index="1"
-																				stroke="rgba(230, 231, 236, 1)" stroke-width="1"></path>
-																			<path fill="none"
-																				d="M -10 34.939804257999995 L 0 34.939804257999995 L 3.7684210526316 31.86881466733344 L 7.5368421052632 32.4237783086666 L 11.305263157895 29.275051915333222 L 15.073684210526 30.584865531333236 L 18.842105263158 32.46174593266663 L 22.610526315789 34.5486458819999 L 26.378947368421 34.16777883399993 L 30.147368421053 33.89713352799998 L 33.915789473684 32.87149212200002 L 37.684210526316 32.3705024773334 L 41.452631578947 29.73704536066657 L 45.221052631579 29.003859798666653 L 48.989473684211 28.467200772666757 L 52.757894736842 30.463429755333323 L 56.526315789474 30.39351786066659 L 60.294736842105 30.914745790000097 L 64.063157894737 34.366192715333284 L 67.831578947368 33.75067877133324 L 71.6 34.56750564533327 L 75.368421052632 37.1081768013334 L 79.136842105263 39.635389602000075 L 82.905263157895 42.432204925333394 L 86.673684210526 44.37160607666674 L 90.442105263158 48.2375774206666 L 94.210526315789 47.53817591733322 L 97.978947368421 46.81693745800008 L 101.74736842105 45.87405530866657 L 105.51578947368 42.91611273066677 L 109.28421052632 44.88912670466654 L 113.05263157895 46.10713128333333 L 116.82105263158 49.372825776666545 L 120.58947368421 58.77450643800002 L 124.35789473684 69.99940553733333 L 128.12631578947 78.83865965733328 L 131.89473684211 75.8757861139999 L 135.66315789474 83.92188936399997 L 139.43157894737 87.9473595186667 L 143.2 105.78228772533333 L 146.96842105263 119.5086954786667 L 150.73684210526 104.74887039933343 L 154.50526315789 100.33629842533335 L 158.27368421053 99.6143968026666 L 162.04210526316 100.36920213066674 L 165.81052631579 103.30175723266655 L 169.57894736842 109.68006552733326 L 173.34736842105 107.5491978120001 L 177.11578947368 107.51768397466665 L 180.88421052632 113.35711748600013 L 184.65263157895 129.60951630000014 L 188.42105263158 121.7238759820001 L 192.18947368421 116.74402965266661 L 195.95789473684 107.9816457706667 L 199.72631578947 105.15336113333325 L 203.49473684211 105.65909679266673 L 207.26315789474 99.41169526266657 L 211.03157894737 100.87029720066676 L 214.8 103.7757110020001 L 218.56842105263 100.92729774800011 L 222.33684210526 101.16458863933336 L 226.10526315789 105.18062137666678 L 229.87368421053 107.5130429166667 L 233.64210526316 103.09154905866677 L 237.41052631579 100.05514124666664 L 241.17894736842 104.55129084333345 L 244.94736842105 102.12032885600001 L 248.71578947368 102.30854018466661 L 252.48421052632 106.15763595200002 L 256.25263157895 107.90788585133319 L 260.02105263158 112.12240866533347 L 263.78947368421 111.28135320466657 L 267.55789473684 110.14255181266664 L 271.32631578947 109.20351253266669 L 275.09473684211 109.11057349066664 L 278.86315789474 109.8522371586666 L 282.63157894737 110.78097810533342 L 286.4 111.43623093733338 L 290.16842105263 108.92174465666677 L 293.93684210526 107.98320369266673 L 297.70526315789 106.83441812199996 L 301.47368421053 103.7841712986667 L 305.24210526316 103.33424414533323 L 309.01052631579 103.56825042333324 L 312.77894736842 106.87169475866676 L 316.54736842105 103.32316158466665 L 320.31578947368 101.5766110193334 L 324.08421052632 98.31773979466655 L 327.85263157895 96.799585444 L 331.62105263158 94.62014351200008 L 335.38947368421 91.19983590999996 L 339.15789473684 86.58313108799987 L 342.92631578947 87.78175852000007 L 346.69473684211 89.22196151733343 L 350.46315789474 88.55660909133343 L 354.23157894737 87.88145097466659 L 358 86.00507029533338 L 368 86.00507029533338"
-																				visibility="visible" data-z-index="2"
-																				class="highcharts-tracker-line"
-																				stroke-linejoin="round"
-																				stroke="rgba(192,192,192,0.0001)" stroke-width="21"></path></g>
-																			<g data-z-index="0.1"
-																				class="highcharts-markers highcharts-series-0 highcharts-area-series highcharts-color-0  highcharts-tracker"
-																				transform="translate(0,0) scale(1 1)"
-																				clip-path="none"></g>
-																			<g data-z-index="0.1"
-																				class="highcharts-series highcharts-series-1 highcharts-line-series "
-																				transform="translate(0,0) scale(1 1)"
-																				clip-path="url(#highcharts-dknsddu-132)">
-																			<path fill="none"
-																				d="M 0 82.0349772759999 L 3.7684210526316 87.72060931066673 L 7.5368421052632 88.64181311066679 L 11.305263157895 82.50195637266675 L 15.073684210526 88.93889531133328 L 18.842105263158 92.40251442266678 L 22.610526315789 99.12362145199987 L 26.378947368421 98.07973941599997 L 30.147368421053 97.29086433999993 L 33.915789473684 99.93585070599991 L 37.684210526316 103.01284897333329 L 41.452631578947 105.08665866800013 L 45.221052631579 103.86673068133332 L 48.989473684211 104.22394653999987 L 52.757894736842 102.6106265366667 L 56.526315789474 106.52042216066673 L 60.294736842105 104.9123467593333 L 64.063157894737 89.46566680266673 L 67.831578947368 90.14620358466675 L 71.6 86.71403272199989 L 75.368421052632 83.36126422933336 L 79.136842105263 83.38182890333337 L 82.905263157895 87.2910548506666 L 86.673684210526 92.28111808866674 L 90.442105263158 90.03025298466673 L 94.210526315789 92.03920705666667 L 97.978947368421 89.73425695600011 L 101.74736842105 88.29012611266668 L 105.51578947368 88.41800331733322"
-																				class="highcharts-graph" data-z-index="1"
-																				stroke="rgba(208, 80, 74, 1)" stroke-width="1.5"
-																				visibility="hidden"></path>
-																			<path fill="none"
-																				d="M 0 82.0349772759999 L 3.7684210526316 87.72060931066673 L 7.5368421052632 88.64181311066679 L 11.305263157895 82.50195637266675 L 15.073684210526 88.93889531133328 L 18.842105263158 92.40251442266678 L 22.610526315789 99.12362145199987 L 26.378947368421 98.07973941599997 L 30.147368421053 97.29086433999993 L 33.915789473684 99.93585070599991 L 37.684210526316 103.01284897333329 L 41.452631578947 105.08665866800013 L 45.221052631579 103.86673068133332 L 48.989473684211 104.22394653999987 L 52.757894736842 102.6106265366667 L 56.526315789474 106.52042216066673 L 60.294736842105 104.9123467593333 L 64.063157894737 89.46566680266673 L 67.831578947368 90.14620358466675 L 71.6 86.71403272199989 L 75.368421052632 83.36126422933336 L 79.136842105263 83.38182890333337 L 82.905263157895 87.2910548506666 L 86.673684210526 92.28111808866674 L 90.442105263158 90.03025298466673 L 94.210526315789 92.03920705666667 L 97.978947368421 89.73425695600011 L 101.74736842105 88.29012611266668 L 105.51578947368 88.41800331733322"
-																				class="highcharts-graph highcharts-zone-graph-0 highcharts-negative"
-																				data-z-index="1" stroke="rgba(8, 102, 191, 1)"
-																				stroke-width="1.5"
-																				clip-path="url(#highcharts-dknsddu-260)"></path>
-																			<path fill="none"
-																				d="M 0 82.0349772759999 L 3.7684210526316 87.72060931066673 L 7.5368421052632 88.64181311066679 L 11.305263157895 82.50195637266675 L 15.073684210526 88.93889531133328 L 18.842105263158 92.40251442266678 L 22.610526315789 99.12362145199987 L 26.378947368421 98.07973941599997 L 30.147368421053 97.29086433999993 L 33.915789473684 99.93585070599991 L 37.684210526316 103.01284897333329 L 41.452631578947 105.08665866800013 L 45.221052631579 103.86673068133332 L 48.989473684211 104.22394653999987 L 52.757894736842 102.6106265366667 L 56.526315789474 106.52042216066673 L 60.294736842105 104.9123467593333 L 64.063157894737 89.46566680266673 L 67.831578947368 90.14620358466675 L 71.6 86.71403272199989 L 75.368421052632 83.36126422933336 L 79.136842105263 83.38182890333337 L 82.905263157895 87.2910548506666 L 86.673684210526 92.28111808866674 L 90.442105263158 90.03025298466673 L 94.210526315789 92.03920705666667 L 97.978947368421 89.73425695600011 L 101.74736842105 88.29012611266668 L 105.51578947368 88.41800331733322"
-																				class="highcharts-graph highcharts-zone-graph-1 "
-																				data-z-index="1" stroke="rgba(208, 80, 74, 1)"
-																				stroke-width="1.5"
-																				clip-path="url(#highcharts-dknsddu-261)"></path>
-																			<path fill="none"
-																				d="M -10 82.0349772759999 L 0 82.0349772759999 L 3.7684210526316 87.72060931066673 L 7.5368421052632 88.64181311066679 L 11.305263157895 82.50195637266675 L 15.073684210526 88.93889531133328 L 18.842105263158 92.40251442266678 L 22.610526315789 99.12362145199987 L 26.378947368421 98.07973941599997 L 30.147368421053 97.29086433999993 L 33.915789473684 99.93585070599991 L 37.684210526316 103.01284897333329 L 41.452631578947 105.08665866800013 L 45.221052631579 103.86673068133332 L 48.989473684211 104.22394653999987 L 52.757894736842 102.6106265366667 L 56.526315789474 106.52042216066673 L 60.294736842105 104.9123467593333 L 64.063157894737 89.46566680266673 L 67.831578947368 90.14620358466675 L 71.6 86.71403272199989 L 75.368421052632 83.36126422933336 L 79.136842105263 83.38182890333337 L 82.905263157895 87.2910548506666 L 86.673684210526 92.28111808866674 L 90.442105263158 90.03025298466673 L 94.210526315789 92.03920705666667 L 97.978947368421 89.73425695600011 L 101.74736842105 88.29012611266668 L 105.51578947368 88.41800331733322 L 115.51578947368 88.41800331733322"
-																				visibility="visible" data-z-index="2"
-																				class="highcharts-tracker-line"
-																				stroke-linejoin="round"
-																				stroke="rgba(192,192,192,0.0001)"
-																				stroke-width="21.5"></path></g>
-																			<g data-z-index="0.1"
-																				class="highcharts-markers highcharts-series-1 highcharts-line-series  highcharts-tracker"
-																				transform="translate(0,0) scale(1 1)"></g></g>
-																			<text x="179" text-anchor="middle"
-																				class="highcharts-title" data-z-index="4"
-																				style="color:#333333;font-size:18px;display:none;fill:#333333;"
-																				y="24"></text>
-																			<text x="179" text-anchor="middle"
-																				class="highcharts-subtitle" data-z-index="4"
-																				style="color:#666666;fill:#666666;" y="24"></text>
-																			<g
-																				class="highcharts-axis-labels highcharts-xaxis-labels "
-																				data-z-index="7"></g>
-																			<g
-																				class="highcharts-axis-labels highcharts-yaxis-labels "
-																				data-z-index="7"></g></svg>
-																	</div>
-																</div>
-															</div>
-															<figure>
-																<span class="app__color01--2pIY9"><i></i>당일</span>
-																<span class="app__color02--c6PlO"><i></i>전일</span>
-															</figure>
-														</div>
-													</div>
+													
 												</div>
 												<div class="app__col-4--ls7AG">
 													<div class="app__SiseList--y53V_">
@@ -610,7 +736,7 @@ var google_conversion_value = 0;
 											</div>
 										</div>
 									</article>
-						</div>
+						</div>	
 					</div>
 					<footer class="sub">
 						<div class="wrap">
@@ -618,45 +744,36 @@ var google_conversion_value = 0;
 							<div class="aboutUs">
 								<p class="contact">
 									<span><a target="_blank" rel="noopener noreferrer"
-										href="#">두나무 주식회사</a></span><span class="dark">고객센터
-										1588-5682</span>
+										href="#">두나무 주식회사</a></span><span class="dark">고객센터 1588-5682</span>
 								</p>
 								<p class="address">
 									<span>서울시 강남구 테헤란로4길 14, 5층</span><span>대표 이석우</span><span>사업자등록번호
 										119-86-54968</span>
 								</p>
 								<div class="snsLink">
-									<a target="_blank" rel="noopener noreferrer"
-										href="#"
+									<a target="_blank" rel="noopener noreferrer" href="#"
 										class="snsLink__item snsLink__item--twitter" title="twitter">twitter</a><a
-										target="_blank" rel="noopener noreferrer"
-										href="#"
+										target="_blank" rel="noopener noreferrer" href="#"
 										class="snsLink__item snsLink__item--facebook" title="facebook">facebook</a><a
-										target="_blank" rel="noopener noreferrer"
-										href="#"
+										target="_blank" rel="noopener noreferrer" href="#"
 										class="snsLink__item snsLink__item--medium" title="medium">medium</a><a
-										target="_blank" rel="noopener noreferrer"
-										href="#"
+										target="_blank" rel="noopener noreferrer" href="#"
 										class="snsLink__item snsLink__item--naver" title="naver">naver</a><a
-										target="_blank" rel="noopener noreferrer"
-										href="#"
+										target="_blank" rel="noopener noreferrer" href="#"
 										class="snsLink__item snsLink__item--linkedin" title="linkedin">linkedin</a>
 								</div>
 								<p class="company">
-									<a target="_blank" rel="noopener noreferrer"
-										href="#" title="BITTREX"><img
+									<a target="_blank" rel="noopener noreferrer" href="#"
+										title="BITTREX"><img
 										src="https://static.upbit.com/upbit-pc/main/company01.gif"
 										alt="BITTREX"></a><a target="_blank"
-										rel="noopener noreferrer" href="#"
-										title="BitGo"><img
+										rel="noopener noreferrer" href="#" title="BitGo"><img
 										src="https://static.upbit.com/upbit-pc/main/company02.gif"
 										alt="BitGo"></a><a target="_blank" rel="noopener noreferrer"
-										href="#"
-										title="KakaoPay"><img
+										href="#" title="KakaoPay"><img
 										src="https://static.upbit.com/upbit-pc/main/company03.gif"
 										alt="KakaoPay"></a><a target="_blank"
-										rel="noopener noreferrer" href="#"
-										title="삼성화재"><img
+										rel="noopener noreferrer" href="#" title="삼성화재"><img
 										src="https://static.upbit.com/upbit-pc/main/company04.gif"
 										alt="삼성화재"></a>
 								</p>
@@ -667,8 +784,7 @@ var google_conversion_value = 0;
 								<dl>
 									<dt>회사</dt>
 									<dd>
-										<a target="_blank" rel="noopener noreferrer"
-											href="#">회사소개</a>
+										<a target="_blank" rel="noopener noreferrer" href="#">회사소개</a>
 									</dd>
 									<dd>
 										<a title="공지사항" href="#">공지사항</a>
@@ -677,8 +793,7 @@ var google_conversion_value = 0;
 										<a title="이용약관" href="#">이용약관</a>
 									</dd>
 									<dd>
-										<a title="Open API 이용약관" href="#">Open
-											API 이용약관</a>
+										<a title="Open API 이용약관" href="#">Open API 이용약관</a>
 									</dd>
 									<dd>
 										<a title="개인정보처리방침" href="#"><strong>개인정보처리방침</strong></a>
@@ -687,24 +802,20 @@ var google_conversion_value = 0;
 								<dl>
 									<dt>고객지원</dt>
 									<dd>
-										<a title="자주하는 질문(FAQ)" href="#">자주하는
-											질문(FAQ)</a>
+										<a title="자주하는 질문(FAQ)" href="#">자주하는 질문(FAQ)</a>
 									</dd>
 									<dd>
-										<a target="_blank" rel="noopener noreferrer"
-											href="#"
+										<a target="_blank" rel="noopener noreferrer" href="#"
 											title="카카오톡 문의(24시간)">카카오톡 문의(24시간)</a>
 									</dd>
 									<dd>
 										<a title="1:1 문의하기" href="#">1:1 문의하기</a>
 									</dd>
 									<dd>
-										<a title="Open API" href="#">Open
-											API</a>
+										<a title="Open API" href="#">Open API</a>
 									</dd>
 									<dd>
-										<a title="거래 및 입출금 이용안내" href="#">거래 및
-											입출금 이용안내</a>
+										<a title="거래 및 입출금 이용안내" href="#">거래 및 입출금 이용안내</a>
 									</dd>
 								</dl>
 							</div>

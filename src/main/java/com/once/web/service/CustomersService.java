@@ -12,8 +12,8 @@ public interface CustomersService {
 	public void registCustomer(Map<?,?> map);
 	public List<Customers> bringAllAmount(Customers cust);
 	public List<Customers> bringSomeCoin(Customers cust);
-	
-	public Map<String, Object> retrieveCustomer(String id);
+	public Customers retrieveCustomer(String id);
+	public Customers searchCoin(Map<?,?> map);
 	public int countCustomers();
 	public boolean existsCustomerID(Map<?,?> map);
 	

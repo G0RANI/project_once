@@ -8,6 +8,7 @@ ngh=(()=>{
 	let onCreate=()=>{	
 		setContentView();
 	};
+<<<<<<< HEAD
 	let setContentView=()=>{
 		$('#a').click(e=>{
 			e.preventDefault();
@@ -17,7 +18,43 @@ ngh=(()=>{
 			});
 		})
 		
+=======
+	let setContentView=()=>{	
+>>>>>>> 3f2dac915554640b2f16d4fb69930eb270b150a8
 		once_chart();
+	
+		
+		$.getScript($.js()+'/component/ngh_compo.js',()=>{		
+		  
+			  	
+			  $('.top a').eq(0).click(function(){
+					$('#b').empty();
+				  $(ngh_compo.l_buy()).appendTo('#b');
+				  $('.top a').attr('class', '');
+				  $('.top li').attr('class', 't2');
+		          $(this).attr('class', 'on');
+			  
+			  	});
+			  
+			  $('.top a').eq(1).click(function(){
+				  $('.top a').attr('class', '');
+				  $('.top li').attr('class', 't3');
+		          $(this).attr('class', 'on');
+				  $('#b').empty();
+				  $(ngh_compo.l_medo()).appendTo('#b');	
+			  	});
+			  
+			  $('.top a').eq(2).click(function(){
+				  $('.top a').attr('class', '');
+				  $('.top li').attr('class', 't4');
+		          $(this).attr('class', 'on');
+		     	 $('#b').empty();
+					$(ngh_compo.trx()).appendTo('#b');			
+			  	});
+			  
+			  $('#chr_1').empty();
+			  	$(ngh_compo.chr()).appendTo('#chr_1');
+             })
 	};
 	
 	/*once 차트 */
@@ -30,11 +67,9 @@ ngh=(()=>{
 				tp[i] = j.price;
 			});
 			 $('#l_val').empty();
-			 
 			 let prev1 = (tp[0] - tp[1]) / tp[1] *100;
-			 
-			 
 			 let minue = tp[0] - tp[1]
+			 
 			 let col = "";
 			 let prev = "1147";
 			 let giho = "";
@@ -101,7 +136,7 @@ ngh=(()=>{
 						 +'		 	<em>BTC<span>/KRW</span></em>'
 						 +'		</td>'
 						 +'		<td class="price">'
-						 +'			<strong>'+d.ls.price+'</strong>'
+						 +'			<strong>'+tp[0]+'</strong>'
 						 +'			<span class=""> </span>'
 						 +'		</td>'
 						 +'		<td class="percent">'
@@ -141,6 +176,7 @@ ngh=(()=>{
 				/*each*/
 		});
 	}
+	
 	return{init:init,
 		onCreate:onCreate};
 })();

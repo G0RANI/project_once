@@ -31,7 +31,7 @@ public class CustomersServiceImpl implements CustomersService{
 	}
 
 	@Override
-	public Map<String,Object> retrieveCustomer(String id) {
+	public Customers retrieveCustomer(String id) {
 		return cm.selectCustomer(id);
 	}
 
@@ -57,6 +57,12 @@ public class CustomersServiceImpl implements CustomersService{
 	public void removeCustomer(Customers cust) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public Customers searchCoin(Map<?, ?> map) {
+		
+		return cm.selectCoin(map);
 	}
 
 }
