@@ -10,25 +10,16 @@ ngh=(()=>{
 	};
 	let setContentView=()=>{	
 		once_chart();
-<<<<<<< HEAD
-		$.getScript($.js()+'/component/ngh_compo.js',()=>{				  			  	
-			  $('.top a').eq(0).click(function(){
-=======
 	
 		
 		$.getScript($.js()+'/component/ngh_compo.js',()=>{		
 		  
 			  	
 			 /* $('.top a').eq(0).click(function(){
->>>>>>> richard_lt
 					$('#b').empty();
 				  $(ngh_compo.l_buy()).appendTo('#b');
 				  $('.top a').attr('class', '');
 				  $('.top li').attr('class', 't2');
-<<<<<<< HEAD
-		          $(this).attr('class', 'on');			  
-			  	});			  
-=======
 		          $(this).attr('class', 'on');
 		          let once_p = [];
 		          $.ajax({
@@ -47,43 +38,40 @@ ngh=(()=>{
 			  
 			  	});*/
 			  
->>>>>>> richard_lt
 			  $('.top a').eq(1).click(function(){
 				  $('.top a').attr('class', '');
 				  $('.top li').attr('class', 't3');
 		          $(this).attr('class', 'on');
 				  $('#b').empty();
 				  $(ngh_compo.l_medo()).appendTo('#b');	
-			  	});			  
+			  	});
+			  
 			  $('.top a').eq(2).click(function(){
 				  $('.top a').attr('class', '');
 				  $('.top li').attr('class', 't4');
 		          $(this).attr('class', 'on');
-<<<<<<< HEAD
-		     	 $('#b').empty();
-					$(ngh_compo.trx()).appendTo('#b');			
-			  	});			  
-=======
 		     	  $('#b').empty();
 		     	  $(ngh_compo.trx()).appendTo('#b');			
 			  	});
 			  
->>>>>>> richard_lt
 			  $('#chr_1').empty();
 			  	$(ngh_compo.chr()).appendTo('#chr_1');
              })
-	};	
+	};
+	
 	/*once 차트 */
 	let once_chart=()=>{
 		$.getJSON($.ctx()+'/ngh/once',d=>{
-			/*왼쪽 값*/			
+			/*왼쪽 값*/
+			
 			let tp = new Array();
 			$.each(d.ls,(i,j)=>{
 				tp[i] = j.price;
 			});
 			 $('#l_val').empty();
 			 let prev1 = (tp[0] - tp[1]) / tp[1] *100;
-			 let minue = tp[0] - tp[1]			 
+			 let minue = tp[0] - tp[1]
+			 
 			 let col = "";
 			 let prev = "1147";
 			 let giho = "";
@@ -93,7 +81,8 @@ ngh=(()=>{
 			}else{
 				col = "down";
 				/*giho = "-";*/
-			};			
+			};
+			
 			 $('<div id="l_val">'
 					 +'	<div class="'+col+' ty01">'
 					 +'		<span class="first">'
@@ -107,7 +96,8 @@ ngh=(()=>{
 					 +'	</div>'
 					 +'	</div>').appendTo('.marketB');
 			 /*오른쪽 네비*/
-			 $('#r_root').empty();			 
+			 $('#r_root').empty();
+			 
 				let arr=[{txt : '원스코인', name : 'once'},	  
 		              {txt : '비트코인', name : 'bit'},
 		              {txt : '비트코인캐시', name : 'cash'}, 
@@ -124,7 +114,8 @@ ngh=(()=>{
 		              {txt : '엔진코인'},
 		              {txt : '코스모스인'},
 		              {txt : '이오스'}
-		              ];				
+		              ];
+				
 				$.each(arr,(i,j)=>{
 					$('<tbody>'
 						 +'	<tr class="'+col+' on">'
@@ -165,16 +156,20 @@ ngh=(()=>{
 		                  let that = $(this).attr('name');
 		                  switch(that){
 		                  case 'once':
-		                		alert('once');		                		
+		                		alert('once');
+		                		
 		                      break;
 		                  case 'bit':
-		                		alert('bit');		                		
+		                		alert('bit');
+		                		
 		                       break;
 		                  case 'cash':
-		                		alert('cash');		                		
+		                		alert('cash');
+		                		
 		                       break;
 		                  case 'riple':
-		                		alert('riple');		                		
+		                		alert('riple');
+		                		
 		                       break;
 		                  }
 		             });
@@ -205,7 +200,8 @@ ngh=(()=>{
 				    	  });
 					  	});
 		});
-	}	
+	}
+	
 	return{init:init,
 		onCreate:onCreate};
 })();
