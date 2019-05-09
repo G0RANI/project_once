@@ -407,9 +407,9 @@ html, body {
 											<span class="tabB">
 											
 											<ul class="top">
-													<li class="t2"><a href="#" class="on" title="매수">매수</a></li>
-													<li class=""><a href="#" class="" title="매도">매도</a></li>
-													<li class=""><a href="#" class="" title="거래내역">거래내역</a></li>
+													<li class="t2"><a class="on" title="매수">매수</a></li>
+													<li class=""><a  class="" title="매도">매도</a></li>
+													<li class=""><a  class="" title="거래내역">거래내역</a></li>
 												</ul>
 												</span>
 												<span id="b" class="orderB" style="height: 374px;">
@@ -435,7 +435,7 @@ html, body {
 															<strong>수량</strong> <i>(BTC)</i>
 														</dt>
 														<dd class="marginB6">
-															<input type="text" class="txt All" placeholder="0"
+															<input id="count" type="text" class="txt All" placeholder="0"
 																value="">
 														</dd>
 														<dd class="Quantity marginNone">
@@ -448,7 +448,7 @@ html, body {
 														</dt>
 														<dd class="marginB6">
 															<input type="txt" class="txt All" placeholder="0"
-																value="0.00">
+																value="">
 														</dd>
 														<dt></dt>
 														<dd></dd>
@@ -655,112 +655,90 @@ html, body {
 								</article>
 								</div>
 							</section>
-							<footer>
-							<div class="app__wrap--2K1mv">
-								<a title="UpBit" class="app__logo--1S5fo" href="/home">Upbit</a>
-								<div class="app__aboutUs--2XC3i">
-									<p class="app__contact--2Xg-L">
-										<span><a target="_blank" rel="noopener noreferrer"
-											href="https://dunamu.com">원스 주식회사</a></span><span
-											class="app__dark--24xsm">고객센터 1588-1313</span>
-									</p>
-									<p class="address">
-										<span>서울 마포구 백범로 23, 3층</span><span>대표 once</span><span>사업자등록번호
-											123-45-78944</span>
-									</p>
-									
-									<div class="app__snsLink--6VrG4">
-										<a target="_blank" rel="noopener noreferrer"
-											href="https://twitter.com/upbitglobal"
-											class="app__snsLink__item--3sEsb app__snsLink__item--twitter--PmHSZ"
-											title="twitter">twitter</a><a target="_blank"
-											rel="noopener noreferrer"
-											href="https://www.facebook.com/upbit.exchange"
-											class="app__snsLink__item--3sEsb app__snsLink__item--facebook--jcjXV"
-											title="facebook">facebook</a><a target="_blank"
-											rel="noopener noreferrer" href="https://medium.com/@upbit"
-											class="app__snsLink__item--3sEsb app__snsLink__item--medium--204OY"
-											title="medium">medium</a><a target="_blank"
-											rel="noopener noreferrer"
-											href="https://blog.naver.com/dunamupr"
-											class="app__snsLink__item--3sEsb app__snsLink__item--naver--3WcT3"
-											title="naver">naver</a><a target="_blank"
-											rel="noopener noreferrer"
-											href="https://www.linkedin.com/company/upbit-official"
-											class="app__snsLink__item--3sEsb app__snsLink__item--linkedin--1eEkL"
-											title="linkedin">linkedin</a>
-									</div>
-									
-									<p class="app__company--3_rIE">
-										<a target="_blank" rel="noopener noreferrer"
-											href="https://bittrex.com" title="BITTREX"><img
-											src="https://static.upbit.com/upbit-pc/main/company01.gif"
-											alt="BITTREX"></a><a target="_blank"
-											rel="noopener noreferrer" href="https://www.bitgo.com/"
-											title="BitGo"><img
-											src="https://static.upbit.com/upbit-pc/main/company02.gif"
-											alt="BitGo"></a><a target="_blank"
-											rel="noopener noreferrer"
-											href="http://www.kakao.com/kakaopay/index.php/authentication/"
-											title="KakaoPay"><img
-											src="https://static.upbit.com/upbit-pc/main/company03.gif"
-											alt="KakaoPay"></a><a target="_blank"
-											rel="noopener noreferrer" href="https://www.samsungfire.com/"
-											title="삼성화재"><img
-											src="https://static.upbit.com/upbit-pc/main/company04.gif"
-											alt="삼성화재"></a>
-									</p>
-									<p class="app__copyright--3yoJ_">Copyright © 2017 - 2019
-										Dunamu Inc. All rights reserved.</p>
-								</div>
-								<div class="app__footerMenu--2F2rh">
-									<dl>
-										<dt>회사</dt>
-										<dd>
-											<a target="_blank" rel="noopener noreferrer"
-												href="https://dunamu.com">회사소개</a>
-										</dd>
-										<dd>
-											<a title="공지사항" href="/service_center/notice">공지사항</a>
-										</dd>
-										<dd>
-											<a title="이용약관" href="/terms_of_service">이용약관</a>
-										</dd>
-										<dd>
-											<a title="Open API 이용약관" href="/open_api_agreement">Open
-												API 이용약관</a>
-										</dd>
-										<dd>
-											<a title="개인정보처리방침" href="/privacy_policy"><strong>개인정보처리방침</strong></a>
-										</dd>
-									</dl>
-									<dl>
-										<dt>고객지원</dt>
-										<dd>
-											<a title="자주하는 질문(FAQ)" href="/service_center/faq">자주하는
-												질문(FAQ)</a>
-										</dd>
-										<dd>
-											<a target="_blank" rel="noopener noreferrer"
-												href="https://static.upbit.com/common/bzc_kakao.html"
-												title="카카오톡 문의(24시간)">카카오톡 문의(24시간)</a>
-										</dd>
-										<dd>
-											<a title="1:1 문의하기" href="/service_center/qna">1:1 문의하기</a>
-										</dd>
-										<dd>
-											<a title="Open API" href="/service_center/open_api_guide">Open
-												API</a>
-										</dd>
-										<dd>
-											<a title="거래 및 입출금 이용안내" href="/service_center/guide">거래
-												및 입출금 이용안내</a>
-										</dd>
-									</dl>
-								</div>
-							</div>
-						</footer>
 						</div>
+						<footer class="sub">
+						<div class="wrap">
+							<a title="UpBit" class="logo" href="/home">Upbit</a>
+							<div class="aboutUs">
+								<p class="contact">
+									<span><a target="_blank" rel="noopener noreferrer"
+										href="#">두나무 주식회사</a></span><span class="dark">고객센터 1588-5682</span>
+								</p>
+								<p class="address">
+									<span>서울시 강남구 테헤란로4길 14, 5층</span><span>대표 이석우</span><span>사업자등록번호
+										119-86-54968</span>
+								</p>
+								<div class="snsLink">
+									<a target="_blank" rel="noopener noreferrer" href="#"
+										class="snsLink__item snsLink__item--twitter" title="twitter">twitter</a><a
+										target="_blank" rel="noopener noreferrer" href="#"
+										class="snsLink__item snsLink__item--facebook" title="facebook">facebook</a><a
+										target="_blank" rel="noopener noreferrer" href="#"
+										class="snsLink__item snsLink__item--medium" title="medium">medium</a><a
+										target="_blank" rel="noopener noreferrer" href="#"
+										class="snsLink__item snsLink__item--naver" title="naver">naver</a><a
+										target="_blank" rel="noopener noreferrer" href="#"
+										class="snsLink__item snsLink__item--linkedin" title="linkedin">linkedin</a>
+								</div>
+								<p class="company">
+									<a target="_blank" rel="noopener noreferrer" href="#"
+										title="BITTREX"><img
+										src="https://static.upbit.com/upbit-pc/main/company01.gif"
+										alt="BITTREX"></a><a target="_blank"
+										rel="noopener noreferrer" href="#" title="BitGo"><img
+										src="https://static.upbit.com/upbit-pc/main/company02.gif"
+										alt="BitGo"></a><a target="_blank" rel="noopener noreferrer"
+										href="#" title="KakaoPay"><img
+										src="https://static.upbit.com/upbit-pc/main/company03.gif"
+										alt="KakaoPay"></a><a target="_blank"
+										rel="noopener noreferrer" href="#" title="삼성화재"><img
+										src="https://static.upbit.com/upbit-pc/main/company04.gif"
+										alt="삼성화재"></a>
+								</p>
+								<p class="copyright">Copyright © 2017 - 2019 Dunamu Inc. All
+									rights reserved.</p>
+							</div>
+							<div class="footerMenu">
+								<dl>
+									<dt>회사</dt>
+									<dd>
+										<a target="_blank" rel="noopener noreferrer" href="#">회사소개</a>
+									</dd>
+									<dd>
+										<a title="공지사항" href="#">공지사항</a>
+									</dd>
+									<dd>
+										<a title="이용약관" href="#">이용약관</a>
+									</dd>
+									<dd>
+										<a title="Open API 이용약관" href="#">Open API 이용약관</a>
+									</dd>
+									<dd>
+										<a title="개인정보처리방침" href="#"><strong>개인정보처리방침</strong></a>
+									</dd>
+								</dl>
+								<dl>
+									<dt>고객지원</dt>
+									<dd>
+										<a title="자주하는 질문(FAQ)" href="#">자주하는 질문(FAQ)</a>
+									</dd>
+									<dd>
+										<a target="_blank" rel="noopener noreferrer" href="#"
+											title="카카오톡 문의(24시간)">카카오톡 문의(24시간)</a>
+									</dd>
+									<dd>
+										<a title="1:1 문의하기" href="#">1:1 문의하기</a>
+									</dd>
+									<dd>
+										<a title="Open API" href="#">Open API</a>
+									</dd>
+									<dd>
+										<a title="거래 및 입출금 이용안내" href="#">거래 및 입출금 이용안내</a>
+									</dd>
+								</dl>
+							</div>
+						</div>
+					</footer>
 					</div>
 </body>
 <!-- upbit -->
@@ -788,6 +766,10 @@ html, body {
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/ngh/nghchart.js"></script>
+<<<<<<< HEAD
+=======
+
+>>>>>>> refs/remotes/origin/kth_lt
 <script>
 app.init('<%=application.getContextPath()%>');
 ngh.init('<%=application.getContextPath()%>');

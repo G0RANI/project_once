@@ -8,6 +8,5 @@ import lombok.Data;
 
 @Data @Component
 public class Transactions {
-	private String tseq, rw, rwm, id;
-	private Date date;
+	private String tseq,rw,nprice,id,unit,date;
 }

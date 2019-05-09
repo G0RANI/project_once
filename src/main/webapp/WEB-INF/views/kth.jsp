@@ -68,7 +68,7 @@
 		                    <strong>
 		                    <ahref="https://www.ubcindex.com" target="_blank" rel="noopener noreferrer">네이버뉴스</a></strong><span class="tabB tabR">
 							</span></span>
-<table class="highlight tbl_index">
+							<table class="highlight tbl_index">
                                 <colgroup>
                                     <col width="10">
                                     <col width="200">
@@ -210,11 +210,19 @@
 		                        </thead>
 		                        <tbody>
 		                            <tr>
+<<<<<<< HEAD
+		                                <th><em class="logo"
+		                                    style="background: url(https://assets.coingecko.com/coins/images/677/large/basic-attention-token.png?1547034427) 0px 0px/cover no-repeat;">-</em><a
+		                                    class="tit" href="/exchange?code=CRIX.UPBIT.KRW-BAT"><strong>베이직어텐션토큰</strong></a></th>
+		                                <td class="lAlign"><i>BAT/KRW</i></td>
+		                                <td class=""><p class="up">+39.76%</p></td>
+=======
 		  		                        <th><em class="logo"
 		                                    style="background: url(https://assets.coingecko.com/coins/images/677/large/basic-attention-token.png?1547034427) 0px 0px/cover no-repeat;">-</em><a
 		                                    class="tit" href="/exchange?code=CRIX.UPBIT.KRW-BAT"><strong>베이직어텐션토큰</strong></a></th>
 		                                <td class="lAlign"><i>BAT/KRW</i></td>
 		                                <td class=""><p class="up">+39.77%</p></td>
+>>>>>>> kth_lt
 		                                <td class=""><p class="up">+110.57%</p></td>
 		                                <td class=""><p class="up">+248.91%</p></td>
 		                                <td class=""><p class="up">+52.72%</p></td>
@@ -345,6 +353,89 @@
 		            </div>
 		        </div>
 		    </div>
+		    <footer class="sub">
+						<div class="wrap">
+							<a title="UpBit" class="logo" href="/home">Upbit</a>
+							<div class="aboutUs">
+								<p class="contact">
+									<span><a target="_blank" rel="noopener noreferrer"
+										href="#">두나무 주식회사</a></span><span class="dark">고객센터 1588-5682</span>
+								</p>
+								<p class="address">
+									<span>서울시 강남구 테헤란로4길 14, 5층</span><span>대표 이석우</span><span>사업자등록번호
+										119-86-54968</span>
+								</p>
+								<div class="snsLink">
+									<a target="_blank" rel="noopener noreferrer" href="#"
+										class="snsLink__item snsLink__item--twitter" title="twitter">twitter</a><a
+										target="_blank" rel="noopener noreferrer" href="#"
+										class="snsLink__item snsLink__item--facebook" title="facebook">facebook</a><a
+										target="_blank" rel="noopener noreferrer" href="#"
+										class="snsLink__item snsLink__item--medium" title="medium">medium</a><a
+										target="_blank" rel="noopener noreferrer" href="#"
+										class="snsLink__item snsLink__item--naver" title="naver">naver</a><a
+										target="_blank" rel="noopener noreferrer" href="#"
+										class="snsLink__item snsLink__item--linkedin" title="linkedin">linkedin</a>
+								</div>
+								<p class="company">
+									<a target="_blank" rel="noopener noreferrer" href="#"
+										title="BITTREX"><img
+										src="https://static.upbit.com/upbit-pc/main/company01.gif"
+										alt="BITTREX"></a><a target="_blank"
+										rel="noopener noreferrer" href="#" title="BitGo"><img
+										src="https://static.upbit.com/upbit-pc/main/company02.gif"
+										alt="BitGo"></a><a target="_blank" rel="noopener noreferrer"
+										href="#" title="KakaoPay"><img
+										src="https://static.upbit.com/upbit-pc/main/company03.gif"
+										alt="KakaoPay"></a><a target="_blank"
+										rel="noopener noreferrer" href="#" title="삼성화재"><img
+										src="https://static.upbit.com/upbit-pc/main/company04.gif"
+										alt="삼성화재"></a>
+								</p>
+								<p class="copyright">Copyright © 2017 - 2019 Dunamu Inc. All
+									rights reserved.</p>
+							</div>
+							<div class="footerMenu">
+								<dl>
+									<dt>회사</dt>
+									<dd>
+										<a target="_blank" rel="noopener noreferrer" href="#">회사소개</a>
+									</dd>
+									<dd>
+										<a title="공지사항" href="#">공지사항</a>
+									</dd>
+									<dd>
+										<a title="이용약관" href="#">이용약관</a>
+									</dd>
+									<dd>
+										<a title="Open API 이용약관" href="#">Open API 이용약관</a>
+									</dd>
+									<dd>
+										<a title="개인정보처리방침" href="#"><strong>개인정보처리방침</strong></a>
+									</dd>
+								</dl>
+								<dl>
+									<dt>고객지원</dt>
+									<dd>
+										<a title="자주하는 질문(FAQ)" href="#">자주하는 질문(FAQ)</a>
+									</dd>
+									<dd>
+										<a target="_blank" rel="noopener noreferrer" href="#"
+											title="카카오톡 문의(24시간)">카카오톡 문의(24시간)</a>
+									</dd>
+									<dd>
+										<a title="1:1 문의하기" href="#">1:1 문의하기</a>
+									</dd>
+									<dd>
+										<a title="Open API" href="#">Open API</a>
+									</dd>
+									<dd>
+										<a title="거래 및 입출금 이용안내" href="#">거래 및 입출금 이용안내</a>
+									</dd>
+								</dl>
+							</div>
+						</div>
+					</footer>
 </body>
 <!-- upbit -->
 <script src="https://cdn.upbit.com/vendors-chunk-344e4004ead25be2326b.js"></script>
