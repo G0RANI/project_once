@@ -291,8 +291,6 @@ ksa=(()=>{
 		        	 Kakao.API.request({
 		        	       url: '/v1/user/me',
 		        	       success: (res)=>{
-		        	             alert(JSON.stringify(res));
-		        	             alert(JSON.stringify(authObj));
 		        	             console.log(res.id);
 		        	             console.log(res.kaccount_email);
 		        	             console.log(res.properties['nickname']);
@@ -304,7 +302,6 @@ ksa=(()=>{
 		        	         	 sessionStorage.setItem('email', res.kaccount_email);
 		        	         	 sessionStorage.setItem('nickname', res.properties['nickname']);
 		        	         	 sessionStorage.setItem('pic', res.properties['profile_image']);
-		        	         	 alert(sessionStorage.getItem(res.id));
 		        	         	$.ajax({
 		    	             		url:x+'/login',
 		    	             		type: 'POST',
@@ -312,11 +309,9 @@ ksa=(()=>{
 		    	             		dataType:'json',
 		    	             		contentType : "application/json; charset=UTF-8",
 		    	             		success:(res)=>{
-		    	             			alert('성공');
 		    	             			location.assign(x);
 		    	             		},
 		    	             		error:(err)=>{
-		    	             			alert('실패');
 		    	             			kakao(x);
 		    	             		}
 		    	             	});
