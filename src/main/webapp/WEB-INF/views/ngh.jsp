@@ -30,7 +30,7 @@
 <script src="https://cdn.upbit.com/js/pc-inline-1.2.js"
 	integrity="sha384-qTbmS4jWPoNJ/fbbtBgeNTj7u3P1Mlp0wn9pKGGp1+ehUyuSFYVGJosc800zYG+n"
 	crossorigin="anonymous"></script>
-<script async="" src="https://platform.twitter.com/widgets.js"></script>
+<!-- <script async="" src="https://platform.twitter.com/widgets.js"></script> -->
 <style data-styled="" data-styled-version="4.2.0"></style>
 <script src="https://www.amcharts.com/lib/4/core.js"></script>
 <script src="https://www.amcharts.com/lib/4/charts.js"></script>
@@ -39,14 +39,12 @@
 <script src="http://www.amcharts.com/lib/3/serial.js"></script>
 <script src="http://www.amcharts.com/lib/3/themes/light.js"></script>
 <script src="http://www.amcharts.com/lib/3/amstock.js"></script>
-
 <style type="text/css">
 
 /* #chartdiv {
   width: 100%;
   height: 500px;
 } */
-
 #chartdiv {
   width: 100%;
   height: 100%;
