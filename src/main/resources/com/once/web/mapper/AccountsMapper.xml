@@ -8,11 +8,7 @@
 	VALUES (#{acnum}, #{money}, #{id})
   </insert>
   <select id="selectAccount" resultType="hashMap">
-<<<<<<< HEAD
  	SELECT *
-=======
- 	SELECT AC.money, AC.acnum, CU.hqua
->>>>>>> richard_lt
 	FROM ACCOUNT AS AC 
 	  INNER JOIN CUSTOMERS AS CU
 	  	ON  AC.id LIKE CU.id

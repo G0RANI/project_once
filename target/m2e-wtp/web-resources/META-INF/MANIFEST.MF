@@ -1,13 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< HEAD
 Built-By: 1027
-=======
-<<<<<<< HEAD
-Built-By: 1027
-=======
-Built-By: namgi
->>>>>>> a267d10b344750cf6787dfecd4a39b8cb3d26583
->>>>>>> richard_lt
 Build-Jdk: 1.8.0_201
 Created-By: Maven Integration for Eclipse
 
