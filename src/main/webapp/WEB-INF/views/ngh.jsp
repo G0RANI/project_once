@@ -788,11 +788,6 @@ html, body {
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/ngh/nghchart.js"></script>
-<<<<<<< HEAD
-=======
-
->>>>>>> c20f323bdee56a3ffd8a1e220d8077a87b7d8765
-
 <script>
 app.init('<%=application.getContextPath()%>');
 ngh.init('<%=application.getContextPath()%>');
