@@ -17,10 +17,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.once.web.domain.Accounts;
 import com.once.web.domain.Once;
 import com.once.web.lambda.IConsumer;
 import com.once.web.lambda.IFunction;
 import com.once.web.lambda.ISupplier;
+import com.once.web.service.AccountsServiceImpl;
 import com.once.web.service.OnceServiceImpl;
 import com.once.web.service.TransactionsServiceImpl;
 
@@ -32,6 +34,8 @@ public class NghController {
 	@Autowired Once once;
 	@Autowired OnceServiceImpl onceimpl;
 	@Autowired TransactionsServiceImpl trs;
+	@Autowired AccountsServiceImpl asi;
+	@Autowired Accounts ac;
 	
 	private static final Logger logger = LoggerFactory.getLogger(NghController.class);
 	@RequestMapping("/ngh")
@@ -59,16 +63,19 @@ public class NghController {
 		map.clear();
 		IFunction i = (Object o) -> onceimpl.selectAllOnceList(); 
 		List<?> ls = (List<?>) i.apply(once);
-		System.out.println(ls.toString());
 		System.out.println("원스에 값"+i.apply(once).toString());
 		map.put("ls", ls);
 		 return map;
 	}
+	
+	
+	@SuppressWarnings("unchecked")
 	@ResponseBody
-	@RequestMapping(value = "/ngh/buy/{unit}/{price}/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/ngh/buy/{unit}/{price}/{id}/{tprice}", method = RequestMethod.GET)
 	public Map<String, Object> buy(@PathVariable("unit") String unit,
 									@PathVariable("price") String price,
-									@PathVariable("id") String id) {
+									@PathVariable("id") String id,
+									@PathVariable("tprice") String tprice) {
 		Date today = new Date();
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String date = String.valueOf(dateFormat.format(today));
@@ -78,14 +85,19 @@ public class NghController {
 		map.put("unit", unit);
 		map.put("id", id);
 		map.put("nprice",price);
-		map.put("rw","input");
+		map.put("rw","매수");
 		map.put("date",date);
+		map.put("tprice",tprice);
 		IConsumer i = (Object o) -> trs.modifyTransaction(map);
 		i.accept(map);
-		System.out.println("map 값 : "+map);	
-		
-	
-		
-		  return map;
+		IFunction f = (Object o) -> asi.retrieveAccount(id);		
+		ac = (Accounts) f.apply(id);
+		System.out.println(ac);
+		/*
+		 * String bm = String.valueOf(Integer.parseInt(acm) - Integer.parseInt(tprice));
+		 * map.put("bm",bm); IConsumer ii = (Object o) -> asi.modifyBuyAccount(map);
+		 * ii.accept(map); System.out.println("map 값 : "+map);
+		 */
+		 return map;
 	}
 }
