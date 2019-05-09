@@ -6,5 +6,4 @@ import lombok.Data;
 
 @Data @Component
 public class Customers {
-		private String id, hcoin, hqua, pprice;
-}
+		private String id, hqua;}

@@ -20,7 +20,7 @@ public class TransactionsServiceImpl implements TransactionsService{
 	}
 
 	@Override
-	public Map<String,Object> retrieveAllTransactions(String id) {
+	public List<Transactions> retrieveAllTransactions(String id) {
 		
 		return tr.selectAllTransactions(id);
 	}
