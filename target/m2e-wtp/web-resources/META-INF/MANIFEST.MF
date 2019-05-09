@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: JEONGWOO
 Build-Jdk: 1.8.0_211
+=======
+Built-By: 1027
+Build-Jdk: 1.8.0_201
+>>>>>>> 9ddc20c4b3f17d34abc02076290f92c06f41445c
 Created-By: Maven Integration for Eclipse
 

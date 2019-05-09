@@ -1,5 +1,6 @@
 package com.once.web.controller;
 
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -61,6 +62,7 @@ public class KsaController {
 	public Map<String,Object> selectAccountInfo(@PathVariable String id) {
 		System.out.println("selectAccountInfo 회원아이디 : "+id);
 		IFunction f = (Object o) -> acc.retrieveAccount(id);
+		System.out.println("selectAccountInfo  : "+f.apply(id));
 		return (Map<String, Object>) f.apply(id);
 	}
 	
@@ -98,8 +100,10 @@ public class KsaController {
 	public Map<String,Object> selectTransactions(@PathVariable String id) {
 		System.out.println("selectTransactions 회원아이디 : "+id);
 		IFunction f = (Object o) -> trx.retrieveAllTransactions(id);
-		System.out.println(f.apply(id));
-		return (Map<String, Object>) f.apply(id);
+		List<Transactions> l = (List<Transactions>) f.apply(id);
+		map.clear();
+		map.put("ls", l);
+		return map;
 	}
 	
 	@ResponseBody
