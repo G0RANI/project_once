@@ -47,4 +47,10 @@ public class AccountsServiceImpl implements AccountsService{
 		
 	}
 
+	@Override
+	public void modifyBuyAccount(Map<?, ?> map) {
+		am.updateBuyAccount(map);
+		
+	}
+
 }

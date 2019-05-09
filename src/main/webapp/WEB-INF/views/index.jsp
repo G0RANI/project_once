@@ -18,8 +18,6 @@
 	<link rel="stylesheet" media="all" href="https://cdn.upbit.com/server_assets/assets/application-eed45448fcc8d15913d4046f854336c3e6d7dc7618b691d2e0500aa6583b42aa.css">
     <link rel="stylesheet" media="screen" href="https://cdn.upbit.com/commons-common-30703bb927f1099d8531.css">
     <link rel="stylesheet" media="screen" href="https://cdn.upbit.com/KR_PC-common-1b0a4e1e53868b6001ef.css">
-    <link rel="icon" type="image/jpg" href="/favicon.jpg" sizes="32x32">
-    <link rel="shortcut icon" href="/favicon.jpg">
 	<script src="https://cdn.upbit.com/js/bluebird-3.3.4.min.js" integrity="sha384-Zum86V5Chub72Pcj/UopirJ0QwQ+LgKZFTlVMt/yaVwYbROQJl/q8Nj2e72vZel2" crossorigin="anonymous"></script>
     <script src="https://cdn.upbit.com/js/bluebird-3.3.4.min.js" integrity="sha384-Zum86V5Chub72Pcj/UopirJ0QwQ+LgKZFTlVMt/yaVwYbROQJl/q8Nj2e72vZel2" crossorigin="anonymous"></script>
     <script src="https://cdn.upbit.com/js/jquery-3.2.1.min.js" integrity="sha384-xBuQ/xzmlsLoJpyjoggmTEz8OWUFM0/RC5BsqQBDX2v5cMvDHcMakNTNrHIW2I5f" crossorigin="anonymous"></script>
@@ -27,7 +25,7 @@
     <script async="" src="https://platform.twitter.com/widgets.js"></script>
     <style data-styled="" data-styled-version="4.2.0"></style>
 	<link href="https://fonts.googleapis.com/css?family=Lato"rel="stylesheet">
-	
+	<link rel="icon" href="data:;base64, iVORw0KGo=">
 <style type="text/css">
 * {
 	font-family: 'Lato', sans-serif;
@@ -247,6 +245,32 @@ h1 {
 	margin: 30px auto 30px auto;
 	text-align: center;
 }
+header section h1 img {
+    text-indent: -1000em;
+    display: inline-block;
+    position: absolute;
+    width: 90px;
+    height: 70px;
+    right: 20px;
+    bottom: 1px;
+    left: 0px;
+    border-radius: 3px;
+    top: 0px;
+    cursor: pointer;
+}
+footer div img {  
+    text-indent: -1000em;
+    display: inline-block;
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    right: 20px;
+    bottom: 1px;
+    left: 0px;
+    border-radius: 3px;
+    top: 0px;
+    cursor: pointer;  
+}
 </style>
 <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script>
@@ -264,7 +288,7 @@ h1 {
 						<header class="" style="z-index: 100;">
 							<section>
 								<h1>
-									<a style="cursor: pointer" title="UpBit" id="home">ONCE</a>
+									<img src="/web/resources/img/logo2.png" id="home" alt="once">
 								</h1>
 								<nav id="nav2">
 									<a style="cursor: pointer" class="" id="ngh" title="거래소">거래소</a>
@@ -291,7 +315,6 @@ h1 {
 											<div class="dp-content">
 												<h2>Exchange</h2>
 												<p>거래소</p>
-												<a href="#" class="site-btn"></a>
 											</div>
 											<div class="dp-img">
 												<img class="img-fluid" src="https://3.bp.blogspot.com/-uG4g2ru306M/WSmOaS9-dLI/AAAAAAAAA3Q/b4BlZd8-qsgoFv4aW2wOEzOijxmQ7Pm2QCLcB/s1600/NYSE.JPG" alt="investing">
@@ -301,7 +324,6 @@ h1 {
 											<div class="dp-content">
 												<h2>Wallets</h2>
 												<p>입출금</p>
-												<a href="#" class="site-btn"></a>
 											</div>
 											<div class="dp-img">
 												<img class="img-fluid" src="https://img.seoul.co.kr/img/upload/2017/05/15/SSI_20170515143932.jpg" alt="investing">
@@ -311,7 +333,6 @@ h1 {
 											<div class="dp-content">
 												<h2>My Trade</h2>
 												<p>투자내역</p>
-												<a href="#" class="site-btn"></a>
 											</div>
 											<div class="dp-img">
 												<img class="img-fluid" src="https://www.v-on.kr/wp-content/uploads/2018/11/%EB%B2%A4%EC%B2%98%EA%B8%B0%EC%97%85%EC%9D%84-%EC%9C%84%ED%95%9C-%ED%88%AC%EC%9E%90%EA%B3%84%EC%95%BD%EC%84%9C-%ED%95%B4%EC%84%A4%EC%84%9C-%EB%8C%80%ED%91%9C%EC%9D%B4%EB%AF%B8%EC%A7%80.jpg" alt="investing">
@@ -321,7 +342,6 @@ h1 {
 											<div class="dp-content">
 												<h2>Trend</h2>
 												<p>코인동향</p>
-												<a href="#" class="site-btn"></a>
 											</div>
 											<div class="dp-img">
 												<img class="img-fluid" src="http://platum.kr/wp-content/uploads/2016/03/12.jpg" alt="investing">
@@ -437,11 +457,11 @@ h1 {
 						<iframe id="google_shimpl" style="display: none;"></iframe>
 						<iframe id="google_esf" name="google_esf" src="https://googleads.g.doubleclick.net/pagead/html/r20190501/r20190131/zrt_lookup.html#" data-ad-client="ca-pub-2783044520727903" style="display: none;"></iframe>
 						<div style="background-color: rgb(255, 255, 255);">
-							<h1>ONCE</h1>
+							
 							<article class="app__main--erefX home">
 								<section class="app__container--2DgeA">
 									<article class="app__DataDisplay--Wc51W">
-										<div id="chart"
+										<div id="chart" style="margin-top: 60px;"
 											class="app__wrap--2K1mv app__paddingSide--wUIeO">
 											<div class="app__row--2t8gF">
 												<div class="app__col-4--ls7AG">
@@ -678,86 +698,33 @@ h1 {
 									</article>
 						</div>	
 					</div>
-					<footer class="sub">
+					<footer class="sub" style="margin-top: 0px;">
 						<div class="wrap">
-							<a title="UpBit" class="logo" href="/home">Upbit</a>
+							<img src="/web/resources/img/logo3.png" alt="once">
 							<div class="aboutUs">
 								<p class="contact">
-									<span><a target="_blank" rel="noopener noreferrer"
-										href="#">두나무 주식회사</a></span><span class="dark">고객센터 1588-5682</span>
+									<span><a target="_blank" rel="noopener noreferrer">ONCE 주식회사</a></span>
+									<span class="dark">고객센터 1234-1234</span>
 								</p>
 								<p class="address">
-									<span>서울시 강남구 테헤란로4길 14, 5층</span><span>대표 이석우</span><span>사업자등록번호
-										119-86-54968</span>
+									<span>서울 마포구 백범로 23 구프라자 3층</span><span>대표 ONCE</span><span>사업자등록번호
+										123-45-78910</span>
 								</p>
 								<div class="snsLink">
-									<a target="_blank" rel="noopener noreferrer" href="#"
+									<a target="_blank" rel="noopener noreferrer" 
 										class="snsLink__item snsLink__item--twitter" title="twitter">twitter</a><a
-										target="_blank" rel="noopener noreferrer" href="#"
+										target="_blank" rel="noopener noreferrer" 
 										class="snsLink__item snsLink__item--facebook" title="facebook">facebook</a><a
-										target="_blank" rel="noopener noreferrer" href="#"
+										target="_blank" rel="noopener noreferrer" 
 										class="snsLink__item snsLink__item--medium" title="medium">medium</a><a
-										target="_blank" rel="noopener noreferrer" href="#"
+										target="_blank" rel="noopener noreferrer" 
 										class="snsLink__item snsLink__item--naver" title="naver">naver</a><a
-										target="_blank" rel="noopener noreferrer" href="#"
+										target="_blank" rel="noopener noreferrer" 
 										class="snsLink__item snsLink__item--linkedin" title="linkedin">linkedin</a>
 								</div>
-								<p class="company">
-									<a target="_blank" rel="noopener noreferrer" href="#"
-										title="BITTREX"><img
-										src="https://static.upbit.com/upbit-pc/main/company01.gif"
-										alt="BITTREX"></a><a target="_blank"
-										rel="noopener noreferrer" href="#" title="BitGo"><img
-										src="https://static.upbit.com/upbit-pc/main/company02.gif"
-										alt="BitGo"></a><a target="_blank" rel="noopener noreferrer"
-										href="#" title="KakaoPay"><img
-										src="https://static.upbit.com/upbit-pc/main/company03.gif"
-										alt="KakaoPay"></a><a target="_blank"
-										rel="noopener noreferrer" href="#" title="삼성화재"><img
-										src="https://static.upbit.com/upbit-pc/main/company04.gif"
-										alt="삼성화재"></a>
-								</p>
-								<p class="copyright">Copyright © 2017 - 2019 Dunamu Inc. All
+								
+								<p class="copyright">Copyright © 2017 - 2019 ONCE Inc. All
 									rights reserved.</p>
-							</div>
-							<div class="footerMenu">
-								<dl>
-									<dt>회사</dt>
-									<dd>
-										<a target="_blank" rel="noopener noreferrer" href="#">회사소개</a>
-									</dd>
-									<dd>
-										<a title="공지사항" href="#">공지사항</a>
-									</dd>
-									<dd>
-										<a title="이용약관" href="#">이용약관</a>
-									</dd>
-									<dd>
-										<a title="Open API 이용약관" href="#">Open API 이용약관</a>
-									</dd>
-									<dd>
-										<a title="개인정보처리방침" href="#"><strong>개인정보처리방침</strong></a>
-									</dd>
-								</dl>
-								<dl>
-									<dt>고객지원</dt>
-									<dd>
-										<a title="자주하는 질문(FAQ)" href="#">자주하는 질문(FAQ)</a>
-									</dd>
-									<dd>
-										<a target="_blank" rel="noopener noreferrer" href="#"
-											title="카카오톡 문의(24시간)">카카오톡 문의(24시간)</a>
-									</dd>
-									<dd>
-										<a title="1:1 문의하기" href="#">1:1 문의하기</a>
-									</dd>
-									<dd>
-										<a title="Open API" href="#">Open API</a>
-									</dd>
-									<dd>
-										<a title="거래 및 입출금 이용안내" href="#">거래 및 입출금 이용안내</a>
-									</dd>
-								</dl>
 							</div>
 						</div>
 					</footer>
