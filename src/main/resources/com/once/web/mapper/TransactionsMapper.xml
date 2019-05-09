@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.once.web.mapper.TransactionsMapper">
- <select id="selectAllTransactions" resultType="hashMap">
+ <select id="selectAllTransactions" resultType="Map">
  	SELECT * 
  	FROM TRANSACTIONS as tr
  		inner join CUSTOMERS as cu
@@ -14,5 +14,6 @@
 insert into TRANSACTIONS (id, rw, unit, nprice, date)
 	values (#{id}, #{rw}, #{unit}, #{nprice},#{date})
  </insert>
+
  
 </mapper>
