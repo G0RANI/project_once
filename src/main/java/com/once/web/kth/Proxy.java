@@ -194,7 +194,7 @@ public class Proxy {
       title = title.replaceAll(match, " ");
         String[] arg = title.split(" ");
         arg = new HashSet<String>(Arrays.asList(arg)).toArray(new String[0]);
-        System.out.println("afteer "+arg.length);
+        System.out.println("afteer"+arg.length);
         
         for(String s :arg) {
         	writer.write(s+","+(random.nextInt(20)+10)+"\n");
