@@ -16,7 +16,7 @@ function generateChartData() {
 		 success : d=>{
 			 		let i = 0;
 				  for ( i = 0; i < d.ls.length; i++ ) {
-				    let newDate = new Date(d.ls[i].odate);
+				    let newDate = new Date();
 				    newDate.setDate(newDate.getDate() + i );
 				 /*   newDate = d.ls[i].odate;*/
 				    let a1 = d.ls[i].price;
