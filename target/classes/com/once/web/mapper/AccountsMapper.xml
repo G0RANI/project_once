@@ -12,8 +12,8 @@
 	FROM ACCOUNT AS AC 
 	  INNER JOIN CUSTOMERS AS CU
 	  	ON  AC.id LIKE CU.id
-	  INNER JOIN TRANSACTIONS AS TR
-	 	ON  AC.id LIKE TR.id
+	<!--   INNER JOIN TRANSACTIONS AS TR
+	 	ON  AC.id LIKE TR.id -->
 	WHERE AC.id LIKE #{id};
   </select>
   <update id="updateBuyAccount" parameterType="hashMap">
