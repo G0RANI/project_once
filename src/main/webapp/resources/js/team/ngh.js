@@ -18,7 +18,15 @@ ngh=(()=>{
 				  $('.top li').attr('class', 't3');
 		          $(this).attr('class', 'on');
 				  $('#b').empty();
-				  $(ngh_compo.l_medo()).appendTo('#b');	
+				  $(ngh_compo.l_medo()).appendTo('#b');
+				  if(sessionStorage.getItem('session') === null){
+					  $('.ty02').empty();
+					  $('<a title="로그인" id="login2">로그인</a>').appendTo('.ty02');
+					  $('#login2').click(e=>{
+						  e.preventDefault();
+				          location.assign($.ctx()+"/ksa");
+					  });
+				  }
 			  	});
 			  
 			  $('.top a').eq(2).click(function(){
@@ -26,12 +34,17 @@ ngh=(()=>{
 				  $('.top li').attr('class', 't4');
 		          $(this).attr('class', 'on');
 		     	  $('#b').empty();
-		     	  $(ngh_compo.trx()).appendTo('#b');			
+		     	  $(ngh_compo.trx()).appendTo('#b');
+		     	 /*if(sessionStorage.getItem('session') === null){		             
+	                 $('#off').click(e=>{
+	                     alert('클릭 로그아웃!');
+	                     logout();
+	                 });
+	                };*/
 			  	});
 			  
 			  $('#chr_1').empty();
 			  	$(ngh_compo.chr()).appendTo('#chr_1');
-			  	
 			  	$.ajax({
                     url:$.ctx()+'/retrieve_trx/'+id,
                     data:id,
@@ -77,11 +90,8 @@ ngh=(()=>{
                          $('.ty01 tbody').html('<td colspan="8" class="dataNone"><p>과거 거래내역이 없습니다.</p></td>');
                     }
              });
-			  	
-			  	
              })
 	};
-	
 	/*once 차트 */
 	let once_chart=()=>{
 		$.getJSON($.ctx()+'/ngh/once',d=>{
@@ -177,25 +187,22 @@ ngh=(()=>{
 		                  switch(that){
 		                  case 'once':
 		                		alert('once');
-		                		
 		                      break;
 		                  case 'bit':
 		                		alert('bit');
-		                		
 		                       break;
 		                  case 'cash':
 		                		alert('cash');
-		                		
 		                       break;
 		                  case 'riple':
 		                		alert('riple');
-		                		
 		                       break;
 		                  }
 		             });
 					/*click*/
 				});
 				/*each*/
+				
 		 	  $('.top a').eq(0).
 			  attr('class', 'on');
 			  $('.top li').attr('class', 't2');
@@ -204,16 +211,17 @@ ngh=(()=>{
 			  $('#priceall').remove();
 			  $( '<input id="priceall" type="text" class="txt" value="'+tp[0]+'">')
 			  	.prependTo('.marginB101');
-			  
-		/*	  $(function(){
+			  $('#count').change(function(){
+				  $('#allpr').attr('value', tp[0]*$('#count').val());
+			  });
+			/*  	$(function(){
 				  $('.txt All').on('keyup',function(){
 				            var cnt = $(".orderB").length;     
 				            console.log(cnt);
-				            
 				    for( var i=1; i< cnt; i++){
-				       var sum = parseInt($(this).val() || 0 );
+				       var sum = parseInt($(this).val()|| 0 );
 				       sum++
-				      console.log(sum);
+				       console.log(sum);
 				    }
 				              var sum1 = parseInt($("#priceall").val() || 0 ); // input 값을 가져오며 계산하지만 값이 없을경우 0이 대입된다  뒷부분에 ( || 0 ) 없을경우 합계에 오류가 생겨 NaN 값이 떨어진다
 				              var sum2 = parseInt($("#count").val() || 0);
@@ -232,9 +240,18 @@ ngh=(()=>{
 			  		let id = sessionStorage.getItem('info');
 			  		let tprice = price*unit;
 			          $.getJSON($.ctx()+'/ngh/buy/'+unit+'/'+price+'/'+id+'/'+tprice,d=>{
+			        	  
 			        	  alert('성공');
 			          })
 		    	  });
+			  if(sessionStorage.getItem('session') === null){
+				  $('#btn_mesu').empty();
+				  $('<li class="ty02 login"><a title="로그인" id="login2">로그인</a>').appendTo('#btn_mesu');
+				  $('#login2').click(e=>{
+					  e.preventDefault();
+			          location.assign($.ctx()+"/ksa");
+				  });
+			  }
 			 $('.top a').eq(0).click(function(){
 				  $('.top a').attr('class', '');
 				  $('.top li').attr('class', 't2');
@@ -262,7 +279,6 @@ ngh=(()=>{
 				  	});
 		});
 	}
-	
 	return{init:init,
 		onCreate:onCreate};
 })();

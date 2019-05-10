@@ -18,11 +18,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.once.web.domain.Accounts;
+import com.once.web.domain.Customers;
 import com.once.web.domain.Once;
+import com.once.web.domain.OnceHis;
 import com.once.web.lambda.IConsumer;
 import com.once.web.lambda.IFunction;
 import com.once.web.lambda.ISupplier;
 import com.once.web.service.AccountsServiceImpl;
+import com.once.web.service.CustomersServiceImpl;
+import com.once.web.service.OnceHisServiceImpl;
 import com.once.web.service.OnceServiceImpl;
 import com.once.web.service.TransactionsServiceImpl;
 
@@ -36,6 +40,10 @@ public class NghController {
 	@Autowired TransactionsServiceImpl trs;
 	@Autowired AccountsServiceImpl asi;
 	@Autowired Accounts ac;
+	@Autowired OnceHisServiceImpl ohsi;
+	@Autowired CustomersServiceImpl custi;
+	/* @Autowired Customers cust; */
+	
 	
 	private static final Logger logger = LoggerFactory.getLogger(NghController.class);
 	@RequestMapping("/ngh")
@@ -88,16 +96,48 @@ public class NghController {
 		map.put("rw","매수");
 		map.put("date",date);
 		map.put("tprice",tprice);
+		int totalPrice = Integer.parseInt(tprice);
+		int onceunit = Integer.parseInt(unit);
+		IFunction f = (Object o) -> asi.retrieveAccount(id);
+		Map<String,Object> ls = (Map<String,Object>)f.apply(id);	
+		int  money = Integer.parseInt((String)ls.get("money"));
+		int curruentMoney =  money - totalPrice;
+		String bm = String.valueOf(curruentMoney);
+		map.put("bm",bm); 
+		IConsumer ii = (Object o) -> asi.modifyBuyAccount(map);
+		ii.accept(map); 
 		IConsumer i = (Object o) -> trs.modifyTransaction(map);
-		i.accept(map);
-		IFunction f = (Object o) -> asi.retrieveAccount(id);		
-		ac = (Accounts) f.apply(id);
-		System.out.println(ac);
-		/*
-		 * String bm = String.valueOf(Integer.parseInt(acm) - Integer.parseInt(tprice));
-		 * map.put("bm",bm); IConsumer ii = (Object o) -> asi.modifyBuyAccount(map);
-		 * ii.accept(map); System.out.println("map 값 : "+map);
-		 */
+		i.accept(map); 
+		ISupplier s = ()-> ohsi.selectOnceCount();
+		s.get();
+		Map<String, Object> olist = (Map<String, Object>) s.get();
+		System.out.println(olist.get("current_count"));
+		int count = (int) olist.get("current_count"); 
+		int oncecount = count - onceunit;
+		String oc = String.valueOf(oncecount);
+		map.put("oc", oc);
+		OnceHis oh = new OnceHis();
+		oh.setCurrentCount(oc);
+		IConsumer c = (Object o) -> ohsi.insertOnceCount(oh);
+		c.accept(oh);
+		System.out.println("id : "+id);
+		IFunction ifc = (Object o)-> custi.retrieveCustomer(id);
+		Customers custpr = (Customers) ifc.apply(id);
+		System.out.println(custpr.getTbprice());
+		System.out.println(custpr.getHqua());
+		int tbprice = Integer.parseInt(custpr.getTbprice());
+		int hqua = Integer.parseInt(custpr.getHqua());
+		int tbprices = tbprice + totalPrice;
+		int hquas = hqua + onceunit;
+		String tb = String.valueOf(tbprices);
+		String hq = String.valueOf(hquas);
+		map.put("tb", tb);
+		map.put("hq", hq);
+		map.put("id", id);
+		IConsumer cc = (Object o) -> custi.updateCust(map);
+		cc.accept(map);
+
+		
 		 return map;
 	}
 }

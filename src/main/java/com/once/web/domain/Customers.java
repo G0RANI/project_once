@@ -6,4 +6,7 @@ import lombok.Data;
 
 @Data @Component
 public class Customers {
-		private String id, hqua;}
+		private String id, hqua, tbprice;
+		
+		
+}

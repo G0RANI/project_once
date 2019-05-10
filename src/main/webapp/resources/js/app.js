@@ -45,6 +45,7 @@ app.$ = {
 			}
 		};
 app.$$ = {
+<<<<<<< HEAD
 		init : ()=>{
 			if(sessionStorage.getItem('session') !== null){
 				 $('#ksa').remove();
@@ -56,3 +57,16 @@ app.$$ = {
 				};
 			}
 		};
+=======
+        init : ()=>{
+            if(sessionStorage.getItem('session') !== null){
+                 $('#ksa').remove();
+                 $('.tnb').html('<li><a style="cursor:pointer" id="off" title="로그아웃">로그아웃</a></li>');
+                 $('#off').click(e=>{
+                     /*alert('클릭 로그아웃!');
+                     logout();*/
+                 });
+                };
+            }
+        };
+>>>>>>> ac957758ed5b815ed4d4f183978b37145625dbb6

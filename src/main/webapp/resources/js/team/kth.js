@@ -12,8 +12,12 @@ kth=(()=>{
      };
      let onCreate=()=>{
          $('#once').empty();
-           $.getScript($.js()+'/component/kth_compo.js',()=>{
-                $(kth_compo.cs_form()).appendTo('#once');
+         $.getScript($.js()+'/component/kth_compo.js',()=>{
+           $.getScript($.js()+'/team/chat.js',()=>{
+               $(kth_compo.coin_chat()).appendTo('.bgWhite');
+               chat.init();
+           });
+                $(kth_compo.cs_form()).appendTo('#once').css('margin-left','-137px');
                $('#nav2 a').attr('class', '');
                $('#kth2').attr('class', 'on');
                list(1);
@@ -78,15 +82,27 @@ kth=(()=>{
                   };
           });
          $('.serchBt').click(function(){
-        	 let val =$('#search_form').val();
-             if(val==''||val.length<2){
-                 alert('잘못된 입력입니다');
-             }else{
-                 let arr = {srch:val,
-                		 page:1}
-                 search(arr);
+             let val =$('#search_form').val();
+               if(val==''||val.length<2){
+                   alert('잘못된 입력입니다');
+               }else{
+                   let arr = {srch:val,
+                           page:1}
+                   search(arr);
+               }
+           });
+           $('#search_form').keypress(function(e){
+             if (e.which == 13){
+                 let val =$('#search_form').val();
+                 if(val==''||val.length<2){
+                      alert('잘못된 입력입니다');
+                 }else{
+                      let arr = {srch:val,
+                                page:1}
+                      search(arr);
+                 }
              }
-         });
+           });
           
      };
      let search=(x)=>{

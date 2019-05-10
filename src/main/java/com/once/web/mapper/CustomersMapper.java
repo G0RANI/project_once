@@ -14,6 +14,7 @@ public interface CustomersMapper {
 	public Customers selectCoin(Map<?,?> map);
 	public int countCustomers();
 	public boolean existsCustomerID(Map<?,?> map);	
+	public void updateCust(Map<?,?> map);
 	public void updateCustomer(Customers cust);
 	public void deleteCustomer(Customers cust);
 }

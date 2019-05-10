@@ -17,6 +17,7 @@ public class CustomersServiceImpl implements CustomersService{
 	public void registCustomer(Map<?,?> map) {
 		cm.insertCustomer(map);
 	}
+	
 
 	@Override
 	public List<Customers> bringAllAmount(Customers cust) {
@@ -64,5 +65,13 @@ public class CustomersServiceImpl implements CustomersService{
 		
 		return cm.selectCoin(map);
 	}
+
+
+	@Override
+	public void updateCust(Map<?, ?> map) {
+		cm.updateCust(map);
+	}
+
+
 
 }
