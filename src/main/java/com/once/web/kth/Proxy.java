@@ -73,33 +73,33 @@ public class Proxy {
     		System.out.println("페이지사이즈 "+pageSize);
     		System.out.println("블록사이즈 "+blockSize);
     		System.out.println("페이지넘버 "+pageNum);
-    		System.out.println("로우카운트 "+rowCount);
+    		System.out.println("로우카 운트 "+rowCount);
 
          }
          
     public List<CoinArticle> youtube() throws Exception {
         List<CoinArticle> list = new ArrayList<CoinArticle>();
-        String[] url = {"https://www.youtube.com/watch?v=mFw8la7W-LU","https://www.youtube.com/watch?v=iALw-CsLQog&list=PL-r3nv8Pk2S2CdICd8IcNk9O8a6hBq2GS&index=3"};
-        String[] url1 = {"https://www.youtube.com/watch?v=3pXQe7FHFF4&list=PL-r3nv8Pk2S2CdICd8IcNk9O8a6hBq2GS&index=3&t=0s","https://www.youtube.com/watch?v=R4dolIUp4sU&list=PL-r3nv8Pk2S2CdICd8IcNk9O8a6hBq2GS&index=4"};
+        String[] url = {"https://www.youtube.com/watch?v=TY8Ux_HTJTs&list=PLl9uUFkzm8kJodWXJffC1xHYAf4TKgpDJ&index=2&t=2s","https://www.youtube.com/watch?v=ETsSSEb3Lg8&list=PLl9uUFkzm8kJodWXJffC1xHYAf4TKgpDJ&index=2"};
+        String[] url1 = {"https://www.youtube.com/watch?v=F8fcnr8BNzY&list=PLl9uUFkzm8kJodWXJffC1xHYAf4TKgpDJ&index=3","https://www.youtube.com/watch?v=qxu4K112NXY&list=PLl9uUFkzm8kJodWXJffC1xHYAf4TKgpDJ&index=4"};
         CoinArticle article = null;
        for(int i =0;i<2;i++) {
         article =new CoinArticle();
         article.setUrl(url[i]);
         Document doc = Jsoup.connect(url[i]).get();
-        int text = doc.select("h1.watch-title-container span").attr("title").indexOf("]")+1;
-        int text2 = doc.select("h1.watch-title-container span").attr("title").indexOf("암");
+        int text = doc.select("h1.watch-title-container span").attr("title").indexOf("암");
+        int text2 = doc.select("h1.watch-title-container span").attr("title").indexOf("편")+1;
         article.setTitle(doc.select("h1.watch-title-container span").attr("title").substring(text,text2));
         article.setAdate(doc.select("strong.watch-time-text").text().substring(5));
        
         article.setYouUrl(url1[i]);
         Document docu = Jsoup.connect(url1[i]).get();
-        int text3 = doc.select("h1.watch-title-container span").attr("title").indexOf("]")+1;
-        int text4 = doc.select("h1.watch-title-container span").attr("title").indexOf("암");
+        int text3 = doc.select("h1.watch-title-container span").attr("title").indexOf("암");
+        int text4 = doc.select("h1.watch-title-container span").attr("title").indexOf("편")+1;
         article.setYouTitle(docu.select("h1.watch-title-container span").attr("title").substring(text3,text4));
         article.setYouDate(docu.select("strong.watch-time-text").text().substring(5));
         list.add(article);
       
-          String url2 ="https://www.youtube.com/playlist?list=PL-r3nv8Pk2S2CdICd8IcNk9O8a6hBq2GS";
+          String url2 ="https://www.youtube.com/playlist?list=PLl9uUFkzm8kJodWXJffC1xHYAf4TKgpDJ";
           Document doc2 = Jsoup.connect(url2).get();
            if(i==0) {
              int j=0;
@@ -135,9 +135,9 @@ public class Proxy {
     public void word(int wordpage) throws Exception {
 //    	page = wordpage;
     	page =1;
-    	File file = new File("C:\\Users\\1027\\git\\project_once\\src\\main\\webapp\\resources\\csv\\csv.csv");
+    	File file = new File("C:\\Users\\taehy\\git\\project_once\\src\\main\\webapp\\resources\\csv\\csv.csv");
     	file.delete();
-    	String csvFileName = "C:\\Users\\1027\\git\\project_once\\src\\main\\webapp\\resources\\csv\\csv.csv";
+    	String csvFileName = "C:\\Users\\taehy\\git\\project_once\\src\\main\\webapp\\resources\\csv\\csv.csv";
     	BufferedWriter writer = new BufferedWriter(
     			new OutputStreamWriter(new FileOutputStream(csvFileName),"UTF-8"));
     	writer.write("text,frequency\n");
