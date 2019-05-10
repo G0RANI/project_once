@@ -26,6 +26,7 @@
     <style data-styled="" data-styled-version="4.2.0"></style>
 	<link href="https://fonts.googleapis.com/css?family=Lato"rel="stylesheet">
 	<link rel="icon" href="data:;base64, iVORw0KGo=">
+	<link rel="stylesheet" href="<%=application.getContextPath()%>/resources/css/kth/chat.css">
 <style type="text/css">
 * {
 	font-family: 'Lato', sans-serif;
@@ -752,6 +753,7 @@ footer div img {
 <script src="<%=application.getContextPath()%>/resources/js/team/ksa.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/team/kth.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/team/ngh.js"></script>
+<script src="<%=application.getContextPath()%>/resources/js/team/chat.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/app.js"></script>
 <script src="<%=application.getContextPath()%>/resources/js/router.js"></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>

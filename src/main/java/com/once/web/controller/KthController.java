@@ -4,6 +4,8 @@ package com.once.web.controller;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -16,12 +18,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.once.web.domain.Chat;
 import com.once.web.domain.CoinArticle;
 import com.once.web.domain.CustService;
 import com.once.web.kth.Proxy;
 import com.once.web.lambda.IConsumer;
 import com.once.web.lambda.IFunction;
 import com.once.web.lambda.ISupplier;
+import com.once.web.mapper.ChatMapper;
 import com.once.web.service.CustServiceServiceImpl;
 @Controller
 public class KthController {
@@ -30,6 +35,7 @@ public class KthController {
      @Autowired Map<String, Object> map;
      @Autowired Proxy pxy;
      @Autowired CustServiceServiceImpl cuseservice;
+     @Autowired ChatMapper chatmapper;
      @RequestMapping("/kth")
      public String kthMain() {
          logger.info("김태혁 컨트롤 진입 했씁니다!!!");   
@@ -140,5 +146,27 @@ public Map<String, Object> youcrawler() throws Exception{
 		map.put("pxy", pxy);
     	 return map;
      };
-     
+     @ResponseBody
+     @RequestMapping(value = "/chat/{text}", method  = {RequestMethod.POST})
+     public Map<String, Object> chat(@PathVariable  String text){
+      Chat cha = new Chat();
+      map.clear();
+      System.out.println(text);
+      Random random = new Random();
+      switch (text) {
+      case "안녕하세요": case "안녕": case "하이": case "ㅎㅇ":
+      int seq =  random.nextInt(6)+1;
+      cha.setChatSeq(String.valueOf(seq));
+      IFunction f =(Object o) -> chatmapper.selectCoinArticle(cha);
+      Chat ch = (Chat) f.apply(cha);
+      System.out.println(ch.toString());
+      map.put("ch", ch); 
+          break;
+          
+      default:
+          
+          break;
+      }
+      return map;
+     }
 }
