@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+     <mapper namespace="com.once.web.mapper.OnceHisMapper">
+
+<insert id="insertOnceCount" parameterType="com.once.web.domain.OnceHis">
+	INSERT INTO ONCE_HISTORY(tseq,
+							 current_count, 
+							  price,
+							  date)
+		VALUES (NULL, #{currentCount}, 1200, now())
+</insert>
+<select id="selectOnceCount" resultType="hashMap">
+			SELECT * 
+			FROM ONCE_HISTORY
+			ORDER BY DATE DESC LIMIT 1
+</select>
+</mapper>

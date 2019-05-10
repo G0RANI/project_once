@@ -38,13 +38,11 @@ public class AccountsServiceImpl implements AccountsService{
 	@Override
 	public void modifyAccount(Accounts acc) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void removeAccount(Accounts acc) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
