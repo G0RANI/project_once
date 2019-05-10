@@ -10,6 +10,29 @@
     </head>
     <body>
 <script>
+	function _GET(search) {
+	    var obj = {};
+	    var uri = decodeURI(search);
+	        uri = uri.slice(1,uri.length);
+	
+	    var param = uri.split('&');
+	    
+	    for (var i = 0; i < param.length; i++) {
+	        var devide = param[i].split('=');
+	        obj[devide[0]] = devide[1];
+	    }
+	
+	    return obj;
+	}
+	
+	window.onload = function () {
+	    var search = window.location.search;
+	    var getData =  _GET(search);
+	    var sender = document.querySelector('#sender');
+	
+	    sender.value = getData.val;
+	}
+
 	(function(){
 		var IMP = window.IMP;
         IMP.init('imp75272689'); 
