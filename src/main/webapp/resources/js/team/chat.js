@@ -35,7 +35,7 @@ chat=(()=>{
                         +'                            </div>'
                         +'                        </div>'
                         +'                        <div class="col-md-2 col-xs-2 avatar">'
-                        +'                            <img src="'+profile_image+'" class=" img-responsive ">'
+                        +'                            <img src="'+profile_image+'" class=" img-responsive img">'
                         +'                        </div>'
                         +'                    </div>').appendTo('.msg_container_base');
               $(".msg_container_base").scrollTop($(".msg_container_base")[0].scrollHeight);
@@ -48,7 +48,7 @@ chat=(()=>{
                    success : d=>{
                         $('                    <div class="row msg_container base_receive">'
                                   +'                        <div class="col-md-2 col-xs-2 avatar">'
-                                  +'                            <img src="/web/resources/img/logo3.png" class=" img-responsive ">'
+                                  +'                            <img src="/web/resources/img/logo3.png" class=" img-responsive img">'
                                   +'                        </div>'
                                   +'                        <div class="col-xs-10 col-md-10">'
                                   +'                            <div class="messages msg_receive">'

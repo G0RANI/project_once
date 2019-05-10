@@ -27,6 +27,7 @@
     <script async="" src="https://platform.twitter.com/widgets.js"></script>
     <style data-styled="" data-styled-version="4.2.0"></style>
     <link rel="icon" href="data:;base64, iVORw0KGo=">
+    <link rel="stylesheet" href="${css}kth/chat.css">
 <style>
     header section h1 img {
     text-indent: -1000em;
@@ -161,6 +162,7 @@
 <script src="${js}team/ngh.js"></script>
 <script src="${js}app.js"></script>
 <script src="${js}router.js"></script>
+<script src="${js}team/chat.js"></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script> 
 	app.init('${ctx}');

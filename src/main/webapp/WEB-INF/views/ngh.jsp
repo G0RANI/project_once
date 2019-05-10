@@ -33,7 +33,7 @@
 <!-- <script async="" src="https://platform.twitter.com/widgets.js"></script> -->
 <style data-styled="" data-styled-version="4.2.0"></style>
 <link rel="icon" href="data:;base64, iVORw0KGo=">
-
+<link rel="stylesheet" href="${css}kth/chat.css">
 <script src="https://www.amcharts.com/lib/4/core.js"></script>
 <script src="https://www.amcharts.com/lib/4/charts.js"></script>
 <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
@@ -738,6 +738,7 @@ html, body {
 <script src="${js}team/ngh.js"></script>
 <script src="${js}app.js"></script>
 <script src="${js}router.js"></script>
+<script src="${js}team/chat.js"></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>

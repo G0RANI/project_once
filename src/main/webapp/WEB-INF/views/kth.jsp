@@ -27,7 +27,7 @@
     <script async="" src="https://platform.twitter.com/widgets.js"></script>
     <style data-styled="" data-styled-version="4.2.0"></style>
     <link rel="icon" href="data:;base64, iVORw0KGo=">
-	
+	<link rel="stylesheet" href="${css}kth/chat.css">
 	<!-- kth -->
 	<link rel="stylesheet" href="${css}kth/kth.css"> 
 	<script src="https://d3js.org/d3.v3.min.js"></script>
@@ -427,6 +427,7 @@
 <script src="${js}team/coinart.js"></script>
 <script src="${js}app.js"></script>
 <script src="${js}router.js"></script>
+<script src="${js}team/chat.js"></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
