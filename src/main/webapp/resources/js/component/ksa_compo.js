@@ -417,7 +417,7 @@ ksa_compo = {
 			+'                        <tbody>'
 			+'                            <tr id="hcoin">'
 			+'                                <th>'
-			+'                                    <img src="https://static.upbit.com/logos/BTC.png" alt="비트코인" width=20px height=20px >'
+			+'                                    <img src="/web/resources/img/logo4.jpg" alt="원스코인" width=20px height=20px >'
 			+'                                    <a class="tit" style="text-decoration: none;"><strong>원스코인</strong><i>ONCE</i></a>'
 			+'                                </th>'
 			+'                                <td><strong>0.00015797 <i>BTC</i></strong></td>'
