@@ -755,6 +755,10 @@ footer div img {
 <script src="${js}team/ngh.js"></script>
 <script src="${js}app.js"></script>
 <script src="${js}router.js"></script>
+<<<<<<< HEAD
+=======
+<script src="${js}chat.js"></script>
+>>>>>>> kth_lt
 
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 

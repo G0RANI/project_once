@@ -10,7 +10,6 @@ chat=(()=>{
             if (e.which == 13){
               setContentView();
               $('#btn-input').val('');
-                  $(".msg_container_base").scrollTop($(".msg_container_base")[0].scrollHeight);
     }
          });
           $('#btn-chat').click(function(){
@@ -21,8 +20,12 @@ chat=(()=>{
      let setContentView =()=>{
               let value = $('#btn-input').val();
               let cust_id = sessionStorage.getItem('nickname');
+              let profile_image = sessionStorage.getItem('pic');
               if(cust_id ==null){
             	  cust_id= "고객"
+              }
+              if(profile_image ==null){
+            	  profile_image ="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg"
               }
               if(value !=""){
               $('                    <div class="row msg_container base_sent">'
@@ -32,9 +35,10 @@ chat=(()=>{
                         +'                            </div>'
                         +'                        </div>'
                         +'                        <div class="col-md-2 col-xs-2 avatar">'
-                        +'                            <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">'
+                        +'                            <img src="'+profile_image+'" class=" img-responsive ">'
                         +'                        </div>'
                         +'                    </div>').appendTo('.msg_container_base');
+              $(".msg_container_base").scrollTop($(".msg_container_base")[0].scrollHeight);
               $.ajax({
                    url : $.ctx()+'/chat/'+value,
                    type : 'post',
@@ -52,6 +56,7 @@ chat=(()=>{
                                   +'                            </div>'
                                   +'                        </div>'
                                   +'                    </div>').appendTo('.msg_container_base');
+                        $(".msg_container_base").scrollTop($(".msg_container_base")[0].scrollHeight);
                    },
                    error : e =>{
                    }

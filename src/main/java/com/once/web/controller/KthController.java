@@ -150,21 +150,29 @@ public Map<String, Object> youcrawler() throws Exception{
      @RequestMapping(value = "/chat/{text}", method  = {RequestMethod.POST})
      public Map<String, Object> chat(@PathVariable  String text){
       Chat cha = new Chat();
-      map.clear();
       System.out.println(text);
       Random random = new Random();
+      Chat ch = null;
+      IFunction f =null;
       switch (text) {
-      case "안녕하세요": case "안녕": case "하이": case "ㅎㅇ":
+      case "안녕하세요": case "안녕": case "하이": case "ㅎㅇ": case "하이루": case "방가방가":
+	  map.clear();
       int seq =  random.nextInt(6)+1;
       cha.setChatSeq(String.valueOf(seq));
-      IFunction f =(Object o) -> chatmapper.selectCoinArticle(cha);
-      Chat ch = (Chat) f.apply(cha);
+      f =(Object o) -> chatmapper.selectCoinArticle(cha);
+      ch = (Chat) f.apply(cha);
       System.out.println(ch.toString());
       map.put("ch", ch); 
           break;
           
       default:
-          
+    	  map.clear();
+          seq =  random.nextInt(10 -7 +1)+7;
+          cha.setChatSeq(String.valueOf(seq));
+          f =(Object o) -> chatmapper.selectCoinArticle(cha);
+          ch = (Chat) f.apply(cha);
+          System.out.println(ch.toString());
+          map.put("ch", ch); 
           break;
       }
       return map;
