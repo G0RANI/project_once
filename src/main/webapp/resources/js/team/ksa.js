@@ -90,10 +90,73 @@ ksa=(()=>{
                             	$('.ty04 tbody').append('<tr>'
                             			+'<td class="lAlign">'+j.date+'</td>'
                             			+'<td class="cAlign up">'+j.rw+'</td>'
-                            			+'<td><strong><i>'+j.unit+'</i></strong></td>'
-                            			+'<td><strong><i>'+j.nprice+'</i></strong></td>'
-                            			+'<td><strong>0.00015797 <i>'+j.rwm+'</i></strong></td>'
+                            			+'<td><strong>'+j.unit+' <i>ONCE </i></strong></td>'
+                            			+'<td><strong>'+j.nprice+' <i>KRW </i></strong></td>'
+                            			+'<td><strong>'+j.unit*j.nprice+' <i>KRW </i></strong></td>'
                             			+'</tr>');
+                            });
+                            $('#proSearch').change(function(){
+                            	alert('값이 뭐냐?'+ $(this).val());
+                            	 switch($(this).val()){
+                                 case 'allType': 
+                                	 alert('거래전체');
+                                	 $.each(s.ls, (i,j)=>{
+                                     $('.ty04 tbody').append('<tr>'
+                                     		+'<td class="lAlign">'+j.date+'</td>'
+                                     		+'<td class="cAlign up">'+j.rw+'</td>'
+                                     		+'<td><strong><i>'+j.unit+'</i></strong></td>'
+                                     		+'<td><strong><i>'+j.nprice+'</i></strong></td>'
+                                     		+'<td><strong>'+j.unit*j.nprice+' <i>WON </i></strong></td>'
+                                     		+'</tr>');
+                                      });
+                                	 break;
+                                 case 'bid':  
+                                	 alert('매수');
+                                	 $('.ty04 tbody').empty();
+                                	 $.each(s.ls, (i,j)=>{
+                                		 if(j.rw==='매수'){
+                                         $('.ty04 tbody').append('<tr>'
+                                         		+'<td class="lAlign">'+j.date+'</td>'
+                                         		+'<td class="cAlign up">'+j.rw+'</td>'
+                                         		+'<td><strong><i>'+j.unit+'</i></strong></td>'
+                                         		+'<td><strong><i>'+j.nprice+'</i></strong></td>'
+                                         		+'<td><strong>0.00015797 <i>'+j.rwm+'</i></strong></td>'
+                                         		+'</tr>');
+                                		 }
+                                          });
+                                	 break;
+                                 case 'ask':  
+                                	 alert('매도');
+                                	 $('.ty04 tbody').empty();
+                                	 $.each(s.ls, (i,j)=>{
+                                		 if(j.rw==='매도'){
+                                         $('.ty04 tbody').append('<tr>'
+                                         		+'<td class="lAlign">'+j.date+'</td>'
+                                         		+'<td class="cAlign up">'+j.rw+'</td>'
+                                         		+'<td><strong><i>'+j.unit+'</i></strong></td>'
+                                         		+'<td><strong><i>'+j.nprice+'</i></strong></td>'
+                                         		+'<td><strong>0.00015797 <i>'+j.rwm+'</i></strong></td>'
+                                         		+'</tr>');
+                                		 }
+                                          });
+                                	 break;
+                                 case 'deposit':  
+                                	 alert('입금');
+                                	 $('.ty04 tbody').empty();
+                                	 $.each(s.ls, (i,j)=>{
+                                		 if(j.rw==='입금'){
+                                         $('.ty04 tbody').append('<tr>'
+                                         		+'<td class="lAlign">'+j.date+'</td>'
+                                         		+'<td class="cAlign up">'+j.rw+'</td>'
+                                         		+'<td><strong><i>'+j.unit+'</i></strong></td>'
+                                         		+'<td><strong><i>'+j.nprice+'</i></strong></td>'
+                                         		+'<td><strong>0.00015797 <i>'+j.rwm+'</i></strong></td>'
+                                         		+'</tr>');
+                                		 }
+                                          });
+                                	 break;
+                                 }
+                            	
                             });
                       	 },
                       	 error:e=>{	 
@@ -105,7 +168,9 @@ ksa=(()=>{
                              $('.ty04 tbody').empty();
                            	 $('.ty04 tbody').html('<td colspan="8" class="dataNone"><p>과거 거래내역이 없습니다.</p></td>');
                       	 }
+                      	 
                     });
+                	 
                 });
            });
            break;
