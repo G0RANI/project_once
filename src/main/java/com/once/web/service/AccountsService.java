@@ -10,10 +10,9 @@ import com.once.web.domain.Accounts;
 public interface AccountsService {
 	public void openAnAccount(Map<?, ?> map);
 	public Map<String,Object> retrieveAccount(String userId);
-	
 	public int countAccounts();
 	public boolean existsAccount(Accounts acc);
-	
 	public void modifyAccount(Accounts acc);
+	public void modifyBuyAccount(Map<?,?> map);
 	public void removeAccount(Accounts acc);
 }

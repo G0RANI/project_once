@@ -9,41 +9,24 @@ ngh=(()=>{
 		setContentView();
 	};
 	let setContentView=()=>{	
+		let id = sessionStorage.getItem('info');
 		once_chart();
-	
-		
-		$.getScript($.js()+'/component/ngh_compo.js',()=>{		
-		  
-			  	
-			 /* $('.top a').eq(0).click(function(){
-					$('#b').empty();
-				  $(ngh_compo.l_buy()).appendTo('#b');
-				  $('.top a').attr('class', '');
-				  $('.top li').attr('class', 't2');
-		          $(this).attr('class', 'on');
-		          let once_p = [];
-		          $.ajax({
-		        	  url : $.ctx()+'/ngh/buy',
-		        	  data : '',
-		        	  dataType : '',
-		        	  Type : '',
-		        	  contentType: '',
-		        	  success : d=>{
-		        		  
-		        	  },
-		        	  error : e=>{
-		        		  
-		        	  }
-		          })
-			  
-			  	});*/
-			  
+		$.getScript($.js()+'/component/ngh_compo.js',()=>{
+			
 			  $('.top a').eq(1).click(function(){
 				  $('.top a').attr('class', '');
 				  $('.top li').attr('class', 't3');
 		          $(this).attr('class', 'on');
 				  $('#b').empty();
-				  $(ngh_compo.l_medo()).appendTo('#b');	
+				  $(ngh_compo.l_medo()).appendTo('#b');
+				  if(sessionStorage.getItem('session') === null){
+					  $('.ty02').empty();
+					  $('<a title="로그인" id="login2">로그인</a>').appendTo('.ty02');
+					  $('#login2').click(e=>{
+						  e.preventDefault();
+				          location.assign($.ctx()+"/ksa");
+					  });
+				  }
 			  	});
 			  
 			  $('.top a').eq(2).click(function(){
@@ -51,19 +34,68 @@ ngh=(()=>{
 				  $('.top li').attr('class', 't4');
 		          $(this).attr('class', 'on');
 		     	  $('#b').empty();
-		     	  $(ngh_compo.trx()).appendTo('#b');			
+		     	  $(ngh_compo.trx()).appendTo('#b');
+		     	 /*if(sessionStorage.getItem('session') === null){		             
+	                 $('#off').click(e=>{
+	                     alert('클릭 로그아웃!');
+	                     logout();
+	                 });
+	                };*/
 			  	});
 			  
 			  $('#chr_1').empty();
 			  	$(ngh_compo.chr()).appendTo('#chr_1');
+			  	$.ajax({
+                    url:$.ctx()+'/retrieve_trx/'+id,
+                    data:id,
+                    type:'POST',
+                    dataType:'json',
+                    contentType:'application/json',
+                    success:s=>{
+                        alert('성공!'+s.hcoin);
+                       let tx_date = new Date(s.date);
+                      function convert(x) {
+                           var date = new Date(x),
+                               mnth = ("0" + (date.getMonth()+1)).slice(-2),
+                               day  = ("0" + date.getDate()).slice(-2),
+                               hours  = ("0" + date.getHours()).slice(-2),
+                               minutes = ("0" + date.getMinutes()).slice(-2);
+                           var date2 = [date.getFullYear(), mnth, day].join("-");
+                           var date3 = [hours, minutes ].join(":");
+                          return [ date2, date3 ].join(" ");
+                       }
+                         $('#bt_ty01').attr('class', '');
+                         $(this).attr('class', 'on');
+                         $('#bt_list').empty();
+                         $('#bt_list').html(ngh_compo.chr());
+                         $('#bt_list').empty();
+                         $('#bt_list').html(+'<tr class="up">'
+			                                     +'<td class="cAlign">'
+			                                     +'<p>'
+			                                     +''+convert(tx_date)+''
+			                                     +'</p>'
+			                                     +'</td>'
+			                                     +'<td><strong class="down">'+s.nprice+'</strong></td>'
+			                                     +'<td>'+s.unit+'</td>'
+			                                     +'<td class="rAlign">12,244,000</td>'
+			                                     +'</tr>');
+                    },
+                    error:e=>{    
+                        alert('실패!');
+                        $('.ty01 a').attr('class', '');
+                      $(this).attr('class', 'on');
+                      $('.scrollB').empty();
+                      $('.scrollB').html(ksa_compo.investment_trx());
+                      $('.ty01 tbody').empty();
+                         $('.ty01 tbody').html('<td colspan="8" class="dataNone"><p>과거 거래내역이 없습니다.</p></td>');
+                    }
+             });
              })
 	};
-	
 	/*once 차트 */
 	let once_chart=()=>{
 		$.getJSON($.ctx()+'/ngh/once',d=>{
 			/*왼쪽 값*/
-			
 			let tp = new Array();
 			$.each(d.ls,(i,j)=>{
 				tp[i] = j.price;
@@ -71,7 +103,6 @@ ngh=(()=>{
 			 $('#l_val').empty();
 			 let prev1 = (tp[0] - tp[1]) / tp[1] *100;
 			 let minue = tp[0] - tp[1]
-			 
 			 let col = "";
 			 let prev = "1147";
 			 let giho = "";
@@ -115,7 +146,6 @@ ngh=(()=>{
 		              {txt : '코스모스인'},
 		              {txt : '이오스'}
 		              ];
-				
 				$.each(arr,(i,j)=>{
 					$('<tbody>'
 						 +'	<tr class="'+col+' on">'
@@ -157,51 +187,98 @@ ngh=(()=>{
 		                  switch(that){
 		                  case 'once':
 		                		alert('once');
-		                		
 		                      break;
 		                  case 'bit':
 		                		alert('bit');
-		                		
 		                       break;
 		                  case 'cash':
 		                		alert('cash');
-		                		
 		                       break;
 		                  case 'riple':
 		                		alert('riple');
-		                		
 		                       break;
 		                  }
 		             });
 					/*click*/
 				});
 				/*each*/
-				 $('.top a').eq(0).click(function(){
-					  $('.top a').attr('class', '');
-					  $('.top li').attr('class', 't2');
-			          $(this).attr('class', 'on');
-						$('#b').empty();
-					  $(ngh_compo.l_buy()).appendTo('#b');
-					  $('#priceall').remove();
-					  $( '<input id="priceall" type="text" class="txt" value="'+tp[0]+'">')
-					  	.prependTo('.marginB101');
-					  
-					  $(' <li class="ty04"><a title="매수">매수</a></li>')
-					  	.appendTo('#btn_mesu')
-					  	.click(()=>{
-					  		alert('가격'+tp[0]);
-					  		let price = tp[0];
-					  		let unit = $('#count').val();
-					  		let id = sessionStorage.getItem('info');
-					          $.getJSON($.ctx()+'/ngh/buy/'+unit+'/'+price+'/'+id,d=>{
-					        	  alert('성공');
-					        	  
-					          })
-				    	  });
-					  	});
+				
+		 	  $('.top a').eq(0).
+			  attr('class', 'on');
+			  $('.top li').attr('class', 't2');
+			  $('#b').empty();
+			  $(ngh_compo.l_buy()).appendTo('#b');
+			  $('#priceall').remove();
+			  $( '<input id="priceall" type="text" class="txt" value="'+tp[0]+'">')
+			  	.prependTo('.marginB101');
+			  $('#count').change(function(){
+				  $('#allpr').attr('value', tp[0]*$('#count').val());
+			  });
+			/*  	$(function(){
+				  $('.txt All').on('keyup',function(){
+				            var cnt = $(".orderB").length;     
+				            console.log(cnt);
+				    for( var i=1; i< cnt; i++){
+				       var sum = parseInt($(this).val()|| 0 );
+				       sum++
+				       console.log(sum);
+				    }
+				              var sum1 = parseInt($("#priceall").val() || 0 ); // input 값을 가져오며 계산하지만 값이 없을경우 0이 대입된다  뒷부분에 ( || 0 ) 없을경우 합계에 오류가 생겨 NaN 값이 떨어진다
+				              var sum2 = parseInt($("#count").val() || 0);
+				              var sum = sum1 * sum2 ;
+				              console.log(sum);
+				              $("#allpr").val(sum);
+				          });
+				  });*/
+
+			  $(' <li class="ty04"><a title="매수">매수</a></li>')
+			  	.appendTo('#btn_mesu')
+			  	.click(()=>{
+			  		alert('가격'+tp[0]);
+			  		let price = tp[0];
+			  		let unit = $('#count').val();
+			  		let id = sessionStorage.getItem('info');
+			  		let tprice = price*unit;
+			          $.getJSON($.ctx()+'/ngh/buy/'+unit+'/'+price+'/'+id+'/'+tprice,d=>{
+			        	  
+			        	  alert('성공');
+			          })
+		    	  });
+			  if(sessionStorage.getItem('session') === null){
+				  $('#btn_mesu').empty();
+				  $('<li class="ty02 login"><a title="로그인" id="login2">로그인</a>').appendTo('#btn_mesu');
+				  $('#login2').click(e=>{
+					  e.preventDefault();
+			          location.assign($.ctx()+"/ksa");
+				  });
+			  }
+			 $('.top a').eq(0).click(function(){
+				  $('.top a').attr('class', '');
+				  $('.top li').attr('class', 't2');
+		          $(this).attr('class', 'on');
+				  $('#b').empty();
+				  $(ngh_compo.l_buy()).appendTo('#b');
+				  $('#priceall').remove();
+				  $( '<input id="priceall" type="text" class="txt" value="'+tp[0]+'">')
+				  	.prependTo('.marginB101');
+				  
+				  
+				  
+				  $(' <li class="ty04"><a title="매수">매수</a></li>')
+				  	.appendTo('#btn_mesu')
+				  	.click(()=>{
+				  		alert('가격'+tp[0]);
+				  		let price = tp[0];
+				  		let unit = $('#count').val();
+				  		let tprice = price*unit;
+				  		let id = sessionStorage.getItem('info');
+				          $.getJSON($.ctx()+'/ngh/buy/'+unit+'/'+price+'/'+id+'/'+tprice,d=>{
+				        	  alert('성공');
+				          })
+			    	  });
+				  	});
 		});
 	}
-	
 	return{init:init,
 		onCreate:onCreate};
 })();

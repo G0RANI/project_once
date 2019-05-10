@@ -6,7 +6,6 @@
 			// Themes end
 			var chart = am4core.create("chartdiv", am4charts.XYChart);
 			var data = [];
-			
 			var value = 0;
 				$.ajax({
 					url : '/web/ngh/ch',
@@ -56,12 +55,12 @@
 			//chart.scrollbarY = new am4core.Scrollbar();
 			chart.scrollbarX = new am4core.Scrollbar();
 			}); 
-
-/*메인차트*/
- /**
+		
+/*메인차트
+ *//**
  * Generate random chart data
- */
-/*var chartData1 = [];
+ *//*
+var chartData1 = [];
 function generateChartData() {
 	let firstDate = new Date();
 	firstDate.setDate( firstDate.getDate() - 721);
@@ -75,6 +74,9 @@ function generateChartData() {
 			 		let i = 0;
 				  for ( i = 0; i < d.ls.length; i++ ) {
 				    let newDate = new Date();
+<<<<<<< HEAD
+				    newDate.setDate(newDate.getDate() + i );
+				 /*   newDate = d.ls[i].odate;
 				    newDate.setDate(newDate.getDate());
 				    newDate.setHours(0,0,0,0);
 				    newDate = d.ls[i].odate;
@@ -257,6 +259,8 @@ var chart = AmCharts.makeChart( "chartdiv", {
 		chart.scrollbarX = new am4core.Scrollbar();
 		}); */
 	
+
+
 //미니차트
 	// end am4core.ready()
 		am4core.ready(function() {

@@ -26,16 +26,45 @@
     <script src="https://cdn.upbit.com/js/pc-inline-1.2.js" integrity="sha384-qTbmS4jWPoNJ/fbbtBgeNTj7u3P1Mlp0wn9pKGGp1+ehUyuSFYVGJosc800zYG+n" crossorigin="anonymous"></script>
     <script async="" src="https://platform.twitter.com/widgets.js"></script>
     <style data-styled="" data-styled-version="4.2.0"></style>
-	
+    <link rel="icon" href="data:;base64, iVORw0KGo=">
+	<link rel="stylesheet" href="${css}kth/chat.css">
 	<!-- kth -->
-	<link rel="stylesheet" href="<%=application.getContextPath()%>/resources/css/kth/kth.css"> 
+	<link rel="stylesheet" href="${css}kth/kth.css"> 
 	<script src="https://d3js.org/d3.v3.min.js"></script>
 	<script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js" type="text/JavaScript"></script>
 	<style>
 	@font-face {
 		font-family: 'overwatch';
-		src: url('<%=application.getContextPath()%>/resources/csv/koverwatch.woff2');
+		src: url('${csv}koverwatch.woff2');
 		}	
+	</style>
+	<style>
+    header section h1 img {
+    text-indent: -1000em;
+    display: inline-block;
+    position: absolute;
+    width: 90px;
+    height: 70px;
+    right: 20px;
+    bottom: 1px;
+    left: 0px;
+    border-radius: 3px;
+    top: 0px;
+    cursor: pointer;
+	}
+	footer div img {  
+	    text-indent: -1000em;
+	    display: inline-block;
+	    position: absolute;
+	    width: 90px;
+	    height: 90px;
+	    right: 20px;
+	    bottom: 1px;
+	    left: 0px;
+	    border-radius: 3px;
+	    top: 0px;
+	    cursor: pointer;  
+	}
 	</style>
 </head>
 <body>
@@ -43,7 +72,7 @@
 	<header class="" style="z-index: 100;">
 		<section>
 			<h1>
-				<a style="cursor:pointer" title="UpBit" id="home">UpBit</a>
+				<img src="/web/resources/img/logo2.png" id="home" alt="once">
 			</h1>
 			<nav id="nav2">
 				<a style="cursor:pointer" class="" id="ngh" title="거래소">거래소</a>
@@ -209,19 +238,11 @@
 		                        </thead>
 		                        <tbody>
 		                            <tr>
-<<<<<<< HEAD
 		                                <th><em class="logo"
 		                                    style="background: url(https://assets.coingecko.com/coins/images/677/large/basic-attention-token.png?1547034427) 0px 0px/cover no-repeat;">-</em><a
 		                                    class="tit" href="/exchange?code=CRIX.UPBIT.KRW-BAT"><strong>베이직어텐션토큰</strong></a></th>
 		                                <td class="lAlign"><i>BAT/KRW</i></td>
 		                                <td class=""><p class="up">+39.76%</p></td>
-=======
-		  		                        <th><em class="logo"
-		                                    style="background: url(https://assets.coingecko.com/coins/images/677/large/basic-attention-token.png?1547034427) 0px 0px/cover no-repeat;">-</em><a
-		                                    class="tit" href="/exchange?code=CRIX.UPBIT.KRW-BAT"><strong>베이직어텐션토큰</strong></a></th>
-		                                <td class="lAlign"><i>BAT/KRW</i></td>
-		                                <td class=""><p class="up">+39.77%</p></td>
->>>>>>> kth_lt
 		                                <td class=""><p class="up">+110.57%</p></td>
 		                                <td class=""><p class="up">+248.91%</p></td>
 		                                <td class=""><p class="up">+52.72%</p></td>
@@ -354,84 +375,31 @@
 		    </div>
 		    <footer class="sub">
 						<div class="wrap">
-							<a title="UpBit" class="logo" href="/home">Upbit</a>
+							<img src="/web/resources/img/logo3.png" alt="once">
 							<div class="aboutUs">
 								<p class="contact">
-									<span><a target="_blank" rel="noopener noreferrer"
-										href="#">두나무 주식회사</a></span><span class="dark">고객센터 1588-5682</span>
+									<span><a target="_blank" rel="noopener noreferrer">ONCE 주식회사</a></span>
+									<span class="dark">고객센터 1234-1234</span>
 								</p>
 								<p class="address">
-									<span>서울시 강남구 테헤란로4길 14, 5층</span><span>대표 이석우</span><span>사업자등록번호
-										119-86-54968</span>
+									<span>서울 마포구 백범로 23 구프라자 3층</span><span>대표 ONCE</span><span>사업자등록번호
+										123-45-78910</span>
 								</p>
 								<div class="snsLink">
-									<a target="_blank" rel="noopener noreferrer" href="#"
+									<a target="_blank" rel="noopener noreferrer" 
 										class="snsLink__item snsLink__item--twitter" title="twitter">twitter</a><a
-										target="_blank" rel="noopener noreferrer" href="#"
+										target="_blank" rel="noopener noreferrer" 
 										class="snsLink__item snsLink__item--facebook" title="facebook">facebook</a><a
-										target="_blank" rel="noopener noreferrer" href="#"
+										target="_blank" rel="noopener noreferrer" 
 										class="snsLink__item snsLink__item--medium" title="medium">medium</a><a
-										target="_blank" rel="noopener noreferrer" href="#"
+										target="_blank" rel="noopener noreferrer" 
 										class="snsLink__item snsLink__item--naver" title="naver">naver</a><a
-										target="_blank" rel="noopener noreferrer" href="#"
+										target="_blank" rel="noopener noreferrer" 
 										class="snsLink__item snsLink__item--linkedin" title="linkedin">linkedin</a>
 								</div>
-								<p class="company">
-									<a target="_blank" rel="noopener noreferrer" href="#"
-										title="BITTREX"><img
-										src="https://static.upbit.com/upbit-pc/main/company01.gif"
-										alt="BITTREX"></a><a target="_blank"
-										rel="noopener noreferrer" href="#" title="BitGo"><img
-										src="https://static.upbit.com/upbit-pc/main/company02.gif"
-										alt="BitGo"></a><a target="_blank" rel="noopener noreferrer"
-										href="#" title="KakaoPay"><img
-										src="https://static.upbit.com/upbit-pc/main/company03.gif"
-										alt="KakaoPay"></a><a target="_blank"
-										rel="noopener noreferrer" href="#" title="삼성화재"><img
-										src="https://static.upbit.com/upbit-pc/main/company04.gif"
-										alt="삼성화재"></a>
-								</p>
-								<p class="copyright">Copyright © 2017 - 2019 Dunamu Inc. All
+								
+								<p class="copyright">Copyright © 2017 - 2019 ONCE Inc. All
 									rights reserved.</p>
-							</div>
-							<div class="footerMenu">
-								<dl>
-									<dt>회사</dt>
-									<dd>
-										<a target="_blank" rel="noopener noreferrer" href="#">회사소개</a>
-									</dd>
-									<dd>
-										<a title="공지사항" href="#">공지사항</a>
-									</dd>
-									<dd>
-										<a title="이용약관" href="#">이용약관</a>
-									</dd>
-									<dd>
-										<a title="Open API 이용약관" href="#">Open API 이용약관</a>
-									</dd>
-									<dd>
-										<a title="개인정보처리방침" href="#"><strong>개인정보처리방침</strong></a>
-									</dd>
-								</dl>
-								<dl>
-									<dt>고객지원</dt>
-									<dd>
-										<a title="자주하는 질문(FAQ)" href="#">자주하는 질문(FAQ)</a>
-									</dd>
-									<dd>
-										<a target="_blank" rel="noopener noreferrer" href="#"
-											title="카카오톡 문의(24시간)">카카오톡 문의(24시간)</a>
-									</dd>
-									<dd>
-										<a title="1:1 문의하기" href="#">1:1 문의하기</a>
-									</dd>
-									<dd>
-										<a title="Open API" href="#">Open API</a>
-									</dd>
-									<dd>
-										<a title="거래 및 입출금 이용안내" href="#">거래 및 입출금 이용안내</a>
-									</dd>
-								</dl>
 							</div>
 						</div>
 					</footer>
@@ -444,28 +412,29 @@
 <script src="https://cdn.upbit.com/KR_PC-chunk-1b0a4e1e53868b6001ef.js"></script>
 
 <!-- once -->
-<script src="<%=application.getContextPath()%>/resources/js/common/auth.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/common/util.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/component/component.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/component/ksa_compo.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/component/kth_compo.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/kth/scroll.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/app.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/common/util.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/team/ksa.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/team/kth.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/team/ngh.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/team/coinart.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/app.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/router.js"></script>
+<script src="${js}common/auth.js"></script>
+<script src="${js}common/util.js"></script>
+<script src="${js}component/component.js"></script>
+<script src="${js}component/ksa_compo.js"></script>
+<script src="${js}component/kth_compo.js"></script>
+<script src="${js}kth/scroll.js"></script>
+<script src="${js}app.js"></script>
+<script src="${js}common/util.js"></script>
+<script src="${js}team/ksa.js"></script>
+<script src="${js}team/kth.js"></script>
+<script src="${js}team/ngh.js"></script>
+<script src="${js}team/coinart.js"></script>
+<script src="${js}app.js"></script>
+<script src="${js}router.js"></script>
+<script src="${js}team/chat.js"></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 
 <script type="text/javascript">initMoving(document.getElementById("right_content"), 50, 50, 50)</script>	
 <script>
-	app.init('<%=application.getContextPath()%>');
-	coinart.init('<%=application.getContextPath()%>');
+	app.init('${ctx}');
+	coinart.init('${ctx}');
 	app.$$.init();
 </script>
 </html>

@@ -20,7 +20,7 @@ public class TransactionsServiceImpl implements TransactionsService{
 	}
 
 	@Override
-	public Map<String,Object> retrieveAllTransactions(String id) {
+	public List<Transactions> retrieveAllTransactions(String id) {
 		
 		return tr.selectAllTransactions(id);
 	}
@@ -42,7 +42,6 @@ public class TransactionsServiceImpl implements TransactionsService{
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
 	@Override
 	public void modifyTransaction(Map<?,?> map) {
 		tr.updateTransaction(map);

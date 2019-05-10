@@ -8,10 +8,15 @@
 	VALUES (#{acnum}, #{money}, #{id})
   </insert>
   <select id="selectAccount" resultType="hashMap">
- 	SELECT AC.id, AC.acnum, CU.hcoin, CU.pprice
+ 	SELECT *
 	FROM ACCOUNT AS AC 
-	  INNER join CUSTOMERS AS CU
-	  ON  AC.id LIKE CU.id
+	  INNER JOIN CUSTOMERS AS CU
+	  	ON  AC.id LIKE CU.id
 	WHERE AC.id LIKE #{id};
   </select>
+  <update id="updateBuyAccount" parameterType="hashMap">
+	  UPDATE ACCOUNT 
+	SET MONEY = #{bm}
+	WHERE ID LIKE #{id};  
+  </update>
 </mapper>

@@ -10,7 +10,7 @@ import com.once.web.domain.Transactions;
 @Component
 public interface TransactionsService {
 	public void registTransaction(Transactions trx);
-	public Map<String,Object> retrieveAllTransactions(String id);
+	public List<Transactions> retrieveAllTransactions(String id);
 	public List<Transactions> bringWithdrawals(Transactions trx);
 	public List<Transactions> bringDeposits(Transactions trx);
 	public int countTransactions();
