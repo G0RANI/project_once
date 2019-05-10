@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.once.web.mapper.ChatMapper">
+  <select id="selectCoinArticle" resultType="com.once.web.domain.Chat" parameterType="com.once.web.domain.Chat">
+  	SELECT CHAT_SEQ chatSeq,
+  		   CHAT_TEXT chatText 
+  	FROM CHAT 
+  	WHERE CHAT_SEQ LIKE #{chatSeq};
+  </select>
+</mapper>

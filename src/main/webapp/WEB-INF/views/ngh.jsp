@@ -21,7 +21,6 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script src="https://cdn.upbit.com/manifest-bundle-f95e81eead967f24e5c0.js"></script>
 <script src="https://cdn.upbit.com/js/bluebird-3.3.4.min.js"
 	integrity="sha384-Zum86V5Chub72Pcj/UopirJ0QwQ+LgKZFTlVMt/yaVwYbROQJl/q8Nj2e72vZel2"
 	crossorigin="anonymous"></script>
@@ -31,8 +30,10 @@
 <script src="https://cdn.upbit.com/js/pc-inline-1.2.js"
 	integrity="sha384-qTbmS4jWPoNJ/fbbtBgeNTj7u3P1Mlp0wn9pKGGp1+ehUyuSFYVGJosc800zYG+n"
 	crossorigin="anonymous"></script>
-<script async="" src="https://platform.twitter.com/widgets.js"></script>
+<!-- <script async="" src="https://platform.twitter.com/widgets.js"></script> -->
 <style data-styled="" data-styled-version="4.2.0"></style>
+<link rel="icon" href="data:;base64, iVORw0KGo=">
+
 <script src="https://www.amcharts.com/lib/4/core.js"></script>
 <script src="https://www.amcharts.com/lib/4/charts.js"></script>
 <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
@@ -40,14 +41,12 @@
 <script src="http://www.amcharts.com/lib/3/serial.js"></script>
 <script src="http://www.amcharts.com/lib/3/themes/light.js"></script>
 <script src="http://www.amcharts.com/lib/3/amstock.js"></script>
-
 <style type="text/css">
 
 /* #chartdiv {
   width: 100%;
   height: 500px;
 } */
-
 #chartdiv {
   width: 100%;
   height: 100%;
@@ -196,6 +195,35 @@ html, body {
 	margin-bottom: 0;
 }
 </style>
+<style>
+    header section h1 img {
+    text-indent: -1000em;
+    display: inline-block;
+    position: absolute;
+    width: 90px;
+    height: 70px;
+    right: 20px;
+    bottom: 1px;
+    left: 0px;
+    border-radius: 3px;
+    top: 0px;
+    cursor: pointer;
+	}
+	footer div img {  
+	    text-indent: -1000em;
+	    display: inline-block;
+	    position: absolute;
+	    width: 90px;
+	    height: 90px;
+	    right: 20px;
+	    bottom: 1px;
+	    left: 0px;
+	    border-radius: 3px;
+	    top: 0px;
+	    cursor: pointer;  
+	}
+</style>
+
 </head>
 
 <body class="bgWhite">
@@ -209,7 +237,7 @@ html, body {
 						<header class="" style="z-index: 100;">
 							<section>
 								<h1>
-									<a style="cursor:pointer" title="UpBit" id="home">UpBit</a>
+									<img src="/web/resources/img/logo2.png" id="home" alt="once">
 								</h1>
 								<nav id="nav2">
 									<a style="cursor:pointer" class="on" id="ngh" title="거래소">거래소</a>
@@ -404,27 +432,18 @@ html, body {
 										</article>
 									</div>
 									<div class="rightB">
-										<article>
-											<span class="tabB"><ul class="top">
-													<li class="t2"><a href="#" class="on" title="매수">매수</a></li>
-													<li class="t3"><a href="#" class="" title="매도">매도</a></li>
-													<li class="t4"><a href="#" class="" title="거래내역">거래내역</a></li>
-												</ul></span><span class="orderB"><div style="height: 347px;">
+										<article id="l_buy">
+											<span class="tabB">
+											
+											<ul class="top">
+													<li class="t2"><a class="on" title="매수">매수</a></li>
+													<li class=""><a  class="" title="매도">매도</a></li>
+													<li class=""><a  class="" title="거래내역">거래내역</a></li>
+												</ul>
+												</span>
+												<span id="b" class="orderB" style="height: 374px;">
+												<div style="height: 347px;">
 													<dl>
-														<dt class="checkOption">
-															<strong>주문구분 <a href="#" class="tooltipDown"><div>
-																		<h5>[지정가 주문]</h5>
-																		주문 수량과 가격을 직접 결정하는 주문입니다. 매매체결 여부보다 가격을 우선으로 생각할 때 사용
-																		합니다.
-																		<h5>[시장가 주문]</h5>
-																		매수 시 주문 금액/매도 시 주문 수량만 설정하면, 시장가격으로 즉시 체결시키는 주문입니다.
-																		빠르게 매매를 체결하고 싶을 때 사용합니다.
-																	</div></a></strong>
-														</dt>
-														<dd class="checkOption">
-															<span class="chkB"><a class="on"><em>-</em>지정가</a><a
-																class="disable"><em>-</em>시장가</a></span>
-														</dd>
 														<dt class="price">
 															<strong>주문가능</strong>
 														</dt>
@@ -445,7 +464,7 @@ html, body {
 															<strong>수량</strong> <i>(BTC)</i>
 														</dt>
 														<dd class="marginB6">
-															<input type="text" class="txt All" placeholder="0"
+															<input id="count" type="text" class="txt All" placeholder="0"
 																value="">
 														</dd>
 														<dd class="Quantity marginNone">
@@ -458,7 +477,7 @@ html, body {
 														</dt>
 														<dd class="marginB6">
 															<input type="txt" class="txt All" placeholder="0"
-																value="0.00">
+																value="">
 														</dd>
 														<dt></dt>
 														<dd></dd>
@@ -468,11 +487,11 @@ html, body {
 																포함): 0.05%</p>
 															<p class="fr">최소주문금액: 1,000 KRW</p></span>
 														<ul class="btnB">
-															<li class="ty01"><a title="회원가입" href="/signup">회원가입</a></li>
-															<li class="ty02"><a title="로그인" href="/signin">로그인</a></li>
+														<li class="ty04"><a href="#" title="매수">매수</a></li>
 														</ul>
 													</div>
-												</div></span>
+												</div>
+												</span>
 										</article>
 										<article>
 											
@@ -485,7 +504,7 @@ html, body {
 											<li><a href="#" class="on" title="체결">체결</a></li>
 											<li><a href="#" class="" title="일별">일별</a></li>
 										</ul>
-										<div>
+										<div id="chr_1">
 											<table class="ty01">
 												<colgroup>
 													<col width="96">
@@ -502,7 +521,7 @@ html, body {
 													</tr>
 												</thead>
 											</table>
-											<div class="scrollB" style="height: 360px;">
+											<div id="bt_list" class="scrollB" style="height: 360px;">
 												<div
 													style="position: relative; overflow: hidden; width: 100%; height: 360px;">
 													<div
@@ -665,112 +684,37 @@ html, body {
 								</article>
 								</div>
 							</section>
-							<footer>
-							<div class="app__wrap--2K1mv">
-								<a title="UpBit" class="app__logo--1S5fo" href="/home">Upbit</a>
-								<div class="app__aboutUs--2XC3i">
-									<p class="app__contact--2Xg-L">
-										<span><a target="_blank" rel="noopener noreferrer"
-											href="https://dunamu.com">원스 주식회사</a></span><span
-											class="app__dark--24xsm">고객센터 1588-1313</span>
-									</p>
-									<p class="address">
-										<span>서울 마포구 백범로 23, 3층</span><span>대표 once</span><span>사업자등록번호
-											123-45-78944</span>
-									</p>
-									
-									<div class="app__snsLink--6VrG4">
-										<a target="_blank" rel="noopener noreferrer"
-											href="https://twitter.com/upbitglobal"
-											class="app__snsLink__item--3sEsb app__snsLink__item--twitter--PmHSZ"
-											title="twitter">twitter</a><a target="_blank"
-											rel="noopener noreferrer"
-											href="https://www.facebook.com/upbit.exchange"
-											class="app__snsLink__item--3sEsb app__snsLink__item--facebook--jcjXV"
-											title="facebook">facebook</a><a target="_blank"
-											rel="noopener noreferrer" href="https://medium.com/@upbit"
-											class="app__snsLink__item--3sEsb app__snsLink__item--medium--204OY"
-											title="medium">medium</a><a target="_blank"
-											rel="noopener noreferrer"
-											href="https://blog.naver.com/dunamupr"
-											class="app__snsLink__item--3sEsb app__snsLink__item--naver--3WcT3"
-											title="naver">naver</a><a target="_blank"
-											rel="noopener noreferrer"
-											href="https://www.linkedin.com/company/upbit-official"
-											class="app__snsLink__item--3sEsb app__snsLink__item--linkedin--1eEkL"
-											title="linkedin">linkedin</a>
-									</div>
-									
-									<p class="app__company--3_rIE">
-										<a target="_blank" rel="noopener noreferrer"
-											href="https://bittrex.com" title="BITTREX"><img
-											src="https://static.upbit.com/upbit-pc/main/company01.gif"
-											alt="BITTREX"></a><a target="_blank"
-											rel="noopener noreferrer" href="https://www.bitgo.com/"
-											title="BitGo"><img
-											src="https://static.upbit.com/upbit-pc/main/company02.gif"
-											alt="BitGo"></a><a target="_blank"
-											rel="noopener noreferrer"
-											href="http://www.kakao.com/kakaopay/index.php/authentication/"
-											title="KakaoPay"><img
-											src="https://static.upbit.com/upbit-pc/main/company03.gif"
-											alt="KakaoPay"></a><a target="_blank"
-											rel="noopener noreferrer" href="https://www.samsungfire.com/"
-											title="삼성화재"><img
-											src="https://static.upbit.com/upbit-pc/main/company04.gif"
-											alt="삼성화재"></a>
-									</p>
-									<p class="app__copyright--3yoJ_">Copyright © 2017 - 2019
-										Dunamu Inc. All rights reserved.</p>
-								</div>
-								<div class="app__footerMenu--2F2rh">
-									<dl>
-										<dt>회사</dt>
-										<dd>
-											<a target="_blank" rel="noopener noreferrer"
-												href="https://dunamu.com">회사소개</a>
-										</dd>
-										<dd>
-											<a title="공지사항" href="/service_center/notice">공지사항</a>
-										</dd>
-										<dd>
-											<a title="이용약관" href="/terms_of_service">이용약관</a>
-										</dd>
-										<dd>
-											<a title="Open API 이용약관" href="/open_api_agreement">Open
-												API 이용약관</a>
-										</dd>
-										<dd>
-											<a title="개인정보처리방침" href="/privacy_policy"><strong>개인정보처리방침</strong></a>
-										</dd>
-									</dl>
-									<dl>
-										<dt>고객지원</dt>
-										<dd>
-											<a title="자주하는 질문(FAQ)" href="/service_center/faq">자주하는
-												질문(FAQ)</a>
-										</dd>
-										<dd>
-											<a target="_blank" rel="noopener noreferrer"
-												href="https://static.upbit.com/common/bzc_kakao.html"
-												title="카카오톡 문의(24시간)">카카오톡 문의(24시간)</a>
-										</dd>
-										<dd>
-											<a title="1:1 문의하기" href="/service_center/qna">1:1 문의하기</a>
-										</dd>
-										<dd>
-											<a title="Open API" href="/service_center/open_api_guide">Open
-												API</a>
-										</dd>
-										<dd>
-											<a title="거래 및 입출금 이용안내" href="/service_center/guide">거래
-												및 입출금 이용안내</a>
-										</dd>
-									</dl>
-								</div>
-							</div>
-						</footer>
 						</div>
+						<footer class="sub">
+						<div class="wrap">
+							<img src="/web/resources/img/logo3.png" alt="once">
+							<div class="aboutUs">
+								<p class="contact">
+									<span><a target="_blank" rel="noopener noreferrer">ONCE 주식회사</a></span>
+									<span class="dark">고객센터 1234-1234</span>
+								</p>
+								<p class="address">
+									<span>서울 마포구 백범로 23 구프라자 3층</span><span>대표 ONCE</span><span>사업자등록번호
+										123-45-78910</span>
+								</p>
+								<div class="snsLink">
+									<a target="_blank" rel="noopener noreferrer" 
+										class="snsLink__item snsLink__item--twitter" title="twitter">twitter</a><a
+										target="_blank" rel="noopener noreferrer" 
+										class="snsLink__item snsLink__item--facebook" title="facebook">facebook</a><a
+										target="_blank" rel="noopener noreferrer" 
+										class="snsLink__item snsLink__item--medium" title="medium">medium</a><a
+										target="_blank" rel="noopener noreferrer" 
+										class="snsLink__item snsLink__item--naver" title="naver">naver</a><a
+										target="_blank" rel="noopener noreferrer" 
+										class="snsLink__item snsLink__item--linkedin" title="linkedin">linkedin</a>
+								</div>
+								
+								<p class="copyright">Copyright © 2017 - 2019 ONCE Inc. All
+									rights reserved.</p>
+							</div>
+						</div>
+					</footer>
 					</div>
 </body>
 <!-- upbit -->
@@ -781,27 +725,27 @@ html, body {
 <script src="https://cdn.upbit.com/KR_PC-chunk-1b0a4e1e53868b6001ef.js"></script>
 
 <!-- once -->
-<script src="<%=application.getContextPath()%>/resources/js/common/auth.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/common/once.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/common/util.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/component/component.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/component/ksa_compo.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/component/kth_compo.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/kth/scroll.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/app.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/common/util.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/team/ksa.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/team/kth.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/team/ngh.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/app.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/router.js"></script>
+<script src="${js}common/auth.js"></script>
+<script src="${js}common/util.js"></script>
+<script src="${js}component/component.js"></script>
+<script src="${js}component/ksa_compo.js"></script>
+<script src="${js}component/kth_compo.js"></script>
+<script src="${js}kth/scroll.js"></script>
+<script src="${js}app.js"></script>
+<script src="${js}common/util.js"></script>
+<script src="${js}team/ksa.js"></script>
+<script src="${js}team/kth.js"></script>
+<script src="${js}team/ngh.js"></script>
+<script src="${js}app.js"></script>
+<script src="${js}router.js"></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/ngh/nghchart.js"></script>
+<script src="${js}ngh/nghchart.js"></script>
 
 <script>
-app.init('<%=application.getContextPath()%>');
-ngh.init('<%=application.getContextPath()%>');
+app.init('${ctx}');
+ngh.init('${ctx}');
+app.$$.init();
 </script>
 </html>

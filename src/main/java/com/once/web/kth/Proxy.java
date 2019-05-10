@@ -2,10 +2,11 @@ package com.once.web.kth;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
@@ -15,6 +16,8 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
+
+import com.once.web.domain.CoinArticle;
 
 import lombok.Data;
 
@@ -70,14 +73,61 @@ public class Proxy {
     		System.out.println("페이지사이즈 "+pageSize);
     		System.out.println("블록사이즈 "+blockSize);
     		System.out.println("페이지넘버 "+pageNum);
-    		System.out.println("로우카운트 "+rowCount);
+    		System.out.println("로우카 운트 "+rowCount);
 
          }
          
-    public void youtube() throws Exception {
-    	String url ="https://www.youtube.com/watch?v=mFw8la7W-LU";
-    	Document doc = Jsoup.connect(url).get();
-    	Elements element1 = doc.select("");
+    public List<CoinArticle> youtube() throws Exception {
+        List<CoinArticle> list = new ArrayList<CoinArticle>();
+        String[] url = {"https://www.youtube.com/watch?v=TY8Ux_HTJTs&list=PLl9uUFkzm8kJodWXJffC1xHYAf4TKgpDJ&index=2&t=2s","https://www.youtube.com/watch?v=ETsSSEb3Lg8&list=PLl9uUFkzm8kJodWXJffC1xHYAf4TKgpDJ&index=2"};
+        String[] url1 = {"https://www.youtube.com/watch?v=F8fcnr8BNzY&list=PLl9uUFkzm8kJodWXJffC1xHYAf4TKgpDJ&index=3","https://www.youtube.com/watch?v=qxu4K112NXY&list=PLl9uUFkzm8kJodWXJffC1xHYAf4TKgpDJ&index=4"};
+        CoinArticle article = null;
+       for(int i =0;i<2;i++) {
+        article =new CoinArticle();
+        article.setUrl(url[i]);
+        Document doc = Jsoup.connect(url[i]).get();
+        int text = doc.select("h1.watch-title-container span").attr("title").indexOf("암");
+        int text2 = doc.select("h1.watch-title-container span").attr("title").indexOf("편")+1;
+        article.setTitle(doc.select("h1.watch-title-container span").attr("title").substring(text,text2));
+        article.setAdate(doc.select("strong.watch-time-text").text().substring(5));
+       
+        article.setYouUrl(url1[i]);
+        Document docu = Jsoup.connect(url1[i]).get();
+        int text3 = doc.select("h1.watch-title-container span").attr("title").indexOf("암");
+        int text4 = doc.select("h1.watch-title-container span").attr("title").indexOf("편")+1;
+        article.setYouTitle(docu.select("h1.watch-title-container span").attr("title").substring(text3,text4));
+        article.setYouDate(docu.select("strong.watch-time-text").text().substring(5));
+        list.add(article);
+      
+          String url2 ="https://www.youtube.com/playlist?list=PLl9uUFkzm8kJodWXJffC1xHYAf4TKgpDJ";
+          Document doc2 = Jsoup.connect(url2).get();
+           if(i==0) {
+             int j=0;
+             for(Element element:doc2.select("tr img")) {
+                 if(j<2) {
+                      if(j==0) {
+                           article.setImg(element.attr("data-thumb"));
+                      }else {
+                           article.setYouImg(element.attr("data-thumb"));
+                      }
+                 }
+                 j++;
+             }
+           }else {
+             int j=0;
+             for(Element element:doc2.select("tr img")) {
+                 if(j>1&&j<=3) {
+                      if(j==2) {
+                           article.setImg(element.attr("data-thumb"));
+                      }else{
+                           article.setYouImg(element.attr("data-thumb"));
+                      }
+                 }
+                 j++;
+             }
+           }
+       }
+           return list;
     	
     }     
          
@@ -139,10 +189,11 @@ public class Proxy {
       title = title.replaceAll("가상화폐", " ");
       title = title.replaceAll("암호화폐", " ");
       title = title.replaceAll("월", " ");
+      title = title.replaceAll("만", " ");
       title = title.replaceAll(match, " ");
         String[] arg = title.split(" ");
         arg = new HashSet<String>(Arrays.asList(arg)).toArray(new String[0]);
-        System.out.println("after "+arg.length);
+        System.out.println("afteer"+arg.length);
         
         for(String s :arg) {
         	writer.write(s+","+(random.nextInt(20)+10)+"\n");

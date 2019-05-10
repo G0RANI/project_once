@@ -6,11 +6,11 @@
 <select id="selectAllOnceList" resultType="com.once.web.domain.Once">
 	SELECT OSEQ,ODATE,PRICE
     FROM ONCE
-    WHERE ODATE BETWEEN '2019-05-06 14:00:00' AND '2019-05-06 16:00:00'
+    WHERE ODATE BETWEEN '2019-05-06 23:00:50' AND '2019-05-06 23:59:50'
 </select>
 
 <select id="selectPrice" resultType="com.once.web.domain.Once">
-	SELECT *
+	SELECT OSEQ,ODATE,PRICE
 	FROM ONCE
 	ORDER BY OSEQ DESC
 	LIMIT 2

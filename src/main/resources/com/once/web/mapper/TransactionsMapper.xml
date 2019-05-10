@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-      <mapper namespace="com.once.web.mapper.TransactionsMapper">
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.once.web.mapper.TransactionsMapper">
+<select id="selectAllTransactions" resultType="Map">
+    SELECT *
+    FROM TRANSACTIONS as tr
+        inner join CUSTOMERS as cu
+        on tr.id like cu.id
+    WHERE tr.id LIKE #{id};
+</select>
+<insert id="updateTransaction" parameterType="hashMap">
+insert into TRANSACTIONS (id, rw, unit, nprice, date,tprice)
+    values (#{id}, #{rw}, #{unit}, #{nprice},#{date},#{tprice})
+</insert>
 </mapper>

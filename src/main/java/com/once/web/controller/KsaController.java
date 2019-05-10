@@ -1,5 +1,6 @@
 package com.once.web.controller;
 
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,6 +25,7 @@ import com.once.web.lambda.IFunction;
 import com.once.web.lambda.IPredicate;
 import com.once.web.service.AccountsServiceImpl;
 import com.once.web.service.CustomersServiceImpl;
+import com.once.web.service.TransactionsServiceImpl;
 
 
 @Controller
@@ -34,6 +37,7 @@ public class KsaController {
 	@Autowired Accounts ac;
 	@Autowired AccountsServiceImpl acc;
 	@Autowired Transactions tr;
+	@Autowired TransactionsServiceImpl trx;
 	
 	@RequestMapping("/ksa")
 	public String ksaMain(Locale locale, Model model) {
@@ -53,13 +57,14 @@ public class KsaController {
 		return p.test(res.get("id"));
 	}
 
+	@SuppressWarnings("unchecked")
 	@ResponseBody
 	@RequestMapping(value ="/retrieve_acc/{id}", method = RequestMethod.POST)
-	public Accounts selectAccountInfo(@PathVariable String id) {
+	public Map<String,Object> selectAccountInfo(@PathVariable String id) {
 		System.out.println("selectAccountInfo 회원아이디 : "+id);
 		IFunction f = (Object o) -> acc.retrieveAccount(id);
-		ac = (Accounts) f.apply(id);
-		return ac;
+		System.out.println("selectAccountInfo  : "+f.apply(id));
+		return (Map<String, Object>) f.apply(id);
 	}
 	
 	@ResponseBody
@@ -83,21 +88,43 @@ public class KsaController {
 	
 	@ResponseBody
 	@RequestMapping(value ="/retrieve_cust/{id}", method = RequestMethod.POST)
-	public Map<String,Object> selectCustInfo(@PathVariable String id) {
-		System.out.println("selectCustInfo 회원아이디 : "+id);
+	public Customers selectCustomer(@PathVariable String id) {
+		System.out.println("selectCustomer 회원아이디 : "+id);
 		IFunction f = (Object o) -> cust.retrieveCustomer(id);
-		ct = (Customers) f.apply(id);
-		tr = (Transactions) f.apply(id);
-//		map.put("ct", ct);
-//		map.put("tr", tr);
-		System.out.println("cust정보 : "+ct);
-		System.out.println("tr정보 : "+tr);
+		System.out.println(f.apply(id));
+		return  (Customers) f.apply(id);
+	}
+	
+	@SuppressWarnings("unchecked")
+	@ResponseBody
+	@RequestMapping(value ="/retrieve_trx/{id}", method = RequestMethod.POST)
+	public Map<String,Object> selectTransactions(@PathVariable String id) {
+		System.out.println("selectTransactions 회원아이디 : "+id);
+		IFunction f = (Object o) -> trx.retrieveAllTransactions(id);
+		List<Transactions> l = (List<Transactions>) f.apply(id);
+		map.clear();
+		map.put("ls", l);
 		return map;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/search", method = RequestMethod.GET)
+	public Customers search(@RequestBody Map<String,Object> res) {
+		System.out.println("search word : "+res);
+		IFunction f = (Object o) -> cust.searchCoin(res); 
+		return (Customers) f.apply(res);
 	}
 	
 	@GetMapping("/payment")
 	public String payment(Locale locale, Model model) {
 		logger.info("===============테스트 진입===============");
 		return "payment";
+	}
+	
+	@PostMapping("/payment")
+	public String payment2(Locale locale, Model model) {
+		logger.info("===============테스트 진입===============");
+		String a = "a";
+		return a;
 	}
 }
