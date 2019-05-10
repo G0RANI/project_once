@@ -742,7 +742,6 @@ footer div img {
 <script src="https://cdn.upbit.com/KR_PC-chunk-1b0a4e1e53868b6001ef.js"></script>
 
 <!-- once -->
-<<<<<<< HEAD
 <script src="${js}common/auth.js"></script>
 <script src="${js}common/util.js"></script>
 <script src="${js}component/component.js"></script>
@@ -756,22 +755,8 @@ footer div img {
 <script src="${js}team/ngh.js"></script>
 <script src="${js}app.js"></script>
 <script src="${js}router.js"></script>
-=======
-<script src="<%=application.getContextPath()%>/resources/js/common/auth.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/common/util.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/component/component.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/component/ksa_compo.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/component/kth_compo.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/kth/scroll.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/app.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/common/util.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/team/ksa.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/team/kth.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/team/ngh.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/team/chat.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/app.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/router.js"></script>
->>>>>>> kth_lt
+<script src="${js}chat.js"></script>
+
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
 <script>
