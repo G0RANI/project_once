@@ -8,4 +8,5 @@ import lombok.Data;
 public class Customers {
 		private String id, hqua, tbprice;
 		
+		
 }

@@ -17,4 +17,11 @@
  	FROM CUSTOMERS
  	WHERE id LIKE #{id};
  </select>
+ <update id="updateCust" parameterType="hashMap">
+ UPDATE CUSTOMERS 
+	SET tbprice = #{tb},
+		  hqua = #{hq}
+	WHERE ID LIKE #{id}
+ </update>
+ 
 </mapper>
