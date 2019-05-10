@@ -104,17 +104,6 @@ public class NghController {
 		IConsumer ii = (Object o) -> asi.modifyBuyAccount(map);
 		ii.accept(map); 
 		IConsumer i = (Object o) -> trs.modifyTransaction(map);
-<<<<<<< HEAD
-		i.accept(map);
-		IFunction f = (Object o) -> asi.retrieveAccount(id);		
-		f.apply(id);
-		System.out.println(f.apply(id));
-		/*
-		 * String bm = String.valueOf(Integer.parseInt(acm) - Integer.parseInt(tprice));
-		 * map.put("bm",bm); IConsumer ii = (Object o) -> asi.modifyBuyAccount(map);
-		 * ii.accept(map); System.out.println("map 값 : "+map);
-		 */
-=======
 		i.accept(map); 
 		ISupplier s = ()-> ohsi.selectOnceCount();
 		s.get();
@@ -139,8 +128,7 @@ public class NghController {
 		{
 			System.out.println(e.getMessage());
 		}
-		
->>>>>>> richard_lt
+
 		 return map;
 	}
 }
