@@ -725,30 +725,27 @@ html, body {
 <script src="https://cdn.upbit.com/KR_PC-chunk-1b0a4e1e53868b6001ef.js"></script>
 
 <!-- once -->
-<script src="<%=application.getContextPath()%>/resources/js/common/auth.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/common/util.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/component/component.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/component/ksa_compo.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/component/kth_compo.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/kth/scroll.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/app.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/common/util.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/team/ksa.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/team/kth.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/team/ngh.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/app.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/router.js"></script>
+<script src="${js}common/auth.js"></script>
+<script src="${js}common/util.js"></script>
+<script src="${js}component/component.js"></script>
+<script src="${js}component/ksa_compo.js"></script>
+<script src="${js}component/kth_compo.js"></script>
+<script src="${js}kth/scroll.js"></script>
+<script src="${js}app.js"></script>
+<script src="${js}common/util.js"></script>
+<script src="${js}team/ksa.js"></script>
+<script src="${js}team/kth.js"></script>
+<script src="${js}team/ngh.js"></script>
+<script src="${js}app.js"></script>
+<script src="${js}router.js"></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
-<script src="<%=application.getContextPath()%>/resources/js/ngh/nghchart.js"></script>
-<<<<<<< HEAD
-=======
+<script src="${js}ngh/nghchart.js"></script>
 
->>>>>>> refs/remotes/origin/kth_lt
 <script>
-app.init('<%=application.getContextPath()%>');
-ngh.init('<%=application.getContextPath()%>');
+app.init('${ctx}');
+ngh.init('${ctx}');
 app.$$.init();
 </script>
 </html>

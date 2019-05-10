@@ -18,7 +18,15 @@ ngh=(()=>{
 				  $('.top li').attr('class', 't3');
 		          $(this).attr('class', 'on');
 				  $('#b').empty();
-				  $(ngh_compo.l_medo()).appendTo('#b');	
+				  $(ngh_compo.l_medo()).appendTo('#b');
+				  if(sessionStorage.getItem('session') === null){
+					  $('.ty02').empty();
+					  $('<a title="로그인" id="login2">로그인</a>').appendTo('.ty02');
+					  $('#login2').click(e=>{
+						  e.preventDefault();
+				          location.assign($.ctx()+"/ksa");
+					  });
+				  }
 			  	});
 			  
 			  $('.top a').eq(2).click(function(){
@@ -26,7 +34,14 @@ ngh=(()=>{
 				  $('.top li').attr('class', 't4');
 		          $(this).attr('class', 'on');
 		     	  $('#b').empty();
-		     	  $(ngh_compo.trx()).appendTo('#b');			
+		     	  $(ngh_compo.trx()).appendTo('#b');
+		     	 /*if(sessionStorage.getItem('session') === null){		             
+	                 $('#off').click(e=>{
+	                     alert('클릭 로그아웃!');
+	                     logout();
+	                 });
+	                };*/
+		     	  
 			  	});
 			  
 			  $('#chr_1').empty();
@@ -205,6 +220,7 @@ ngh=(()=>{
 			  $( '<input id="priceall" type="text" class="txt" value="'+tp[0]+'">')
 			  	.prependTo('.marginB101');
 			  
+			  
 		/*	  $(function(){
 				  $('.txt All').on('keyup',function(){
 				            var cnt = $(".orderB").length;     
@@ -235,6 +251,14 @@ ngh=(()=>{
 			        	  alert('성공');
 			          })
 		    	  });
+			  if(sessionStorage.getItem('session') === null){
+				  $('#btn_mesu').empty();
+				  $('<li class="ty02 login"><a title="로그인" id="login2">로그인</a>').appendTo('#btn_mesu');
+				  $('#login2').click(e=>{
+					  e.preventDefault();
+			          location.assign($.ctx()+"/ksa");
+				  });
+			  }
 			 $('.top a').eq(0).click(function(){
 				  $('.top a').attr('class', '');
 				  $('.top li').attr('class', 't2');

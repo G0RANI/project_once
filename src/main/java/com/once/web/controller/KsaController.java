@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -118,5 +119,12 @@ public class KsaController {
 	public String payment(Locale locale, Model model) {
 		logger.info("===============테스트 진입===============");
 		return "payment";
+	}
+	
+	@PostMapping("/payment")
+	public String payment2(Locale locale, Model model) {
+		logger.info("===============테스트 진입===============");
+		String a = "a";
+		return a;
 	}
 }

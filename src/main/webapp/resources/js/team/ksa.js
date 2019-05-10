@@ -231,9 +231,15 @@ ksa=(()=>{
        			 });
        			 $('.btnB em').empty();
            		 $('.btnB em').html('계좌번호  :  '+s.acnum);
+           		 $('<dl class="inputB">'
+           				+'<dd class="addr">'
+           					+'<input type="text" placeholder="KRW" value="" style="color: rgb(153, 153, 153);">'
+           					+'<a style="cursor:pointer" id="charge" title="충전">충전하기</a>'
+           				+'</dd>'
+           			+'</dl>').appendTo('.btnB');
            		 $('#h_money strmong').html('<strong>'+s.money+' <i>KRW</i></strong>');
            		 $('#acc').remove();
-           		 $('<a id="charge" class="btn" style="padding-top:1px;" title="충전하기">충전하기</a>').appendTo('.btnB');
+           		 /*$('<a id="charge" class="btn" style="padding-top:1px;" title="충전하기">충전하기</a>').appendTo('.btnB');*/
            		 $('#charge').click(e=>{
    					 e.preventDefault();
    					 window.open('payment', "a", "width=1000, height=800, left=100, top=50");		 
