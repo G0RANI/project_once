@@ -62,91 +62,17 @@ ksa=(()=>{
                 $(ksa_compo.investment_coin()).appendTo('#once');
                 $('#nav2 a').attr('class', '');
                 $('#ksa_i').attr('class', 'on');   
-                
-                $.ajax({
-                  	 url:$.ctx()+'/retrieve_acc/'+cust_id,
-                  	 data:cust_id,
-                  	 type:'POST',
-                  	 dataType:'json',
-                  	 contentType:'application/json',
-                  	 success:s=>{
-                  		 	alert('성공');
-                  		  $.getJSON($.ctx()+'/ngh/once',d=>{
-                  			alert('성공2');                  			  
-                				let tp = new Array();
-                				$.each(d.ls,(i,j)=>{
-                					tp[i] = j.price;
-                				});
-                				let c_krw = tp[0] * s.hqua;
-                				let total_p = c_krw+parseInt(s.money); //총보유자산
-                				let f_buy = s.nprice * s.hqua;//총매수금액 : 매수했을 당시 가격 * 보유코인갯수
-                				
-                				$('#total_price strong').eq(0).html(f_buy+' <i>KRW</i></strong>'); //총매수금액
-	                  		  	$('#total_price strong').eq(1).html(total_p+' <i>KRW</i></strong>'); //총평가금액
-	                  		  
-	                  		  	$('#assets strong').eq(0).html(s.money+' <i>KRW</i>'); //보유 krw
-	                  		 	$('#assets strong').eq(1).html(total_p+' <i>KRW</i></strong>'); //총보유자산
-                  		  }); 
-                  			
-                  	 },
-                  	 error:e=>{
-                  		 alert('실패');
-                  	 }
-                   });
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                /*
-                
-                $.ajax({
-                  	 url:$.ctx()+'/retrieve_acc/'+cust_id,
-                  	 data:cust_id,
-                  	 type:'POST',
-                  	 dataType:'json',
-                  	 contentType:'application/json',
-                  	 success:s=>{
-                  		 alert('성공!');
-                  			 $('#total_price strong').eq(1).empty();			총평가금액
-                    		 $('#total_price strong').eq(1).html(s.hcoin+' <i>KRW</i>');
-                    		 $('#assets strong').eq(1).empty();			총보유자산
-                    		 $('#assets strong').eq(1).html(s.hcoin+' <i>KRW</i>');
-                  	      $('.ty04 a').eq(0).click(function(){
-                              alert('보유코인');
-                              $('.ty04 a').attr('class', '');
-                              $(this).attr('class', 'on');
-                              $('.ownB').empty();
-                              $('.ownB').html(ksa_compo.investment_hcoin());
-                              $('#total_price strong').eq(1).empty();			총평가금액
-                     		  $('#total_price strong').eq(1).html(s.hcoin+' <i>KRW</i>');
-                     		  $('#assets strong').eq(1).empty();			총보유자산
-                     		  $('#assets strong').eq(1).html(s.hcoin+' <i>KRW</i>');
-                          });
-                  	 },
-                  	 error:e=>{	 
-                  		 alert('실패!');
-                  	 }
-                });*/
+                hcoin();
+                $('#off').click(e=>{logout()});
+                $('.ty04 a').eq(0).click(function(){
+	                  alert('보유코인');
+	                  $('.ty04 a').attr('class', '');
+	                  $(this).attr('class', 'on');
+	                  $('.ownB').empty();
+	                  $('.ownB').html(ksa_compo.investment_hcoin());
+	                  hcoin();
+	            });
+             };
                 $('.ty04 a').eq(1).click(function(){
                 	 $.ajax({
                       	 url:$.ctx()+'/retrieve_trx/'+cust_id,
@@ -155,17 +81,6 @@ ksa=(()=>{
                       	 dataType:'json',
                       	 contentType:'application/json',
                       	 success:s=>{
-                      /*	//	 let tx_date = new Date(s.date);
-	                  	   function convert(x) {
-	                  		    var date = new Date(x),
-	                  		        mnth = ("0" + (date.getMonth()+1)).slice(-2),
-	                  		        day  = ("0" + date.getDate()).slice(-2),
-	                  		    	hours  = ("0" + date.getHours()).slice(-2),
-	                  		        minutes = ("0" + date.getMinutes()).slice(-2);
-	                  		    var date2 = [date.getFullYear(), mnth, day].join("-");
-	                  		    var date3 = [hours, minutes ].join(":");
-	                  		   return [ date2, date3 ].join(" ");
-	                  		}*/
                             $('.ty04 a').attr('class', '');
                             $(this).attr('class', 'on');
                             $('.ownB').empty();
@@ -173,7 +88,6 @@ ksa=(()=>{
                             $('.ty04 tbody').empty();     
                             $.each(s.ls, (i,j)=>{
                             	$('.ty04 tbody').append('<tr>'
-                            		//	+'<td class="lAlign">'+convert(tx_date)+'</td>'
                             			+'<td class="lAlign">'+j.date+'</td>'
                             			+'<td class="cAlign up">'+j.rw+'</td>'
                             			+'<td><strong><i>'+j.unit+'</i></strong></td>'
@@ -193,7 +107,6 @@ ksa=(()=>{
                       	 }
                     });
                 });
-            }
            });
            break;
 		}
@@ -303,9 +216,7 @@ ksa=(()=>{
 		        	             console.log(authObj.access_token);
 		        	             Kakao.Auth.setAccessToken(authObj.access_token, true);
 		        	         	 sessionStorage.setItem('session', Kakao.Auth.getAccessToken());
-		        	         	 sessionStorage.setItem('res', res);
 		        	         	 sessionStorage.setItem('info', res.id);
-		        	         	 sessionStorage.setItem('email', res.kaccount_email);
 		        	         	 sessionStorage.setItem('nickname', res.properties['nickname']);
 		        	         	 sessionStorage.setItem('pic', res.properties['profile_image']);
 		        	         	$.ajax({
@@ -336,6 +247,62 @@ ksa=(()=>{
         	alert("카카오로그아웃");
         });*/
         location.assign($.ctx());
+    };
+	let hcoin=()=>{
+		 $.ajax({
+          	 url:$.ctx()+'/retrieve_acc/'+cust_id,
+          	 data:cust_id,
+          	 type:'POST',
+          	 dataType:'json',
+          	 contentType:'application/json',
+          	 success:s=>{
+          		 	alert('성공');
+          		  $.getJSON($.ctx()+'/ngh/once',d=>{
+          			alert('성공2');                  			  
+        				let tp = new Array();
+        				$.each(d.ls,(i,j)=>{
+        					tp[i] = j.price;
+        				});
+        				let c_krw = tp[0] * s.hqua;
+        				let total_p = c_krw+parseInt(s.money); //총보유자산
+        				
+        				$('#total_price strong').eq(0).html(s.tbprice+' <i>KRW</i></strong>'); //총매수금액
+              		  	$('#total_price strong').eq(1).html(total_p+' <i>KRW</i></strong>'); //총평가금액
+              		  	//if문으로 class up, down 주기
+              		  	if(0>(total_p-s.tbprice)){
+                  		  	$('#evaluation strong')
+                  		  	.eq(0)
+                  		  	.attr('class', 'down')
+                  		  	.html((total_p-s.tbprice)+' <i>KRW</i></strong>'); //총평가손익
+                  		  	$('#evaluation strong')
+                  		  	.eq(1)
+                  		  	.attr('class', 'down')
+                  		  	.html(parseFloat((total_p-s.tbprice)/s.tbprice*100).toFixed(2)+' <i>%</i></strong>'); //총평가수익률
+              		  	}else{
+              		  		$('#evaluation strong')
+              		  		.eq(0)
+              		  		.attr('class', 'up')
+                  		  	.html((total_p-s.tbprice)+' <i>KRW</i></strong>'); //총평가손익
+                  		  	$('#evaluation strong')
+                  		  	.eq(1)
+                  		  	.attr('class', 'up')
+                  		  	.html(((total_p-s.tbprice)/s.tbprice*100).toFixed(2)+' <i>%</i></strong>'); //총평가수익률
+              		  	}
+              		  	$('#assets strong').eq(0).html(s.money+' <i>KRW</i>'); //보유 krw
+              		 	$('#assets strong').eq(1).html(total_p+' <i>KRW</i></strong>'); //총보유자산
+              		 	
+              		 	$('#hcoin td').eq(0).html('<strong>'+s.hqua+' <i>BTC</i></strong>'); //보유수량
+              		 	//$('#hcoin td').eq(1).html('<strong>'+s.qua+' <i>BTC</i></strong>'); 매수평균가
+              		 	$('#hcoin td').eq(2).html('<em>'+s.tbprice+' <i>KRW</i></em>'); //매수금액
+              		 	$('#hcoin td').eq(3).html('<em>'+total_p+' <i>KRW</i></em>'); //평가금액
+              		 	$('#hcoin td').eq(4).html('<span><em class="down">'+((total_p-s.tbprice)/s.tbprice*100).toFixed(2)+' <i>%</i></em></span>'
+              		 							 +'<span><em class="down">'+(total_p-s.tbprice)+' <i>KRW</i></em></span>'); //평가손익
+          		  }); 
+          	 },
+          	 error:e=>{
+          		 alert('실패');
+          	 }
+           });
     };
 	
 	return{init:init, kakao:kakao};

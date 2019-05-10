@@ -91,8 +91,8 @@ public class NghController {
 		IConsumer i = (Object o) -> trs.modifyTransaction(map);
 		i.accept(map);
 		IFunction f = (Object o) -> asi.retrieveAccount(id);		
-		ac = (Accounts) f.apply(id);
-		System.out.println(ac);
+		f.apply(id);
+		System.out.println(f.apply(id));
 		/*
 		 * String bm = String.valueOf(Integer.parseInt(acm) - Integer.parseInt(tprice));
 		 * map.put("bm",bm); IConsumer ii = (Object o) -> asi.modifyBuyAccount(map);
