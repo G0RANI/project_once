@@ -291,20 +291,6 @@ ksa=(()=>{
 		    });
 	};	
 	let logout=()=>{
-<<<<<<< HEAD
-        sessionStorage.removeItem('session');
-        Kakao.init('84c6f4f17078c92b08795e362bbe2d2d');
-        Kakao.Auth.logout(
-        function(obj) {
-        if(obj==true){}else{}
-        location.assign($.ctx());
-         }
-        );
-       /* Kakao.Auth.logout(function(){
-        	alert("카카오로그아웃");
-        });*/
-        
-=======
 		Kakao.init('84c6f4f17078c92b08795e362bbe2d2d');
 		Kakao.Auth.logout(function () {
 				alert('로그아웃');
@@ -314,7 +300,6 @@ ksa=(()=>{
 		    	sessionStorage.removeItem('pic');
 		    	location.assign($.ctx());
 			});
->>>>>>> eden_lt
     };
 	let hcoin=()=>{
 		 $.ajax({

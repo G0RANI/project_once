@@ -38,7 +38,7 @@ ngh=(()=>{
 		     	  $.ajax({
 		          	 url:$.ctx()+'/retrieve_trx/'+id,
 		          	 data:id,
-		          	 type:'POST',
+		          	 type:'GET',
 		          	 dataType:'json',
 		          	 contentType:'application/json',
 		          	 success:s=>{
