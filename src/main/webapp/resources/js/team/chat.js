@@ -21,12 +21,8 @@ chat=(()=>{
               let cust_id = sessionStorage.getItem('nickname');
               let cust_info = sessionStorage.getItem('info');
               let profile_image = sessionStorage.getItem('pic');
-              if(cust_id ==null){
-            	  cust_id= "고객"
-              }
-              if(profile_image ==null){
-            	  profile_image ="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg"
-              }
+              cust_id=(cust_id ==null)? "고객":cust_id;
+              profile_image=(profile_image ==null)?"http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg":profile_image;
               let value = $('#btn-input').val();
               if(value !=""){
                   $('                    <div class="row msg_container base_sent">'
@@ -71,13 +67,15 @@ chat=(()=>{
             					  let c_krw = tp[0] * s.hqua;
             					  let total_p = c_krw+parseInt(s.money); //총보유자산
             					  let text = parseFloat((total_p-s.tbprice)/s.tbprice*100).toFixed(2);
+            					  let txt ='';
+            					  txt = (text=='NaN' || text=='Infinity')?cust_id+'님의 거래내역이 없습니다.':cust_id+'님의   수익은'+text+'% 입니다.';
             					  $('                    <div class="row msg_container base_receive">'
             							  +'                        <div class="col-md-2 col-xs-2 avatar">'
             							  +'                            <img src="/web/resources/img/logo3.png" class=" img-responsive img">'
             							  +'                        </div>'
             							  +'                        <div class="col-xs-10 col-md-10">'
             							  +'                            <div class="messages msg_receive">'
-            							  +'                                <p>'+cust_id+'님의 수익률은 '+text+'%입니다.</p>'
+            							  +'                                <p>'+txt+'</p>'
             							  +'                            </div>'
             							  +'                        </div>'
             							  +'                    </div>').appendTo('.msg_container_base');
@@ -113,9 +111,9 @@ chat=(()=>{
                       }
              });
             	  break;
-              case "once 현재시세": case "once시세": case "once 시세가": case "원스 현재가":case "원스 시세":
+              case "once 현재시세": case "once 시세": case "once 시세가": case "원스 현재가":case "원스 시세": case "once시세":
             	  
-            	  $.getJSON($.ctx()+'/ngh/once/price',d=>{            
+            	  $.getJSON($.ctx()+'/ngh/once/price',d=>{ 
         		   $('                    <div class="row msg_container base_receive">'
         				   +'                        <div class="col-md-2 col-xs-2 avatar">'
         				   +'                            <img src="/web/resources/img/logo3.png" class=" img-responsive img">'
@@ -130,7 +128,25 @@ chat=(()=>{
            	 
             });
             	  break;
-              case "once 살까요" : case "once 팔까요" : 
+              case "once 살까요" : case "once 팔까요" : case "once 전일대비" :
+            	  $.getJSON($.ctx()+'/ngh/once/price',d=>{ 
+            		  let prev1 = (d.ls[0].price - d.ls[1].price) / d.ls[1].price *100;
+            		  let tx ='';
+            		  tx=(prev1>=0)?'현재 once '+prev1.toFixed(2)+'% 상승중입니다': '현재  once '+prev1.toFixed(2)+'% 하락중입니다';
+            			  
+            		  
+           		   $('                    <div class="row msg_container base_receive">'
+        				   +'                        <div class="col-md-2 col-xs-2 avatar">'
+        				   +'                            <img src="/web/resources/img/logo3.png" class=" img-responsive img">'
+        				   +'                        </div>'
+        				   +'                        <div class="col-xs-10 col-md-10">'
+        				   +'                            <div class="messages msg_receive">'
+        				   +'                                <p>'+tx+'</p>'
+        				   +'                            </div>'
+        				   +'                        </div>'
+        				   +'                    </div>').appendTo('.msg_container_base');
+        		   $(".msg_container_base").scrollTop($(".msg_container_base")[0].scrollHeight);
+            	  });
             	  break;
               default:
                       $.ajax({

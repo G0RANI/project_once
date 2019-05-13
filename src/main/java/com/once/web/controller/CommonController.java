@@ -39,6 +39,11 @@ public class CommonController {
 		logger.info("김승아 컨트롤 진입 했씁니다!!!");	
 		return "ksa";
 	}
+    @GetMapping("/kth")
+    public String kthMain() {
+        logger.info("김태혁 컨트롤 진입 했씁니다!!!");   
+        return "kth";
+    }
 	
 	@GetMapping("/payment")
 	public String payment(Locale locale, Model model) {
