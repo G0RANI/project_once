@@ -188,7 +188,8 @@ public class NghController {
 		System.out.println(olist.get("current_count"));
 		int count = (int) olist.get("current_count"); 
 		int oncecount = count - onceunit;
-		String onprice= String.valueOf(GetPrice(count));
+		String onprice= String.valueOf(GetPrice(oncecount));
+		System.out.println("가격 : "+onprice);
 		String oc = String.valueOf(oncecount);
 		map2.clear();
 		map2.put("oc", oc);
@@ -270,7 +271,8 @@ public class NghController {
 		System.out.println(olist.get("current_count"));
 		int count = (int) olist.get("current_count"); 
 		int oncecount = count + onceunit;
-		String onprice= String.valueOf(GetPrice(count));
+		String onprice= String.valueOf(GetPrice(oncecount));
+		System.out.println("가격 : "+onprice);
 		String oc = String.valueOf(oncecount);
 		map2.put("oc", oc);
 		map2.put("price", onprice);

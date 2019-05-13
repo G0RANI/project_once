@@ -364,13 +364,13 @@ html, body {
 										<div id="l_val">
 										<div class="down ty01">
 												<span class="first">
-												 <strong>6,122,000</strong>
+												 <strong></strong>
 												  <em>KRW</em>
 												  </span>
 												  <span>
 												  <p class="tit">전일대비</p> 
-														<strong>-0.37%</strong>
-												<strong class="upDown">-23,000</strong></span>
+														<strong></strong>
+												<strong class=""></strong></span>
 											</div>
 										</div>
 											
@@ -391,14 +391,14 @@ html, body {
 														style="background-color: rgb(255, 255, 255);">
 														<stx-hu-tooltip style="left: -1000px; right: auto; top: 131px;">
 														<stx-hu-tooltip-field auto=""> <stx-hu-tooltip-field-name>일시:</stx-hu-tooltip-field-name>
-														<stx-hu-tooltip-field-value>04/22</stx-hu-tooltip-field-value></stx-hu-tooltip-field>
+														<stx-hu-tooltip-field-value></stx-hu-tooltip-field-value></stx-hu-tooltip-field>
 														<stx-hu-tooltip-field auto="">
 														 <stx-hu-tooltip-field-name>가격:</stx-hu-tooltip-field-name>
-														<stx-hu-tooltip-field-value>6,128,000</stx-hu-tooltip-field-value>
+														<stx-hu-tooltip-field-value></stx-hu-tooltip-field-value>
 														</stx-hu-tooltip-field>
 														<stx-hu-tooltip-field auto="">
 														 <stx-hu-tooltip-field-name>거래량:</stx-hu-tooltip-field-name>
-														<stx-hu-tooltip-field-value>123.1</stx-hu-tooltip-field-value>
+														<stx-hu-tooltip-field-value></stx-hu-tooltip-field-value>
 														</stx-hu-tooltip-field>
 														</stx-hu-tooltip>
 														<!-- 메인차트 -->
