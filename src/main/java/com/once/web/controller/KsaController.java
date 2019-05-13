@@ -1,14 +1,12 @@
 package com.once.web.controller;
 
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -110,9 +108,13 @@ public class KsaController {
 	}
 	
 	@PostMapping("/payment")
-	public String payment2(Locale locale, Model model) {
+	public Accounts payment2(@RequestBody Map<String, Object> data) {
 		logger.info("===============테스트 진입===============");
-		String a = "a";
-		return a;
+		System.out.println("data 값: "+data);
+		IConsumer c = (Object o) -> acc.modifyBuyAccount(data);
+		c.accept(data);
+		IFunction f = (Object o) -> acc.retrieveAccount(String.valueOf(data.get("id")));
+		ac=(Accounts) f.apply(data);
+		return ac;
 	}
 }
