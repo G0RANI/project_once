@@ -220,8 +220,8 @@ ksa=(()=>{
            		 /*$('<a id="charge" class="btn" style="padding-top:1px;" title="충전하기">충전하기</a>').appendTo('.btnB');*/
            		 $('#charge').click(e=>{
    					 e.preventDefault();
+   					 sessionStorage.setItem('cm', $('#money').val());
    					 window.open('payment', "a", "width=1000, height=800, left=100, top=50");
-   					 openWin.document.getElementById("#money").value = document.getElementById("pInput").value;
    				 });
            		/* $('.serchBt').click(e=>{
            			let search_word = $('.serchInput input').val();
@@ -309,10 +309,17 @@ ksa=(()=>{
 	};	
 	let logout=()=>{
         sessionStorage.removeItem('session');
+        Kakao.init('84c6f4f17078c92b08795e362bbe2d2d');
+        Kakao.Auth.logout(
+        function(obj) {
+        if(obj==true){}else{}
+        location.assign($.ctx());
+         }
+        );
        /* Kakao.Auth.logout(function(){
         	alert("카카오로그아웃");
         });*/
-        location.assign($.ctx());
+        
     };
 	let hcoin=()=>{
 		 $.ajax({
@@ -371,5 +378,5 @@ ksa=(()=>{
            });
     };
 	
-	return{init:init, kakao:kakao};
+	return{init:init, kakao:kakao, logout:logout};
 })();

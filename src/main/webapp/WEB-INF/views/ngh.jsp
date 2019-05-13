@@ -259,9 +259,7 @@ html, body {
 								<article>
 									<span class="titB link">
 									 <a href="" class="select">
-										<em> 
-											<img src="https://static.upbit.com/logos/BTC.png" 	alt="https://static.upbit.com/logos/BTC.png">
-										</em> 
+										<em class="logo" style="background: url(&quot;/web/resources/img/logo3.png&quot;) 0px 0px / cover no-repeat;">-</em> 
 										<strong>원스코인</strong>
 										<p>ONCE/KRW</p>
 									</a> 

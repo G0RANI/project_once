@@ -10,29 +10,6 @@
     </head>
     <body>
 <script>
-	function _GET(search) {
-	    var obj = {};
-	    var uri = decodeURI(search);
-	        uri = uri.slice(1,uri.length);
-	
-	    var param = uri.split('&');
-	    
-	    for (var i = 0; i < param.length; i++) {
-	        var devide = param[i].split('=');
-	        obj[devide[0]] = devide[1];
-	    }
-	
-	    return obj;
-	}
-	
-	window.onload = function () {
-	    var search = window.location.search;
-	    var getData =  _GET(search);
-	    var sender = document.querySelector('#sender');
-	
-	    sender.value = getData.val;
-	}
-
 	(function(){
 		var IMP = window.IMP;
         IMP.init('imp75272689'); 
@@ -41,7 +18,7 @@
             pay_method: 'card',
             merchant_uid: 'merchant_' + new Date().getTime(),
             name: '금액 충전',
-            amount: 1000, 
+            amount: sessionStorage.getItem('cm'), 
             buyer_email: sessionStorage.getItem('email'),
             buyer_name: '구매자이름',
             buyer_tel: '010-1234-5678',
@@ -64,15 +41,19 @@
                   	 dataType:'json',
                   	 contentType:'application/json',
                   	 success:s=>{
-                  		 alert('성공');
+                  		 alert('성공');                  		
                   	 },
                   	 error:e=>{
                   		 alert('실패');
                   	 }
                 });
+                sessionStorage.removeItem('cm');
+                close();
             } else {
                 var msg = '결제에 실패하였습니다.';
                 msg += '에러내용 : ' + rsp.error_msg;
+                sessionStorage.removeItem('cm');
+                close();
             }
             alert(msg);
         });

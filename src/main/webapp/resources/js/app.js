@@ -50,8 +50,9 @@ app.$$ = {
 				 $('#ksa').remove();
 			     $('.tnb').html('<li><a style="cursor:pointer" id="off" title="로그아웃">로그아웃</a></li>');
 			     $('#off').click(e=>{
-			         /*alert('클릭 로그아웃!');
-			         logout();*/
+			    	 $.getScript('/web/resources/js/team/ksa.js',()=>{
+			    		 ksa.logout();
+			    		 });	        
 			     }); 
 				};
 			}
