@@ -15,10 +15,13 @@ import org.slf4j.LoggerFactory;
 import  org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.once.web.domain.Chat;
 import com.once.web.domain.CoinArticle;
@@ -31,7 +34,7 @@ import com.once.web.lambda.ISupplier;
 import com.once.web.mapper.ChatMapper;
 import com.once.web.mapper.CpMapper;
 import com.once.web.service.CustServiceServiceImpl;
-@Controller
+@RestController
 public class KthController {
      
      private static final Logger logger =  LoggerFactory.getLogger(KthController.class);
@@ -40,13 +43,8 @@ public class KthController {
      @Autowired CustServiceServiceImpl cuseservice;
      @Autowired ChatMapper chatmapper;
      @Autowired CpMapper cpmapper;
-     @RequestMapping("/kth")
-     public String kthMain() {
-         logger.info("김태혁 컨트롤 진입 했씁니다!!!");   
-         return "kth";
-     }
-     @ResponseBody
-     @RequestMapping(value = "/crawler/naver/{page}",  method = {RequestMethod.GET})
+
+     @GetMapping("/crawler/naver/{page}")
      public Map<String, Object> crawler(@PathVariable  int page) throws Exception{
         if(page!=1) {
          page = (page-1)*10+1;
@@ -89,17 +87,15 @@ public class KthController {
         map.put("ls", list);
          return map;
      }
-@ResponseBody
-@RequestMapping(value = "/crawler/youtube",  method = {RequestMethod.GET})
+@GetMapping("/crawler/youtube")
 public Map<String, Object> youcrawler() throws Exception{
 	map.clear();
 	List<CoinArticle> list = pxy.youtube();
 	map.put("lis", list);
 	return map;
 };
-
-     @ResponseBody
-     @RequestMapping(value = "/notice/{npage}", method  = {RequestMethod.GET})
+	 @Transactional
+     @GetMapping("/notice/{npage}")
      public Map<String, Object> notice(@PathVariable  String npage){
          List<CustService> list = new ArrayList<>();
          list.clear();
@@ -117,9 +113,8 @@ public Map<String, Object> youcrawler() throws Exception{
          map.put("pxy", pxy);
          return map;
      }
-     @ResponseBody
      @Transactional
-     @RequestMapping(value = "/detail/{seq}", method  = {RequestMethod.GET})
+     @GetMapping("/detail/{seq}")
      public Map<String, Object> detail(@PathVariable  String seq){
     	 map.clear();
     	 CustService service = new CustService();
@@ -131,9 +126,8 @@ public Map<String, Object> youcrawler() throws Exception{
     	 map.put("cuse", cuse);
     	 return map;
      }
-     @ResponseBody
      @Transactional
-     @RequestMapping(value = "/search/{search}/{page}", method  = {RequestMethod.GET})
+     @GetMapping("/search/{search}/{page}")
      public Map<String, Object> search(@PathVariable  String search,
     		 		  				   @PathVariable String page){
     	 map.clear();
@@ -152,8 +146,7 @@ public Map<String, Object> youcrawler() throws Exception{
 		map.put("pxy", pxy);
     	 return map;
      };
-     @ResponseBody
-     @RequestMapping(value = "/chat/{text}", method  = {RequestMethod.POST})
+     @PostMapping("/chat/{text}")
      public Map<String, Object> chat(@PathVariable  String text){
       Chat cha = new Chat();
       System.out.println(text);
