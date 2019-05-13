@@ -38,9 +38,9 @@ public class TransactionsServiceImpl implements TransactionsService{
 	}
 
 	@Override
-	public int countTransactions() {
-		// TODO Auto-generated method stub
-		return 0;
+	public List<Transactions> retrieveAllTrx() {
+		
+		return tr.selectAllTrx();
 	}
 	@Override
 	public void modifyTransaction(Map<?,?> map) {

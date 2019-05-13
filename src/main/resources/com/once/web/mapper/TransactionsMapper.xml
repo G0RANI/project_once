@@ -8,10 +8,16 @@
     FROM TRANSACTIONS as tr
         inner join CUSTOMERS as cu
         on tr.id like cu.id
-    WHERE tr.id LIKE #{id};
+    WHERE tr.id LIKE #{id}
+    ORDER BY date DESC;
 </select>
 <insert id="updateTransaction" parameterType="hashMap">
 insert into TRANSACTIONS (id, rw, unit, nprice, date,tprice)
     values (#{id}, #{rw}, #{unit}, #{nprice},#{date},#{tprice})
 </insert>
+<select id="selectAllTrx" resultType="Map">
+	SELECT *
+    FROM TRANSACTIONS 
+    ORDER BY date DESC
+</select>
 </mapper>

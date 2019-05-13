@@ -12,10 +12,6 @@ auth=(()=>{
     		e.preventDefault();
     		kth_();
     	 });
-    	$('#custom-login-btn').click(e=>{
-    		e.preventDefault();
-    		ksa_('login');  		
-    	});
     	$('#ksa_d').click(e=>{
     		e.preventDefault();
     		ksa_('d');
