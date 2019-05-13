@@ -120,7 +120,6 @@ ngh=(()=>{
 			$.each(d.ls,(i,j)=>{
 				tp[i] = j.price;
 			});
-			
 			 $('#l_val').empty();
 			 let prev1 = (tp[0] - tp[1]) / tp[1] *100;
 			 let minue = tp[0] - tp[1]
