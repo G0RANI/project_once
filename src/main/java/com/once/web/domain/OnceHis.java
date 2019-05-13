@@ -9,6 +9,9 @@ import lombok.Data;
 
 @Data @Component @Lazy
 public class OnceHis {
-	private String seq ,tseq,currentCount,price;
+	private String seq,
+				   tseq,
+				   currentCount,
+				   price;
 	private Date date;
 }
