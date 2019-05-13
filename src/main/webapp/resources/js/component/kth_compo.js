@@ -567,7 +567,7 @@ kth_compo ={
     coin_chat : ()=>{
         return '<div id="chat_coin">'
         +'<div class="container">'
-        +'    <div class="row chat-window col-xs-5 col-md-3" id="chat_window_1" style="margin-left:1050px;">'
+        +'    <div class="row chat-window col-xs-5 col-md-3" id="chat_window_1" style="margin-left:1150px;">'
         +'        <div class="col-xs-12 col-md-12">'
         +'            <div class="panel panel-default">'
         +'                <div class="panel-heading top-bar">'

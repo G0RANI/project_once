@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.once.web.mapper.CpMapper">
+	<select id="selectCpList" resultType="com.once.web.domain.Cp" parameterType="com.once.web.domain.Cp">
+		SELECT 
+		DATE_FORMAT(CPDATE,'%Y-%m-%d') as CPDATE,
+		CP,
+		CPNUM
+		 FROM CP
+		WHERE CPNUM LIKE #{cpnum};
+	</select>
+  </mapper>
