@@ -6,12 +6,10 @@
 
 <head>
 <meta charset="UTF-8">
-
 <meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Cache-Control" content="no-cache">
-
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -43,24 +41,25 @@
 <style data-styled="" data-styled-version="4.2.0"></style>
 <link rel="icon" href="data:;base64, iVORw0KGo=">
 <link rel="stylesheet" href="${css}kth/chat.css">
-<!-- 
-<script src="https://www.amcharts.com/lib/4/core.js"></script>
+
+<!-- <script src="https://www.amcharts.com/lib/4/core.js"></script>
 <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
 <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
- -->
+  -->
 <script src="http://www.amcharts.com/lib/3/amcharts.js"></script>
 <script src="http://www.amcharts.com/lib/3/serial.js"></script>
 <script src="http://www.amcharts.com/lib/3/themes/light.js"></script>
 <script src="http://www.amcharts.com/lib/3/amstock.js"></script>
 <style type="text/css">
 
-/* #chartdiv {
-  width: 100%;
-  height: 500px;
-} */
-#chartdiv {
+ #chartdiv {
   width: 100%;
   height: 350px;
+} 
+#chartdiv_1 {
+  width: 100%;
+  height: 500px;
 }
 
 html, body {

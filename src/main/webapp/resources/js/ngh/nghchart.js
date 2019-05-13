@@ -273,54 +273,51 @@ function generateChartData() {
 }
 generateChartData();
 
-/*메인차트*/
-	/*am4core.ready(function() {
-		am4core.useTheme(am4themes_animated);
-		var chart = am4core.create("chartdiv", am4charts.XYChart);
-		var data = [];
-		var value = 0;
-			$.ajax({
-				url : '/web/ngh/chart',
-				type : 'get',
-			    dataType:'json',
-				 success : d=>{
-						 alert('once의 값 : 성공 ');
-						 for(let i = 0; i < d.ls.length; i++){
-							 console.log(d.ls[i].price);	
-							  let date = new Date();
-							  date.setHours(0,0,0,0);
-							  date.setDate(i);
-							console.log(d.ls[i].odate);
-							console.log(date);
-							  data.push({date:d.ls[i].odate,
-								  		value:d.ls[i].price});
-							  chart.data = data;
-					}
-					console.log(data);
-				 },
-				 error : e =>{
-					alert('ajax 실팩'); 
-					console.log(e);
-				 }
-			});
-		// Create axes
-		var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
-		dateAxis.renderer.minGridDistance = 60;
-		var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-		// Create series
-		var series = chart.series.push(new am4charts.LineSeries());
-		series.dataFields.valueY = "value";
-		series.dataFields.dateX = "date";
-		series.tooltipText = "{value}"
-		series.tooltip.pointerOrientation = "vertical";
-		chart.cursor = new am4charts.XYCursor();
-		chart.cursor.snapToSeries = series;
-		chart.cursor.xAxis = dateAxis;
-		//chart.scrollbarY = new am4core.Scrollbar();
-		chart.scrollbarX = new am4core.Scrollbar();
-		}); */
-	
 
+/*am4core.ready(function() {
+
+	// Themes begin
+	am4core.useTheme(am4themes_material);
+	am4core.useTheme(am4themes_animated);
+	// Themes end
+
+	var chart = am4core.create("chartdiv_1", am4charts.XYChart);
+
+	var data = [];
+	var value = 50;
+	for(let i = 0; i < 300; i++){
+	  let date = new Date();
+	  date.setHours(0,0,0,0);
+	  date.setDate(i);
+	  value -= Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 10);
+	  data.push({date:date, value: value});
+	}
+
+	chart.data = data;
+
+	// Create axes
+	var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+	dateAxis.renderer.minGridDistance = 60;
+
+	var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+
+	// Create series
+	var series = chart.series.push(new am4charts.LineSeries());
+	series.dataFields.valueY = "value";
+	series.dataFields.dateX = "date";
+	series.tooltipText = "{value}"
+
+	series.tooltip.pointerOrientation = "vertical";
+
+	chart.cursor = new am4charts.XYCursor();
+	chart.cursor.snapToSeries = series;
+	chart.cursor.xAxis = dateAxis;
+
+	//chart.scrollbarY = new am4core.Scrollbar();
+	chart.scrollbarX = new am4core.Scrollbar();
+
+	}); // end am4core.ready()
+*/
 
 //미니차트
 	// end am4core.ready()
@@ -370,3 +367,5 @@ generateChartData();
 //			//chart.scrollbarY = new am4core.Scrollbar();
 //			chart.scrollbarX = new am4core.Scrollbar();
 //			}); 
+
+

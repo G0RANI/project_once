@@ -25,7 +25,6 @@ ngh=(()=>{
 		          	 dataType:'json',
 		          	 contentType:'application/json',
 		          	 success:s=>{
-		          		 	alert('성공');
 		          		//	주문시간 trx	구분 trx	체결가격trx	체결수량 trx	체결금액trx
 		          		 	$('#trx').empty();
 		          		 	$.each(s.ls, (i,j)=>{
@@ -57,7 +56,6 @@ ngh=(()=>{
 			  $('#chr_1').empty();
 			  	$(ngh_compo.chr()).appendTo('#chr_1');
 			  	$.getJSON($.ctx()+'/retrieve_all_trx',d=>{
-			  	  alert('성공!');
                   $('#bt_ty01').attr('class', '');
                   $(this).attr('class', 'on');
                   $('#bt_list').empty();
@@ -232,6 +230,11 @@ ngh=(()=>{
 			  $('#b').empty();
 			  $(ngh_compo.l_buy()).appendTo('#b');
 			  $('#priceall').remove();
+			  $( '<input id="priceall" type="text" class="txt" value="'+tp[0]+'">')
+			  .prependTo('.marginB101');
+			  $('#count').change(function(){
+	              $('#allpr').attr('value', tp[0]*$('#count').val());
+	          });
 			  $.getJSON($.ctx()+'/ngh/mycoin/'+id,d=>{			  
 				  $('#my_money').empty();
 				  $('<strong>'+d.rs.money+'</strong> <i>KRW</i>').appendTo('#now_money');
@@ -250,13 +253,8 @@ ngh=(()=>{
 					  }
 			    });
 			  });
-			//매수 
 			  
-			  $( '<input id="priceall" type="text" class="txt" value="'+tp[0]+'">')
-			  	.prependTo('.marginB101');
-			  $('#count').change(function(){
-				  $('#allpr').attr('value', tp[0]*$('#count').val());
-			  });
+			//매수 
 			  
 			  if(sessionStorage.getItem('session') === null){
 				  $('#btn_mesu').empty();
@@ -266,10 +264,9 @@ ngh=(()=>{
 			          location.assign($.ctx()+"/ksa");
 				  });
 			  } 
-			  
+        
 			 //top 매수 버튼 눌렀을때
 			 $('.top a').eq(0).click(function(){
-				 
 				  $('.top a').attr('class', '');
 				  $('.top li').attr('class', 't2');
 		          $(this).attr('class', 'on');
@@ -277,18 +274,29 @@ ngh=(()=>{
 				  $(ngh_compo.l_buy()).appendTo('#b');
 				  $('#priceall').remove();
 				  $( '<input id="priceall" type="text" class="txt" value="'+tp[0]+'">')
-				  	.prependTo('.marginB101');				  
-				  $('<li class="ty04"><a title="매수">매수</a></li>')
-				  	.appendTo('#btn_mesu');
-				  $('#btn_mesu').click(()=>{
-				  		let price = tp[0];
-				  		let unit = $('#count').val();
-				  		let tprice = price*unit;
-				          $.getJSON($.ctx()+'/ngh/buy/'+unit+'/'+price+'/'+id+'/'+tprice,d=>{
-				        	  alert('매수 성공했다!!!!쏴리질러!!!');
-				          })
-			    	  });
-				  	});
+				  .prependTo('.marginB101');
+				  $('#count').change(function(){
+		              $('#allpr').attr('value', tp[0]*$('#count').val());
+		          });
+				  $.getJSON($.ctx()+'/ngh/mycoin/'+id,d=>{			  
+					  $('#my_money').empty();
+					  $('<strong>'+d.rs.money+'</strong> <i>KRW</i>').appendTo('#now_money');
+					  $(' <li class="ty04"><a title="매수">매수</a></li>')
+					  	.appendTo('#btn_mesu');
+					  $('#btn_mesu').click(()=>{
+						  let price = tp[0];
+						  let unit = $('#count').val();	  		
+					  		let tprice = price*unit;					  
+					  		if(d.rs.money>=tprice){
+							  $.getJSON($.ctx()+'/ngh/buy/'+unit+'/'+price+'/'+id+'/'+tprice,d=>{				        	  
+					        	  alert('성공');
+					          });
+						  }else{
+							  alert('돈없다');
+						  }
+				    });
+				  });
+				 });
 			  //매수 버튼 눌렀을때
 			 
 			  //매도
@@ -310,6 +318,7 @@ ngh=(()=>{
 				          location.assign($.ctx()+"/ksa");
 					  });
 				  }
+				  
 				  $.getJSON($.ctx()+'/ngh/mycoin/'+id,d=>{	
 					  $('#my_money').empty();
 					  $('<strong>'+d.rs.money+'</strong> <i>KRW</i>').appendTo('#now_money');
@@ -317,7 +326,7 @@ ngh=(()=>{
 					  $( '<input id="now_val" type="text" class="txt" value="'+tp[0]+'">')
 				  		.prependTo('.marginB1010');	
 					  $('#btn_medo').click(()=>{
-						  //if(d.rs.money>=tprice){
+						  if(d.rs.money>=tprice){
 							  alert('가격'+tp[0]);
 							  alert('id : '+id);
 						  		let price = tp[0];
@@ -325,10 +334,10 @@ ngh=(()=>{
 						  		let tprice = price*unit;
 						          $.getJSON($.ctx()+'/ngh/medo/'+unit+'/'+price+'/'+id+'/'+tprice,d=>{
 						        	  alert('매도성공이다');
-						          })
-						  //}else{
-							  /*alert('매도 실패다');*/
-						 // };
+						          });
+						  }else{
+							  alert('매도 실패다');
+						  };
 				    	  });
 			  		});
 			  });
