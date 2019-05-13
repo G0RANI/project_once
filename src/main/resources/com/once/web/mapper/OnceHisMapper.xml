@@ -9,11 +9,31 @@
 							 current_count, 
 							  price,
 							  date)
-		VALUES (NULL, #{currentCount}, 1200, now())
+		VALUES (NULL,
+				#{currentCount},
+				#{price},
+				now())
 </insert>
 <select id="selectOnceCount" resultType="hashMap">
 			SELECT * 
 			FROM ONCE_HISTORY
 			ORDER BY DATE DESC LIMIT 1
+</select>
+<select id="selectprice" resultType="com.once.web.domain.OnceHis">
+			SELECT seq,	
+				   tseq,
+				   current_count currentCount,
+				   price,
+				   date  
+			FROM ONCE_HISTORY
+			ORDER BY DATE DESC LIMIT 2
+</select>
+<select id="selectAllList" resultType="com.once.web.domain.OnceHis">
+		SELECT   seq,	
+				 tseq,
+				 current_count currentCount,
+				  price,
+				  date 
+		FROM ONCE_HISTORY
 </select>
 </mapper>

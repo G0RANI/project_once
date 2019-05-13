@@ -11,7 +11,17 @@
     WHERE tr.id LIKE #{id};
 </select>
 <insert id="updateTransaction" parameterType="hashMap">
-insert into TRANSACTIONS (id, rw, unit, nprice, date,tprice)
-    values (#{id}, #{rw}, #{unit}, #{nprice},#{date},#{tprice})
+INSERT INTO TRANSACTIONS (id,
+						  rw, 
+						  unit, 
+						  nprice, 
+						  date,
+						  tprice)
+		    VALUES(#{id},
+		    		#{rw},
+		    		 #{unit}, 
+		    		 #{nprice},
+		    		 #{date},
+		    		 #{tprice})
 </insert>
 </mapper>

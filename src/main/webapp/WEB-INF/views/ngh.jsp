@@ -3,7 +3,16 @@
 <html lang="en">
 
 <title>ONCE</title>
+
+<head>
 <meta charset="UTF-8">
+
+<meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+
+
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -34,9 +43,11 @@
 <style data-styled="" data-styled-version="4.2.0"></style>
 <link rel="icon" href="data:;base64, iVORw0KGo=">
 <link rel="stylesheet" href="${css}kth/chat.css">
+<!-- 
 <script src="https://www.amcharts.com/lib/4/core.js"></script>
 <script src="https://www.amcharts.com/lib/4/charts.js"></script>
 <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+ -->
 <script src="http://www.amcharts.com/lib/3/amcharts.js"></script>
 <script src="http://www.amcharts.com/lib/3/serial.js"></script>
 <script src="http://www.amcharts.com/lib/3/themes/light.js"></script>
@@ -49,7 +60,7 @@
 } */
 #chartdiv {
   width: 100%;
-  height: 100%;
+  height: 350px;
 }
 
 html, body {
@@ -58,10 +69,7 @@ html, body {
   margin: 0px;
 }
 
-#chartdiv {
-	width: 100%;
-	height: 100%;
-}
+
 #markdown_notice_body {
 	margin: 0;
 	padding: 0;
@@ -742,6 +750,8 @@ html, body {
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+
+
 <script src="${js}ngh/nghchart.js"></script>
 
 <script>
