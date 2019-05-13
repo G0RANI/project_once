@@ -18,8 +18,8 @@ chat=(()=>{
           });
      };
      let setContentView =()=>{
-              let value = $('#btn-input').val();
               let cust_id = sessionStorage.getItem('nickname');
+              let cust_info = sessionStorage.getItem('info');
               let profile_image = sessionStorage.getItem('pic');
               if(cust_id ==null){
             	  cust_id= "고객"
@@ -27,44 +27,144 @@ chat=(()=>{
               if(profile_image ==null){
             	  profile_image ="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg"
               }
+              let value = $('#btn-input').val();
               if(value !=""){
-              $('                    <div class="row msg_container base_sent">'
-                        +'                        <div class="col-md-10 col-xs-10 ">'
-                        +'                            <div class="messages msg_sent">'
-                        +'                                <p>'+value+'</p>'
-                        +'                            </div>'
-                        +'                        </div>'
-                        +'                        <div class="col-md-2 col-xs-2 avatar">'
-                        +'                            <img src="'+profile_image+'" class=" img-responsive img">'
-                        +'                        </div>'
-                        +'                    </div>').appendTo('.msg_container_base');
-              $(".msg_container_base").scrollTop($(".msg_container_base")[0].scrollHeight);
-              $.ajax({
-                   url : $.ctx()+'/chat/'+value,
-                   type : 'post',
-                   data : JSON.stringify(),
-                   dataType : 'json',
-                   contentType : 'application/json',
-                   success : d=>{
-                        $('                    <div class="row msg_container base_receive">'
-                                  +'                        <div class="col-md-2 col-xs-2 avatar">'
-                                  +'                            <img src="/web/resources/img/logo3.png" class=" img-responsive img">'
-                                  +'                        </div>'
-                                  +'                        <div class="col-xs-10 col-md-10">'
-                                  +'                            <div class="messages msg_receive">'
-                                  +'                                <p>'+d.ch.chatText+' '+cust_id+'님</p>'
-                                  +'                            </div>'
-                                  +'                        </div>'
-                                  +'                    </div>').appendTo('.msg_container_base');
-                        $(".msg_container_base").scrollTop($(".msg_container_base")[0].scrollHeight);
-                   },
-                   error : e =>{
-                   }
-          });
-          }else{
-              alert('올바르지 않은 문구입니다');
-          }
+                  $('                    <div class="row msg_container base_sent">'
+                            +'                        <div class="col-md-10 col-xs-10 ">'
+                            +'                            <div class="messages msg_sent">'
+                            +'                                <p>'+value+'</p>'
+                            +'                            </div>'
+                            +'                        </div>'
+                            +'                        <div class="col-md-2 col-xs-2 avatar">'
+                            +'                            <img src="'+profile_image+'" class=" img-responsive img">'
+                            +'                        </div>'
+                            +'                    </div>').appendTo('.msg_container_base');
+                  $(".msg_container_base").scrollTop($(".msg_container_base")[0].scrollHeight);
+              switch(value){
+              case "수익률": case "내 수익": case "내 수익률":
+            	  if(cust_info==null){
+					  $('                    <div class="row msg_container base_receive">'
+							  +'                        <div class="col-md-2 col-xs-2 avatar">'
+							  +'                            <img src="/web/resources/img/logo3.png" class=" img-responsive img">'
+							  +'                        </div>'
+							  +'                        <div class="col-xs-10 col-md-10">'
+							  +'                            <div class="messages msg_receive">'
+							  +'                                <p>'+cust_id+'님 로그인 먼저 해주시겠어요?</p>'
+							  +'                            </div>'
+							  +'                        </div>'
+							  +'                    </div>').appendTo('.msg_container_base');
+					  $(".msg_container_base").scrollTop($(".msg_container_base")[0].scrollHeight);
+            	  }else{
+            		  
+            		  $.ajax({
+            			  url:$.ctx()+'/retrieve_acc/'+cust_info,
+            			  data:cust_info,
+            			  type:'POST',
+            			  dataType:'json',
+            			  contentType:'application/json',
+            			  success:s=>{
+            				  $.getJSON($.ctx()+'/ngh/once',d=>{
+            					  let tp = new Array();
+            					  $.each(d.ls,(i,j)=>{
+            						  tp[i] = j.price;
+            					  });
+            					  let c_krw = tp[0] * s.hqua;
+            					  let total_p = c_krw+parseInt(s.money); //총보유자산
+            					  let text = parseFloat((total_p-s.tbprice)/s.tbprice*100).toFixed(2);
+            					  $('                    <div class="row msg_container base_receive">'
+            							  +'                        <div class="col-md-2 col-xs-2 avatar">'
+            							  +'                            <img src="/web/resources/img/logo3.png" class=" img-responsive img">'
+            							  +'                        </div>'
+            							  +'                        <div class="col-xs-10 col-md-10">'
+            							  +'                            <div class="messages msg_receive">'
+            							  +'                                <p>'+cust_id+'님의 수익률은 '+text+'%입니다.</p>'
+            							  +'                            </div>'
+            							  +'                        </div>'
+            							  +'                    </div>').appendTo('.msg_container_base');
+            					  $(".msg_container_base").scrollTop($(".msg_container_base")[0].scrollHeight);
+            				  });
+            			  }
+            		  });
+            	  }
+            	  break;
+              case "4월 종가":
+                  $.ajax({
+                      url : $.ctx()+'/chat/'+value,
+                      type : 'post',
+                      data : JSON.stringify(),
+                      dataType : 'json',
+                      contentType : 'application/json',
+                      success : d=>{
+                    	   $.each(d.ls,(i,j)=>{
+                    		   $('                    <div class="row msg_container base_receive">'
+                    				   +'                        <div class="col-md-2 col-xs-2 avatar">'
+                    				   +'                            <img src="/web/resources/img/logo3.png" class=" img-responsive img">'
+                    				   +'                        </div>'
+                    				   +'                        <div class="col-xs-10 col-md-10">'
+                    				   +'                            <div class="messages msg_receive">'
+                    				   +'                                <p>'+j.cpdate+'날 종가는 '+j.cp+'원 입니다</p>'
+                    				   +'                            </div>'
+                    				   +'                        </div>'
+                    				   +'                    </div>').appendTo('.msg_container_base');
+                    		   $(".msg_container_base").scrollTop($(".msg_container_base")[0].scrollHeight);
+                    	   });
+                      },
+                      error : e =>{
+                      }
+             });
+            	  break;
+              case "once 현재시세": case "once시세": case "once 시세가": case "원스 현재가":case "원스 시세":
+            	  
+            	  $.getJSON($.ctx()+'/ngh/once/price',d=>{            
+        		   $('                    <div class="row msg_container base_receive">'
+        				   +'                        <div class="col-md-2 col-xs-2 avatar">'
+        				   +'                            <img src="/web/resources/img/logo3.png" class=" img-responsive img">'
+        				   +'                        </div>'
+        				   +'                        <div class="col-xs-10 col-md-10">'
+        				   +'                            <div class="messages msg_receive">'
+        				   +'                                <p>현재 once 시세는'+d.ls[0].price+'원 입니다</p>'
+        				   +'                            </div>'
+        				   +'                        </div>'
+        				   +'                    </div>').appendTo('.msg_container_base');
+        		   $(".msg_container_base").scrollTop($(".msg_container_base")[0].scrollHeight);
+           	 
+            });
+            	  break;
+              case "once 살까요" : case "once 팔까요" : 
+            	  break;
+              default:
+                      $.ajax({
+                           url : $.ctx()+'/chat/'+value,
+                           type : 'post',
+                           data : JSON.stringify(),
+                           dataType : 'json',
+                           contentType : 'application/json',
+                           success : d=>{
+                                $('                    <div class="row msg_container base_receive">'
+                                          +'                        <div class="col-md-2 col-xs-2 avatar">'
+                                          +'                            <img src="/web/resources/img/logo3.png" class=" img-responsive img">'
+                                          +'                        </div>'
+                                          +'                        <div class="col-xs-10 col-md-10">'
+                                          +'                            <div class="messages msg_receive">'
+                                          +'                                <p>'+d.ch.chatText+' '+cust_id+'님</p>'
+                                          +'                            </div>'
+                                          +'                        </div>'
+                                          +'                    </div>').appendTo('.msg_container_base');
+                                $(".msg_container_base").scrollTop($(".msg_container_base")[0].scrollHeight);
+                           },
+                           error : e =>{
+                           }
+                  });
+            	  break;
+              }
+              }else{
+            	  alert('올바르지 않은 문구입니다');
+              }            	  
+
      };
+     
+     
+     
      let bot=()=>{
           $(document).on('click', '.panel-heading span.icon_minim', function (e) {
               var $this = $(this);

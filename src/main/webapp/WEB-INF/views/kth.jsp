@@ -67,7 +67,7 @@
 	}
 	</style>
 </head>
-<body>
+<body class="bgWhite">
 <article class="">
 	<header class="" style="z-index: 100;">
 		<section>

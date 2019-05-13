@@ -12,6 +12,11 @@ ksa=(()=>{
 		case 'd':
             $('#once').empty();
             $.getScript($.js()+'/component/ksa_compo.js',()=>{
+                $.getScript($.js()+'/team/chat.js',()=>{
+                	$('#chat_coin').remove();
+                    $(kth_compo.coin_chat()).appendTo('.bgWhite');
+                    chat.init();
+                });
             if(sessionStorage.getItem('session') === null){
                 location.assign($.ctx()+"/ksa");
             }else{
@@ -40,6 +45,11 @@ ksa=(()=>{
 		case 'i':
 			$('#once').empty();
             $.getScript($.js()+'/component/ksa_compo.js',()=>{
+                $.getScript($.js()+'/team/chat.js',()=>{
+                	$('#chat_coin').remove();
+                    $(kth_compo.coin_chat()).appendTo('.bgWhite');
+                    chat.init();
+                });
             if(sessionStorage.getItem('session') === null){
                 location.assign($.ctx()+"/ksa");
             }else{
