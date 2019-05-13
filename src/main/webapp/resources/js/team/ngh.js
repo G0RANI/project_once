@@ -35,61 +35,89 @@ ngh=(()=>{
 		          $(this).attr('class', 'on');
 		     	  $('#b').empty();
 		     	  $(ngh_compo.trx()).appendTo('#b');
-		     	 /*if(sessionStorage.getItem('session') === null){		             
-	                 $('#off').click(e=>{
-	                     alert('클릭 로그아웃!');
-	                     logout();
-	                 });
-	                };*/
+		     	  $.ajax({
+		          	 url:$.ctx()+'/retrieve_trx/'+id,
+		          	 data:id,
+		          	 type:'POST',
+		          	 dataType:'json',
+		          	 contentType:'application/json',
+		          	 success:s=>{
+		          		 	alert('성공');
+		          		//	주문시간 trx	구분 trx	체결가격trx	체결수량 trx	체결금액trx
+		          		 	$('#trx').empty();
+		          		 	$.each(s.ls, (i,j)=>{
+		          		 		if(j.rw==='매수'){
+				          		 	$('#trx').append('<tr class="up">'
+												+'<td><p>'+j.date+'</p></td>'
+												+'<td>'+j.rw+'</td>'
+												+'<td class="rAlign"><p>'+j.nprice+'</p></td>'
+												+'<td class="rAlign"><p>'+j.unit+'</p></td>'
+												+'<td class="rAlign"><p>'+j.tprice+'</p></td>'
+												+'</tr>');
+		          		 		}else{
+				          		 	$('#trx').append('<tr class="down">'
+												+'<td><p>'+j.date+'</p></td>'
+												+'<td>'+j.rw+'</td>'
+												+'<td class="rAlign"><p>'+j.nprice+'</p></td>'
+												+'<td class="rAlign"><p>'+j.unit+'</p></td>'
+												+'<td class="rAlign"><p>'+j.tprice+'</p></td>'
+												+'</tr>');
+		          		 		}
+				          	});
+		          	 },
+		          	 error:e=>{
+		          		 alert('실패');
+		          	 }
+		           });
 			  	});
 			  
 			  $('#chr_1').empty();
 			  	$(ngh_compo.chr()).appendTo('#chr_1');
-			  	$.ajax({
-                    url:$.ctx()+'/retrieve_trx/'+id,
-                    data:id,
-                    type:'POST',
-                    dataType:'json',
+			  	$.getJSON($.ctx()+'/retrieve_all_trx',d=>{
+			  	  alert('성공!');
+                  $('#bt_ty01').attr('class', '');
+                  $(this).attr('class', 'on');
+                  $('#bt_list').empty();
+                  $.each(d.ls, (i,j)=>{
+                	  if(j.rw==='매수'){
+                		  $('#bt_list').append('<tr>'
+                        			+'<td class="lAlign">'+j.date+'</td>'
+                        			+'<td class="up" style="text-align: center;"><strong>'+j.nprice+' <i>KRW </i></strong></center></td>'
+                        			+'<td class="up" style="text-align: center;"><strong>'+j.unit+' <i>ONCE </i></strong></center></td>'
+                        			+'<td><strong>'+j.unit*j.nprice+' <i>KRW </i></strong></td>'
+                        			+'</tr>');
+                	  }else{
+                		  $('#bt_list').append('<tr>'
+                      			+'<td class="lAlign">'+j.date+'</td>'
+                      			+'<td class="up" style="text-align: center;"><strong>'+j.nprice+' <i>KRW </i></strong></center></td>'
+                      			+'<td class="down" style="text-align: center;"><strong>'+j.unit+' <i>ONCE </i></strong></center></td>'
+                      			+'<td><strong>'+j.unit*j.nprice+' <i>KRW </i></strong></td>'
+                      			+'</tr>');
+                	  }
+                  });
+			  	});
+			  	/*$.ajax({
+                    url:$.ctx()+'/retrieve_all_trx',
+                    type:'GET',
                     contentType:'application/json',
                     success:s=>{
-                        alert('성공!'+s.hcoin);
-                       let tx_date = new Date(s.date);
-                      function convert(x) {
-                           var date = new Date(x),
-                               mnth = ("0" + (date.getMonth()+1)).slice(-2),
-                               day  = ("0" + date.getDate()).slice(-2),
-                               hours  = ("0" + date.getHours()).slice(-2),
-                               minutes = ("0" + date.getMinutes()).slice(-2);
-                           var date2 = [date.getFullYear(), mnth, day].join("-");
-                           var date3 = [hours, minutes ].join(":");
-                          return [ date2, date3 ].join(" ");
-                       }
+                        alert('성공!');
                          $('#bt_ty01').attr('class', '');
                          $(this).attr('class', 'on');
                          $('#bt_list').empty();
-                         $('#bt_list').html(ngh_compo.chr());
-                         $('#bt_list').empty();
-                         $('#bt_list').html(+'<tr class="up">'
-			                                     +'<td class="cAlign">'
-			                                     +'<p>'
-			                                     +''+convert(tx_date)+''
-			                                     +'</p>'
-			                                     +'</td>'
-			                                     +'<td><strong class="down">'+s.nprice+'</strong></td>'
-			                                     +'<td>'+s.unit+'</td>'
-			                                     +'<td class="rAlign">12,244,000</td>'
-			                                     +'</tr>');
+                         $.each(s.ls, (i,j)=>{
+                         	$('#bt_list').append('<tr>'
+                         			+'<td class="lAlign">'+j.date+'</td>'
+                         			+'<td><strong>'+j.nprice+' <i>KRW </i></strong></td>'
+                         			+'<td><strong>'+j.unit+' <i>ONCE </i></strong></td>'
+                         			+'<td><strong>'+j.unit*j.nprice+' <i>KRW </i></strong></td>'
+                         			+'</tr>');
+                         });
                     },
                     error:e=>{    
                         alert('실패!');
-                        $('.ty01 a').attr('class', '');
-                      $(this).attr('class', 'on');
-                      $('.scrollB').empty();
-                      $('.scrollB').html(ksa_compo.investment_trx());
-                      $('.ty01 tbody').empty();
-                         $('.ty01 tbody').html('<td colspan="8" class="dataNone"><p>과거 거래내역이 없습니다.</p></td>');
                     }
-             });
+             });*/
              })
 	};
 	/*once 차트 */

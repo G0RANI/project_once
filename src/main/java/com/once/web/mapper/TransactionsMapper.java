@@ -13,7 +13,7 @@ public interface TransactionsMapper {
 	public List<Transactions> selectAllTransactions(String id);
 	public List<Transactions> selectWithdrawals(Transactions trx);
 	public List<Transactions> selectDeposits(Transactions trx);
-	public int countTransactions();
+	public List<Transactions> selectAllTrx();
 	public void updateTransaction(Map<?,?> map);
 	public void deleteTransaction(Transactions trx);
 }

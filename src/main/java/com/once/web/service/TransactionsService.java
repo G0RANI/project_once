@@ -13,7 +13,7 @@ public interface TransactionsService {
 	public List<Transactions> retrieveAllTransactions(String id);
 	public List<Transactions> bringWithdrawals(Transactions trx);
 	public List<Transactions> bringDeposits(Transactions trx);
-	public int countTransactions();
+	public List<Transactions> retrieveAllTrx();
 	public void modifyTransaction(Map<?,?> map);
 	public void removeTransaction(Transactions trx);
 }
