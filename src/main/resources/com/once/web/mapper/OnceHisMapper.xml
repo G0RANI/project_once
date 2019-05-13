@@ -15,7 +15,11 @@
 				now())
 </insert>
 <select id="selectOnceCount" resultType="hashMap">
-			SELECT * 
+			SELECT seq,	
+				   tseq,
+				   current_count currentCount,
+				   price,
+				   date   
 			FROM ONCE_HISTORY
 			ORDER BY DATE DESC LIMIT 1
 </select>
