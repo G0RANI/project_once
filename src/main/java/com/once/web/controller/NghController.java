@@ -183,10 +183,10 @@ public class NghController {
 		IConsumer i = (Object o) -> trs.modifyTransaction(map2);
 		i.accept(map2); 
 		ISupplier s = ()-> ohsi.selectOnceCount();
-		s.get();
+		System.out.println("최신 값"+s.get().toString());
 		Map<String, Object> olist = (Map<String, Object>) s.get();
-		System.out.println(olist.get("current_count"));
-		int count = (int) olist.get("current_count"); 
+		System.out.println(olist.get("currentCount"));
+		int count = (int) olist.get("currentCount"); 
 		int oncecount = count - onceunit;
 		String onprice= String.valueOf(GetPrice(count));
 		String oc = String.valueOf(oncecount);
