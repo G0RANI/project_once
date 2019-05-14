@@ -24,7 +24,6 @@
             buyer_tel: '010-1234-5678',
             buyer_addr: '서울특별시 강남구 삼성동',
             buyer_postcode: '123-456'
-
         }, function (rsp) {
             console.log(rsp);
             if (rsp.success) {
