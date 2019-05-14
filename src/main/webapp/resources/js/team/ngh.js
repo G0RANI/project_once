@@ -11,7 +11,9 @@ ngh=(()=>{
 	};
 	let setContentView=()=>{
 		once_chart();
-		$.getScript($.js()+'/component/ngh_compo.js',()=>{			  
+		$.getScript($.js()+'/component/ngh_compo.js',()=>{	
+			
+			
 			  $('.top a').eq(2).click(function(){
 				  $('.top a').attr('class', '');
 				  $('.top li').attr('class', 't4');
@@ -110,7 +112,6 @@ ngh=(()=>{
                     }
              });*/
              })
-             
 	};
 	/*once 차트 */
 	let once_chart=()=>{
@@ -223,101 +224,145 @@ ngh=(()=>{
 				/*each*/
 				
 			//매수 	
-		 	  $('.top a').eq(0).
-			  attr('class', 'on');
-			  $('.top li').attr('class', 't2');
-			  $('#b').empty();
-			  $(ngh_compo.l_buy()).appendTo('#b');
-			  $('#priceall').remove();
-			  $( '<input id="priceall" type="text" class="txt" value="'+tp[0]+'">')
-			  .prependTo('.marginB101');
-			  $('#count').change(function(){
-	              $('#allpr').attr('value', tp[0]*$('#count').val());
-	          });
-			  $.getJSON($.ctx()+'/ngh/mycoin/'+id,d=>{			  
-				  $('#my_money').empty();
-				  $('<strong>'+d.rs.money+'</strong> <i>KRW</i>').appendTo('#now_money');
-				  $(' <li class="ty04"><a title="매수">매수</a></li>')
-				  	.appendTo('#btn_mesu');
-				  $('#btn_mesu').click(()=>{
-					  let price = tp[0];
-					  let unit = $('#count').val();	  		
-				  		let tprice = price*unit;					  
-				  		if(d.rs.money>=tprice){
-						  $.getJSON($.ctx()+'/ngh/buy/'+unit+'/'+price+'/'+id+'/'+tprice,d=>{				        	  
-				        	  alert('성공');
-				          });
+				 
+				
+				$.getScript($.js()+'/component/ngh_compo.js',()=>{
+					  if(sessionStorage.getItem('session') === null){
+						  $('.top a').eq(0).
+						  attr('class', 'on');
+						  $('.top li').attr('class', 't2');
+						  $('#b').empty();
+						  $(ngh_compo.l_buy()).appendTo('#b');
+						  $('#priceall').remove();
+						  $( '<input id="priceall" type="text" class="txt" value="'+tp[0]+'">')
+						  .prependTo('.marginB101');
+						  $(' <li class="ty04"><a title="매수">매수</a></li>')
+						  	.appendTo('#btn_mesu');
+						  $('#btn_mesu').empty();
+						  $('<li class="ty02 login"><a title="로그인" id="login2">로그인</a>').appendTo('#btn_mesu');
+						  $('#login2').click(e=>{
+							  e.preventDefault();
+					          location.assign($.ctx()+"/ksa");
+						  });
 					  }else{
-						  alert('돈없다');
+						  $('.top a').eq(0).
+						  attr('class', 'on');
+						  $('.top li').attr('class', 't2');
+						  $('#b').empty();
+						  $(ngh_compo.l_buy()).appendTo('#b');
+						  $('#priceall').remove();
+						  $( '<input id="priceall" type="text" class="txt" value="'+tp[0]+'">')
+						  .prependTo('.marginB101');
+						  $('#count').change(function(){
+				              $('#allpr').attr('value', tp[0]*$('#count').val());
+				          });
+						  $(' <li class="ty04"><a title="매수">매수</a></li>')
+						  	.appendTo('#btn_mesu');
+						  $('#btn_mesu').empty();
+						  $.getJSON($.ctx()+'/ngh/mycoin/'+id,d=>{			  
+							  $('#my_money').empty();
+							  $('<strong>'+d.rs.money+'</strong> <i>KRW</i>').appendTo('#now_money');
+							  $(' <li class="ty04"><a title="매수">매수</a></li>')
+							  	.appendTo('#btn_mesu');
+							  $('#btn_mesu').click(()=>{
+								  let price = tp[0];
+								  let unit = $('#count').val();	  		
+							  		let tprice = price*unit;					  
+							  		if(d.rs.money>=tprice){
+									  $.getJSON($.ctx()+'/ngh/buy/'+unit+'/'+price+'/'+id+'/'+tprice,d=>{				        	  
+							        	  alert('성공');
+							          });
+								  }else{
+									  alert('돈없다');
+								  }
+							  });
+						  });
 					  }
-			    });
-			  });
-			  
 			//매수 
-			  
-			  if(sessionStorage.getItem('session') === null){
-				  $('#btn_mesu').empty();
-				  $('<li class="ty02 login"><a title="로그인" id="login2">로그인</a>').appendTo('#btn_mesu');
-				  $('#login2').click(e=>{
-					  e.preventDefault();
-			          location.assign($.ctx()+"/ksa");
-				  });
-			  } 
         
 			 //top 매수 버튼 눌렀을때
-			 $('.top a').eq(0).click(function(){
-				  $('.top a').attr('class', '');
-				  $('.top li').attr('class', 't2');
-		          $(this).attr('class', 'on');
-				  $('#b').empty();
-				  $(ngh_compo.l_buy()).appendTo('#b');
-				  $('#priceall').remove();
-				  $( '<input id="priceall" type="text" class="txt" value="'+tp[0]+'">')
-				  .prependTo('.marginB101');
-				  $('#count').change(function(){
-		              $('#allpr').attr('value', tp[0]*$('#count').val());
-		          });
-				  $.getJSON($.ctx()+'/ngh/mycoin/'+id,d=>{			  
-					  $('#my_money').empty();
-					  $('<strong>'+d.rs.money+'</strong> <i>KRW</i>').appendTo('#now_money');
-					  $(' <li class="ty04"><a title="매수">매수</a></li>')
-					  	.appendTo('#btn_mesu');
-					  $('#btn_mesu').click(()=>{
-						  let price = tp[0];
-						  let unit = $('#count').val();	  		
-					  		let tprice = price*unit;					  
-					  		if(d.rs.money>=tprice){
-							  $.getJSON($.ctx()+'/ngh/buy/'+unit+'/'+price+'/'+id+'/'+tprice,d=>{				        	  
-					        	  alert('성공');
-					          });
+					  
+					  $('.top a').eq(0).click(function(){
+						  if(sessionStorage.getItem('session') === null){
+							  $('.top a').attr('class', '');
+							  $('.top li').attr('class', 't2');
+					          $(this).attr('class', 'on');
+							  $('#b').empty();
+							  $(ngh_compo.l_buy()).appendTo('#b');
+							  $('#priceall').remove();
+							  $( '<input id="priceall" type="text" class="txt" value="'+tp[0]+'">')
+							  .prependTo('.marginB101');
+							  $(' <li class="ty04"><a title="매수">매수</a></li>')
+							  	.appendTo('#btn_mesu');
+							  $('#btn_mesu').empty();
+							  $('<li class="ty02 login"><a title="로그인" id="login2">로그인</a>').appendTo('#btn_mesu');
+							  $('#login2').click(e=>{
+								  e.preventDefault();
+						          location.assign($.ctx()+"/ksa");
+						  });
 						  }else{
-							  alert('돈없다');
+							  $('.top a').attr('class', '');
+							  $('.top li').attr('class', 't2');
+					          $(this).attr('class', 'on');
+							  $('#b').empty();
+							  $(ngh_compo.l_buy()).appendTo('#b');
+							  $('#priceall').remove();
+							  $( '<input id="priceall" type="text" class="txt" value="'+tp[0]+'">')
+							  .prependTo('.marginB101');
+							  $('#count').change(function(){
+					              $('#allpr').attr('value', tp[0]*$('#count').val());
+					          });
+							  $.getJSON($.ctx()+'/ngh/mycoin/'+id,d=>{			  
+								  $('#my_money').empty();
+								  $('<strong>'+d.rs.money+'</strong> <i>KRW</i>').appendTo('#now_money');
+								  $(' <li class="ty04"><a title="매수">매수</a></li>')
+								  	.appendTo('#btn_mesu');
+								  $('#btn_mesu').click(()=>{
+									  let price = tp[0];
+									  let unit = $('#count').val();	  		
+								  		let tprice = price*unit;					  
+								  		if(d.rs.money>=tprice){
+										  $.getJSON($.ctx()+'/ngh/buy/'+unit+'/'+price+'/'+id+'/'+tprice,d=>{				        	  
+								        	  alert('매수!!!성공');
+								          });
+									  }else{
+										  alert('돈없다');
+									  }
+								  });
+							  	});
 						  }
-				    });
-				  });
-				 });
+					 });
+			
 			  //매수 버튼 눌렀을때
 			 
 			  //매도
-			  $('.top a').eq(1).click(function(){
+			$('.top a').eq(1).click(function(){ 
+			  if(sessionStorage.getItem('session') === null){
 				  $('.top a').attr('class', '');
 				  $('.top li').attr('class', 't3');
 		          $(this).attr('class', 'on');
 				  $('#b').empty();
 				  $(ngh_compo.l_medo()).appendTo('#b');
+				  $('#now_val').remove();
+				  $( '<input id="now_val" type="text" class="txt" value="'+tp[0]+'">')
+			  		.prependTo('.marginB1010');	
+				  $('#btn_medo').empty();
+				  $('<a title="로그인" id="login2">로그인</a>').appendTo('#btn_medo');
+				  $('#login2').click(e=>{
+					  e.preventDefault();
+			          location.assign($.ctx()+"/ksa");
+				  });
+				  
+			  }else{
+				  $('.top a').attr('class', '');
+				  $('.top li').attr('class', 't3');
+		          $(this).attr('class', 'on');
+				  $('#b').empty();
+				  $(ngh_compo.l_medo()).appendTo('#b');
+				  
 				  $('#docount').change(function(){
 					  $('#allprme').attr('value', tp[0]*$('#docount').val());
 				  });
-				  
-				  if(sessionStorage.getItem('session') === null){
-					  $('.ty02').empty();
-					  $('<a title="로그인" id="login2">로그인</a>').appendTo('.ty02');
-					  $('#login2').click(e=>{
-						  e.preventDefault();
-				          location.assign($.ctx()+"/ksa");
-					  });
-				  }
-				  
 				  $.getJSON($.ctx()+'/ngh/mycoin/'+id,d=>{	
 					  $('#my_money').empty();
 					  $('<strong>'+d.rs.money+'</strong> <i>KRW</i>').appendTo('#now_money');
@@ -325,7 +370,7 @@ ngh=(()=>{
 					  $( '<input id="now_val" type="text" class="txt" value="'+tp[0]+'">')
 				  		.prependTo('.marginB1010');	
 					  $('#btn_medo').click(()=>{
-						  if(d.rs.money>=tprice){
+						  //if(d.rs.money>=tprice){
 							  alert('가격'+tp[0]);
 							  alert('id : '+id);
 						  		let price = tp[0];
@@ -334,14 +379,16 @@ ngh=(()=>{
 						          $.getJSON($.ctx()+'/ngh/medo/'+unit+'/'+price+'/'+id+'/'+tprice,d=>{
 						        	  alert('매도성공이다');
 						          });
-						  }else{
-							  alert('매도 실패다');
-						  };
+						 // }else{
+							//  alert('매도 실패다');
+						  //};
 				    	  });
 			  		});
-			  });
+			  }
+			 });
 			  //매도
 		});
+	});
 	
 	}
 	return{init:init,

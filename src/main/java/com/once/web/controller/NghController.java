@@ -64,7 +64,7 @@ public class NghController {
 		OnceHis item = new OnceHis();
 		Date today = new Date();
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-//		String date = String.valueOf(dateFormat.format(today));
+		//		String date = String.valueOf(dateFormat.format(today));
 		System.out.println("날짜의 값 : " + dateFormat.format(today));
 		map.clear();
 		ISupplier i = ()-> ohsi.selectOnceCount();
@@ -267,8 +267,8 @@ public class NghController {
 		ISupplier s = ()-> ohsi.selectOnceCount();
 		s.get();
 		Map<String, Object> olist = (Map<String, Object>) s.get();
-		System.out.println(olist.get("current_count"));
-		int count = (int) olist.get("current_count"); 
+		System.out.println(olist.get("currentCount"));
+		int count = (int) olist.get("currentCount"); 
 		int oncecount = count + onceunit;
 		String onprice= String.valueOf(GetPrice(count));
 		String oc = String.valueOf(oncecount);
