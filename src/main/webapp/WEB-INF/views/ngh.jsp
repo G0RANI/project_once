@@ -42,11 +42,11 @@
 <link rel="icon" href="data:;base64, iVORw0KGo=">
 <link rel="stylesheet" href="${css}kth/chat.css">
 
-<!-- <script src="https://www.amcharts.com/lib/4/core.js"></script>
+ <script src="https://www.amcharts.com/lib/4/core.js"></script>
 <script src="https://www.amcharts.com/lib/4/charts.js"></script>
 <script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
 <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-  -->
+ 
 <script src="http://www.amcharts.com/lib/3/amcharts.js"></script>
 <script src="http://www.amcharts.com/lib/3/serial.js"></script>
 <script src="http://www.amcharts.com/lib/3/themes/light.js"></script>
@@ -265,21 +265,17 @@ html, body {
 							<section class="ty01">
 								<article>
 									<span class="titB link">
-									 <a href="" class="select">
+									 <a class="select">
 										<em class="logo" style="background: url(&quot;/web/resources/img/logo3.png&quot;) 0px 0px / cover no-repeat;">-</em> 
 										<strong>원스코인</strong>
 										<p>ONCE/KRW</p>
 									</a> 
-									<a href="" class="Arrow">Arrow</a>
 										<div class="exchangeList" style="display: block;"></div>
 										<div class="inforTab">
 											<dl>
 												<dt class="text-replace">시세, 정보 텝</dt>
 												<dd class="on">
-													<a>시세</a>
-												</dd>
-												<dd class="">
-													<a>정보</a>
+													<a style="width: 300px">시세</a>
 												</dd>
 											</dl>
 										</div>
@@ -388,7 +384,7 @@ html, body {
 													<div id="chartContainerexchangeChartiq"
 														class="chartContainer toolbarOn"
 														style="background-color: rgb(255, 255, 255);">
-														<stx-hu-tooltip style="left: -1000px; right: auto; top: 131px;">
+														<stx-hu-tooltip id="sub_main" style="left: -1000px; right: auto; top: 131px;">
 														<stx-hu-tooltip-field auto=""> <stx-hu-tooltip-field-name>일시:</stx-hu-tooltip-field-name>
 														<stx-hu-tooltip-field-value></stx-hu-tooltip-field-value></stx-hu-tooltip-field>
 														<stx-hu-tooltip-field auto="">
@@ -441,9 +437,9 @@ html, body {
 											<span class="tabB">
 											
 											<ul class="top">
-													<li class="t2"><a class="on" title="매수">매수</a></li>
-													<li class=""><a  class="" title="매도">매도</a></li>
-													<li class=""><a  class="" title="거래내역">거래내역</a></li>
+													<li class="t2"><a class="on" title="매수" style="cursor:pointer;">매수</a></li>
+													<li class=""><a  class="" title="매도" style="cursor:pointer;">매도</a></li>
+													<li class=""><a  class="" title="거래내역" style="cursor:pointer;">거래내역</a></li>
 												</ul>
 												</span>
 												<span id="b" class="orderB" style="height: 374px;">
@@ -460,7 +456,7 @@ html, body {
 														</dt>
 														<dd class="marginB10">
 															<div class="inputB">
-																<input type="text" class="txt" value="6,119,000"><a
+																<input type="text" class="txt All" value="6,119,000"><a
 																	href="#" class="minus" title="-">-</a><a href="#"
 																	class="plus" title="+">+</a>
 															</div>
@@ -473,8 +469,8 @@ html, body {
 																value="">
 														</dd>
 														<dd class="Quantity marginNone">
-															<a href="#" class="qtBt">10%</a><a href="#" class="qtBt">25%</a><a
-																href="#" class="qtBt">50%</a><a href="#" class="qtBt">100%</a><a
+															<a class="qtBt">10%</a><a class="qtBt">25%</a><a
+																 class="qtBt">50%</a><a  class="qtBt">100%</a><a
 																class="qtInput">직접입력</a>
 														</dd>
 														<dt class="marginB6">
@@ -506,8 +502,7 @@ html, body {
 								<article>
 									<span class="tabB">
 										<ul class="top">
-											<li><a href="#" class="on" title="체결">체결</a></li>
-											<li><a href="#" class="" title="일별">일별</a></li>
+											<li><a class="on" title="체결">체결</a></li>
 										</ul>
 										<div id="chr_1">
 											<table class="ty01">
@@ -593,7 +588,6 @@ html, body {
 										<span class="tabB">
 										<ul class="ty05">
 											<li><a href="#" class="on" title="원화거래">원화거래</a></li>
-											<li><a href="#" class="" title="보유코인">보유코인</a></li>
 										</ul>
 										<table class="highlight">
 											<colgroup>
@@ -606,18 +600,10 @@ html, body {
 											</colgroup>
 											<thead>
 												<tr>
-													<th colspan="3"><a href="#">한글명 <img
-															src="https://cdn.upbit.com/images/ico_change.d5d17b3.png"
-															alt=""></a></th>
-													<th><a href="#">현재가 <img
-															src="https://cdn.upbit.com/images/ico_up_down.0a6c534.png"
-															alt=""></a></th>
-													<th><a href="#">전일대비 <img
-															src="https://cdn.upbit.com/images/ico_up_down.0a6c534.png"
-															alt=""></a></th>
-													<th><a href="#">거래대금 <img
-															src="https://cdn.upbit.com/images/ico_up_down_2.a48699e.png"
-															alt=""></a></th>
+													<th colspan="3" style="text-align :center">한글명 </th>
+													<th style="text-align :center">현재가 </th>
+													<th style="text-align :center">전일대비 </th>
+													<th style="text-align :center">거래대금 </th>
 												</tr>
 											</thead>
 										</table>

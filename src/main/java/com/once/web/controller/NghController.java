@@ -87,6 +87,9 @@ public class NghController {
 		map.clear();
 		ISupplier i = ()-> ohsi.selectprice();
 		List<?> ls = (List<?>) i.get();
+		Date today = new Date();
+		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		map.put("date", dateFormat.format(today));
 		map.put("ls", ls); 	
 		return map;
 	}
