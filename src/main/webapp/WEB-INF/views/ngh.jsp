@@ -42,11 +42,11 @@
 <link rel="icon" href="data:;base64, iVORw0KGo=">
 <link rel="stylesheet" href="${css}kth/chat.css">
 
-<script src="https://www.amcharts.com/lib/4/core.js"></script>
+<!-- <script src="https://www.amcharts.com/lib/4/core.js"></script>
 <script src="https://www.amcharts.com/lib/4/charts.js"></script>
 <script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
 <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-
+  -->
 <script src="http://www.amcharts.com/lib/3/amcharts.js"></script>
 <script src="http://www.amcharts.com/lib/3/serial.js"></script>
 <script src="http://www.amcharts.com/lib/3/themes/light.js"></script>
@@ -59,7 +59,7 @@
 } 
 #chartdiv_1 {
   width: 100%;
-  height: 380px;
+  height: 500px;
 }
 
 html, body {
