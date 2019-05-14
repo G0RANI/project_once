@@ -235,8 +235,13 @@ ksa=(()=>{
            		 $('#charge').click(e=>{
    					 e.preventDefault();
    					 sessionStorage.setItem('cm', $('#money').val());
+<<<<<<< HEAD
    					 window.open('payment', "a", "width=1000, height=800, left=100, top=50");
    					location.assign($.ctx()+"/payment");
+=======
+   				//	 window.open('payment', "a", "width=1000, height=800, left=100, top=50");
+   				 location.assign($.ctx()+"/payment");
+>>>>>>> eden_lt
    				 });
        	 },
        	 error:e=>{
