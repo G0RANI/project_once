@@ -173,6 +173,7 @@ public class NghController {
 		map2.put("rw","매수");
 		map2.put("date",date);
 		map2.put("tprice",tprice);
+		map2.put("dmoney","0");
 		int totalPrice = Integer.parseInt(tprice);
 		int onceunit = Integer.parseInt(unit);
 		IFunction f = (Object o) -> asi.retrieveAccount(id);
@@ -251,6 +252,7 @@ public class NghController {
 		map2.put("rw","매도");
 		map2.put("date",date);
 		map2.put("tprice",tprice);
+		map2.put("dmoney","0");
 		int totalPrice = Integer.parseInt(tprice);
 		int onceunit = Integer.parseInt(unit);
 		System.out.println("첫번째 쿼리 아이디 : "+map2.get("id"));

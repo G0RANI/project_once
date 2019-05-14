@@ -17,13 +17,15 @@ INSERT INTO TRANSACTIONS (id,
 						  unit, 
 						  nprice, 
 						  date,
-						  tprice)
+						  tprice,
+						  dmoney)
 		    VALUES(#{id},
 		    		#{rw},
 		    		 #{unit}, 
 		    		 #{nprice},
 		    		 #{date},
-		    		 #{tprice})
+		    		 #{tprice},
+		    		 #{dmoney})
 </insert>
 <select id="selectAllTrx" resultType="Map">
 	SELECT *

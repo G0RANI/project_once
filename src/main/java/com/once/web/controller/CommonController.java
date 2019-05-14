@@ -1,5 +1,8 @@
 package com.once.web.controller;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Locale;
 import java.util.Map;
 
@@ -24,6 +27,7 @@ import com.once.web.domain.Accounts;
 import com.once.web.lambda.IConsumer;
 import com.once.web.lambda.IFunction;
 import com.once.web.service.AccountsServiceImpl;
+import com.once.web.service.TransactionsServiceImpl;
 
 @Controller
 @SessionAttributes({"ctx","css","js","img","csv"})
@@ -32,6 +36,7 @@ public class CommonController {
 	@Autowired HttpServletRequest request;
 	@Autowired Map<String,Object> map;
 	@Autowired AccountsServiceImpl acc;
+	@Autowired TransactionsServiceImpl trs;
 
 	
 	private static final Logger logger = LoggerFactory.getLogger(CommonController.class);
@@ -72,16 +77,27 @@ public class CommonController {
 	public Accounts payment2(@RequestBody String money
 			,@PathVariable String id) {
 			logger.info("===============테스트 결제진입===============");
+			Date today = new Date();
+			DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			System.out.println("data 값: "+money);
 			IFunction f = (Object o) -> acc.retrieveAccount(id);		  
 			Map<String,Object> ls = (Map<String,Object>)f.apply(id);
 			int bMoney = Integer.parseInt((String)ls.get("money"));
 			int tMoney =  bMoney + Integer.parseInt(money);
 			String fMoney = String.valueOf(tMoney);
+			String date = String.valueOf(dateFormat.format(today));
 			map.put("id", id);
 			map.put("bm", fMoney);
+			map.put("unit", "0");
+			map.put("nprice","0");
+			map.put("date",date);
+			map.put("tprice","0");
+			map.put("dmoney",money);
 			IConsumer ii = (Object o) -> acc.modifyBuyAccount(map);
 			ii.accept(map);
+			map.put("rw","입금");
+			IConsumer i = (Object o) -> trs.modifyTransaction(map);
+			i.accept(map); 
 		return (Accounts) map;
 	}
 }
