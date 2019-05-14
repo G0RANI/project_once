@@ -36,22 +36,25 @@ ngh=(()=>{
 		          		//	주문시간 trx	구분 trx	체결가격trx	체결수량 trx	체결금액trx
 		          		 	$('#trx').empty();
 		          		 	$.each(s.ls, (i,j)=>{
-		          		 		if(j.rw==='매수'){
-				          		 	$('#trx').append('<tr class="up">'
-												+'<td><p>'+j.date+'</p></td>'
-												+'<td>'+j.rw+'</td>'
-												+'<td class="rAlign"><p>'+j.nprice+'</p></td>'
-												+'<td class="rAlign"><p>'+j.unit+'</p></td>'
-												+'<td class="rAlign"><p>'+j.tprice+'</p></td>'
-												+'</tr>');
-		          		 		}else{
-				          		 	$('#trx').append('<tr class="down">'
-												+'<td><p>'+j.date+'</p></td>'
-												+'<td>'+j.rw+'</td>'
-												+'<td class="rAlign"><p>'+j.nprice+'</p></td>'
-												+'<td class="rAlign"><p>'+j.unit+'</p></td>'
-												+'<td class="rAlign"><p>'+j.tprice+'</p></td>'
-												+'</tr>');
+		          		 		switch(j.rw){
+		          		 		case '매수':
+		          		 			$('#trx').append('<tr class="up">'
+											+'<td><p>'+j.date+'</p></td>'
+											+'<td>'+j.rw+'</td>'
+											+'<td class="rAlign"><p>'+j.nprice+'</p></td>'
+											+'<td class="rAlign"><p>'+j.unit+'</p></td>'
+											+'<td class="rAlign"><p>'+j.tprice+'</p></td>'
+											+'</tr>');
+		          		 			break;
+		          		 		case '매도':
+		          		 			$('#trx').append('<tr class="down">'
+											+'<td><p>'+j.date+'</p></td>'
+											+'<td>'+j.rw+'</td>'
+											+'<td class="rAlign"><p>'+j.nprice+'</p></td>'
+											+'<td class="rAlign"><p>'+j.unit+'</p></td>'
+											+'<td class="rAlign"><p>'+j.tprice+'</p></td>'
+											+'</tr>');
+		          		 			break;
 		          		 		}
 				          	});
 		          	 },

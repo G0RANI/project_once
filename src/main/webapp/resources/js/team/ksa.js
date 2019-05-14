@@ -210,16 +210,16 @@ ksa=(()=>{
        					tp[i] = j.price;
        				});
        				let c_krw = tp[0] * s.hqua; //원스코인->KRW로 변환한 값
-       				 $('.rAlign p').html('<p>'+c_krw+' <i>KRW</i></p>'); //원스코인 평가금액
+       				 $('#oncecoin p').eq(1).html('<p>'+c_krw+' <i>KRW</i></p>'); //원스코인 평가금액
        				let total_p = c_krw+parseInt(s.money); //총 보유자산 값
          			 $('.totalB p').empty();
          			 $('<p> '+total_p+' <i>KRW</i></p>').appendTo('.totalB'); //총보유자산
      				if(s.tbprice!='0'){
      					 $('#won p').html('<p align = "right">'+parseFloat((s.money/total_p)*100).toFixed(2)+'%</p>');// 원화 보유비중
-               		 	 $('#oncecoin p').html('<p align = "right">'+parseFloat((c_krw/total_p)*100).toFixed(2)+'%</p>');// 원스코인 보유비중
+               		 	 $('#oncecoin p').eq(0).html('<p align = "right">'+parseFloat((c_krw/total_p)*100).toFixed(2)+'%</p>');// 원스코인 보유비중
      				}else{
      					 $('#won p').html('<p align = "right">0%</p>');// 원화 보유비중
-               		 	 $('#oncecoin p').html('<p align = "right">0%</p>');// 원스코인 보유비중
+               		 	 $('#oncecoin p').eq(0).html('<p align = "right">0%</p>');// 원스코인 보유비중
      				}
        			 });
        			 $('.btnB em').empty();
