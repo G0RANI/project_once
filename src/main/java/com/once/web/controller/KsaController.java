@@ -107,8 +107,4 @@ public class KsaController {
 		return map;
 	}
 	
-<<<<<<< HEAD
-	
-=======
->>>>>>> eden_lt
 }

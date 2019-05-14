@@ -14,10 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-<<<<<<< HEAD
-import org.springframework.web.bind.annotation.PostMapping;
-=======
->>>>>>> eden_lt
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -34,14 +30,9 @@ import com.once.web.service.AccountsServiceImpl;
 public class CommonController {
 	@Autowired HttpSession session;
 	@Autowired HttpServletRequest request;
-<<<<<<< HEAD
-	@Autowired Accounts ac;
-	@Autowired AccountsServiceImpl acc;
-	@Autowired Map<String,Object> map;
-=======
 	@Autowired Map<String,Object> map;
 	@Autowired AccountsServiceImpl acc;
->>>>>>> eden_lt
+
 	
 	private static final Logger logger = LoggerFactory.getLogger(CommonController.class);
 	
@@ -74,7 +65,6 @@ public class CommonController {
 		return "payment";
 	}
 	
-<<<<<<< HEAD
 	@Transactional
 	@SuppressWarnings("unchecked")
 	@ResponseBody
@@ -94,25 +84,4 @@ public class CommonController {
 			ii.accept(map);
 		return (Accounts) map;
 	}
-	
-=======
-	@SuppressWarnings("unchecked")
-    @ResponseBody
-    @RequestMapping(value ="/payment/{id}", method = RequestMethod.POST)
-    public Map<String, Object> payment2(@RequestBody String money
-            ,@PathVariable String id) {
-            logger.info("===============테스트 결제진입===============");
-            System.out.println("data 값: "+money);
-            IFunction f = (Object o) -> acc.retrieveAccount(id);          
-            Map<String,Object> ls = (Map<String,Object>)f.apply(id);
-            int bMoney = Integer.parseInt((String)ls.get("money"));
-            int tMoney =  bMoney + Integer.parseInt(money);
-            String fMoney = String.valueOf(tMoney);
-            map.put("id", id);
-            map.put("bm", fMoney);
-            IConsumer ii = (Object o) -> acc.modifyBuyAccount(map);
-            ii.accept(map);
-        return map;
-	}
->>>>>>> eden_lt
 }
