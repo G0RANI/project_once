@@ -60,11 +60,9 @@ public class NghController {
 	@RequestMapping("/ngh/once")
 	public Map<String, Object> once() {
 		logger.info("원스 코인에 들어왔습니다!!!");
-		map.clear();
 		OnceHis item = new OnceHis();
 		Date today = new Date();
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		//		String date = String.valueOf(dateFormat.format(today));
 		System.out.println("날짜의 값 : " + dateFormat.format(today));
 		map.clear();
 		ISupplier i = ()-> ohsi.selectOnceCount();
@@ -94,7 +92,6 @@ public class NghController {
 		return map;
 	}
 	
-	@Transactional
 	@ResponseBody
 	@RequestMapping("/ngh/ch")
 	public Map<String, Object>  chart(

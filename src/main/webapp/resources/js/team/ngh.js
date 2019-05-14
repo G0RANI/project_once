@@ -210,7 +210,7 @@ ngh=(()=>{
 						  $('#b').empty();
 						  $(ngh_compo.l_buy()).appendTo('#b');
 						  $('#priceall').remove();
-						  $( '<input id="priceall" type="text" class="txt" value="'+tp[0]+'">')
+						  $( '<input id="priceall" type="text" class="txt All" value="'+tp[0]+'">')
 						  .prependTo('.marginB101');
 						  $(' <li class="ty04"><a title="매수">매수</a></li>')
 						  	.appendTo('#btn_mesu');
@@ -228,7 +228,7 @@ ngh=(()=>{
 						  $('#b').empty();
 						  $(ngh_compo.l_buy()).appendTo('#b');
 						  $('#priceall').remove();
-						  $( '<input id="priceall" type="text" class="txt" value="'+tp[0]+'">')
+						  $( '<input id="priceall" type="text" class="txt All" value="'+tp[0]+'">')
 						  .prependTo('.marginB101');
 						  $('#count').change(function(){
 				              $('#allpr').attr('value', tp[0]*$('#count').val());
@@ -267,7 +267,7 @@ ngh=(()=>{
 							  $('#b').empty();
 							  $(ngh_compo.l_buy()).appendTo('#b');
 							  $('#priceall').remove();
-							  $( '<input id="priceall" type="text" class="txt" value="'+tp[0]+'">')
+							  $( '<input id="priceall" type="text" class="txt All" value="'+tp[0]+'">')
 							  .prependTo('.marginB101');
 							  $(' <li class="ty04"><a title="매수">매수</a></li>')
 							  	.appendTo('#btn_mesu');
@@ -278,13 +278,14 @@ ngh=(()=>{
 						          location.assign($.ctx()+"/ksa");
 						  });
 						  }else{
+							  $('#my_money').empty();
 							  $('.top a').attr('class', '');
 							  $('.top li').attr('class', 't2');
 					          $(this).attr('class', 'on');
 							  $('#b').empty();
 							  $(ngh_compo.l_buy()).appendTo('#b');
 							  $('#priceall').remove();
-							  $( '<input id="priceall" type="text" class="txt" value="'+tp[0]+'">')
+							  $( '<input id="priceall" type="text" class="txt All" value="'+tp[0]+'">')
 							  .prependTo('.marginB101');
 							  $('#count').change(function(){
 					              $('#allpr').attr('value', tp[0]*$('#count').val());
@@ -309,7 +310,6 @@ ngh=(()=>{
 							  	});
 						  }
 					 });
-			
 			  //매수 버튼 눌렀을때
 			 
 			  //매도
@@ -321,7 +321,7 @@ ngh=(()=>{
 				  $('#b').empty();
 				  $(ngh_compo.l_medo()).appendTo('#b');
 				  $('#now_val').remove();
-				  $( '<input id="now_val" type="text" class="txt" value="'+tp[0]+'">')
+				  $( '<input id="now_val" type="text" class="txt All" value="'+tp[0]+'">')
 			  		.prependTo('.marginB1010');	
 				  $('#btn_medo').empty();
 				  $('<a title="로그인" id="login2">로그인</a>').appendTo('#btn_medo');
@@ -344,7 +344,7 @@ ngh=(()=>{
 					  $('#my_money').empty();
 					  $('<strong>'+d.rs.money+'</strong> <i>KRW</i>').appendTo('#now_money');
 					  $('#now_val').remove();
-					  $( '<input id="now_val" type="text" class="txt" value="'+tp[0]+'">')
+					  $( '<input id="now_val" type="text" class="txt All" value="'+tp[0]+'">')
 				  		.prependTo('.marginB1010');	
 					  $('#btn_medo').click(()=>{
 						  //if(d.rs.money>=tprice){
