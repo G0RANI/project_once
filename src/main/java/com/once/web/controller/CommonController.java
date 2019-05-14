@@ -1,6 +1,7 @@
 package com.once.web.controller;
 
 import java.util.Locale;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -11,14 +12,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
+
+import com.once.web.domain.Accounts;
+import com.once.web.lambda.IConsumer;
+import com.once.web.lambda.IFunction;
+import com.once.web.service.AccountsServiceImpl;
 
 @Controller
 @SessionAttributes({"ctx","css","js","img","csv"})
 public class CommonController {
 	@Autowired HttpSession session;
 	@Autowired HttpServletRequest request;
+	@Autowired Map<String,Object> map;
+	@Autowired AccountsServiceImpl acc;
 	
 	private static final Logger logger = LoggerFactory.getLogger(CommonController.class);
 	
@@ -51,4 +63,22 @@ public class CommonController {
 		return "payment";
 	}
 	
+	@SuppressWarnings("unchecked")
+    @ResponseBody
+    @RequestMapping(value ="/payment/{id}", method = RequestMethod.POST)
+    public Map<String, Object> payment2(@RequestBody String money
+            ,@PathVariable String id) {
+            logger.info("===============테스트 결제진입===============");
+            System.out.println("data 값: "+money);
+            IFunction f = (Object o) -> acc.retrieveAccount(id);          
+            Map<String,Object> ls = (Map<String,Object>)f.apply(id);
+            int bMoney = Integer.parseInt((String)ls.get("money"));
+            int tMoney =  bMoney + Integer.parseInt(money);
+            String fMoney = String.valueOf(tMoney);
+            map.put("id", id);
+            map.put("bm", fMoney);
+            IConsumer ii = (Object o) -> acc.modifyBuyAccount(map);
+            ii.accept(map);
+        return map;
+	}
 }

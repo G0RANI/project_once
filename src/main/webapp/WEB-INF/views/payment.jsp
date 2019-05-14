@@ -24,7 +24,6 @@
             buyer_tel: '010-1234-5678',
             buyer_addr: '서울특별시 강남구 삼성동',
             buyer_postcode: '123-456',
-            m_redirect_url: 'http://localhost:8080/web/payments/complete'
         }, function (rsp) {
             console.log(rsp);
             if (rsp.success) {
@@ -35,20 +34,21 @@
                 msg += '카드 승인번호 : ' + rsp.apply_num;
                 let data = {id:sessionStorage.getItem('info'),money:rsp.paid_amount};
                 $.ajax({
-                  	 url:'/payment',
-                  	 data: data,
-                  	 type:'POST',
-                  	 dataType:'json',
-                  	 contentType:'application/json',
-                  	 success:s=>{
-                  		 alert('성공');                  		
-                  	 },
-                  	 error:e=>{
-                  		 alert('실패');
-                  	 }
+                    url:'/web/payment/'+sessionStorage.getItem('info'),
+                    data:JSON.stringify(rsp.paid_amount),
+                    type:'POST',
+                    dataType:'json',
+                    contentType:'application/json',
+                    success:function (s){
+                       alert('성공');
+                    },
+                    error:function (e){
+                        alert('실패!');
+                        location.assign($.ctx());
+                    }
                 });
-                sessionStorage.removeItem('cm');
-                close();
+           sessionStorage.removeItem('cm');
+                location.assign($.ctx());
             } else {
                 var msg = '결제에 실패하였습니다.';
                 msg += '에러내용 : ' + rsp.error_msg;
