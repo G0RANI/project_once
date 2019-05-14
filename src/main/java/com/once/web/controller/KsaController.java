@@ -107,14 +107,5 @@ public class KsaController {
 		return map;
 	}
 	
-	@PostMapping("/payment")
-	public Accounts payment2(@RequestBody Map<String, Object> data) {
-		logger.info("===============테스트 진입===============");
-		System.out.println("data 값: "+data);
-		IConsumer c = (Object o) -> acc.modifyBuyAccount(data);
-		c.accept(data);
-		IFunction f = (Object o) -> acc.retrieveAccount(String.valueOf(data.get("id")));
-		ac=(Accounts) f.apply(data);
-		return ac;
-	}
+	
 }

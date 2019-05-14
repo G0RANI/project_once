@@ -236,6 +236,7 @@ ksa=(()=>{
    					 e.preventDefault();
    					 sessionStorage.setItem('cm', $('#money').val());
    					 window.open('payment', "a", "width=1000, height=800, left=100, top=50");
+   					location.assign($.ctx()+"/payment");
    				 });
        	 },
        	 error:e=>{
