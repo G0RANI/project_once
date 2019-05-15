@@ -74,7 +74,7 @@ public class CommonController {
 	@SuppressWarnings("unchecked")
 	@ResponseBody
 	@RequestMapping(value ="/payment/{id}", method = RequestMethod.POST)
-	public Accounts payment2(@RequestBody String money
+	public Map<String,Object> payment2(@RequestBody String money
 			,@PathVariable String id) {
 			logger.info("===============테스트 결제진입===============");
 			Date today = new Date();
@@ -93,11 +93,12 @@ public class CommonController {
 			map.put("date",date);
 			map.put("tprice","0");
 			map.put("dmoney",money);
+			map.put("money", money);
 			IConsumer ii = (Object o) -> acc.modifyBuyAccount(map);
 			ii.accept(map);
 			map.put("rw","입금");
 			IConsumer i = (Object o) -> trs.modifyTransaction(map);
 			i.accept(map); 
-		return (Accounts) map;
+		return map;
 	}
 }

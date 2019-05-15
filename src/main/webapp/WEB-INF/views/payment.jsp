@@ -40,15 +40,12 @@
                     dataType:'json',
                     contentType:'application/json',
                     success:function (s){
-                       alert('성공');
                     },
                     error:function (e){
-                        alert('실패!');
-                        location.assign($.ctx());
                     }
                 });
            		sessionStorage.removeItem('cm');
-                location.assign($.ctx());
+           		close();
             } else {
                 var msg = '결제에 실패하였습니다.';
                 msg += '에러내용 : ' + rsp.error_msg;
