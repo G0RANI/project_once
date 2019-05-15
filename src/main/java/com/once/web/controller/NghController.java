@@ -52,20 +52,16 @@ public class NghController {
 	private static final Logger logger = LoggerFactory.getLogger(NghController.class);
 	@RequestMapping("/ngh")
 	public String nghMain(Locale locale, Model model) {
-		logger.info("남기호 컨트롤 진입 했씁니다!!!");	
 		return "ngh";
 	}
 	@SuppressWarnings("unchecked")
 	@ResponseBody
 	@RequestMapping("/ngh/once")
 	public Map<String, Object> once() {
-		logger.info("원스 코인에 들어왔습니다!!!");
 		map.clear();
 		OnceHis item = new OnceHis();
 		Date today = new Date();
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		//		String date = String.valueOf(dateFormat.format(today));
-		System.out.println("날짜의 값 : " + dateFormat.format(today));
 		map.clear();
 		ISupplier i = ()-> ohsi.selectOnceCount();
 		Map<String, Object> ls = (Map<String, Object>) i.get();
@@ -74,7 +70,6 @@ public class NghController {
 		Date dtNormal = GetNormalTime(today); 
 		item.setDate(dtNormal);
 		list.add(item);
-		System.out.println(list);
 		map.put("ls", list); 	
 		
 		return map;
@@ -83,13 +78,22 @@ public class NghController {
 	@ResponseBody
 	@RequestMapping("/ngh/once/price")
 	public Map<String, Object> onceprice() {
-		logger.info("원스 코인에 들어왔습니다!!!");
 		map.clear();
 		ISupplier i = ()-> ohsi.selectprice();
 		List<?> ls = (List<?>) i.get();
 		Date today = new Date();
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		map.put("date", dateFormat.format(today));
+		map.put("ls", ls); 	
+		return map;
+	}
+	@SuppressWarnings("unchecked")
+	@ResponseBody
+	@RequestMapping("/ngh/once/oncechart")
+	public Map<String, Object> oncechart() {
+		map.clear();
+		ISupplier i = ()-> ohsi.selectAllList();
+		List<OnceHis> ls = (List<OnceHis>) i.get();
 		map.put("ls", ls); 	
 		return map;
 	}
@@ -100,7 +104,6 @@ public class NghController {
 	public Map<String, Object>  chart(
 			){
 		map.clear();
-		logger.info("원스차트에 들어왔습니다!!!");
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(new Date());
 		cal.add(Calendar.MINUTE, -10);
@@ -112,9 +115,6 @@ public class NghController {
 			Date date = cal.getTime();
 			price = getRandomNumberInRange(min, max);
 			OnceHis item = new OnceHis();
-			item.setSeq("");
-			item.setTseq("");
-			item.setCurrentCount("");
 			item.setPrice(Integer.toString(price));
 			Date dtNormal = GetNormalTime(date); 
 			item.setDate(dtNormal);
@@ -130,7 +130,6 @@ public class NghController {
             	max = (int) (min * 1.2);
             }
 		}
-		System.out.println("[list values]" + list);
 
 		map.put("ls", list);
 		return map;
@@ -164,8 +163,6 @@ public class NghController {
 		Date today = new Date();
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String date = String.valueOf(dateFormat.format(today));
-		logger.info("매수 매도 에 들어왔습니다!!!");
-		System.out.println("받아온값 : "+price);
 		map2.clear();
 		map2.put("unit", unit);
 		map2.put("id", id);
@@ -187,9 +184,7 @@ public class NghController {
 		IConsumer i = (Object o) -> trs.modifyTransaction(map2);
 		i.accept(map2); 
 		ISupplier s = ()-> ohsi.selectOnceCount();
-		System.out.println("최신 값"+s.get().toString());
 		Map<String, Object> olist = (Map<String, Object>) s.get();
-		System.out.println(olist.get("currentCount"));
 		int count = (int) olist.get("currentCount"); 
 		int oncecount = count - onceunit;
 		String onprice= String.valueOf(GetPrice(count));
@@ -202,11 +197,8 @@ public class NghController {
 		oh.setCurrentCount(oc);;
 		IConsumer c = (Object o) -> ohsi.insertOnceCount(oh);
 		c.accept(oh);
-		System.out.println("id : "+id);
 		IFunction ifc = (Object o)-> custi.retrieveCustomer(id);
 		Customers custpr = (Customers) ifc.apply(id);
-		System.out.println(custpr.getTbprice());
-		System.out.println(custpr.getHqua());
 		int tbprice = Integer.parseInt(custpr.getTbprice());
 		int hqua = Integer.parseInt(custpr.getHqua());
 		int tbprices = tbprice + totalPrice;
@@ -238,13 +230,9 @@ public class NghController {
 									@PathVariable("price") String price,
 									@PathVariable("id") String id,
 									@PathVariable("tprice") String tprice) {
-		System.out.println("아이디"+id);
 		Date today = new Date();
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String date = String.valueOf(dateFormat.format(today));
-		logger.info("매수 매도 에 들어왔습니다!!!");
-		System.out.println("받아온값 : "+price);
-		System.out.println("1번째 id ::: : : : : : : : "+id);
 		map2.clear();
 		map2.put("unit", unit);
 		map2.put("id", id);
@@ -255,24 +243,19 @@ public class NghController {
 		map2.put("dmoney","0");
 		int totalPrice = Integer.parseInt(tprice);
 		int onceunit = Integer.parseInt(unit);
-		System.out.println("첫번째 쿼리 아이디 : "+map2.get("id"));
 		IFunction f = (Object o) -> asi.retrieveAccount(id);
 		Map<String,Object> ls = (Map<String,Object>)f.apply(id);
-		System.out.println("두번째 쿼리 아이디 : "+map2.get("id"));
 		int  money = Integer.parseInt((String)ls.get("money"));
 		int curruentMoney =  money + totalPrice;
 		String bm = String.valueOf(curruentMoney);
 		map2.put("bm",bm);
-		System.out.println("세번째 쿼리 아이디 : "+map2.get("id"));
 		IConsumer ii = (Object o) -> asi.modifyBuyAccount(map2);
 		ii.accept(map2);
-		System.out.println("네번째 쿼리 아이디 : "+map2.get("id"));
 		IConsumer i = (Object o) -> trs.modifyTransaction(map2);
 		i.accept(map2); 
 		ISupplier s = ()-> ohsi.selectOnceCount();
 		s.get();
 		Map<String, Object> olist = (Map<String, Object>) s.get();
-		System.out.println(olist.get("currentCount"));
 		int count = (int) olist.get("currentCount"); 
 		int oncecount = count + onceunit;
 		String onprice= String.valueOf(GetPrice(count));
@@ -284,11 +267,8 @@ public class NghController {
 		oh.setCurrentCount(oc);;
 		IConsumer c = (Object o) -> ohsi.insertOnceCount(oh);
 		c.accept(oh);
-		System.out.println("id : "+id);
 		IFunction ifc = (Object o)-> custi.retrieveCustomer(id);
 		Customers custpr = (Customers) ifc.apply(id);
-		System.out.println(custpr.getTbprice());
-		System.out.println(custpr.getHqua());
 		int tbprice = Integer.parseInt(custpr.getTbprice());
 		int hqua = Integer.parseInt(custpr.getHqua());
 		int tbprices = tbprice - totalPrice;
@@ -308,8 +288,6 @@ public class NghController {
 	@ResponseBody
 	@RequestMapping(value = "/ngh/mycoin/{id}", method = RequestMethod.GET)
 	public Map<String, Object> mycoin(@PathVariable("id") String id){
-		System.out.println("my coin메소드 들어왔다요!!!");
-		System.out.println("id값 "+id);
 		map.clear();
 		map.put("id", id);
 		IFunction f = (Object o) -> asi.retrieveAccount(id);

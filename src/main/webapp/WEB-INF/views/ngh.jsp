@@ -59,7 +59,7 @@
 } 
 #chartdiv_1 {
   width: 100%;
-  height: 500px;
+  height: 380px;
 }
 
 html, body {

@@ -9,7 +9,7 @@
         inner join CUSTOMERS as cu
         on tr.id like cu.id
     WHERE tr.id LIKE #{id}
-    ORDER BY date DESC;
+    ORDER BY date DESC
 </select>
 <insert id="updateTransaction" parameterType="hashMap">
 INSERT INTO TRANSACTIONS (id,

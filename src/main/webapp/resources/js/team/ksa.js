@@ -344,7 +344,7 @@ ksa=(()=>{
                       		  	$('#evaluation strong')
                       		  	.eq(1)
                       		  	.attr('class', 'down')
-                      		  	.html(parseFloat((total_p-s.tbprice)/s.tbprice*100).toFixed(2)+' <i>%</i></strong>'); //총평가수익률
+                      		  	.html(Math.abs(parseFloat((total_p-s.tbprice)/s.tbprice*100).toFixed(2))+' <i>%</i></strong>'); //총평가수익률
                   		  	}else{
                   		  		$('#evaluation strong')
                   		  		.eq(0)
@@ -353,7 +353,7 @@ ksa=(()=>{
                       		  	$('#evaluation strong')
                       		  	.eq(1)
                       		  	.attr('class', 'up')
-                      		  	.html(parseFloat((total_p-s.tbprice)/s.tbprice*100).toFixed(2)+' <i>%</i></strong>'); //총평가수익률
+                      		  	.html('-'+Math.abs(parseFloat((total_p-s.tbprice)/s.tbprice*100).toFixed(2))+' <i>%</i></strong>'); //총평가수익률
                   		  	}
                   		  	$('#assets strong').eq(0).html(s.money+' <i>KRW</i>'); //보유 krw
                   		 	$('#assets strong').eq(1).html(total_p+' <i>KRW</i></strong>'); //총보유자산
