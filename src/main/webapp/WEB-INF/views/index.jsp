@@ -27,7 +27,18 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato"rel="stylesheet">
 	<link rel="icon" href="data:;base64, iVORw0KGo=">
 	<link rel="stylesheet" href="${css}kth/chat.css">
+	
+<script src="https://www.amcharts.com/lib/4/core.js"></script>
+<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
 <style type="text/css">
+#chartdiv_2 {
+  width: 100%;
+  height: 300px;
+}
+
+
 * {
 	font-family: 'Lato', sans-serif;
 }
@@ -473,10 +484,10 @@ footer div img {
 														</div>
 														<div class="app__IndexData--I2viT">
 															<label>ONCE Coin Index </label><span
-																class="app__dataColor--1Uj_q app__down--2bdgI"><i></i><em>2.28</em>
-																<em>-0.21%</em></span>
+																class="app__dataColor--1Uj_q app__down--2bdgI"><!--<i></i> <em>2.28</em>
+																<em>-0.21%</em> --></span>
 														</div>
-														<div class="app__chart--1O1dA">
+														<!-- <div class="app__chart--1O1dA">
 															<div>
 																<div class="highstock" data-highcharts-chart="0"
 																	style="overflow: hidden;">
@@ -656,7 +667,9 @@ footer div img {
 																<span class="app__color01--2pIY9"><i></i>당일</span>
 																<span class="app__color02--c6PlO"><i></i>전일</span>
 															</figure>
-														</div>
+														</div> -->
+														<div id="chartdiv_2"></div>
+														
 													</div>
 												</div>
 												<div class="app__col-4--ls7AG">
@@ -756,6 +769,7 @@ footer div img {
 <script src="${js}app.js"></script>
 <script src="${js}router.js"></script>
 <script src="${js}team/chat.js"></script>
+<script src="${js}team/pjw.js"></script>
 
 
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>

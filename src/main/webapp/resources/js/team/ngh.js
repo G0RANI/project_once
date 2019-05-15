@@ -19,6 +19,7 @@ ngh=(()=>{
                 chat.init();
             });
         });
+        
 		$.getScript($.js()+'/component/ngh_compo.js',()=>{			  
 			  $('.top a').eq(2).click(function(){
 				  $('.top a').attr('class', '');
@@ -88,38 +89,7 @@ ngh=(()=>{
                 	  }
                   });
 			  	});
-			  	/*$.ajax({
-                    url:$.ctx()+'/retrieve_all_trx',
-                    type:'GET',
-                    contentType:'application/json',
-                    success:s=>{
-                       let tx_date = new Date(s.date);
-                      function convert(x) {
-                           var date = new Date(x),
-                               mnth = ("0" + (date.getMonth()+1)).slice(-2),
-                               day  = ("0" + date.getDate()).slice(-2),
-                               hours  = ("0" + date.getHours()).slice(-2),
-                               minutes = ("0" + date.getMinutes()).slice(-2);
-                           var date2 = [date.getFullYear(), mnth, day].join("-");
-                           var date3 = [hours, minutes ].join(":");
-                          return [ date2, date3 ].join(" ");
-                       }
-                         $('#bt_ty01').attr('class', '');
-                         $(this).attr('class', 'on');
-                         $('#bt_list').empty();
-                         $.each(s.ls, (i,j)=>{
-                         	$('#bt_list').append('<tr>'
-                         			+'<td class="lAlign">'+j.date+'</td>'
-                         			+'<td><strong>'+j.nprice+' <i>KRW </i></strong></td>'
-                         			+'<td><strong>'+j.unit+' <i>ONCE </i></strong></td>'
-                         			+'<td><strong>'+j.unit*j.nprice+' <i>KRW </i></strong></td>'
-                         			+'</tr>');
-                         });
-                    },
-                    error:e=>{    
-                        alert('실패!');
-                    }
-             });*/
+			  
              })
 	};
 	/*once 차트 */
@@ -134,7 +104,6 @@ ngh=(()=>{
 			 let prev1 = (tp[0] - tp[1]) / tp[1] *100;
 			 let minue = tp[0] - tp[1]
 			 let col = "";
-			 let prev = "1147";
 			 let giho = "";
 			 if (tp[0] > tp[1]) {
 				col = "up";
@@ -202,8 +171,6 @@ ngh=(()=>{
 				/*each*/
 				
 			//매수 	
-
-				 
 				
 				$.getScript($.js()+'/component/ngh_compo.js',()=>{
 					  if(sessionStorage.getItem('session') === null){
@@ -244,13 +211,15 @@ ngh=(()=>{
 							  $('<strong>'+d.rs.money+'</strong> <i>KRW</i>').appendTo('#now_money');
 							  $(' <li class="ty04"><a title="매수">매수</a></li>')
 							  	.appendTo('#btn_mesu');
-							  $('#btn_mesu').click(()=>{
+							  $('#btn_mesu').click(e=>{
 								  let price = tp[0];
 								  let unit = $('#count').val();	  		
 							  		let tprice = price*unit;					  
 							  		if(d.rs.money>=tprice){
 									  $.getJSON($.ctx()+'/ngh/buy/'+unit+'/'+price+'/'+id+'/'+tprice,d=>{				        	  
-							        	  alert('성공');
+							        	alert('매수가 완료되었습니다');
+							           	e.preventDefault();
+							            location.assign($.ctx()+"/ngh");
 							          });
 								  }else{
 									  alert('돈없다');
@@ -304,7 +273,9 @@ ngh=(()=>{
 								  		let tprice = price*unit;					  
 								  		if(d.rs.money>=tprice){
 										  $.getJSON($.ctx()+'/ngh/buy/'+unit+'/'+price+'/'+id+'/'+tprice,d=>{				        	  
-								        	  alert('매수!!!성공');
+								        	  alert('매수가 성공하였습니다');
+									          	e.preventDefault();
+									            location.assign($.ctx()+"/ngh");
 								          });
 									  }else{
 										  alert('돈없다');
@@ -350,22 +321,33 @@ ngh=(()=>{
 					  $( '<input id="now_val" type="text" class="txt All" value="'+tp[0]+'">')
 				  		.prependTo('.marginB1010');	
 					  $('#btn_medo').click(()=>{
-						  //if(d.rs.money>=tprice){
-							  alert('가격'+tp[0]);
-							  alert('id : '+id);
-						  		let price = tp[0];
-						  		let unit = $('#docount').val();
-						  		let tprice = price*unit;
-						          $.getJSON($.ctx()+'/ngh/medo/'+unit+'/'+price+'/'+id+'/'+tprice,d=>{
-						        	  alert('매도성공이다');
-						          });
-						 // }else{
-							//  alert('매도 실패다');
-						  //};
-				    	  });
+						  $.ajax({
+			                   	 url:$.ctx()+'/retrieve_cust/'+id,
+			                   	 data:id,
+			                   	 type:'POST',
+			                   	 dataType:'json',
+			                   	 contentType:'application/json',
+			                   	 success:d=>{
+								  		let unit = $('#docount').val();
+								  if(unit <= d.hqua){
+								  		let price = tp[0];
+								  		let tprice = price*unit;
+								          $.getJSON($.ctx()+'/ngh/medo/'+unit+'/'+price+'/'+id+'/'+tprice,d=>{
+								        	  alert('매도성공하였습니다');
+								        		e.preventDefault();
+									            location.assign($.ctx()+"/ngh");
+								          });
+								  }else{
+									  alert('매도 실패다');
+								  };
+			                   	 },
+			                   	 error:e=>{
+			                   		 alert('실패!');
+			                   	 }
+			                    });
+					  	});
 			  		});
-
-			  }
+			  	};
 			 });
 			  //매도
 

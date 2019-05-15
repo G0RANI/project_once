@@ -64,7 +64,6 @@ public class NghController {
 		OnceHis item = new OnceHis();
 		Date today = new Date();
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		//		String date = String.valueOf(dateFormat.format(today));
 		System.out.println("날짜의 값 : " + dateFormat.format(today));
 		map.clear();
 		ISupplier i = ()-> ohsi.selectOnceCount();
@@ -74,7 +73,6 @@ public class NghController {
 		Date dtNormal = GetNormalTime(today); 
 		item.setDate(dtNormal);
 		list.add(item);
-		System.out.println(list);
 		map.put("ls", list); 	
 		
 		return map;
@@ -90,6 +88,17 @@ public class NghController {
 		Date today = new Date();
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		map.put("date", dateFormat.format(today));
+		map.put("ls", ls); 	
+		return map;
+	}
+	@SuppressWarnings("unchecked")
+	@ResponseBody
+	@RequestMapping("/ngh/once/oncechart")
+	public Map<String, Object> oncechart() {
+		logger.info("원스 코인에 들어왔습니다!!!");
+		map.clear();
+		ISupplier i = ()-> ohsi.selectAllList();
+		List<OnceHis> ls = (List<OnceHis>) i.get();
 		map.put("ls", ls); 	
 		return map;
 	}
@@ -112,9 +121,6 @@ public class NghController {
 			Date date = cal.getTime();
 			price = getRandomNumberInRange(min, max);
 			OnceHis item = new OnceHis();
-			item.setSeq("");
-			item.setTseq("");
-			item.setCurrentCount("");
 			item.setPrice(Integer.toString(price));
 			Date dtNormal = GetNormalTime(date); 
 			item.setDate(dtNormal);

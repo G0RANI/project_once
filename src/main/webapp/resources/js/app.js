@@ -13,6 +13,7 @@ app=(()=>{
         $('#ngh').click(function(e){
         	e.preventDefault();
             location.assign($.ctx()+"/ngh");
+   
         });
         $('#kth').click(function(e){
         	e.preventDefault();
