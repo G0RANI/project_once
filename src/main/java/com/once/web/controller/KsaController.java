@@ -39,7 +39,6 @@ public class KsaController {
 	@Transactional
 	@PostMapping("/login")
 	public boolean login(@RequestBody Map<String,Object> res) {
-		System.out.println("카카오정보 : "+res);
 		IPredicate p = (Object o) -> cust.existsCustomerID(res); 
 		if(p.test(res.get("id"))) {
 			IConsumer c = (Object o) -> cust.registCustomer(res); 
@@ -51,9 +50,7 @@ public class KsaController {
 	@SuppressWarnings("unchecked")
 	@PostMapping("/retrieve_acc/{id}")
 	public Map<String,Object> selectAccountInfo(@PathVariable String id) {
-		System.out.println("selectAccountInfo 회원아이디 : "+id);
 		IFunction f = (Object o) -> acc.retrieveAccount(id);
-		System.out.println("selectAccountInfo  : "+f.apply(id));
 		return (Map<String, Object>) f.apply(id);
 	}
 	
@@ -61,7 +58,6 @@ public class KsaController {
 	@Transactional
 	@PostMapping("/open_acc/{id}")
 	public Map<String,Object> openAccount(@PathVariable String id) {
-		System.out.println("openAccount 회원아이디 : "+id);
 		String account = "";
 		for(int i=0; i<13; i++) {
 			account += (int)(Math.random()*10);
@@ -77,16 +73,13 @@ public class KsaController {
 	
 	@PostMapping("/retrieve_cust/{id}")
 	public Customers selectCustomer(@PathVariable String id) {
-		System.out.println("selectCustomer 회원아이디 : "+id);
 		IFunction f = (Object o) -> cust.retrieveCustomer(id);
-		System.out.println(f.apply(id));
 		return  (Customers) f.apply(id);
 	}
 	
 	@SuppressWarnings("unchecked")
 	@GetMapping("/retrieve_trx/{id}")
 	public Map<String,Object> selectTransactions(@PathVariable String id) {
-		System.out.println("selectTransactions 회원아이디 : "+id);
 		IFunction f = (Object o) -> trx.retrieveAllTransactions(id);
 		List<Transactions> l = (List<Transactions>) f.apply(id);
 		map.clear();
@@ -97,13 +90,10 @@ public class KsaController {
 	@SuppressWarnings("unchecked")
 	@GetMapping("/retrieve_all_trx")
 	public Map<String,Object> selectAlltrx() {
-		System.out.println("selectAlltrx 진입");
 		ISupplier s = () -> trx.retrieveAllTrx();
-		System.out.println("s.get()은?? "+s.get());
 		List<Transactions> l = (List<Transactions>) s.get();
 		map.clear();
 		map.put("ls", l);
-		System.out.println("map은?? "+map);
 		return map;
 	}
 	

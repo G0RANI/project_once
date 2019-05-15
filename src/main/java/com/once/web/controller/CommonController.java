@@ -35,6 +35,7 @@ public class CommonController {
 	@Autowired HttpSession session;
 	@Autowired HttpServletRequest request;
 	@Autowired Map<String,Object> map;
+	@Autowired Map<String,Object> map2;
 	@Autowired AccountsServiceImpl acc;
 	@Autowired TransactionsServiceImpl trs;
 
@@ -67,33 +68,32 @@ public class CommonController {
 	}
 	
 	@Transactional
-	@SuppressWarnings("unchecked")
-	@ResponseBody
-	@RequestMapping(value ="/payment/{id}", method = RequestMethod.POST)
-	public Map<String,Object> payment2(@RequestBody String money
-			,@PathVariable String id) {
-			Date today = new Date();
-			DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-			System.out.println("data 값: "+money);
-			IFunction f = (Object o) -> acc.retrieveAccount(id);		  
-			Map<String,Object> ls = (Map<String,Object>)f.apply(id);
-			int bMoney = Integer.parseInt((String)ls.get("money"));
-			int tMoney =  bMoney + Integer.parseInt(money);
-			String fMoney = String.valueOf(tMoney);
-			String date = String.valueOf(dateFormat.format(today));
-			map.put("id", id);
-			map.put("bm", fMoney);
-			map.put("unit", "0");
-			map.put("nprice","0");
-			map.put("date",date);
-			map.put("tprice","0");
-			map.put("dmoney",money);
-			map.put("money", money);
-			IConsumer ii = (Object o) -> acc.modifyBuyAccount(map);
-			ii.accept(map);
-			map.put("rw","입금");
-			IConsumer i = (Object o) -> trs.modifyTransaction(map);
-			i.accept(map); 
-		return map;
-	}
+    @SuppressWarnings("unchecked")
+    @ResponseBody
+    @RequestMapping(value ="/payment/{id}", method = RequestMethod.POST)
+    public Map<String,Object> payment2(@RequestBody String money
+            ,@PathVariable String id) {
+            Date today = new Date();
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            IFunction f = (Object o) -> acc.retrieveAccount(id);          
+            Map<String,Object> ls = (Map<String,Object>)f.apply(id);
+            int bMoney = Integer.parseInt((String)ls.get("money"));
+            int tMoney =  bMoney + Integer.parseInt(money);
+            String fMoney = String.valueOf(tMoney);
+            String date = String.valueOf(dateFormat.format(today));
+            map.put("id", id);
+            map.put("bm", fMoney);
+            map.put("unit", "0");
+            map.put("nprice","0");
+            map.put("date",date);
+            map.put("tprice","0");
+            map.put("dmoney",money);
+            IConsumer ii = (Object o) -> acc.modifyBuyAccount(map);
+            ii.accept(map);
+            map.put("rw","입금");
+            IConsumer i = (Object o) -> trs.modifyTransaction(map);
+            i.accept(map);
+            map2.put("r", "결제성공");
+        return map2;
+    }
 }

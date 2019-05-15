@@ -72,24 +72,27 @@ ngh=(()=>{
                   $(this).attr('class', 'on');
                   $('#bt_list').empty();
                   $.each(d.ls, (i,j)=>{
-                	  if(j.rw==='매수'){
-                		  $('#bt_list').append('<tr>'
+                		switch(j.rw){
+          		 		case '매수':
+          		 			$('#bt_list').append('<tr>'
                         			+'<td class="lAlign">'+j.date+'</td>'
                         			+'<td class="up" style="text-align: center;"><strong>'+j.nprice+' <i>KRW </i></strong></center></td>'
                         			+'<td class="up" style="text-align: center;"><strong>'+j.unit+' <i>ONCE </i></strong></center></td>'
                         			+'<td><strong>'+j.unit*j.nprice+' <i>KRW </i></strong></td>'
                         			+'</tr>');
-                	  }else{
-                		  $('#bt_list').append('<tr>'
-                      			+'<td class="lAlign">'+j.date+'</td>'
-                      			+'<td class="up" style="text-align: center;"><strong>'+j.nprice+' <i>KRW </i></strong></center></td>'
-                      			+'<td class="down" style="text-align: center;"><strong>'+j.unit+' <i>ONCE </i></strong></center></td>'
-                      			+'<td><strong>'+j.unit*j.nprice+' <i>KRW </i></strong></td>'
-                      			+'</tr>');
-                	  }
+          		 			break;
+          		 		case '매도':
+          		 		  $('#bt_list').append('<tr>'
+                        			+'<td class="lAlign">'+j.date+'</td>'
+                        			+'<td class="up" style="text-align: center;"><strong>'+j.nprice+' <i>KRW </i></strong></center></td>'
+                        			+'<td class="down" style="text-align: center;"><strong>'+j.unit+' <i>ONCE </i></strong></center></td>'
+                        			+'<td><strong>'+j.unit*j.nprice+' <i>KRW </i></strong></td>'
+                        			+'</tr>');
+          		 			break;
+          		 		}
                   });
 			  	});
-			  
+
              })
 	};
 	/*once 차트 */
