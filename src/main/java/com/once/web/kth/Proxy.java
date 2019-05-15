@@ -62,10 +62,11 @@ public class Proxy {
     			endPage = pageCount;
     		}
     		
-    		existPrev = (startPage - pageSize) > 0;
-    		existNext = (startPage + pageSize) <= pageCount;
-    		prevBlock = startPage - pageSize; 
+    		existPrev = (startPage - pageSize) > -5;
+    		existNext = (startPage + pageSize) <= pageCount+5;
+    		prevBlock = startPage - pageSize+5; 
     		nextBlock = endPage + 1;
+    		System.out.println("페이지 카운트는 "+pageCount);
     		System.out.println("스타트페이지 "+startPage);
     		System.out.println("엔드페이지 "+endPage);
     		System.out.println("스타트로우 "+startRow);

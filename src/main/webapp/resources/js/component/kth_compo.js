@@ -3,7 +3,7 @@ var kth_compo = kth_compo||{};
 kth_compo ={
 	cs_form : ()=>{
 		return '<div class="subMain">'
-		+'	<div class="subMain">'
+		+'	<div class="subMain" style="margin-left: -50px;">'
 		+'		<section class="ty02">'
 		+'			<article>'
 		+'				<div class="inforB">'
@@ -154,7 +154,7 @@ kth_compo ={
 		+'	</div>'
 	},
 	cs_detail :()=>{
-		return'<div class="subMain">'
+		return'<div class="subMain" style="margin-left: -50px;">'
 		+'	<div class="subMain">'
 		+'<section class="ty02">'
 		+'<article>'
