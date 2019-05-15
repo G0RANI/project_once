@@ -99,7 +99,6 @@ public Map<String, Object> youcrawler() throws Exception{
      public Map<String, Object> notice(@PathVariable  String npage){
          List<CustService> list = new ArrayList<>();
          list.clear();
-         System.out.println(npage);
          map.put("page_num", npage);
          map.put("page_size", "10");
          map.put("block_size", "5");
@@ -149,7 +148,6 @@ public Map<String, Object> youcrawler() throws Exception{
      @PostMapping("/chat/{text}")
      public Map<String, Object> chat(@PathVariable  String text){
       Chat cha = new Chat();
-      System.out.println(text);
       Random random = new Random();
       Chat ch = null;
       IFunction f =null;
@@ -160,18 +158,15 @@ public Map<String, Object> youcrawler() throws Exception{
 	      cha.setChatSeq(String.valueOf(seq));
 	      f =(Object o) -> chatmapper.selectCoinArticle(cha);
 	      ch = (Chat) f.apply(cha);
-	      System.out.println(ch.toString());
 	      map.put("ch", ch); 
           break;
       case "4월 종가": case "5월 종가":
     	  map.clear();
     	  String txt = String.valueOf(text.charAt(0));
-    	  System.out.println(txt);
     	  Cp cp = new Cp();
     	  cp.setCpnum(txt);
     	  f =(Object o)->cpmapper.selectCpList(cp);
     	  List<?> ls = (List<?>) f.apply(cp);
-    	  System.out.println(ls.toString());
     	  map.put("ls", ls);
     	  break;
       default:
@@ -180,7 +175,6 @@ public Map<String, Object> youcrawler() throws Exception{
           cha.setChatSeq(String.valueOf(seq));
           f =(Object o) -> chatmapper.selectCoinArticle(cha);
           ch = (Chat) f.apply(cha);
-          System.out.println(ch.toString());
           map.put("ch", ch); 
           break;
       }

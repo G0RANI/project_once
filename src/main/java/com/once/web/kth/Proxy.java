@@ -43,7 +43,6 @@ public class Proxy {
     		int nmg = rowCount % pageSize;
     		int pageCount = (nmg == 0)?rowCount / pageSize:rowCount / pageSize+1;
     		startRow = (pageNum -1) *pageSize;
-    		System.out.println("스타트로우: "+startRow);
     		endRow = (rowCount > pageNum * pageSize)? pageNum * pageSize: rowCount;
     		
 
@@ -66,15 +65,6 @@ public class Proxy {
     		existNext = (startPage + pageSize) <= pageCount+5;
     		prevBlock = startPage - pageSize+5; 
     		nextBlock = endPage + 1;
-    		System.out.println("페이지 카운트는 "+pageCount);
-    		System.out.println("스타트페이지 "+startPage);
-    		System.out.println("엔드페이지 "+endPage);
-    		System.out.println("스타트로우 "+startRow);
-    		System.out.println("엔드로우 "+endRow);
-    		System.out.println("페이지사이즈 "+pageSize);
-    		System.out.println("블록사이즈 "+blockSize);
-    		System.out.println("페이지넘버 "+pageNum);
-    		System.out.println("로우카 운트 "+rowCount);
 
          }
          
@@ -137,9 +127,9 @@ public class Proxy {
 //    	page = wordpage;
     	page =1;
 
-    	File file = new File("C:\\Users\\taehy\\git\\project_once\\src\\main\\webapp\\resources\\csv\\csv.csv");
+    	File file = new File("C:\\Users\\1027\\git\\project_once\\src\\main\\webapp\\resources\\csv\\csv.csv");
     	file.delete();
-    	String csvFileName = "C:\\Users\\taehy\\git\\project_once\\src\\main\\webapp\\resources\\csv\\csv.csv";
+    	String csvFileName = "C:\\Users\\1027\\git\\project_once\\src\\main\\webapp\\resources\\csv\\csv.csv";
     	
     	BufferedWriter writer = new BufferedWriter(
     			new OutputStreamWriter(new FileOutputStream(csvFileName),"UTF-8"));
@@ -199,7 +189,6 @@ public class Proxy {
       title = title.replaceAll(match, " ");
         String[] arg = title.split(" ");
         arg = new HashSet<String>(Arrays.asList(arg)).toArray(new String[0]);
-        System.out.println("afteer"+arg.length);
         
         for(String s :arg) {
         	writer.write(s+","+(random.nextInt(20)+10)+"\n");

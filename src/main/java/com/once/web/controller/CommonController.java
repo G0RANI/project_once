@@ -43,7 +43,6 @@ public class CommonController {
 	
 	@GetMapping("/")
 	public String home(Locale locale, Model model) {
-		logger.info("================루트 진입===============");
 		String ctx = request.getContextPath();
 		session.setAttribute("ctx", ctx);
 		session.setAttribute("css", ctx + "/resources/css/");
@@ -55,18 +54,15 @@ public class CommonController {
 	
 	@GetMapping("/ksa")
 	public String ksaMain(Locale locale, Model model) {
-		logger.info("김승아 컨트롤 진입 했씁니다!!!");	
 		return "ksa";
 	}
     @GetMapping("/kth")
     public String kthMain() {
-        logger.info("김태혁 컨트롤 진입 했씁니다!!!");   
         return "kth";
     }
 	
 	@GetMapping("/payment")
 	public String payment(Locale locale, Model model) {
-		logger.info("===============테스트 진입===============");
 		return "payment";
 	}
 	
@@ -76,7 +72,6 @@ public class CommonController {
 	@RequestMapping(value ="/payment/{id}", method = RequestMethod.POST)
 	public Map<String,Object> payment2(@RequestBody String money
 			,@PathVariable String id) {
-			logger.info("===============테스트 결제진입===============");
 			Date today = new Date();
 			DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			System.out.println("data 값: "+money);
