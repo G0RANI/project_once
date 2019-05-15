@@ -41,7 +41,7 @@
                     contentType:'application/json',
                     success:function (s){
                        alert('성공');
-                    },
+	                    },
                     error:function (e){
                         alert('실패!');
                         location.assign($.ctx());

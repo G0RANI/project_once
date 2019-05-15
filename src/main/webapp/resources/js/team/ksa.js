@@ -81,7 +81,8 @@ ksa=(()=>{
                             $('.ownB').html(ksa_compo.investment_trx());
                             $('.ty04 tbody').empty();     
                             $.each(s.ls, (i,j)=>{
-                            	if(j.rw==='매수'||j.rw==='입금'){
+                            	switch(j.rw){
+                            	case '매수':
                             		$('.ty04 tbody').append('<tr>'
                                 			+'<td class="lAlign">'+j.date+'</td>'
                                 			+'<td class="cAlign up">'+j.rw+'</td>'
@@ -89,7 +90,8 @@ ksa=(()=>{
                                 			+'<td><strong>'+j.nprice+' <i>KRW </i></strong></td>'
                                 			+'<td><strong>'+j.unit*j.nprice+' <i>KRW </i></strong></td>'
                                 			+'</tr>');
-                            	}else{
+                            		break;
+                            	case '매도':
                             		$('.ty04 tbody').append('<tr>'
                                 			+'<td class="lAlign">'+j.date+'</td>'
                                 			+'<td class="cAlign down">'+j.rw+'</td>'
@@ -97,15 +99,23 @@ ksa=(()=>{
                                 			+'<td><strong>'+j.nprice+' <i>KRW </i></strong></td>'
                                 			+'<td><strong>'+j.unit*j.nprice+' <i>KRW </i></strong></td>'
                                 			+'</tr>');
+                            		break;
+                            	case '입금':
+                            		$('.ty04 tbody').append('<tr>'
+                                			+'<td class="lAlign">'+j.date+'</td>'
+                                			+'<td class="cAlign up">'+j.rw+'</td>'
+                                			+'<td><strong>0 <i>ONCE </i></strong></td>'
+                                			+'<td><strong>0 <i>KRW </i></strong></td>'
+                                			+'<td><strong>'+j.dmoney+' <i>KRW </i></strong></td>'
+                                			+'</tr>');
+                            		break;
                             	}
                             });
                             $('#proSearch').change(function(){
-                            	alert('값이 뭐냐?'+ $(this).val());
                             	 switch($(this).val()){
                                  case 'allType': 
-                                	 alert('거래전체');
                                 	 $.each(s.ls, (i,j)=>{
-                                		 if(j.rw==='매수'||j.rw==='입금'){
+                                		 if(j.rw==='매수'){
                                      		$('.ty04 tbody').append('<tr>'
                                          			+'<td class="lAlign">'+j.date+'</td>'
                                          			+'<td class="cAlign up">'+j.rw+'</td>'
@@ -113,7 +123,7 @@ ksa=(()=>{
                                          			+'<td><strong>'+j.nprice+' <i>KRW </i></strong></td>'
                                          			+'<td><strong>'+j.unit*j.nprice+' <i>KRW </i></strong></td>'
                                          			+'</tr>');
-                                     	}else{
+                                     	}else if(j.rw==='매도'){
                                      		$('.ty04 tbody').append('<tr>'
                                          			+'<td class="lAlign">'+j.date+'</td>'
                                          			+'<td class="cAlign down">'+j.rw+'</td>'
@@ -121,6 +131,14 @@ ksa=(()=>{
                                          			+'<td><strong>'+j.nprice+' <i>KRW </i></strong></td>'
                                          			+'<td><strong>'+j.unit*j.nprice+' <i>KRW </i></strong></td>'
                                          			+'</tr>');
+                                     	}else{
+                                     		$('.ty04 tbody').append('<tr>'
+                                        			+'<td class="lAlign">'+j.date+'</td>'
+                                        			+'<td class="cAlign up">'+j.rw+'</td>'
+                                        			+'<td><strong>0 <i>ONCE </i></strong></td>'
+                                        			+'<td><strong>0 <i>KRW </i></strong></td>'
+                                        			+'<td><strong>'+j.dmoney+' <i>KRW </i></strong></td>'
+                                        			+'</tr>');
                                      	}
                                       });
                                 	 break;
@@ -128,7 +146,6 @@ ksa=(()=>{
                                 	 alert('매수');
                                 	 $('.ty04 tbody').empty();
                                 	 $.each(s.ls, (i,j)=>{
-                                		 if(j.rw==='매수'){
                                          $('.ty04 tbody').append('<tr>'
                                         		+'<td class="lAlign">'+j.date+'</td>'
                                      			+'<td class="cAlign up">'+j.rw+'</td>'
@@ -136,14 +153,12 @@ ksa=(()=>{
                                      			+'<td><strong>'+j.nprice+' <i>KRW </i></strong></td>'
                                      			+'<td><strong>'+j.unit*j.nprice+' <i>KRW </i></strong></td>'
                                      			+'</tr>');
-                                		 }
                                           });
                                 	 break;
                                  case 'ask':  
                                 	 alert('매도');
                                 	 $('.ty04 tbody').empty();
                                 	 $.each(s.ls, (i,j)=>{
-                                		 if(j.rw==='매도'){
                                          $('.ty04 tbody').append('<tr>'
                                         		+'<td class="lAlign">'+j.date+'</td>'
                                      			+'<td class="cAlign down">'+j.rw+'</td>'
@@ -151,22 +166,19 @@ ksa=(()=>{
                                      			+'<td><strong>'+j.nprice+' <i>KRW </i></strong></td>'
                                      			+'<td><strong>'+j.unit*j.nprice+' <i>KRW </i></strong></td>'
                                      			+'</tr>');
-                                		 }
                                           });
                                 	 break;
                                   case 'deposit':  
                                 	  alert('입금');
                                  	 $('.ty04 tbody').empty();
                                  	 $.each(s.ls, (i,j)=>{
-                                 		 if(j.rw==='입금'){
-                                          $('.ty04 tbody').append('<tr>'
-                                         		+'<td class="lAlign">'+j.date+'</td>'
-                                      			+'<td class="cAlign up">'+j.rw+'</td>'
-                                      			+'<td><strong>'+j.unit+' <i>ONCE </i></strong></td>'
-                                      			+'<td><strong>'+j.nprice+' <i>KRW </i></strong></td>'
-                                      			+'<td><strong>'+j.unit*j.nprice+' <i>KRW </i></strong></td>'
-                                      			+'</tr>');
-                                 		 }
+                                 		$('.ty04 tbody').append('<tr>'
+                                    			+'<td class="lAlign">'+j.date+'</td>'
+                                    			+'<td class="cAlign up">'+j.rw+'</td>'
+                                    			+'<td><strong>0 <i>ONCE </i></strong></td>'
+                                    			+'<td><strong>0 <i>KRW </i></strong></td>'
+                                    			+'<td><strong>'+j.dmoney+' <i>KRW </i></strong></td>'
+                                    			+'</tr>');
                                            });
                                  	 break;
                                  }
@@ -214,7 +226,7 @@ ksa=(()=>{
        				let total_p = c_krw+parseInt(s.money); //총 보유자산 값
          			 $('.totalB p').empty();
          			 $('<p> '+total_p+' <i>KRW</i></p>').appendTo('.totalB'); //총보유자산
-     				if(s.tbprice!='0'){
+     				if(s.money!='0' || s.hqua!='0'){
      					 $('#won p').html('<p align = "right">'+parseFloat((s.money/total_p)*100).toFixed(2)+'%</p>');// 원화 보유비중
                		 	 $('#oncecoin p').eq(0).html('<p align = "right">'+parseFloat((c_krw/total_p)*100).toFixed(2)+'%</p>');// 원스코인 보유비중
      				}else{
@@ -358,15 +370,16 @@ ksa=(()=>{
                   		  	}
                   		  	$('#assets strong').eq(0).html(s.money+' <i>KRW</i>'); //보유 krw
                   		 	$('#assets strong').eq(1).html(total_p+' <i>KRW</i></strong>'); //총보유자산
-                  		 	
                   		 	$('#hcoin td').eq(0).html('<strong>'+s.hqua+' <i>BTC</i></strong>'); //보유수량
-                  		 	//$('#hcoin td').eq(1).html('<strong>'+s.qua+' <i>BTC</i></strong>'); 매수평균가
                   		 	$('#hcoin td').eq(2).html('<em>'+s.tbprice+' <i>KRW</i></em>'); //매수금액
                   		 	$('#hcoin td').eq(3).html('<em>'+total_p+' <i>KRW</i></em>'); //평가금액
                   		 	$('#hcoin td').eq(4).html('<span><em class="down">'+((total_p-s.tbprice)/s.tbprice*100).toFixed(2)+' <i>%</i></em></span>'
                   		 							 +'<span><em class="down">'+(total_p-s.tbprice)+' <i>KRW</i></em></span>'); //평가손익
+        				}else{
+        					$('#hcoin td').eq(3).html('<em>'+total_p+' <i>KRW</i></em>'); //평가금액
+        					$('#assets strong').eq(0).html(s.money+' <i>KRW</i>'); //보유 krw
+        					$('#assets strong').eq(1).html(s.money+' <i>KRW</i></strong>'); //총보유자산
         				}
-        				
           		  }); 
           	 },
           	 error:e=>{

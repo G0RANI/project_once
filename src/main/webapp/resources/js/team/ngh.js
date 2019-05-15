@@ -71,55 +71,27 @@ ngh=(()=>{
                   $(this).attr('class', 'on');
                   $('#bt_list').empty();
                   $.each(d.ls, (i,j)=>{
-                	  if(j.rw==='매수'){
-                		  $('#bt_list').append('<tr>'
+                		switch(j.rw){
+          		 		case '매수':
+          		 			$('#bt_list').append('<tr>'
                         			+'<td class="lAlign">'+j.date+'</td>'
                         			+'<td class="up" style="text-align: center;"><strong>'+j.nprice+' <i>KRW </i></strong></center></td>'
                         			+'<td class="up" style="text-align: center;"><strong>'+j.unit+' <i>ONCE </i></strong></center></td>'
                         			+'<td><strong>'+j.unit*j.nprice+' <i>KRW </i></strong></td>'
                         			+'</tr>');
-                	  }else{
-                		  $('#bt_list').append('<tr>'
-                      			+'<td class="lAlign">'+j.date+'</td>'
-                      			+'<td class="up" style="text-align: center;"><strong>'+j.nprice+' <i>KRW </i></strong></center></td>'
-                      			+'<td class="down" style="text-align: center;"><strong>'+j.unit+' <i>ONCE </i></strong></center></td>'
-                      			+'<td><strong>'+j.unit*j.nprice+' <i>KRW </i></strong></td>'
-                      			+'</tr>');
-                	  }
+          		 			break;
+          		 		case '매도':
+          		 		  $('#bt_list').append('<tr>'
+                        			+'<td class="lAlign">'+j.date+'</td>'
+                        			+'<td class="up" style="text-align: center;"><strong>'+j.nprice+' <i>KRW </i></strong></center></td>'
+                        			+'<td class="down" style="text-align: center;"><strong>'+j.unit+' <i>ONCE </i></strong></center></td>'
+                        			+'<td><strong>'+j.unit*j.nprice+' <i>KRW </i></strong></td>'
+                        			+'</tr>');
+          		 			break;
+          		 		}
                   });
 			  	});
-			  	/*$.ajax({
-                    url:$.ctx()+'/retrieve_all_trx',
-                    type:'GET',
-                    contentType:'application/json',
-                    success:s=>{
-                       let tx_date = new Date(s.date);
-                      function convert(x) {
-                           var date = new Date(x),
-                               mnth = ("0" + (date.getMonth()+1)).slice(-2),
-                               day  = ("0" + date.getDate()).slice(-2),
-                               hours  = ("0" + date.getHours()).slice(-2),
-                               minutes = ("0" + date.getMinutes()).slice(-2);
-                           var date2 = [date.getFullYear(), mnth, day].join("-");
-                           var date3 = [hours, minutes ].join(":");
-                          return [ date2, date3 ].join(" ");
-                       }
-                         $('#bt_ty01').attr('class', '');
-                         $(this).attr('class', 'on');
-                         $('#bt_list').empty();
-                         $.each(s.ls, (i,j)=>{
-                         	$('#bt_list').append('<tr>'
-                         			+'<td class="lAlign">'+j.date+'</td>'
-                         			+'<td><strong>'+j.nprice+' <i>KRW </i></strong></td>'
-                         			+'<td><strong>'+j.unit+' <i>ONCE </i></strong></td>'
-                         			+'<td><strong>'+j.unit*j.nprice+' <i>KRW </i></strong></td>'
-                         			+'</tr>');
-                         });
-                    },
-                    error:e=>{    
-                        alert('실패!');
-                    }
-             });*/
+			  	
              })
 	};
 	/*once 차트 */
